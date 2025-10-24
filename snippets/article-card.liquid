@@ -1,6 +1,19 @@
-<div class="card article-card relative flex flex-col leading-none tw-border-solid tw-border-viGray-200 tw-rounded-2xl tw-border  tw-overflow-hidden {% if article.image == blank %} without-image{% endif %}">
+<div class="card article-card relative flex flex-col gap-5 md:gap-8 leading-none{% if article.image == blank %} without-image{% endif %}">
   {%- if article.image != blank -%}
-    <div class="article-card__media relative overflow-hidden !tw-rounded-none">
+    <div class="article-card__media relative overflow-hidden">
+      {%- if show_tags and article.tags.size > 0 -%}
+        <div class="badges z-2 absolute grid gap-3">
+          {%- if article.metafields.theme.tag_color.value != blank and article.metafields.theme.tag_background.value != blank -%}
+            {%- capture badge_style -%}
+            --badge-foreground: rgb({{ article.metafields.theme.tag_color.value.rgb }}); --badge-background: rgb({{ article.metafields.theme.tag_background.value.rgb }});
+            {%- endcapture -%}
+          {%- endif -%}
+          
+          {%- for tag in article.tags -%}
+            <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="badge{% if badge_style %} badge--custom{% endif %} font-medium leading-none rounded-full"{% if badge_style %} style="{{ badge_style }}"{% endif %}>{{ tag }}</a>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
 
       <a href="{{ article.url }}" class="article-card__link block relative media media--{{ image_ratio }}" aria-label="{{ article.title | escape }}" tabindex="-1">
         {{- article.image | image_url: width: article.image.width | image_tag: loading: 'lazy', widths: '180,360,540,720,900,1080,1600', is: 'lazy-image', class: 'article-card__image' -}}
@@ -8,16 +21,16 @@
     </div>
   {%- endif -%}
 
-  <div class="article-card__content flex flex-col gap-5 md:gap-8 tw-p-6">
-    <div class="grid gap-4">
-      {%- if show_comments or show_author -%}
+  <div class="article-card__content flex flex-col gap-5 md:gap-8">
+    <div class="grid gap-4 md:gap-5">
+      {%- if show_date or show_comments or show_author -%}
         <ul class="article-card__top flex flex-wrap gap-4">
-          {% comment %} {%- if show_date -%}
+          {%- if show_date -%}
             <li class="inline-flex gap-2 text-xs relative">
               {%- render 'icon', icon: 'calendar', size: 'xs', class: 'stroke-1' -%}
               {{- article.published_at | time_tag: format: 'month_day_year' -}}
             </li>
-          {%- endif -%} {% endcomment %}
+          {%- endif -%}
 
           {%- if show_comments -%}
             <li class="inline-flex gap-2 text-xs relative">
@@ -37,31 +50,14 @@
         </ul>
       {%- endif -%}
 
-
-      {%- if show_tags and article.tags.size > 0 -%}
-      <div class="badges tw-flex tw-flex-wrap gap-3">
-        {%- if article.metafields.theme.tag_color.value != blank and article.metafields.theme.tag_background.value != blank -%}
-          {%- capture badge_style -%}
-          --badge-foreground: rgb({{ article.metafields.theme.tag_color.value.rgb }}); --badge-background: rgb({{ article.metafields.theme.tag_background.value.rgb }});
-          {%- endcapture -%}
-        {%- endif -%}
-        
-        {%- for tag in article.tags -%}
-          <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="tw-bg-vi tw-text-black -md:tw-text-xs badge{% if badge_style %} badge--custom{% endif %} font-medium leading-none rounded-full"{% if badge_style %} style="{{ badge_style }}"{% endif %}>{{ tag }}</a>
-        {%- endfor -%}
-      </div>
-      {%- endif -%}
-
-      
-     
       <p>
-        <a class="article-card__title heading reversed-link text-lg-2xl tw-line-clamp-2 {% if section.settings.swipe_on_mobile %}  -md:tw-text-base{% else %} -md:tw-text-xl {% endif %} -md:tw-text-xl leading-tight tracking-tight" href="{{ article.url }}">
+        <a class="article-card__title heading reversed-link text-lg-2xl leading-tight tracking-tight" href="{{ article.url }}">
           {{- article.title -}}
         </a>
       </p>
 
       {%- if show_excerpt -%}
-        <div class="article-card__bottom rte leading-normal tw-text-sm tw-text-viGray tw-line-clamp-5">
+        <div class="article-card__bottom rte leading-normal">
           {%- liquid
             if article.excerpt.size > 0
               echo article.excerpt
@@ -71,19 +67,12 @@
           -%}
         </div>
       {%- endif -%}
-      
-      {%- if show_date -%}
-        <div class="inline-flex gap-2 text-xs relative tw-text-vi">
-          {%- render 'icon', icon: 'calendar', size: 'xs', class: 'stroke-1' -%}
-          {{- article.published_at | time_tag: format: 'month_day_year' -}}
-        </div>
-      {%- endif -%}
     </div>
 
-    {% comment %} <p>
+    <p>
       <a class="link text-sm font-medium leading-tight" href="{{ article.url }}">
         {{- 'blogs.article.read_more' | t -}}
       </a>
-    </p> {% endcomment %}
+    </p>
   </div>
 </div>

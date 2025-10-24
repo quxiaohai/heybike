@@ -12,9 +12,8 @@
     "main-page": {
       "type": "main-page",
       "settings": {
-        "heading_size": "title-lg tracking-heading",
-        "heading_alignment": "text-center",
-        "heading_tag": "h2",
+        "heading_size": "title-xl tracking-heading",
+        "heading_tag": "h1",
         "text_size": "text-base",
         "padding_top": 72,
         "padding_bottom": 120,

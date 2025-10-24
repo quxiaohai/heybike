@@ -1,0 +1,1093 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1761115676ab625e9c": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_8aadf58_C6GRVE": {
+          "type": "ai_gen_block_8aadf58",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Pc_2_677ab49e-665a-4ebc-8aa2-55b6c2e18604.jpg",
+            "mobile_image": "shopify://shop_images/App_81a90ad6-8221-4bc0-8ad8-173613f92815.jpg",
+            "desktop_height_mode": "custom",
+            "desktop_custom_height": 600,
+            "mobile_height_mode": "adapt",
+            "mobile_custom_height": 400,
+            "overlay_opacity": 30,
+            "desktop_horizontal_align": "left",
+            "desktop_vertical_align": "middle",
+            "desktop_padding_top": 40,
+            "desktop_padding_right": 40,
+            "desktop_padding_bottom": 40,
+            "desktop_padding_left": 200,
+            "desktop_content_width": "small",
+            "desktop_content_width_custom": 600,
+            "desktop_text_align": "left",
+            "mobile_horizontal_align": "center",
+            "mobile_vertical_align": "top",
+            "mobile_padding_top": 20,
+            "mobile_padding_right": 20,
+            "mobile_padding_bottom": 20,
+            "mobile_padding_left": 20,
+            "mobile_content_width": "medium",
+            "mobile_content_width_custom": 340,
+            "mobile_text_align": "center",
+            "show_subheading": true,
+            "subheading": "2025 BIGGEST EBIKE SALE",
+            "subheading_order": 1,
+            "subheading_color": "#ffffff",
+            "desktop_subheading_size": 16,
+            "mobile_subheading_size": 14,
+            "show_heading": true,
+            "heading": "BLACK FRIDAY & CYBER MONDAY",
+            "heading_order": 2,
+            "heading_color": "#ffffff",
+            "desktop_heading_size": 48,
+            "mobile_heading_size": 32,
+            "show_countdown": true,
+            "countdown_target_date": "2025-11-03T23:59:59",
+            "countdown_order": 4,
+            "countdown_style": "boxes",
+            "countdown_bg_color": "#000000",
+            "countdown_text_color": "#ffffff",
+            "desktop_countdown_size": 32,
+            "mobile_countdown_size": 24,
+            "show_description": true,
+            "description": "Enjoy record-low prices and limited gifts during the biggest ebike sale of the year.",
+            "description_order": 3,
+            "description_color": "#ffffff",
+            "desktop_description_size": 18,
+            "mobile_description_size": 16,
+            "show_button": false,
+            "button_text": "Shop Now",
+            "button_link": "",
+            "button_order": 5,
+            "button_bg_color": "#ffdb00",
+            "button_text_color": "#000000",
+            "desktop_button_size": 16,
+            "mobile_button_size": 14
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_8aadf58_C6GRVE"
+      ],
+      "settings": {}
+    },
+    "rich_text_nYQpCC": {
+      "type": "rich-text",
+      "blocks": {
+        "spacing_LVzpQC": {
+          "type": "spacing",
+          "settings": {
+            "height": 4,
+            "height_mobile": 4
+          }
+        },
+        "text_rLjiAm": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><em>You Don't Want to Miss</em></h2>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "sketch-underline"
+          }
+        },
+        "spacing_jQxCtN": {
+          "type": "spacing",
+          "settings": {
+            "height": 4,
+            "height_mobile": 4
+          }
+        }
+      },
+      "block_order": [
+        "spacing_LVzpQC",
+        "text_rLjiAm",
+        "spacing_jQxCtN"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#f9f9f9",
+        "color_background": "#000000",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "17612145953e09cce4": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_cf84993_qpzk3f": {
+          "type": "ai_gen_block_cf84993",
+          "settings": {
+            "section_heading": "",
+            "section_bg_color": "#000000",
+            "section_padding_mobile": 20,
+            "section_padding_desktop": 40,
+            "section_margin_mobile": 20,
+            "section_margin_desktop": 200,
+            "desktop_layout": "horizontal",
+            "mobile_layout": "horizontal",
+            "column_spacing": 20,
+            "image_layout": "adapt",
+            "column_1_enabled": true,
+            "column_1_image": "shopify://shop_images/500x375.jpg",
+            "column_1_content": "<p>Column 1 content</p>",
+            "column_1_position": "bottom",
+            "column_1_alignment": "center",
+            "column_1_text_color": "#ffffff",
+            "column_1_text_size": 16,
+            "column_1_bg_color": "rgba(0,0,0,0.5)",
+            "column_2_enabled": true,
+            "column_2_image": "shopify://shop_images/500x375.jpg",
+            "column_2_content": "<p>Column 2 content</p>",
+            "column_2_position": "bottom",
+            "column_2_alignment": "center",
+            "column_2_text_color": "#ffffff",
+            "column_2_text_size": 16,
+            "column_2_bg_color": "rgba(0,0,0,0.5)",
+            "column_3_enabled": true,
+            "column_3_image": "shopify://shop_images/500x375.jpg",
+            "column_3_content": "<p>Column 3 content</p>",
+            "column_3_position": "bottom",
+            "column_3_alignment": "center",
+            "column_3_text_color": "#ffffff",
+            "column_3_text_size": 16,
+            "column_3_bg_color": "rgba(0,0,0,0.5)",
+            "column_4_enabled": false,
+            "column_4_content": "<p>Column 4 content</p>",
+            "column_4_position": "bottom",
+            "column_4_alignment": "center",
+            "column_4_text_color": "#ffffff",
+            "column_4_text_size": 16,
+            "column_4_bg_color": "rgba(0,0,0,0.5)",
+            "column_5_enabled": false,
+            "column_5_content": "<p>Column 5 content</p>",
+            "column_5_position": "bottom",
+            "column_5_alignment": "center",
+            "column_5_text_color": "#ffffff",
+            "column_5_text_size": 16,
+            "column_5_bg_color": "rgba(0,0,0,0.5)"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_cf84993_qpzk3f"
+      ],
+      "settings": {}
+    },
+    "176110059830d34a2a": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f8a5dd4_FKrjJ6": {
+          "type": "ai_gen_block_f8a5dd4",
+          "settings": {
+            "heading": "",
+            "heading_size": 28,
+            "heading_alignment": "center",
+            "heading_color": "#171717",
+            "layout": "horizontal",
+            "columns_desktop": 3,
+            "column_gap": 20,
+            "max_width": 1500,
+            "background_color": "#ffffff",
+            "image_border_radius": 8,
+            "badge_margin": 10,
+            "badge_font_size": 14,
+            "badge_border_radius": 4,
+            "badge_bg_color": "#ffdb00",
+            "badge_text_color": "#000000",
+            "dot_active_color": "#171717",
+            "dot_inactive_color": "#cccccc",
+            "desktop_image_1": "shopify://shop_images/imp.png",
+            "badge_text_1": "Info",
+            "modal_description_1": "Add your description text here that will appear in the modal when the badge is clicked.",
+            "desktop_image_2": "shopify://shop_images/imp.png",
+            "badge_text_2": "Info",
+            "modal_description_2": "Add your description text here that will appear in the modal when the badge is clicked.",
+            "desktop_image_3": "shopify://shop_images/imp.png",
+            "mobile_image_3": "shopify://shop_images/imp.png",
+            "badge_text_3": "Info",
+            "modal_description_3": "Add your description text here that will appear in the modal when the badge is clicked."
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f8a5dd4_FKrjJ6"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "image_with_text_overlay_JRFpTF": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_xUPpEk": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Capture Your Ride, Win Big!",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true
+          }
+        },
+        "heading_iGgN8E": {
+          "type": "heading",
+          "settings": {
+            "heading": "Heybike Photo Contest",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_wE97GC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Submit your best Heybike moments and get a chance to win amazing rewards every month. Join the community, share your journey, and ride into the spotlight!</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_PBmRwM": {
+          "type": "button",
+          "settings": {
+            "button_label": "Submit Photo Now!",
+            "button_link": "",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        },
+        "button_8wCYAC": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Join Heybike Community",
+            "button_link": "",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "subheading_xUPpEk",
+        "heading_iGgN8E",
+        "text_wE97GC",
+        "button_PBmRwM",
+        "button_8wCYAC"
+      ],
+      "disabled": true,
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/Pc_2_677ab49e-665a-4ebc-8aa2-55b6c2e18604.jpg",
+        "image_height": "650px",
+        "content_width": "small",
+        "content_position": "md:items-end md:justify-start",
+        "text_alignment": "left",
+        "image_mobile": "shopify://shop_images/App_81a90ad6-8221-4bc0-8ad8-173613f92815.jpg",
+        "image_height_mobile": "adapt",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 15,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "rich_text_dE8RXT": {
+      "type": "rich-text",
+      "blocks": {
+        "spacing_CJ8nQP": {
+          "type": "spacing",
+          "settings": {
+            "height": 4,
+            "height_mobile": 4
+          }
+        },
+        "text_EwQCdB": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><em><strong>Black Friday Early Access</strong></em></h2>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "sketch-underline"
+          }
+        },
+        "spacing_PQmcLL": {
+          "type": "spacing",
+          "settings": {
+            "height": 4,
+            "height_mobile": 4
+          }
+        }
+      },
+      "block_order": [
+        "spacing_CJ8nQP",
+        "text_EwQCdB",
+        "spacing_PQmcLL"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#ffffff",
+        "color_background": "#000000",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "cg_featured_collection_PiUwwV": {
+      "type": "cg_featured-collection",
+      "name": "CG Featured Collection",
+      "settings": {
+        "collection": "electric-bike",
+        "products": [
+          "mars-2-0",
+          "heybike-cityrun-electric-bike",
+          "hauler",
+          "horizon"
+        ],
+        "product_limit": 3,
+        "columns": 3,
+        "carousel_on_desktop": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "heading": "",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "#000000",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 44,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "direction": "vertical",
+        "border_color": "#999999",
+        "hide_review_counter": false,
+        "hide_spec": false,
+        "shop_now_button": "text"
+      }
+    },
+    "cg_featured_collection_4U4wRk": {
+      "type": "cg_featured-collection",
+      "name": "CG Featured Collection",
+      "settings": {
+        "collection": "electric-bike",
+        "products": [
+          "ranger-s",
+          "hero",
+          "alpha",
+          "tyson"
+        ],
+        "product_limit": 3,
+        "columns": 3,
+        "carousel_on_desktop": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "heading": "",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "#000000",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "direction": "vertical",
+        "border_color": "#999999",
+        "hide_review_counter": false,
+        "hide_spec": false,
+        "shop_now_button": "text"
+      }
+    },
+    "image_with_text_overlay_hbaLYr": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_waQ3CH": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Add a tagline",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true
+          }
+        },
+        "heading_cfnNRb": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image with text overlay",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_aR3JGY": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_waQ3CH",
+        "heading_cfnNRb",
+        "text_aR3JGY"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets.name",
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/Heybike_4th_of_July_Ebike_Sale_Best_Electric_Bike_For_Sale.jpg",
+        "image_height": "400px",
+        "content_width": "small",
+        "content_position": "md:items-end md:justify-start",
+        "text_alignment": "left",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 100,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "rich_text_KRedQV": {
+      "type": "rich-text",
+      "blocks": {
+        "spacing_LfqpiE": {
+          "type": "spacing",
+          "settings": {
+            "height": 4,
+            "height_mobile": 4
+          }
+        },
+        "text_YzH43g": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><em><strong>Buy More, Save More</strong></em></h2>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "sketch-underline"
+          }
+        },
+        "spacing_xKBLFX": {
+          "type": "spacing",
+          "settings": {
+            "height": 4,
+            "height_mobile": 4
+          }
+        }
+      },
+      "block_order": [
+        "spacing_LfqpiE",
+        "text_YzH43g",
+        "spacing_xKBLFX"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#ffffff",
+        "color_background": "#000000",
+        "gradient_background": "",
+        "color_highlight": "#ffdb00",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "cg_featured_collection_rYnfWp": {
+      "type": "cg_featured-collection",
+      "name": "CG Featured Collection",
+      "settings": {
+        "collection": "electric-bike",
+        "products": [
+          "mars-2-0-combo",
+          "cityrun-combo",
+          "horizon-combo",
+          "mars-2-0-1000w-combo"
+        ],
+        "product_limit": 3,
+        "columns": 3,
+        "carousel_on_desktop": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "heading": "",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "#000000",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "direction": "vertical",
+        "border_color": "#999999",
+        "hide_review_counter": false,
+        "hide_spec": false,
+        "shop_now_button": "text"
+      }
+    },
+    "cg_featured_collection_XLPP63": {
+      "type": "cg_featured-collection",
+      "name": "CG Featured Collection",
+      "settings": {
+        "collection": "electric-bike",
+        "products": [
+          "ranger-s-combo",
+          "alpha-combo",
+          "ranger-s-1000w-combo",
+          "tyson"
+        ],
+        "product_limit": 3,
+        "columns": 3,
+        "carousel_on_desktop": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "heading": "",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "#000000",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "direction": "vertical",
+        "border_color": "#999999",
+        "hide_review_counter": false,
+        "hide_spec": false,
+        "shop_now_button": "text"
+      }
+    },
+    "pagefly_section_ciW99G": {
+      "type": "pagefly-section",
+      "name": "PageFly Section",
+      "settings": {
+        "section_id": "pf-20e2cc22"
+      }
+    },
+    "rich_text_3r9Btn": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_F6DCry": {
+          "type": "heading",
+          "settings": {
+            "heading": "Rich text",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_GNrbRd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_Yx7yxN": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_F6DCry",
+        "text_GNrbRd",
+        "button_Yx7yxN"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 100,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "custom_newsletter_xyYfDh": {
+      "type": "custom-newsletter",
+      "blocks": {
+        "newsletter_rAkGCx": {
+          "type": "newsletter",
+          "settings": {
+            "image_width": "full_width",
+            "image_max_width": 50,
+            "image_max_width_mobile": 50,
+            "heading": "<em><strong>Sign up and save</strong></em>",
+            "heading_size": "title-md",
+            "text_max_size_heading": 32,
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "sketch-underline",
+            "text": "",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text_text": "none",
+            "highlighted_scribble_text": "basic-underline",
+            "newsletter_form": true,
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "md",
+            "button_secondary_style": false,
+            "label": "",
+            "link": "",
+            "liquid": "",
+            "social_media": false
+          }
+        },
+        "newsletter_rxDmfM": {
+          "type": "newsletter",
+          "settings": {
+            "image": "shopify://shop_images/1200-png.png",
+            "image_width": "custom",
+            "image_max_width": 600,
+            "image_max_width_mobile": 600,
+            "heading": "",
+            "heading_size": "title-lg tracking-heading",
+            "text_max_size_heading": 32,
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "text": "",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text_text": "none",
+            "highlighted_scribble_text": "circle",
+            "newsletter_form": false,
+            "button_label": "",
+            "button_link": "",
+            "button_size": "md",
+            "button_secondary_style": false,
+            "label": "",
+            "link": "",
+            "liquid": "",
+            "social_media": false
+          }
+        }
+      },
+      "block_order": [
+        "newsletter_rAkGCx",
+        "newsletter_rxDmfM"
+      ],
+      "disabled": true,
+      "name": "Newsletter",
+      "settings": {
+        "content_width": "large",
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "image_with_text_overlay_bR3EfE": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_7BAgYD": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Add a tagline",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true
+          }
+        },
+        "heading_DTcceR": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "WIN YOUR ORDER FREE",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_jX7jTr": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "liquid_4HRakU": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div class=\"klaviyo-form-UtynJg\"></div>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_7BAgYD",
+        "heading_DTcceR",
+        "text_jX7jTr",
+        "liquid_4HRakU"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text-overlay.presets.name",
+      "settings": {
+        "transparent_header": false,
+        "image_height": "450px",
+        "content_width": "small",
+        "content_position": "md:items-end md:justify-start",
+        "text_alignment": "center",
+        "image_height_mobile": "500px",
+        "content_position_mobile": "items-start justify-center",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 70,
+        "padding_top": 52,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-md",
+        "heading_alignment": "text-left",
+        "heading_tag": "h1",
+        "text_size": "text-base",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "faq_ABgirD": {
+      "type": "faq",
+      "blocks": {
+        "question_GQULta": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_LX4AFz": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_8n69Jr": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "question_GQULta",
+        "question_LX4AFz",
+        "question_8n69Jr"
+      ],
+      "disabled": true,
+      "settings": {
+        "style": "with-border",
+        "heading": "Terms & Conditions",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "panel_background": "",
+        "panel_border": "#e3e3e3",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "color_overlay": "#ffffff",
+        "overlay_opacity": 4,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": true,
+        "rounded": false,
+        "title_margin_bottom": 68,
+        "summary_padding": 32,
+        "summary_icon_bg": ""
+      }
+    }
+  },
+  "order": [
+    "1761115676ab625e9c",
+    "rich_text_nYQpCC",
+    "17612145953e09cce4",
+    "176110059830d34a2a",
+    "image_with_text_overlay_JRFpTF",
+    "rich_text_dE8RXT",
+    "cg_featured_collection_PiUwwV",
+    "cg_featured_collection_4U4wRk",
+    "image_with_text_overlay_hbaLYr",
+    "rich_text_KRedQV",
+    "cg_featured_collection_rYnfWp",
+    "cg_featured_collection_XLPP63",
+    "pagefly_section_ciW99G",
+    "rich_text_3r9Btn",
+    "custom_newsletter_xyYfDh",
+    "image_with_text_overlay_bR3EfE",
+    "main-page",
+    "faq_ABgirD"
+  ]
+}

@@ -1,0 +1,315 @@
+{% comment %}
+  Created by CLEARgo
+{% endcomment %}
+
+{% style %}
+  #shopify-section-{{ section.id }} { 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: left; 
+    
+    {% if section.settings.section_bg != blank %}
+      background-color: {{ section.settings.section_bg }}; 
+    {% endif %}
+    {% if section.settings.bg_img != blank %}
+      background-image: url({{ section.settings.bg_img | img_url: 'master' }}); 
+    {% endif %}
+  }
+
+  #shopify-section-{{ section.id }} .push-up-card-trail { 
+    /* height: 200vh; */
+  }
+
+  #shopify-section-{{ section.id }} .push-up-card-container {
+    top: 0; 
+    max-width: 1440px; 
+    position: sticky; 
+    margin: 0 auto; 
+    padding: 0 20px calc(144vw / 19.2) 20px; 
+  }
+
+  #shopify-section-{{ section.id }} .push-up-card { 
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    border-radius: 16px; 
+    padding: calc(36vw / 19.2); 
+    opacity: 0; 
+    transform: translateY(50%); 
+    transition: all .6s; 
+    
+    {% if section.settings.card_bg != blank %}
+      background-color: {{ section.settings.card_bg }}; 
+    {% endif %}
+  }
+
+  #shopify-section-{{ section.id }} .push-up-card.active { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+
+  #shopify-section-{{ section.id }} .push-up-card * {
+    {% if section.settings.font_color != blank %}
+      color: {{ section.settings.font_color }}; 
+    {% endif %}
+  }
+
+  #shopify-section-{{ section.id }} .card-main {
+    width: 35%; 
+  }
+
+  #shopify-section-{{ section.id }} .tag {
+    margin-bottom: calc(36vw / 19.2); 
+  }
+
+  #shopify-section-{{ section.id }} .card-heading { 
+    margin-bottom: calc(24vw / 19.2); 
+    line-height: normal; 
+    font-size: 1.5rem; 
+  }
+
+  #shopify-section-{{ section.id }} .card-aside {
+    width: 45%; 
+  }
+
+  #shopify-section-{{ section.id }} .media { 
+    width: 100%; 
+    height: auto; 
+    aspect-ratio: 745 / 640; 
+    border-radius: 16px;
+    object-fit: cover; 
+    object-position: center; 
+  }
+
+  #shopify-section-{{ section.id }} .media.mobile { 
+    display: none; 
+  }
+
+  /* Responsive */
+  /* Mobile */
+  @media (max-width: 767px) {
+    #shopify-section-{{ section.id }} { 
+      background-position: left;
+      background-size: cover; 
+    }
+    
+    #shopify-section-{{ section.id }} .push-up-card-trail { 
+      height: fit-content;  
+    }
+    
+    #shopify-section-{{ section.id }} .push-up-card-container {
+      position: static; 
+      padding: 0 20px 48px 20px; 
+    }
+
+    #shopify-section-{{ section.id }} .push-up-card {
+      flex-direction: column-reverse; 
+      gap: 36px; 
+      padding: 36px 24px; 
+    }
+
+    #shopify-section-{{ section.id }} .card-aside, 
+    #shopify-section-{{ section.id }} .card-main {
+      width: 100%; 
+    }
+
+    #shopify-section-{{ section.id }} .tag {
+      margin-bottom: 16px; 
+    }
+
+     #shopify-section-{{ section.id }} .media { 
+      aspect-ratio: 287 / 172; 
+    }
+
+    #shopify-section-{{ section.id }} .media.desktop { 
+      display: none; 
+    }
+
+    #shopify-section-{{ section.id }} .media.mobile { 
+      display: block; 
+    }
+  }
+
+  /* Tablet */
+  @media (min-width: 768px) and (max-width: 1366px) {
+    #shopify-section-{{ section.id }} .push-up-card-container {
+      padding: 0 20px calc(144vw / 13.66) 20px; 
+    }
+    
+    #shopify-section-{{ section.id }} .push-up-card {
+      padding: calc(36vw / 13.66); 
+    }
+
+    #shopify-section-{{ section.id }} .tag {
+      margin-bottom: calc(36vw / 13.66); 
+    }
+
+    #shopify-section-{{ section.id }} .card-heading { 
+      margin-bottom: calc(24vw / 13.66); 
+    }
+  }
+  
+  /* Desktop */
+  @media (min-width: 1920px) {
+    #shopify-section-{{ section.id }} .push-up-card-container {
+      padding: 0 20px 144px 20px; 
+    }
+    
+    #shopify-section-{{ section.id }} .push-up-card {
+      padding: 36px; 
+    }
+
+    #shopify-section-{{ section.id }} .tag {
+      margin-bottom: 36px; 
+    }
+
+    #shopify-section-{{ section.id }} .card-heading { 
+      margin-bottom: 24px; 
+    }
+  }
+{% endstyle %}
+
+<!-- View -->
+<div class="push-up-card-trail">
+  <div class="push-up-card-container">
+    <div class="push-up-card">
+      <div class="card-main">
+        {% if section.settings.tag != blank %}
+          <p class="tag">{{ section.settings.tag }}</p>
+        {% endif %}
+        {% if section.settings.card_heading != blank %}
+          <h2 class="card-heading">{{ section.settings.card_heading }}</h2>
+        {% endif %}
+        {% if section.settings.card_desc != blank %}
+          <div class="card-desc">{{ section.settings.card_desc }}</div>
+        {% endif %}
+      </div>
+      <div class="card-aside">
+      {% if section.settings.card_img != blank %}
+        <img width="745" height="640" class="media" src="{{ section.settings.card_img | img_url: 'master' }}" />
+      {% endif %}
+      {% if section.settings.card_video != blank %}
+        {{ section.settings.card_video | video_tag: autoplay: true, loop: true, muted: true, controls: false, outline: false, controlList: nofullscreen, class: 'media desktop' }}
+      {% endif %}
+      {% if section.settings.card_video_mobile != blank %}
+        {{ section.settings.card_video_mobile | video_tag: autoplay: true, loop: true, muted: true, controls: false, outline: false, controlList: nofullscreen, class: 'media mobile' }}
+      {% elsif section.settings.card_video != blank %}
+        {{ section.settings.card_video | video_tag: autoplay: true, loop: true, muted: true, controls: false, outline: false, controlList: nofullscreen, class: 'media mobile' }}
+      {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  addEventListener("DOMContentLoaded", (event) => { 
+    function getOffsetTop(element) {
+      const rect = element.getBoundingClientRect();
+      const offsetTop = rect.top + window.scrollY;
+      return offsetTop;
+    }
+
+    const section{{ section.id | remove: '-' }} = document.querySelector("#shopify-section-{{ section.id }} .push-up-card-trail"); 
+    const offset{{ section.id | remove: '-' }} = getOffsetTop(section{{ section.id | remove: '-' }}); 
+    const pushUpCard{{ section.id | remove: '-' }} = section{{ section.id | remove: '-' }}.querySelector(".push-up-card"); 
+    
+    addEventListener("scroll", (event) => {
+      if (window.innerWidth >= 768) {
+        /* Desktop */
+        if(window.pageYOffset >= (offset{{ section.id | remove: '-' }} - (window.innerHeight / 2))) {
+          pushUpCard{{ section.id | remove: '-' }}.classList.add("active"); 
+        } else {
+          pushUpCard{{ section.id | remove: '-' }}.classList.remove("active"); 
+        }
+      } else {
+        /* Mobile */
+        if(window.pageYOffset >= offset{{ section.id | remove: '-' }} + window.innerHeight) {
+          pushUpCard{{ section.id | remove: '-' }}.classList.add("active"); 
+        } else {
+          pushUpCard{{ section.id | remove: '-' }}.classList.remove("active"); 
+        }
+      }
+    }); 
+  }); 
+</script>
+
+{% schema %}
+  {
+    "name": "CG Push Up Card", 
+    "tag": "section", 
+    "class": "cg-push-up-card", 
+    "settings": [ 
+      {
+        "type": "header", 
+        "content": "Section"
+      }, 
+      {
+        "type": "color", 
+        "id": "section_bg", 
+        "label": "Background color", 
+        "default": "#F7F7F7"
+      }, 
+      {
+        "type": "image_picker", 
+        "id": "bg_img", 
+        "label": "Background image"
+      }, 
+      {
+        "type": "header", 
+        "content": "Card"
+      }, 
+      {
+        "type": "color", 
+        "id": "card_bg", 
+        "label": "Background color", 
+        "default": "#0F0F0E"
+      }, 
+      {
+        "type": "color", 
+        "id": "font_color", 
+        "label": "Font color", 
+        "default": "#FFFFFF"
+      }, 
+      {
+        "type": "text", 
+        "id": "tag", 
+        "label": "Tag", 
+        "default": "Redifine Sleekness"
+      }, 
+      {
+        "type": "text", 
+        "id": "card_heading", 
+        "label": "Heading", 
+        "default": "X Series ebikes are designed to offer an unrivaled user experience, spotlighted by their upgraded folding system"
+      }, 
+      {
+        "type": "richtext", 
+        "id": "card_desc", 
+        "label": "Description"
+      }, 
+      {
+        "type": "image_picker", 
+        "id": "card_img", 
+        "label": "Image"
+      }, 
+      {
+        "type": "video", 
+        "id": "card_video", 
+        "label": "Video (Desktop)"
+      }, 
+      {
+        "type": "video", 
+        "id": "card_video_mobile", 
+        "label": "Video (Mobile)"
+      }
+    ], 
+    "blocks": [], 
+    "presets": [
+      {
+        "name": "CG Push Up Card", 
+        "blocks": []
+      }
+    ]
+  }
+{% endschema %}

@@ -421,6 +421,9 @@
         "read_more",
         "spinning_text"
       ],
+      "custom_css": [
+        "@media screen and (min-width: 1920px) {.featured-product {gap: var(--grid-gap); padding-inline: calc(var(--grid-gap) * 2); }}"
+      ],
       "settings": {
         "product": "",
         "enable_sticky_info": true,
@@ -500,6 +503,10 @@
     },
     "rich-text-2": {
       "type": "rich-text",
+      "custom_css": [
+        "@media screen and (min-width: 1536px) and (max-width: 1920px) {.collage, .collage .title-wrapper {padding-inline: 0; }}",
+        "@media screen and (min-width: 1920px) {.collage, .collage .title-wrapper {padding-inline: var(--grid-gap); }}"
+      ],
       "settings": {
         "text_alignment": "left",
         "text_alignment_mobile": "left",
@@ -534,8 +541,8 @@
     "product-bundle": {
       "type": "product-bundle",
       "custom_css": [
-        "@media screen and (min-width: 1536px) {.product-bundle-wrapper {padding-inline: calc(var(--grid-gap) * 2); }}",
-        "@media screen and (min-width: 1536px) and (max-width: 1920px) {.product-bundle {flex: 0 0 25%; } .product-bundle__sidebar {width: 100%; }}"
+        "@media screen and (min-width: 1536px) {.product-bundle {flex: 0 0 25%; } .product-bundle__sidebar {width: 100%; }}",
+        "@media screen and (min-width: 1920px) {.product-bundle-wrapper {padding-inline: calc(var(--grid-gap) * 2); }}"
       ],
       "settings": {
         "collection": "",
@@ -607,6 +614,187 @@
         "padding_bottom": 120,
         "divider": false,
         "rounded": false
+      }
+    },
+    "shop-the-feed": {
+      "type": "shop-the-feed",
+      "blocks": {
+        "feed-1": {
+          "type": "feed",
+          "settings": {
+            "image": "",
+            "video_on_hover": true,
+            "account_avatar": "",
+            "account_name": "@Concept",
+            "account_description": "We cultivate sonic excellence",
+            "account_button": "Follow",
+            "hotspot_color_text_1": "#ffffff",
+            "hotspot_vertical_1": 45,
+            "hotspot_horizontal_1": 25,
+            "hotspot_product_1": "",
+            "hotspot_color_text_2": "#ffffff",
+            "hotspot_vertical_2": 30,
+            "hotspot_horizontal_2": 60,
+            "hotspot_product_2": "",
+            "hotspot_color_text_3": "#ffffff",
+            "hotspot_vertical_3": 60,
+            "hotspot_horizontal_3": 75,
+            "hotspot_product_3": "",
+            "hotspot_color_text_4": "#ffffff",
+            "hotspot_vertical_4": 50,
+            "hotspot_horizontal_4": 50,
+            "hotspot_product_4": ""
+          }
+        },
+        "feed-2": {
+          "type": "feed",
+          "settings": {
+            "image": "",
+            "video_on_hover": true,
+            "account_avatar": "",
+            "account_name": "@Concept",
+            "account_description": "We cultivate sonic excellence",
+            "account_button": "Follow",
+            "hotspot_color_text_1": "#ffffff",
+            "hotspot_vertical_1": 45,
+            "hotspot_horizontal_1": 25,
+            "hotspot_product_1": "",
+            "hotspot_color_text_2": "#ffffff",
+            "hotspot_vertical_2": 30,
+            "hotspot_horizontal_2": 60,
+            "hotspot_product_2": "",
+            "hotspot_color_text_3": "#ffffff",
+            "hotspot_vertical_3": 60,
+            "hotspot_horizontal_3": 75,
+            "hotspot_product_3": "",
+            "hotspot_color_text_4": "#ffffff",
+            "hotspot_vertical_4": 50,
+            "hotspot_horizontal_4": 50,
+            "hotspot_product_4": ""
+          }
+        },
+        "feed-3": {
+          "type": "feed",
+          "settings": {
+            "image": "",
+            "video_on_hover": true,
+            "account_avatar": "",
+            "account_name": "@Concept",
+            "account_description": "We cultivate sonic excellence",
+            "account_button": "Follow",
+            "hotspot_color_text_1": "#ffffff",
+            "hotspot_vertical_1": 45,
+            "hotspot_horizontal_1": 25,
+            "hotspot_product_1": "",
+            "hotspot_color_text_2": "#ffffff",
+            "hotspot_vertical_2": 30,
+            "hotspot_horizontal_2": 60,
+            "hotspot_product_2": "",
+            "hotspot_color_text_3": "#ffffff",
+            "hotspot_vertical_3": 60,
+            "hotspot_horizontal_3": 75,
+            "hotspot_product_3": "",
+            "hotspot_color_text_4": "#ffffff",
+            "hotspot_vertical_4": 50,
+            "hotspot_horizontal_4": 50,
+            "hotspot_product_4": ""
+          }
+        },
+        "feed-4": {
+          "type": "feed",
+          "settings": {
+            "image": "",
+            "video_on_hover": true,
+            "account_avatar": "",
+            "account_name": "@Concept",
+            "account_description": "We cultivate sonic excellence",
+            "account_button": "Follow",
+            "hotspot_color_text_1": "#ffffff",
+            "hotspot_vertical_1": 45,
+            "hotspot_horizontal_1": 25,
+            "hotspot_product_1": "",
+            "hotspot_color_text_2": "#ffffff",
+            "hotspot_vertical_2": 30,
+            "hotspot_horizontal_2": 60,
+            "hotspot_product_2": "",
+            "hotspot_color_text_3": "#ffffff",
+            "hotspot_vertical_3": 60,
+            "hotspot_horizontal_3": 75,
+            "hotspot_product_3": "",
+            "hotspot_color_text_4": "#ffffff",
+            "hotspot_vertical_4": 50,
+            "hotspot_horizontal_4": 50,
+            "hotspot_product_4": ""
+          }
+        },
+        "feed-5": {
+          "type": "feed",
+          "settings": {
+            "image": "",
+            "video_on_hover": true,
+            "account_avatar": "",
+            "account_name": "@Concept",
+            "account_description": "We cultivate sonic excellence",
+            "account_button": "Follow",
+            "hotspot_color_text_1": "#ffffff",
+            "hotspot_vertical_1": 36,
+            "hotspot_horizontal_1": 58,
+            "hotspot_product_1": "",
+            "hotspot_color_text_2": "#ffffff",
+            "hotspot_vertical_2": 50,
+            "hotspot_horizontal_2": 50,
+            "hotspot_product_2": "",
+            "hotspot_color_text_3": "#ffffff",
+            "hotspot_vertical_3": 50,
+            "hotspot_horizontal_3": 50,
+            "hotspot_product_3": "",
+            "hotspot_color_text_4": "#ffffff",
+            "hotspot_vertical_4": 40,
+            "hotspot_horizontal_4": 60,
+            "hotspot_product_4": ""
+          }
+        }
+      },
+      "block_order": [
+        "feed-1",
+        "feed-2",
+        "feed-3",
+        "feed-4",
+        "feed-5"
+      ],
+      "settings": {
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "image_ratio": "portrait",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "account_avatar": "",
+        "account_name": "@Concept",
+        "heading": "Shop the <em>Feed</em>",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "<p>Discover premium audio from our Instagram and shop now.</p>",
+        "button_label": "Follow",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": false,
+        "highlighted_text": "scribble",
+        "highlighted_scribble": "squiggle-underline",
+        "color_text": "",
+        "color_background": "#fafafa",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 80,
+        "padding_bottom": 100,
+        "divider": false,
+        "full_width": false,
+        "rounded": true
       }
     },
     "countdown-timer": {
@@ -1012,6 +1200,7 @@
     "rich-text-2",
     "product-bundle",
     "scrolling-text-1",
+    "shop-the-feed",
     "countdown-timer",
     "shop-the-look",
     "testimonials-banner",

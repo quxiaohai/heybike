@@ -1,0 +1,703 @@
+{% doc %}
+  @prompt
+    Create a multi-column section with these exact specifications:
+    - Section heading text field
+    - 3 columns arranged horizontally with ability to add more columns as blocks
+    - Each column has separate image uploads for desktop and mobile versions
+    - Each column has a small clickable badge/tag on top right of image with proper margin from edges
+    - No hover effects or animations on badge or images
+    - Clicking badge opens a modal with description text
+    - CRITICAL MODAL: Modal is position fixed with z-index 9999, do NOT modify body styles or add any overflow properties that create scrollbars. Simply show/hide modal without touching page elements. Background stays completely unchanged.
+    - Layout toggle between horizontal and vertical stacked list
+    - Desktop: all columns visible in row, NO scrollbar, use overflow visible or auto only on the container itself not on body
+    - Mobile: show exactly 1.2 cards width with horizontal swipe, NO vertical scrollbar, use pagination dots below cards that are clickable to navigate
+    - CRITICAL SPACING: Wrap entire section content in a container with proper padding on ALL sides - left, right, top, bottom. Use padding like 20px on mobile and 40px on desktop so content never touches any screen edge. First card must have left spacing, last card must have right spacing.
+    - Ensure no overflow hidden or scroll properties are added to body or html elements
+    - Modal overlay is position fixed top 0 left 0 right 0 bottom 0 with semi-transparent background and z-index 9999
+    - Modal content box centered with white background and close X button
+    - Smooth fade-in animation for modal only
+    - Click overlay or X button to close modal
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-multi-column-{{ ai_gen_id }} {
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-multi-column-container-{{ ai_gen_id }} {
+    padding: 40px;
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-multi-column-heading-{{ ai_gen_id }} {
+    text-align: {{ block.settings.heading_alignment }};
+    margin: 0 0 30px;
+    color: {{ block.settings.heading_color }};
+    font-size: {{ block.settings.heading_size }}px;
+  }
+
+  .ai-multi-column-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    overflow: visible;
+  }
+
+  .ai-multi-column-grid-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ block.settings.column_gap }}px;
+  }
+
+  .ai-multi-column-grid-{{ ai_gen_id }}.layout-horizontal {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: visible;
+  }
+
+  .ai-multi-column-grid-{{ ai_gen_id }}.layout-vertical {
+    flex-direction: column;
+  }
+
+  .ai-multi-column-item-{{ ai_gen_id }} {
+    flex: 0 0 auto;
+    position: relative;
+  }
+
+  .layout-horizontal .ai-multi-column-item-{{ ai_gen_id }} {
+    width: calc((100% - ({{ block.settings.columns_desktop | minus: 1 }} * {{ block.settings.column_gap }}px)) / {{ block.settings.columns_desktop }});
+  }
+
+  .layout-vertical .ai-multi-column-item-{{ ai_gen_id }} {
+    width: 100%;
+  }
+
+  .ai-multi-column-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    overflow: hidden;
+  }
+
+  .ai-multi-column-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-multi-column-image-{{ ai_gen_id }}.mobile-image {
+    display: none;
+  }
+
+  .ai-multi-column-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #f4f4f4;
+  }
+
+  .ai-multi-column-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ai-multi-column-badge-{{ ai_gen_id }} {
+    position: absolute;
+    top: {{ block.settings.badge_margin }}px;
+    right: {{ block.settings.badge_margin }}px;
+    background-color: {{ block.settings.badge_bg_color }};
+    color: {{ block.settings.badge_text_color }};
+    padding: 8px 12px;
+    border-radius: {{ block.settings.badge_border_radius }}px;
+    font-size: {{ block.settings.badge_font_size }}px;
+    cursor: pointer;
+    z-index: 10;
+    border: none;
+  }
+
+  .ai-multi-column-pagination-{{ ai_gen_id }} {
+    display: none;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .ai-multi-column-dot-{{ ai_gen_id }} {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: {{ block.settings.dot_inactive_color }};
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .ai-multi-column-dot-{{ ai_gen_id }}.active {
+    background-color: {{ block.settings.dot_active_color }};
+  }
+
+  .ai-multi-column-modal-overlay-{{ ai_gen_id }} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-multi-column-modal-overlay-{{ ai_gen_id }}.active {
+    display: flex;
+    opacity: 1;
+  }
+
+  .ai-multi-column-modal-content-{{ ai_gen_id }} {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .ai-multi-column-modal-close-{{ ai_gen_id }} {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000000;
+    padding: 5px;
+    line-height: 1;
+  }
+
+  .ai-multi-column-modal-text-{{ ai_gen_id }} {
+    color: #000000;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-multi-column-container-{{ ai_gen_id }} {
+      padding: 20px;
+    }
+
+    .ai-multi-column-grid-{{ ai_gen_id }}.layout-horizontal {
+      overflow-x: auto;
+      overflow-y: visible;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-right: 20px;
+    }
+
+    .ai-multi-column-grid-{{ ai_gen_id }}.layout-horizontal::-webkit-scrollbar {
+      display: none;
+    }
+
+    .layout-horizontal .ai-multi-column-item-{{ ai_gen_id }} {
+      width: calc(100% / 1.2 - {{ block.settings.column_gap }}px);
+      scroll-snap-align: start;
+      flex-shrink: 0;
+    }
+
+    .ai-multi-column-image-{{ ai_gen_id }}.desktop-image {
+      display: none;
+    }
+
+    .ai-multi-column-image-{{ ai_gen_id }}.mobile-image {
+      display: block;
+    }
+
+    .ai-multi-column-pagination-{{ ai_gen_id }} {
+      display: flex;
+    }
+
+    .layout-vertical .ai-multi-column-pagination-{{ ai_gen_id }} {
+      display: none;
+    }
+  }
+{% endstyle %}
+
+<multi-column-section-{{ ai_gen_id }}
+  class="ai-multi-column-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-multi-column-container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-multi-column-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+    {% endif %}
+
+    <div class="ai-multi-column-wrapper-{{ ai_gen_id }}">
+      <div
+        class="ai-multi-column-grid-{{ ai_gen_id }} layout-{{ block.settings.layout }}"
+        data-layout="{{ block.settings.layout }}"
+      >
+        {% for i in (1..3) %}
+          {% liquid
+            assign desktop_image_key = 'desktop_image_' | append: i
+            assign mobile_image_key = 'mobile_image_' | append: i
+            assign badge_text_key = 'badge_text_' | append: i
+            assign modal_desc_key = 'modal_description_' | append: i
+
+            assign desktop_image = block.settings[desktop_image_key]
+            assign mobile_image = block.settings[mobile_image_key]
+            assign badge_text = block.settings[badge_text_key]
+            assign modal_desc = block.settings[modal_desc_key]
+          %}
+
+          <div class="ai-multi-column-item-{{ ai_gen_id }}" data-index="{{ forloop.index0 }}">
+            <div class="ai-multi-column-image-wrapper-{{ ai_gen_id }}">
+              {% if desktop_image %}
+                <img
+                  src="{{ desktop_image | image_url: width: 800 }}"
+                  alt="{{ desktop_image.alt | escape }}"
+                  loading="lazy"
+                  width="{{ desktop_image.width }}"
+                  height="{{ desktop_image.height }}"
+                  class="ai-multi-column-image-{{ ai_gen_id }} desktop-image"
+                >
+              {% else %}
+                <div class="ai-multi-column-placeholder-{{ ai_gen_id }} desktop-image">
+                  {{ 'image' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+
+              {% if mobile_image %}
+                <img
+                  src="{{ mobile_image | image_url: width: 600 }}"
+                  alt="{{ mobile_image.alt | escape }}"
+                  loading="lazy"
+                  width="{{ mobile_image.width }}"
+                  height="{{ mobile_image.height }}"
+                  class="ai-multi-column-image-{{ ai_gen_id }} mobile-image"
+                >
+              {% elsif desktop_image %}
+                <img
+                  src="{{ desktop_image | image_url: width: 600 }}"
+                  alt="{{ desktop_image.alt | escape }}"
+                  loading="lazy"
+                  width="{{ desktop_image.width }}"
+                  height="{{ desktop_image.height }}"
+                  class="ai-multi-column-image-{{ ai_gen_id }} mobile-image"
+                >
+              {% else %}
+                <div class="ai-multi-column-placeholder-{{ ai_gen_id }} mobile-image">
+                  {{ 'image' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+
+              {% if badge_text != blank %}
+                <button
+                  class="ai-multi-column-badge-{{ ai_gen_id }}"
+                  data-modal-trigger="{{ forloop.index0 }}"
+                  aria-label="Open details"
+                >
+                  {{ badge_text }}
+                </button>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="ai-multi-column-pagination-{{ ai_gen_id }}">
+        {% for i in (1..3) %}
+          <button
+            class="ai-multi-column-dot-{{ ai_gen_id }} {% if forloop.first %}active{% endif %}"
+            data-dot-index="{{ forloop.index0 }}"
+            aria-label="Go to slide {{ forloop.index }}"
+          ></button>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-multi-column-modal-overlay-{{ ai_gen_id }}">
+    <div class="ai-multi-column-modal-content-{{ ai_gen_id }}">
+      <button class="ai-multi-column-modal-close-{{ ai_gen_id }}" aria-label="Close modal">×</button>
+      <div class="ai-multi-column-modal-text-{{ ai_gen_id }}"></div>
+    </div>
+  </div>
+</multi-column-section-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class MultiColumnSection{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.modalOverlay = this.querySelector('.ai-multi-column-modal-overlay-{{ ai_gen_id }}');
+        this.modalContent = this.querySelector('.ai-multi-column-modal-text-{{ ai_gen_id }}');
+        this.modalClose = this.querySelector('.ai-multi-column-modal-close-{{ ai_gen_id }}');
+        this.badges = this.querySelectorAll('.ai-multi-column-badge-{{ ai_gen_id }}');
+        this.grid = this.querySelector('.ai-multi-column-grid-{{ ai_gen_id }}');
+        this.dots = this.querySelectorAll('.ai-multi-column-dot-{{ ai_gen_id }}');
+        this.items = this.querySelectorAll('.ai-multi-column-item-{{ ai_gen_id }}');
+        
+        this.modalData = [
+          {{ block.settings.modal_description_1 | json }},
+          {{ block.settings.modal_description_2 | json }},
+          {{ block.settings.modal_description_3 | json }}
+        ];
+      }
+
+      connectedCallback() {
+        this.setupModalListeners();
+        this.setupScrollListeners();
+        this.setupDotListeners();
+      }
+
+      setupModalListeners() {
+        this.badges.forEach((badge) => {
+          badge.addEventListener('click', (e) => {
+            const index = parseInt(badge.getAttribute('data-modal-trigger'));
+            this.openModal(index);
+          });
+        });
+
+        this.modalClose.addEventListener('click', () => {
+          this.closeModal();
+        });
+
+        this.modalOverlay.addEventListener('click', (e) => {
+          if (e.target === this.modalOverlay) {
+            this.closeModal();
+          }
+        });
+      }
+
+      setupScrollListeners() {
+        if (window.innerWidth <= 749) {
+          this.grid.addEventListener('scroll', () => {
+            this.updateActiveDot();
+          });
+        }
+      }
+
+      setupDotListeners() {
+        this.dots.forEach((dot) => {
+          dot.addEventListener('click', () => {
+            const index = parseInt(dot.getAttribute('data-dot-index'));
+            this.scrollToItem(index);
+          });
+        });
+      }
+
+      updateActiveDot() {
+        const scrollLeft = this.grid.scrollLeft;
+        const itemWidth = this.items[0].offsetWidth + {{ block.settings.column_gap }};
+        const activeIndex = Math.round(scrollLeft / itemWidth);
+
+        this.dots.forEach((dot, index) => {
+          if (index === activeIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+
+      scrollToItem(index) {
+        const item = this.items[index];
+        if (item) {
+          const itemWidth = item.offsetWidth + {{ block.settings.column_gap }};
+          this.grid.scrollTo({
+            left: itemWidth * index,
+            behavior: 'smooth'
+          });
+        }
+      }
+
+      openModal(index) {
+        const description = this.modalData[index];
+        if (description) {
+          this.modalContent.textContent = description;
+          this.modalOverlay.classList.add('active');
+        }
+      }
+
+      closeModal() {
+        this.modalOverlay.classList.remove('active');
+      }
+    }
+
+    customElements.define('multi-column-section-{{ ai_gen_id }}', MultiColumnSection{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Multi-column section",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Featured Collection"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 32
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#171717"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout style",
+      "options": [
+        {
+          "value": "horizontal",
+          "label": "Horizontal"
+        },
+        {
+          "value": "vertical",
+          "label": "Vertical"
+        }
+      ],
+      "default": "horizontal"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "label": "Columns on desktop",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Column gap",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 1000,
+      "max": 2000,
+      "step": 50,
+      "unit": "px",
+      "label": "Maximum width",
+      "default": 1600
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Image style"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Badge style"
+    },
+    {
+      "type": "range",
+      "id": "badge_margin",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "label": "Badge margin from edge",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Badge font size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "badge_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Badge border radius",
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Badge background",
+      "default": "#ffdb00"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge text color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Pagination dots"
+    },
+    {
+      "type": "color",
+      "id": "dot_active_color",
+      "label": "Active dot color",
+      "default": "#171717"
+    },
+    {
+      "type": "color",
+      "id": "dot_inactive_color",
+      "label": "Inactive dot color",
+      "default": "#cccccc"
+    },
+    {
+      "type": "header",
+      "content": "Column 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image_1",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image_1",
+      "label": "Mobile image"
+    },
+    {
+      "type": "text",
+      "id": "badge_text_1",
+      "label": "Badge text",
+      "default": "Info"
+    },
+    {
+      "type": "textarea",
+      "id": "modal_description_1",
+      "label": "Modal description",
+      "default": "Add your description text here that will appear in the modal when the badge is clicked."
+    },
+    {
+      "type": "header",
+      "content": "Column 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image_2",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image_2",
+      "label": "Mobile image"
+    },
+    {
+      "type": "text",
+      "id": "badge_text_2",
+      "label": "Badge text",
+      "default": "Info"
+    },
+    {
+      "type": "textarea",
+      "id": "modal_description_2",
+      "label": "Modal description",
+      "default": "Add your description text here that will appear in the modal when the badge is clicked."
+    },
+    {
+      "type": "header",
+      "content": "Column 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image_3",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image_3",
+      "label": "Mobile image"
+    },
+    {
+      "type": "text",
+      "id": "badge_text_3",
+      "label": "Badge text",
+      "default": "Info"
+    },
+    {
+      "type": "textarea",
+      "id": "modal_description_3",
+      "label": "Modal description",
+      "default": "Add your description text here that will appear in the modal when the badge is clicked."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Multi-column section"
+    }
+  ]
+}
+{% endschema %}

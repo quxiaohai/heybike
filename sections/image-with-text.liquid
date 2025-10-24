@@ -16,10 +16,62 @@
       }
     }
   {% endif -%}
+  
+  #shopify-section-{{ section.id }} .image-with-text { 
+    display: flex; 
+  }
+
+  #shopify-section-{{ section.id }} .image-with-text__item:has(> .image-with-text__media) {
+    width: calc(800vw / 19.2); 
+    height: calc(800vw / 19.2); 
+    aspect-ratio: 1; 
+  }
+
+  #shopify-section-{{ section.id }} .image-with-text__media, 
+  #shopify-section-{{ section.id }} .image-with-text__media * { 
+    width: 100%; 
+    height: 100%; 
+    display: flex; 
+  }
+
+  #shopify-section-{{ section.id }} .image-with-text__media img {
+    object-fit: cover; 
+    object-position: center; 
+  }
+
+  #shopify-section-{{ section.id }} h5 { 
+    margin-bottom: 20px; 
+  }
+
+  /* Reponsive */
+  /* Mobile */
+  @media (max-width: 767px) {
+    #shopify-section-{{ section.id }} .image-with-text__item:has(> .image-with-text__media) { 
+      width: 100%; 
+      height: auto; 
+      aspect-ratio: 750 / 550; 
+    }
+  }
+
+  /* Tablet */
+  @media (min-width: 768px) and (max-width: 1366px) {
+    #shopify-section-{{ section.id }} .image-with-text__item:has(> .image-with-text__media) {
+      width: calc(800vw / 13.66); 
+      height: calc(800vw / 13.66); 
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 1920px) {
+    #shopify-section-{{ section.id }} .image-with-text__item:has(> .image-with-text__media) {
+      width: 800px; 
+      height: 800px;  
+    }
+  }
 </style>
 
 <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
-  <div class="page-width{% if section.settings.full_width %} page-width--full{% endif %} relative">
+  <div class="{% if section.settings.full_width %} page-width--full{% endif %} relative">
     {%- liquid
       assign with_background = false
       if section.settings.gradient_background_2 != blank and section.settings.gradient_background_2 != 'rgba(0,0,0,0)'
@@ -29,35 +81,13 @@
         assign with_background = true
       endif
     -%}
-    <div class="image-with-text {% if with_background %} with-background{% endif %} lg:flex lg:gap-8{% if section.settings.layout == 'image_first' %} lg:flex-row{% else %} lg:flex-row-reverse{% endif %} overflow-hidden">
+    <div class="image-with-text{% if with_background %} with-background{% endif %} lg:flex lg:gap-8{% if section.settings.layout == 'image_first' %} lg:flex-row{% else %} lg:flex-row-reverse{% endif %} overflow-hidden">
       <div class="image-with-text__item grow shrink-0{% if section.settings.image_width == 'small' %} lg:grow-0{% endif %} relative">
-        <div class="image-with-text__media h-full">
-          <media-element class="tw-rounded-2xl tw-overflow-hidden image-with-text__image block media--{{ section.settings.image_height }} mobile:media--{{ section.settings.image_height_mobile }} relative overflow-hidden"
+        <div class="image-with-text__media">
+          <media-element class="image-with-text__image"
             {%- if section.settings.enable_parallax %} data-parallax="0.3" data-parallax-dir="{{ section.settings.parallax_direction }}"{% endif -%}
           >
-            {% capture image_visible %}
-              {% if section.settings.img_placeholder %}
-                {% if section.settings.img_placeholder_mb %}
-                  tw-invisible
-                {% else %}
-                  md:tw-invisible
-                {% endif %}
-              {% elsif section.settings.img_placeholder_mb %}
-                -md:tw-invisible
-              {% endif %}
-            {% endcapture %}
-
-            {%- if section.settings.video != blank -%}
-            <video-media class="block" style="--aspect-ratio: {{ section.settings.video.aspect_ratio }}" autoplay>
-              {{- poster -}}
-              <template>
-                {{- section.settings.video | video_tag: playsinline: true, muted: true, autoplay: true, loop: true, controls: false, preload: 'none', image_size: '800x' -}}
-              </template>
-            </video-media>
-            {% else %}
-            <picture class="media media--height block w-full h-full relative overflow-hidden {{ image_visible | strip  }}">
-              
-
+            <picture class="media">
               {%- if section.settings.image != blank -%}
                 {%- assign sizes = '(max-width: 767px) 100vw, 50vw' -%}
                 {%- if section.settings.image_mobile -%}
@@ -68,18 +98,18 @@
                     height="{{ section.settings.image_mobile.height }}"
                   >
                 {%- endif -%}
-                  {{- section.settings.image | image_url: width: section.settings.image.width | image_tag: loading: 'lazy', sizes: sizes, widths: '300,400,500,600,700,800,900,1000,1200,1400,1600', is: 'lazy-image' -}}
+  
+                {{- section.settings.image | image_url: width: section.settings.image.width | image_tag: loading: 'lazy', sizes: sizes, widths: '300,400,500,600,700,800,900,1000,1200,1400,1600', is: 'lazy-image' -}}
               {%- else -%}
                 {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder' -}}
               {%- endif -%}
             </picture>
-            {% endif %}
           </media-element>
         </div>
       </div>
 
       <div class="image-with-text__item grow shrink-0{% if section.settings.image_width == 'large' %} lg:grow-0{% endif %} {{ section.settings.content_position }}">
-        <div class="rich-text tw-max-w-[36.25rem] md:tw-pr-4 lg:text-{{ section.settings.text_alignment }} text-{{ section.settings.text_alignment_mobile }} relative z-1">
+        <div class="rich-text lg:text-{{ section.settings.text_alignment }} text-{{ section.settings.text_alignment_mobile }} relative z-1">
           {%- liquid
             assign with_gradient = false
             if section.settings.gradient_highlight != blank and section.settings.gradient_highlight != 'rgba(0,0,0,0)'
@@ -106,7 +136,7 @@
               {%- when 'heading' -%}
                 {%- if block.settings.heading != blank -%}
                   {%- assign delay = delay | plus: 1 -%}
-                  <{{ block.settings.heading_tag }} class="heading tw-leading-tight {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
+                  <{{ block.settings.heading_tag }} class="heading leading-none {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
                     {%- if block.settings.highlighted_text == 'none' -%}
                       <split-words class="split-words block" data-animate="fade-up-large" data-animate-delay="{{ delay | times: 250 }}">{{ block.settings.heading }}</split-words>
                     {%- else -%}
@@ -117,8 +147,7 @@
     
               {%- when 'text' -%}
                 {%- if block.settings.text != blank -%}
-                  <div class="rte tw-leading-[1.5] {{ block.settings.text_font }} {{ block.settings.text_size }}{% if block.settings.secondary_color %} text-opacity{% endif %}"{% if block.settings.text_size == 'subtext-custom' %} 
-                    style="color:{{ block.settings.text_color }}; --subtext-size:{{ block.settings.text_max_size }}px;"{% endif %} {{ block.shopify_attributes }}>
+                  <div class="rte leading-normal {{ block.settings.text_font }} {{ block.settings.text_size }}{% if block.settings.secondary_color %} text-opacity{% endif %}"{% if block.settings.text_size == 'subtext-custom' %} style="--subtext-size:{{ block.settings.text_max_size }}px;"{% endif %} {{ block.shopify_attributes }}>
                     {%- render 'highlighted-text', content: block.settings.text, style: block.settings.highlighted_text, scribble: block.settings.highlighted_scribble, gradient: with_gradient -%}
                   </div>
                 {%- endif -%}
@@ -189,48 +218,14 @@
   </div>
 </div>
 
-{% if section.settings.bg_img %}
-<style>
-  #shopify-section-{{ section.id }} .page-width{
-    background-image:url({{ section.settings.bg_img | image_url: width: '1920'}} );
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  @media screen and (max-width: 769px) {
-    #shopify-section-{{ section.id }} .page-width{
-      {% if section.settings.bg_img_mb != blank %}
-      background-image:url({{ section.settings.bg_img_mb | image_url: width: '769'}} );
-      background-position:center;
-      background-size: cover;
-      padding-block-end: var(--sp-10);
-      {% else %}
-      background-image:none;
-      {% endif %}
-    }
-  }
-</style>
-{% endif %}
-
-
 {% schema %}
 {
   "name": "t:sections.image-with-text.name",
   "settings": [
     {
-      "type": "checkbox",
-      "id": "img_placeholder",
-      "label": "Image placeholder",
-      "default": false
-    },
-    {
       "type": "image_picker",
       "id": "image",
       "label": "t:sections.global.settings.image.label"
-    },
-    {
-      "type": "video",
-      "id": "video",
-      "label": "Video"
     },
     {
       "type": "select",
@@ -357,12 +352,6 @@
       "content": "t:sections.global.settings.header__mobile.content"
     },
     {
-      "type": "checkbox",
-      "id": "img_placeholder_mb",
-      "label": "Image placeholder (mobile)",
-      "default": false
-    },
-    {
       "type": "image_picker",
       "id": "image_mobile",
       "label": "t:sections.global.settings.image_mobile.label"
@@ -431,16 +420,6 @@
       "type": "color",
       "id": "color_background",
       "label": "t:sections.global.settings.color_background.label"
-    },
-    {
-      "type": "image_picker",
-      "id": "bg_img",
-      "label": "Background image"
-    },
-    {
-      "type": "image_picker",
-      "id": "bg_img_mb",
-      "label": "Background image (mobile)"
     },
     {
       "type": "color_background",
@@ -560,18 +539,15 @@
       "name": "t:sections.global.blocks.heading.name",
       "settings": [
         {
-          "type": "richtext",
+          "type": "inline_richtext",
           "id": "heading",
-          "label": "t:sections.global.settings.heading.label"
+          "label": "t:sections.global.settings.heading.label",
+          "default": "Image with text"
         },
         {
           "type": "select",
           "id": "heading_size",
           "options": [
-            {
-              "value": "title-xs",
-              "label": "X small"
-            },
             {
               "value": "title-sm",
               "label": "t:sections.global.settings.heading_size.options__1.label"
@@ -753,7 +729,7 @@
       "settings": [
         {
           "id": "text",
-          "type": "textarea",
+          "type": "richtext",
           "label": "t:sections.global.settings.text.label",
           "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
         },
@@ -794,12 +770,6 @@
           "step": 2,
           "unit": "px",
           "label": "t:sections.global.settings.text_max_size.label"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text color",
-          "default": "#000000"
         },
         {
           "type": "select",
@@ -1238,7 +1208,7 @@
           "id": "icon_width",
           "label": "t:sections.global.settings.icon_width.label",
           "default": 48,
-          "min": 20,
+          "min": 10,
           "max": 120,
           "step": 2,
           "unit": "px"

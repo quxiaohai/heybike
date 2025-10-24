@@ -37,7 +37,7 @@
     endif
   -%}
 
-  :root {
+  :root { 
     /*! General */
     --color-base-text: {{ settings.color_text.rgb }};
     --color-base-highlight: {{ settings.color_highlight.rgb }};
@@ -77,7 +77,7 @@
     --card-shadow-vertical-offset: {{ settings.card_shadow_vertical_offset | divided_by: 10.0 }}rem;
 
     /*! Buttons */
-    --buttons-radius: var(--rounded-button);
+    --buttons-radius: var(--theme-button);
     --buttons-border-width: {{ settings.buttons_border_thickness }}px;
     --buttons-border-opacity: {{ settings.buttons_border_opacity | divided_by: 100.0 }};
     --buttons-shadow-opacity: {{ settings.buttons_shadow_opacity | divided_by: 100.0 }};
@@ -115,7 +115,6 @@
     --sp-12: 3rem;
     --sp-13: 3.25rem;
     --sp-14: 3.5rem;
-    --sp-14_5: 3.75rem;
     --sp-15: 3.875rem;
     --sp-16: 4rem;
     --sp-18: 4.5rem;
@@ -148,7 +147,8 @@
       --font-heading-text-transform: uppercase;
     {% endif %}
 
-    --font-body-family: {{ body_font.family }}, {{ body_font.fallback_families }};
+    /* --font-body-family: {{ body_font.family }}, {{ body_font.fallback_families }}; */
+    --font-body-family: "Public Sans", sans-serif; 
     --font-body-style: {{ body_font.style }};
     --font-body-weight: {{ body_font.weight }};
     --font-body-line-height: {{ settings.type_body_line_height }};
@@ -195,10 +195,12 @@
     /*! Layout */
     --page-width: {{ settings.page_width }}px;
     --gap-padding: clamp(var(--sp-5), 2.526vw, var(--sp-12));
-    --grid-gap: clamp(40px, 20vw, 80px);
+    --grid-gap: clamp(40px, 20vw, 60px);
     --page-padding: var(--sp-5);
-    --page-container: min(calc(100vw - var(--scrollbar-width, 0px) - var(--page-padding) * 2), var(--page-width));
+    /* --page-container: min(calc(100vw - var(--scrollbar-width, 0px) - var(--page-padding) * 2), var(--page-width));*/
+    --page-container: 1440px;
     --rounded-button: {{ rounded_button }}rem;
+    --theme-button: .25rem; 
     --rounded-input: {{ rounded_input }}rem;
     --rounded-card: {% if settings.rounded_card == 'round' %}clamp(var(--sp-2d5), 1.053vw, var(--sp-5)){% else %}0rem{% endif %};
     --rounded-block: {% if settings.rounded_block == 'round' %}clamp(var(--sp-2d5), 1.053vw, var(--sp-5)){% else %}0rem{% endif %};

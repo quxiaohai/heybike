@@ -8,12 +8,12 @@
   padding-inline-end: var(--sp-3d5);
 }
 
-.collection .collection__topbar {
-  padding-block-start: clamp(var(--sp-8), 2.526vw, var(--sp-12));
+.collection .collection__topbar { 
+  padding-block-start: clamp(var(--sp-8), 2.526vw, var(--sp-12)); 
 }
 
-.collection .empty-state {
-  margin-block: var(--sp-12) var(--sp-5);
+.collection .empty-state { 
+  margin-block: var(--sp-12) var(--sp-5); 
 }
 
 .collection .search__form {

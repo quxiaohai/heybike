@@ -1,0 +1,1778 @@
+{% doc %}
+  @prompt
+    Create horizontal scrollable navigation with tabs: Ranger 3.0 Pro, Mars 3.0, Ranger S, Mars 2.0, ALPHA, Cityrun, Horizon. All sections visible simultaneously, smooth scrolling between sections. Each section has title with "View Product" button on right. 6 YouTube videos in 3x2 grid with proper container margins, adequate padding from screen edges, and centered play buttons. Each video block contains: YouTube video thumbnail at top with centered play button overlay, editable video title field directly below the video, and editable creator name field below the title. Videos open in popup overlay when clicked. All text fields fully customizable., All sections stay visible
+    Ranger 3.0 Pro, Mars 3.0, Ranger S, Mars 2.0, ALPHA, Horizon, and Cityrun sections will all be displayed on the page at the same time
+    Navigation scrolls, doesn't hide
+    When you click "Mars 3.0", it will smoothly scroll down to the Mars 3.0 section while keeping the Ranger 3.0 Pro section visible above it
+    Active tab highlighting
+    The navigation will automatically highlight which section you're currently viewing based on your scroll position
+    Smooth scrolling
+    Clean transitions between sections when clicking tabs
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-video-tabs-{{ ai_gen_id }} {
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding }}px 0;
+  }
+
+  .ai-video-tabs-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 {{ block.settings.container_padding }}px;
+  }
+
+  .ai-video-tabs-nav-{{ ai_gen_id }} {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.nav_padding }}px 0;
+    margin-bottom: {{ block.settings.nav_bottom_margin }}px;
+    border-bottom: 1px solid {{ block.settings.nav_border_color }};
+  }
+
+  .ai-video-tabs-nav-wrapper-{{ ai_gen_id }} {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+  }
+
+  .ai-video-tabs-nav-wrapper-{{ ai_gen_id }}::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ai-video-tabs-nav-list-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ block.settings.tab_gap }}px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    white-space: nowrap;
+    min-width: max-content;
+  }
+
+  .ai-video-tabs-nav-item-{{ ai_gen_id }} {
+    flex-shrink: 0;
+  }
+
+  .ai-video-tabs-nav-button-{{ ai_gen_id }} {
+    background: {{ block.settings.tab_background }};
+    color: {{ block.settings.tab_text_color }};
+    border: {{ block.settings.tab_border_width }}px solid {{ block.settings.tab_border_color }};
+    border-radius: {{ block.settings.tab_border_radius }}px;
+    padding: {{ block.settings.tab_padding_vertical }}px {{ block.settings.tab_padding_horizontal }}px;
+    font-size: {{ block.settings.tab_font_size }}px;
+    font-weight: {{ block.settings.tab_font_weight }};
+    cursor: pointer;
+    transition: all0.3s ease;
+    white-space: nowrap;
+  }
+
+  .ai-video-tabs-nav-button-{{ ai_gen_id }}:hover,
+  .ai-video-tabs-nav-button-{{ ai_gen_id }}.active {
+    background: {{ block.settings.tab_active_background }};
+    color: {{ block.settings.tab_active_text_color }};
+    border-color: {{ block.settings.tab_active_border_color }};
+  }
+
+  .ai-video-tabs-content-{{ ai_gen_id }} {
+    display: block;
+  }
+
+  .ai-video-tabs-section-{{ ai_gen_id }} {
+    margin-bottom: {{ block.settings.section_gap }}px;
+    scroll-margin-top: {{ block.settings.scroll_offset }}px;
+  }
+
+  .ai-video-tabs-section-{{ ai_gen_id }}:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-video-tabs-section-header-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: {{ block.settings.header_bottom_margin }}px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .ai-video-tabs-section-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.section_title_size }}px;
+    font-weight: {{ block.settings.section_title_weight }};
+    color: {{ block.settings.section_title_color }};
+    margin: 0;
+  }
+
+  .ai-video-tabs-view-button-{{ ai_gen_id }} {
+    background: {{ block.settings.button_background }};
+    color: {{ block.settings.button_text_color }};
+    border: {{ block.settings.button_border_width }}px solid {{ block.settings.button_border_color }};
+    border-radius: {{ block.settings.button_border_radius }}px;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    font-size: {{ block.settings.button_font_size }}px;
+    font-weight: {{ block.settings.button_font_weight }};
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .ai-video-tabs-view-button-{{ ai_gen_id }}:hover {
+    background: {{ block.settings.button_hover_background }};
+    color: {{ block.settings.button_hover_text_color }};
+    border-color: {{ block.settings.button_hover_border_color }};
+  }
+
+  .ai-video-tabs-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ block.settings.video_gap }}px;
+  }
+
+  .ai-video-tabs-video-item-{{ ai_gen_id }} {
+    background: {{ block.settings.video_background }};
+    border-radius: {{ block.settings.video_border_radius }}px;
+    overflow: hidden;
+    border: {{ block.settings.video_border_width }}px solid {{ block.settings.video_border_color }};
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ai-video-tabs-video-item-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-video-tabs-video-thumbnail-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #f4f4f4;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .ai-video-tabs-video-thumbnail-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-video-tabs-play-button-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: {{ block.settings.play_button_size }}px;
+    height: {{ block.settings.play_button_size }}px;
+    background: {{ block.settings.play_button_background }};
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .ai-video-tabs-play-button-{{ ai_gen_id }}:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: {{ block.settings.play_button_hover_background }};}
+
+  .ai-video-tabs-play-icon-{{ ai_gen_id }} {
+    width: calc({{ block.settings.play_button_size }}px * 0.4);
+    height: calc({{ block.settings.play_button_size }}px * 0.4);
+    fill: {{ block.settings.play_button_icon_color }};
+    margin-left: 3px;
+  }
+
+  .ai-video-tabs-video-info-{{ ai_gen_id }} {
+    padding: {{ block.settings.video_info_padding }}px;
+  }
+
+  .ai-video-tabs-video-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.video_title_size }}px;
+    font-weight: {{ block.settings.video_title_weight }};
+    color: {{ block.settings.video_title_color }};
+    margin: 0 0 {{ block.settings.title_bottom_margin }}px 0;line-height: 1.4;
+  }
+
+  .ai-video-tabs-video-creator-{{ ai_gen_id }} {
+    font-size: {{ block.settings.video_creator_size }}px;
+    font-weight: {{ block.settings.video_creator_weight }};
+    color: {{ block.settings.video_creator_color }};
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .ai-video-tabs-modal-{{ ai_gen_id }} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .ai-video-tabs-modal-{{ ai_gen_id }}.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .ai-video-tabs-modal-content-{{ ai_gen_id }} {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    aspect-ratio: 16/9;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .ai-video-tabs-modal-close-{{ ai_gen_id }} {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10000;
+  }
+
+  .ai-video-tabs-modal-iframe-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-video-tabs-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .ai-video-tabs-section-header-{{ ai_gen_id }} {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .ai-video-tabs-nav-button-{{ ai_gen_id }} {
+      font-size: {{ block.settings.tab_font_size | times: 0.9 }}px;
+      padding: {{ block.settings.tab_padding_vertical | times: 0.8 }}px {{ block.settings.tab_padding_horizontal | times: 0.8 }}px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .ai-video-tabs-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+    
+    .ai-video-tabs-container-{{ ai_gen_id }} {
+      padding: 0 {{ block.settings.container_padding | times: 0.7 }}px;
+    }
+  }
+{% endstyle %}<video-tabs-{{ ai_gen_id }} class="ai-video-tabs-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-video-tabs-container-{{ ai_gen_id }}">
+    <nav class="ai-video-tabs-nav-{{ ai_gen_id }}">
+      <div class="ai-video-tabs-nav-wrapper-{{ ai_gen_id }}">
+        <ul class="ai-video-tabs-nav-list-{{ ai_gen_id }}">
+          <li class="ai-video-tabs-nav-item-{{ ai_gen_id }}">
+            <button class="ai-video-tabs-nav-button-{{ ai_gen_id }} active" data-section="ranger-pro">Ranger 3.0 Pro</button>
+          </li>
+          <li class="ai-video-tabs-nav-item-{{ ai_gen_id }}">
+            <button class="ai-video-tabs-nav-button-{{ ai_gen_id }}" data-section="mars-3">Mars 3.0</button>
+          </li>
+          <li class="ai-video-tabs-nav-item-{{ ai_gen_id }}">
+            <button class="ai-video-tabs-nav-button-{{ ai_gen_id }}" data-section="ranger-s">Ranger S</button>
+          </li>
+          <li class="ai-video-tabs-nav-item-{{ ai_gen_id }}">
+            <button class="ai-video-tabs-nav-button-{{ ai_gen_id }}" data-section="mars-2">Mars 2.0</button>
+          </li>
+          <li class="ai-video-tabs-nav-item-{{ ai_gen_id }}">
+            <button class="ai-video-tabs-nav-button-{{ ai_gen_id }}" data-section="alpha">ALPHA</button>
+          </li>
+          <li class="ai-video-tabs-nav-item-{{ ai_gen_id }}">
+            <button class="ai-video-tabs-nav-button-{{ ai_gen_id }}" data-section="horizon">Horizon</button>
+          </li>
+          <li class="ai-video-tabs-nav-item-{{ ai_gen_id }}">
+            <button class="ai-video-tabs-nav-button-{{ ai_gen_id }}" data-section="cityrun">Cityrun</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="ai-video-tabs-content-{{ ai_gen_id }}">
+      {% assign sections = 'ranger-pro,mars-3,ranger-s,mars-2,alpha,horizon,cityrun' | split: ',' %}
+      {% assign section_titles = 'Ranger 3.0 Pro,Mars 3.0,Ranger S,Mars 2.0,ALPHA,Horizon,Cityrun' | split: ',' %}
+      
+      {% for section in sections %}
+        {% assign section_index = forloop.index %}
+        {% assign section_title = section_titles[forloop.index0] %}
+        
+        <div class="ai-video-tabs-section-{{ ai_gen_id }}" id="section-{{ section }}-{{ ai_gen_id }}" data-section="{{ section }}">
+          <div class="ai-video-tabs-section-header-{{ ai_gen_id }}">
+            <h2 class="ai-video-tabs-section-title-{{ ai_gen_id }}">{{ section_title }}</h2>
+            {% assign button_url_key = section | append: '_button_url' %}
+            {% if block.settings[button_url_key] != blank %}
+              <a href="{{ block.settings[button_url_key] }}" class="ai-video-tabs-view-button-{{ ai_gen_id }}">
+                {{ block.settings.view_button_text }}
+              </a>
+            {% endif %}
+          </div>
+          
+          <div class="ai-video-tabs-grid-{{ ai_gen_id }}">
+            {% for i in (1..6) %}
+              {% assign video_id_key = section | append: '_video_' | append: i | append: '_id' %}
+              {% assign video_title_key = section | append: '_video_' | append: i | append: '_title' %}
+              {% assign video_creator_key = section | append: '_video_' | append: i | append: '_creator' %}
+              {% assign video_id = block.settings[video_id_key] %}
+              {% assign video_title = block.settings[video_title_key] %}
+              {% assign video_creator = block.settings[video_creator_key] %}
+              <div class="ai-video-tabs-video-item-{{ ai_gen_id }}">
+                <div class="ai-video-tabs-video-thumbnail-{{ ai_gen_id }}" data-video-id="{{ video_id }}">
+                  {% if video_id != blank %}
+                    <img 
+                      src="https://img.youtube.com/vi/{{ video_id }}/maxresdefault.jpg" 
+                      alt="{{ video_title | escape }}"
+                      loading="lazy"
+                    >
+                  {% else %}
+                    <div style="width: 100%; height: 100%; background: #f4f4f4; display: flex; align-items: center; justify-content: center; color: #999; font-size: 14px;">
+                      Add YouTube video ID
+                    </div>
+                  {% endif %}
+                  
+                  {% if video_id != blank %}
+                    <button class="ai-video-tabs-play-button-{{ ai_gen_id }}" aria-label="Play video">
+                      <svg class="ai-video-tabs-play-icon-{{ ai_gen_id }}" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </button>
+                  {% endif %}
+                </div>
+                
+                <div class="ai-video-tabs-video-info-{{ ai_gen_id }}">
+                  {% if video_title != blank %}
+                    <h3 class="ai-video-tabs-video-title-{{ ai_gen_id }}">{{ video_title }}</h3>
+                  {% else %}
+                    <h3 class="ai-video-tabs-video-title-{{ ai_gen_id }}" style="color: #999; font-style: italic;">Add video title</h3>
+                  {% endif %}
+                  
+                  {% if video_creator != blank %}
+                    <p class="ai-video-tabs-video-creator-{{ ai_gen_id }}">{{ video_creator }}</p>
+                  {% else %}
+                    <p class="ai-video-tabs-video-creator-{{ ai_gen_id }}" style="color: #999; font-style: italic;">Add creator name</p>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="ai-video-tabs-modal-{{ ai_gen_id }}">
+    <div class="ai-video-tabs-modal-content-{{ ai_gen_id }}">
+      <button class="ai-video-tabs-modal-close-{{ ai_gen_id }}" aria-label="Close video">&times;</button>
+      <iframe class="ai-video-tabs-modal-iframe-{{ ai_gen_id }}" src="" allowfullscreen></iframe>
+    </div>
+  </div>
+</video-tabs-{{ ai_gen_id }}>
+
+<script>
+(function() {
+  class VideoTabs{{ ai_gen_id }} extends HTMLElement {
+    constructor() {
+      super();
+      this.sections = [];
+      this.observer = null;
+    }
+
+    connectedCallback() {
+      this.navButtons = this.querySelectorAll('.ai-video-tabs-nav-button-{{ ai_gen_id }}');
+      this.sections = this.querySelectorAll('.ai-video-tabs-section-{{ ai_gen_id }}');
+      this.modal = this.querySelector('.ai-video-tabs-modal-{{ ai_gen_id }}');
+      this.modalIframe = this.querySelector('.ai-video-tabs-modal-iframe-{{ ai_gen_id }}');
+      this.modalClose = this.querySelector('.ai-video-tabs-modal-close-{{ ai_gen_id }}');
+      this.playButtons = this.querySelectorAll('.ai-video-tabs-play-button-{{ ai_gen_id }}');
+
+      this.setupNavigation();
+      this.setupVideoModal();
+      this.setupScrollObserver();
+    }
+
+    setupNavigation() {
+      this.navButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const sectionId = button.dataset.section;
+          const targetSection = this.querySelector(`#section-${sectionId}-{{ ai_gen_id }}`);
+          
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    }
+
+    setupVideoModal() {
+      this.playButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          const thumbnail = button.closest('.ai-video-tabs-video-thumbnail-{{ ai_gen_id }}');
+          const videoId = thumbnail.dataset.videoId;
+          if (videoId) {
+            this.openVideo(videoId);
+          }
+        });
+      });
+
+      this.modalClose.addEventListener('click', () => {
+        this.closeVideo();
+      });
+
+      this.modal.addEventListener('click', (e) => {
+        if (e.target === this.modal) {
+          this.closeVideo();
+        }
+      });document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && this.modal.classList.contains('active')) {
+          this.closeVideo();
+        }
+      });
+    }
+
+    setupScrollObserver() {
+      const options = {
+        root: null,
+        rootMargin: '-20% 0px -70% 0px',
+        threshold: 0
+      };
+
+      this.observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.dataset.section;
+            this.updateActiveTab(sectionId);
+          }
+        });
+      }, options);
+
+      this.sections.forEach(section => {
+        this.observer.observe(section);
+      });
+    }
+
+    updateActiveTab(activeSectionId) {
+      this.navButtons.forEach(button => {
+        const isActive = button.dataset.section === activeSectionId;
+        button.classList.toggle('active', isActive);
+      });}
+
+    openVideo(videoId) {
+      const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+      this.modalIframe.src = embedUrl;
+      this.modal.classList.add('active');document.body.style.overflow = 'hidden';
+    }
+
+    closeVideo() {
+      this.modal.classList.remove('active');
+      this.modalIframe.src = '';
+      document.body.style.overflow = '';
+    }
+
+    disconnectedCallback() {
+      if (this.observer) {
+        this.observer.disconnect();
+      }
+    }
+  }
+
+  customElements.define('video-tabs-{{ ai_gen_id }}', VideoTabs{{ ai_gen_id }});
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Video tabs navigation",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 800,
+      "max": 1600,
+      "step": 50,
+      "unit": "px",
+      "label": "Maximum width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "container_padding",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Container padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_gap",
+      "min": 40,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Section spacing",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "scroll_offset",
+      "min": 80,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Scroll offset",
+      "default": 120
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Navigation tabs"
+    },
+    {
+      "type": "range",
+      "id": "nav_padding",
+      "min": 10,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "label": "Navigation padding",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "nav_bottom_margin",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom margin",
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "nav_border_color",
+      "label": "Navigation border color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "range",
+      "id": "tab_gap",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "label": "Tab spacing",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "tab_background",
+      "label": "Tab background",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "tab_text_color",
+      "label": "Tab text color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "tab_border_color",
+      "label": "Tab border color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_background",
+      "label": "Active tab background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_text_color",
+      "label": "Active tab text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_border_color",
+      "label": "Active tab border color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "tab_border_width",
+      "min": 0,
+      "max": 3,
+      "step": 1,
+      "unit": "px",
+      "label": "Tab border width",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "tab_border_radius",
+      "min": 0,
+      "max": 25,
+      "step": 1,
+      "unit": "px",
+      "label": "Tab border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "tab_padding_vertical",
+      "min": 8,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Tab vertical padding",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "tab_padding_horizontal",
+      "min": 15,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Tab horizontal padding",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "tab_font_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Tab font size",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "tab_font_weight",
+      "label": "Tab font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "header",
+      "content": "Section headers"
+    },
+    {
+      "type": "range",
+      "id": "header_bottom_margin",
+      "min": 15,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Header bottom margin",
+      "default": 25
+    },
+    {
+      "type": "color",
+      "id": "section_title_color",
+      "label": "Section title color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "section_title_size",
+      "min": 20,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Section title size",
+      "default": 28
+    },
+    {
+      "type": "select",
+      "id": "section_title_weight",
+      "label": "Section title weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "header",
+      "content": "View product buttons"
+    },
+    {
+      "type": "text",
+      "id": "view_button_text",
+      "label": "Button text",
+      "default": "View Product"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button border color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "Button hover background",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Button hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_border_color",
+      "label": "Button hover border color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "min": 0,
+      "max": 3,
+      "step": 1,
+      "unit": "px",
+      "label": "Button border width",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 25,
+      "step": 1,
+      "unit": "px",
+      "label": "Button border radius",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "min": 8,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Button vertical padding",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "min": 15,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Button horizontal padding",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Button font size",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "button_font_weight",
+      "label": "Button font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "header",
+      "content": "Video grid"
+    },
+    {
+      "type": "range",
+      "id": "video_gap",
+      "min": 15,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Video spacing",
+      "default": 25
+    },
+    {
+      "type": "color",
+      "id": "video_background",
+      "label": "Video card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "video_border_color",
+      "label": "Video card border color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "range",
+      "id": "video_border_width",
+      "min": 0,
+      "max": 3,
+      "step": 1,
+      "unit": "px",
+      "label": "Video card border width",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "video_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Video card border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "video_info_padding",
+      "min": 10,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "label": "Video info padding",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Play button"
+    },
+    {
+      "type": "range",
+      "id": "play_button_size",
+      "min": 40,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Play button size",
+      "default": 60
+    },
+    {
+      "type": "color",
+      "id": "play_button_background",
+      "label": "Play button background",
+      "default": "rgba(0, 0, 0, 0.8)"
+    },
+    {
+      "type": "color",
+      "id": "play_button_hover_background",
+      "label": "Play button hover background",
+      "default": "rgba(0, 0, 0, 0.9)"
+    },
+    {
+      "type": "color",
+      "id": "play_button_icon_color",
+      "label": "Play button icon color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Video text"
+    },
+    {
+      "type": "color",
+      "id": "video_title_color",
+      "label": "Video title color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "video_title_size",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Video title size",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "video_title_weight",
+      "label": "Video title weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "range",
+      "id": "title_bottom_margin",
+      "min": 5,
+      "max": 15,
+      "step": 1,
+      "unit": "px",
+      "label": "Title bottom margin",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "video_creator_color",
+      "label": "Creator name color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "video_creator_size",
+      "min": 12,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Creator name size",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "video_creator_weight",
+      "label": "Creator name weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "header",
+      "content": "Ranger3.0 Pro"
+    },
+    {
+      "type": "url",
+      "id": "ranger-pro_button_url",
+      "label": "View product URL"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_1_id",
+      "label": "Video 1 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_1_creator",
+      "label": "Video 1 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_2_id",
+      "label": "Video 2 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_2_creator",
+      "label": "Video 2 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_3_id",
+      "label": "Video 3 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_3_title",
+      "label": "Video 3 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_3_creator",
+      "label": "Video 3 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_4_id",
+      "label": "Video 4 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_4_title",
+      "label": "Video 4 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_4_creator",
+      "label": "Video 4 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_5_id",
+      "label": "Video 5 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_5_title",
+      "label": "Video 5 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_5_creator",
+      "label": "Video 5 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_6_id",
+      "label": "Video 6 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_6_title",
+      "label": "Video 6 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger-pro_video_6_creator",
+      "label": "Video 6 creator"
+    },
+    {
+      "type": "header",
+      "content": "Mars 3.0"
+    },
+    {
+      "type": "url",
+      "id": "mars-3_button_url",
+      "label": "View product URL"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_1_id",
+      "label": "Video 1 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_1_creator",
+      "label": "Video 1 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_2_id",
+      "label": "Video 2 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_2_creator",
+      "label": "Video 2 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_3_id",
+      "label": "Video 3 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_3_title",
+      "label": "Video 3 title"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_3_creator",
+      "label": "Video 3 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_4_id",
+      "label": "Video 4 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_4_title",
+      "label": "Video 4 title"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_4_creator",
+      "label": "Video 4 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_5_id",
+      "label": "Video 5 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_5_title",
+      "label": "Video 5 title"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_5_creator",
+      "label": "Video 5 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_6_id",
+      "label": "Video 6 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_6_title",
+      "label": "Video 6 title"
+    },
+    {
+      "type": "text",
+      "id": "mars-3_video_6_creator",
+      "label": "Video 6 creator"
+    },
+    {
+      "type": "header",
+      "content": "Ranger S"
+    },
+    {
+      "type": "url",
+      "id": "ranger-s_button_url",
+      "label": "View product URL"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_1_id",
+      "label": "Video 1 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_1_creator",
+      "label": "Video 1 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_2_id",
+      "label": "Video 2 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_2_creator",
+      "label": "Video 2 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_3_id",
+      "label": "Video 3 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_3_title",
+      "label": "Video 3 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_3_creator",
+      "label": "Video 3 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_4_id",
+      "label": "Video 4 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_4_title",
+      "label": "Video 4 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_4_creator",
+      "label": "Video 4 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_5_id",
+      "label": "Video 5 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_5_title",
+      "label": "Video 5 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_5_creator",
+      "label": "Video 5 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_6_id",
+      "label": "Video 6 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_6_title",
+      "label": "Video 6 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger-s_video_6_creator",
+      "label": "Video 6 creator"
+    },
+    {
+      "type": "header",
+      "content": "Mars 2.0"
+    },
+    {
+      "type": "url",
+      "id": "mars-2_button_url",
+      "label": "View product URL"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_1_id",
+      "label": "Video 1 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_1_creator",
+      "label": "Video 1 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_2_id",
+      "label": "Video 2 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_2_creator",
+      "label": "Video 2 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_3_id",
+      "label": "Video 3 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_3_title",
+      "label": "Video 3 title"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_3_creator",
+      "label": "Video 3 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_4_id",
+      "label": "Video 4 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_4_title",
+      "label": "Video 4 title"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_4_creator",
+      "label": "Video 4 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_5_id",
+      "label": "Video 5 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_5_title",
+      "label": "Video 5 title"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_5_creator",
+      "label": "Video 5 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_6_id",
+      "label": "Video 6 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_6_title",
+      "label": "Video 6 title"
+    },
+    {
+      "type": "text",
+      "id": "mars-2_video_6_creator",
+      "label": "Video 6 creator"
+    },
+    {
+      "type": "header",
+      "content": "ALPHA"
+    },
+    {
+      "type": "url",
+      "id": "alpha_button_url",
+      "label": "View product URL"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_1_id",
+      "label": "Video 1 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_1_creator",
+      "label": "Video 1 creator"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_2_id",
+      "label": "Video 2 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_2_creator",
+      "label": "Video 2 creator"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_3_id",
+      "label": "Video 3 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_3_title",
+      "label": "Video 3 title"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_3_creator",
+      "label": "Video 3 creator"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_4_id",
+      "label": "Video 4 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_4_title",
+      "label": "Video 4 title"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_4_creator",
+      "label": "Video 4 creator"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_5_id",
+      "label": "Video 5 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_5_title",
+      "label": "Video 5 title"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_5_creator",
+      "label": "Video 5 creator"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_6_id",
+      "label": "Video 6 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_6_title",
+      "label": "Video 6 title"
+    },
+    {
+      "type": "text",
+      "id": "alpha_video_6_creator",
+      "label": "Video 6 creator"
+    },
+    {
+      "type": "header",
+      "content": "Horizon"
+    },
+    {
+      "type": "url",
+      "id": "horizon_button_url",
+      "label": "View product URL"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_1_id",
+      "label": "Video 1 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_1_creator",
+      "label": "Video 1 creator"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_2_id",
+      "label": "Video 2 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_2_creator",
+      "label": "Video 2 creator"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_3_id",
+      "label": "Video 3 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_3_title",
+      "label": "Video 3 title"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_3_creator",
+      "label": "Video 3 creator"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_4_id",
+      "label": "Video 4 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_4_title",
+      "label": "Video 4 title"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_4_creator",
+      "label": "Video 4 creator"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_5_id",
+      "label": "Video 5 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_5_title",
+      "label": "Video 5 title"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_5_creator",
+      "label": "Video 5 creator"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_6_id",
+      "label": "Video 6 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_6_title",
+      "label": "Video 6 title"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_6_creator",
+      "label": "Video 6 creator"
+    },
+    {
+      "type": "header",
+      "content": "Cityrun"
+    },
+    {
+      "type": "url",
+      "id": "cityrun_button_url",
+      "label": "View product URL"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_1_id",
+      "label": "Video 1 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_1_creator",
+      "label": "Video 1 creator"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_2_id",
+      "label": "Video 2 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_2_creator",
+      "label": "Video 2 creator"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_3_id",
+      "label": "Video 3 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_3_title",
+      "label": "Video 3 title"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_3_creator",
+      "label": "Video 3 creator"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_4_id",
+      "label": "Video 4 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_4_title",
+      "label": "Video 4 title"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_4_creator",
+      "label": "Video 4 creator"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_5_id",
+      "label": "Video 5 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_5_title",
+      "label": "Video 5 title"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_5_creator",
+      "label": "Video 5 creator"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_6_id",
+      "label": "Video 6 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_6_title",
+      "label": "Video 6 title"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_6_creator",
+      "label": "Video 6 creator"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video tabs navigation"
+    }
+  ]
+}
+{% endschema %}

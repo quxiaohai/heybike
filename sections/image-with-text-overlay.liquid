@@ -44,8 +44,7 @@
       {%- if section.blocks.size > 0 -%}
         <span class="banner__overlay absolute top-0 left-0 w-full h-full pointer-events-none"></span>
         <div class="banner__content overflow-hidden absolute z-1 top-0 left-0 w-full h-full">
-
-          <div class="{% if section.settings.full_width %}page-width{% else %}page-width-half{% endif %} w-full h-full flex {{ section.settings.content_position }} {{ section.settings.content_position_mobile }}">
+          <div class="page-width w-full h-full flex {{ section.settings.content_position }} {{ section.settings.content_position_mobile }}">
             <div class="banner__box banner__box--{{ section.settings.content_width }} md:text-{{ section.settings.text_alignment }} text-{{ section.settings.text_alignment_mobile }}">
               {%- liquid
                 assign with_gradient = false
@@ -89,7 +88,7 @@
                       {%- assign delay = delay | plus: 1 -%}
                       <{{ block.settings.heading_tag }} class="banner__title heading leading-none {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
                         {%- if block.settings.highlighted_text == 'none' -%}
-                          <split-words class="split-words block" data-animate="fade-up-large" data-animate-delay="{{ delay | times: 250 }}">{{ block.settings.heading | newline_to_br }}</split-words>
+                          <split-words class="split-words block" data-animate="fade-up-large" data-animate-delay="{{ delay | times: 250 }}">{{ block.settings.heading }}</split-words>
                         {%- else -%}
                           {%- render 'highlighted-text', content: block.settings.heading, style: block.settings.highlighted_text, scribble: block.settings.highlighted_scribble, gradient: with_gradient -%}
                         {%- endif -%}
@@ -555,7 +554,7 @@
       "name": "t:sections.global.blocks.heading.name",
       "settings": [
         {
-          "type": "textarea",
+          "type": "inline_richtext",
           "id": "heading",
           "default": "Image with text overlay",
           "label": "t:sections.global.settings.heading.label"
@@ -564,10 +563,6 @@
           "type": "select",
           "id": "heading_size",
           "options": [
-            {
-              "value": "title-xs",
-              "label": "X small"
-            },
             {
               "value": "title-sm",
               "label": "t:sections.global.settings.heading_size.options__1.label"
@@ -1228,7 +1223,7 @@
           "id": "icon_width",
           "label": "t:sections.global.settings.icon_width.label",
           "default": 48,
-          "min": 20,
+          "min": 10,
           "max": 120,
           "step": 2,
           "unit": "px"

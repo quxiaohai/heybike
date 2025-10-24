@@ -76,7 +76,7 @@
             "image": "",
             "icon": "",
             "heading": "Example heading",
-            "content": "<p>Share information about your brand with your customers.<\/p>",
+            "content": "<p>Share information about your brand with your customers.</p>",
             "button_label": "Shop now",
             "button_link": "",
             "content_position": "md:items-center",
@@ -98,9 +98,9 @@
       ],
       "settings": {
         "products_per_page": 11,
-        "pagination": "paginated",
         "columns": 4,
         "columns_mobile": "2",
+        "pagination": "paginated",
         "enable_filtering": true,
         "filter_collapsed": false,
         "filter_type": "drawer",
@@ -153,7 +153,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Give customers details about the banner image(s) or content on the template.<\/p>",
+            "text": "<p>Give customers details about the banner image(s) or content on the template.</p>",
             "text_size": "subtext-md",
             "text_max_size": 32,
             "text_font": "body",
@@ -185,8 +185,6 @@
         "content_position_mobile": "items-center justify-start",
         "text_alignment_mobile": "left",
         "color_text": "#ffffff",
-        "color_background": "#171717",
-        "gradient_background": "",
         "color_highlight": "#e0a580",
         "gradient_highlight": "",
         "color_button_text": "#171717",

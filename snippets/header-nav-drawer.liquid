@@ -1,31 +1,151 @@
-<details is="menu-details">
-  <summary class="drawer__menu-item block heading text-2xl leading-none tracking-tight cursor-pointer relative" aria-expanded="false">
-    {{- link.title | escape -}}
+<details is="menu-details" open>
+  <summary class="drawer__menu-item " aria-expanded="true">
+    <p class="link-title">
+        {{- link.title | escape -}}
+    </p>
+    <img width="8" height="12" src="{{ 'cg_menu-arrow-right.svg' | asset_url }}"/>
   </summary>
-  <div class="drawer__submenu z-1 absolute top-0 left-0 flex flex-col w-full h-full" data-parent>
-    <button type="button" class="tracking-tight heading text-base shrink-0 flex items-center gap-3 w-full">{{ link.title | escape }}</button>
-    <ul class="drawer__scrollable flex flex-col h-full">
+  <div class="drawer__submenu drawer__submenu-1 z-1 absolute top-0 left-0 flex flex-col w-full h-full" data-parent>
+    <button type="button" class="back-btn tracking-tight text-base font-bold shrink-0 flex items-center gap-3 w-full">
+      <img class="menu-arrow-left" width="8" height="12" src="{{ 'cg_menu-arrow-right.svg' | asset_url }}"/>
+
+      {% comment %}
+        {% render 'icon', icon: 'cg_menu-arrow-left' %}
+      {% endcomment %}
+      {{ link.title | escape }}
+    </button>
+      {% assign show_product = false %}
+    
+      {% assign link_title = link.title | downcase | handleize  %}
+      {% if link_title == 'ebikes' or link_title == 'equipments' %}
+          {% assign show_product = true %}
+      {% endif %}
+     
+    <ul class="drawer__scrollable submenu-1_ul flex flex-col h-full">
       {%- for childlink in link.links -%}
-        <li>
-          {%- if childlink.links != blank -%}
-            <details is="menu-details">
-              <summary class="drawer__menu-item block heading tw-text-xl leading-none tracking-tight cursor-pointer relative" aria-expanded="false">
-                {{- childlink.title | escape -}}
-              </summary>
-              <div class="drawer__submenu z-1 absolute top-0 left-0 w-full h-full">
-                <button type="button" class="tracking-tight heading text-base flex items-center gap-3 w-full">{{ childlink.title | escape }}</button>
-                <ul class="drawer__scrollable flex flex-col h-full">
-                  {%- for grandchildlink in childlink.links -%}
-                    <li>
-                      <a class="drawer__menu-item block heading tw-text-xl leading-none tracking-tight" href="{{ grandchildlink.url }}">{{ grandchildlink.title | escape }}</a>
-                    </li>
-                  {%- endfor -%}
-                </ul>
-              </div>
-            </details>
-          {%- else -%}
-            <a class="drawer__menu-item block heading tw-text-xl leading-none tracking-tight" href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-          {%- endif -%}
+             {% assign collection_url = '' %}
+            {% if childlink.url contains 'collections'  %}
+             {% assign collection_url = childlink.url | split: 'collections/' | last %}
+            {% endif %}
+            <li class="submenu-1_li" {% if forloop.first %}class="active-list"{% endif %} data-name="{% if collection_url != blank %}{{ collection_url }}{% else %}#{% endif %}">
+            {%- if block.settings.show_menu_image %}
+                  {% comment %}
+                  {% if childlink.type == 'collection_link' and childlink.object.image != blank -%}
+                  <a href="{% if childlink.url contains 'collections/' %}javascript:void(0);{% else %}{{ childlink.url }}{% endif %}" class="media media--wide block relative overflow-hidden">
+                    {{- childlink.object.image | image_url: width: childlink.object.image.width | image_tag: loading: 'lazy', widths: '180,360,540,720,900,1080', is: 'lazy-image' -}}
+                  </a>
+                  
+                 {% if childlink.url contains 'collections/' %}
+                    {%- render 'icon', icon: 'arrow-right', size: 'lg', class: 'transform' -%}
+                   {% endif %}
+                    {% else %}
+                  {% endcomment %}
+                
+                  {% assign childlink_handle = childlink.handle  | append: '.png'  %}
+                  <a href="javascript:void(0);" class="media media--wide block relative">
+                   <img src="{{ childlink_handle | file_img_url }}">
+                  </a>
+                
+                {%- endif -%}
+           
+                 {% if childlink.links != blank %}
+                  <details is="menu-details" open>
+                      <summary class="drawer__menu-item " aria-expanded="true">
+                        <p class="link-title">{{- childlink.title | escape -}}</p>
+                        <img width="8" height="12" src="{{ 'cg_menu-arrow-right.svg' | asset_url }}"/>
+                      </summary>
+                      <div class="drawer__submenu drawer__submenu-2 z-1 absolute top-0 left-0 w-full h-full">
+                        <button type="button" class="back-btn tracking-tight text-base font-bold flex items-center gap-3 w-full">
+                          <img class="menu-arrow-left" width="8" height="12" src="{{ 'cg_menu-arrow-right.svg' | asset_url }}"/>
+
+                          {% comment %}
+                            {% render 'icon', icon: 'cg_menu-arrow-left' %}
+                          {% endcomment %}
+                          {{ childlink.title | escape }}
+                        </button>
+                        <ul class="drawer__scrollable submenu-2_ul flex flex-col h-full">
+                          {%- for grandchildlink in childlink.links -%}
+                            <li class="submenu-2_li">
+                            <a class="drawer__menu-item" href="{{ grandchildlink.url }}">
+                              <span>{{ grandchildlink.title | escape }}</span>
+                            </a>
+                              {% if grandchildlink.url contains 'collections/' %}
+                                <img width="8" height="12" src="{{ 'cg_menu-arrow-right.svg' | asset_url }}"/>
+                              {% endif %}
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      </div>
+                  </details>
+                {%- else -%}
+                   {%- if show_product and  childlink.url contains 'collections'   %}
+                    <details is="menu-details" open>
+                    <summary class="drawer__menu-item" aria-expanded="true">
+                      <span>{{- childlink.title | escape -}}</span>
+                    {% if childlink.url contains 'collections/' %}
+                      <img width="8" height="12" src="{{ 'cg_menu-arrow-right.svg' | asset_url }}"/>
+                    {% endif %}
+                    </summary>
+                    <div class="drawer__submenu drawer__submenu-2 z-1 absolute top-0 left-0 w-full h-full">
+                      <button type="button" class="back-btn tracking-tight text-base font-bold flex items-center gap-3 w-full">
+                        <img class="menu-arrow-left" width="8" height="12" src="{{ 'cg_menu-arrow-right.svg' | asset_url }}"/>
+
+                        {% comment %}
+                          {% render 'icon', icon: 'cg_menu-arrow-left' %}
+                        {% endcomment %}
+                        {{ childlink.title | escape }}
+                      </button>
+                      <ul class="flex">
+                       <div class="mobile-collections-list flex flex-col h-full grow shrink" id="menu-{{ forloop.index }}" {{ index }}>
+                        {% assign collection_url = childlink.url | split: 'collections/' | last %}
+                        {% assign products = collections[collection_url].products %}
+                          {% if products.size > 0 %}
+                            <div class="collection_url {{ collection_url }} relative grow overflow-hidden" id="{{ collection_url }}">
+                              <div class="collection_wrapper drawer__scrollable relative w-full h-full">
+                              {% for product in products %}
+                                {% assign product_count = products.size %}
+                                {% if forloop.index0 < 3 %}
+                                  <a class="menu_product-card" href="{{ product.url }}">
+                                    <div class="product-info">
+                                    {%- assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
+                                    <div class="product_img-wrapper">{{- featured_media | image_url: width: featured_media.width | image_tag: size: '60x60' -}}</div>
+                                    <div class="product_content">
+                                      <div class="product-title">{{ product.title }}</div>
+                                      <div class="product-price">
+                                        <span class="regular-price">{{ product.price | money }}</span>
+                                      </div>
+                                      {% comment %}
+                                      <div class="product-description">{% if product.metafields.my_fields.short_description != blank %}{{ product.metafields.my_fields.short_description }}{% else %}{{ product.descriptions | split : '.' | first }}{% endif %}</div>
+                                      {% endcomment %}
+                                    </div>
+                                    </div>
+                                  </a>
+                                {% endif %}
+                              {% endfor %}
+                              </div>
+                              <a href="{{ childlink.url }}" class="button button--secondary view-all_btn" is="hover-link">
+                                <span class="btn-text">
+                                  View All ({{ product_count }})
+                                  {% render 'icon', icon: 'cg_arrow-upright' %}
+                                </span>
+                              </a>
+                            </div>
+                          {% endif %}
+                        </div>  
+                      </ul>
+                    </div>
+                    </details>
+                {% else %}
+                 <a class="drawer__menu-item block text-2xl font-bold leading-none tracking-tight" href="{% if childlink.url contains 'collections/' %}javascript:void(0);{% else %}{{ childlink.url }}{% endif %}">
+                  <span>{{ childlink.title | escape }}</span>
+                </a>
+                     {% if childlink.url contains 'collections/' %}
+                      {% comment %}
+                        {% render 'icon', icon: 'cg_menu-arrow-right' %}
+                      {% endcomment %}
+                 {% endif %}
+              {% endif %}
+          {% endif %}
         </li>
       {%- endfor -%}
 
@@ -37,82 +157,89 @@
           endif
         -%}
       {%- endif -%}
-      {%- if show_promotions -%}
-        <li class="drawer__promotions">
 
-          {% comment %} <ul class="mega-menu__list grid grid-cols-2 w-full h-full" role="list" tabindex="-1"> {% endcomment %}
-          <ul class="mega-menu__list w-full h-full" role="list" tabindex="-1">
-            {%- for i in (1..5) -%}
-              {%- liquid
-                assign promo_image = 'promo_image_' | append: i
-                assign promo_image = block.settings[promo_image]
-              -%}
-              {%- if promo_image != blank -%}
-                {%- liquid
-                  assign promo_image_ratio = 'promo_image_ratio_' | append: i
-                  assign promo_image_ratio = block.settings[promo_image_ratio]
-    
-                  assign promo_heading = 'promo_heading_' | append: i
-                  assign promo_heading = block.settings[promo_heading]
-    
-                  assign promo_subtext = 'promo_subtext_' | append: i
-                  assign promo_subtext = block.settings[promo_subtext]
-    
-                  assign promo_overlay_content = 'promo_overlay_content_' | append: i
-                  assign promo_overlay_content = block.settings[promo_overlay_content]
-    
-                  assign promo_link = 'promo_link_' | append: i
-                  assign promo_link = block.settings[promo_link]
-  
-                  assign promo_tag = 'promo_tag_' | append: i
-                  assign promo_tag = block.settings[promo_tag]
-    
-                  assign promo_color_text = 'promo_color_text_' | append: i
-                  assign promo_color_text = block.settings[promo_color_text]
-    
-                  assign promo_color_overlay = 'promo_color_overlay_' | append: i
-                  assign promo_color_overlay = block.settings[promo_color_overlay]
-    
-                  assign promo_overlay_opacity = 'promo_overlay_opacity_' | append: i
-                  assign promo_overlay_opacity = block.settings[promo_overlay_opacity]
-                -%}
-                <li class="mega-menu__item flex opacity-0 w-full">
-                  <div class="media-card media-card--{{ settings.card_style }}{% if promo_overlay_content %} media-card--overlap{% endif %} overflow-hidden">
-                    <a class="media-card__link flex flex-col w-full h-full relative"{% if promo_link != blank %} href="{{ promo_link }}"{% else %} role="link" aria-disabled="true"{% endif %}
-                      aria-label="{{ promo_heading | default: promo_subtext | escape }}"
-                      style="--color-foreground: {{ promo_color_text.rgb }}; --color-overlay: {{ promo_color_overlay.rgb }}; --overlay-opacity: {{ promo_overlay_opacity | divided_by: 100.0 }};"
-                    >
-                      {%- if promo_tag != blank -%}
-                        <div class="badges z-2 absolute grid gap-3 pointer-events-none">
-                          <span class="badge badge--onsale flex items-center gap-1d5 font-medium leading-none rounded-full">{{ promo_tag | escape }}</span>
-                        </div>
-                      {%- endif -%}
-                      <div class="media media--{{ promo_image_ratio }} relative overflow-hidden">
-                        {{- promo_image | image_url: width: promo_image.width | image_tag: loading: 'lazy', widths: '180,360,540,720,900,1080', is: 'lazy-image' -}}
-                      </div>
-                      {%- if promo_heading != blank or promo_subtext != blank -%}
-                        <div class="media-card__content flex justify-between items-center gap-4 w-full">
-                          <div class="media-card__text opacity-0 shrink-1 grid gap-0d5">
-                            {%- if promo_heading != blank -%}
-                              <p>
-                                <span class="heading reversed-link text-lg tracking-tighter leading-tight">{{ promo_heading | escape }}</span>
-                              </p>
-                            {%- endif -%}
-                            {%- if promo_subtext != blank -%}
-                              <p class="leading-none text-xs xl:text-sm hidden md:block">{{ promo_subtext }}</p>
-                            {%- endif -%}
+      {%- if block.settings.button_label != blank -%}
+        <div class="mega-menu__item--footer">
+          <div class="mega-menu__footer relative">
+            <a class="flex items-center justify-between w-full h-full"{% if block.settings.button_link != blank %} href="{{ block.settings.button_link }}"{% else %} role="link" aria-disabled="true"{% endif %}>
+              <span class="font-bold tracking-tight">{{ block.settings.button_label | escape }}</span>
+              <img width="8" height="12" src="{{ 'cg_upright-arrow.svg' | asset_url }}"/>
+            </a>
+
+            {%- if show_promotions -%}
+              <li class="drawer__promotions">
+                <ul class="mega-menu__list grid grid-cols-2 w-full h-full" role="list" tabindex="-1">
+                  {%- for i in (1..5) -%}
+                    {%- liquid
+                      assign promo_image = 'promo_image_' | append: i
+                      assign promo_image = block.settings[promo_image]
+                    -%}
+                    {%- if promo_image != blank -%}
+                      {%- liquid
+                        assign promo_image_ratio = 'promo_image_ratio_' | append: i
+                        assign promo_image_ratio = block.settings[promo_image_ratio]
+          
+                        assign promo_heading = 'promo_heading_' | append: i
+                        assign promo_heading = block.settings[promo_heading]
+          
+                        assign promo_subtext = 'promo_subtext_' | append: i
+                        assign promo_subtext = block.settings[promo_subtext]
+          
+                        assign promo_overlay_content = 'promo_overlay_content_' | append: i
+                        assign promo_overlay_content = block.settings[promo_overlay_content]
+          
+                        assign promo_link = 'promo_link_' | append: i
+                        assign promo_link = block.settings[promo_link]
+        
+                        assign promo_tag = 'promo_tag_' | append: i
+                        assign promo_tag = block.settings[promo_tag]
+          
+                        assign promo_color_text = 'promo_color_text_' | append: i
+                        assign promo_color_text = block.settings[promo_color_text]
+          
+                        assign promo_color_overlay = 'promo_color_overlay_' | append: i
+                        assign promo_color_overlay = block.settings[promo_color_overlay]
+          
+                        assign promo_overlay_opacity = 'promo_overlay_opacity_' | append: i
+                        assign promo_overlay_opacity = block.settings[promo_overlay_opacity]
+                      -%}
+                      <li class="mega-menu__item media-card media-card--{{ settings.card_style }}{% if promo_overlay_content %} media-card--overlap{% endif %} overflow-hidden opacity-0 w-full">
+                        <a class="media-card__link grid w-full h-full relative"{% if promo_link != blank %} href="{{ promo_link }}"{% else %} role="link" aria-disabled="true"{% endif %}
+                          style="--color-foreground: {{ promo_color_text.rgb }}; --color-overlay: {{ promo_color_overlay.rgb }}; --overlay-opacity: {{ promo_overlay_opacity | divided_by: 100.0 }};"
+                        >
+                          {%- if promo_tag != blank -%}
+                            <div class="badges z-2 absolute grid gap-3 pointer-events-none">
+                              <span class="badge badge--onsale flex items-center gap-1d5 font-medium leading-none rounded-full">{{ promo_tag | escape }}</span>
+                            </div>
+                          {%- endif -%}
+                          <div class="media media--{{ promo_image_ratio }} relative overflow-hidden">
+                            {{- promo_image | image_url: width: promo_image.width | image_tag: loading: 'lazy', widths: '180,360,540,720,900,1080', is: 'lazy-image' -}}
                           </div>
-                          {%- render 'icon', icon: 'arrow-right', size: 'xs', class: 'transform shrink-0 hidden md:block' -%}
-                        </div>
-                      {%- endif -%}
-                    </a>
-                  </div>
-                </li>
-              {%- endif -%}
-            {%- endfor -%}
-          </ul>
-        </li>
+                          {%- if promo_heading != blank or promo_subtext != blank -%}
+                            <div class="media-card__content flex justify-between items-center gap-4 w-full">
+                              <div class="media-card__text opacity-0 shrink-1">
+                                {%- if promo_heading != blank -%}
+                                  <span class="heading reversed-link text-lg font-bold tracking-tighter leading-none">{{ promo_heading | escape }}</span>
+                                {%- endif -%}
+                                {%- if promo_subtext != blank -%}
+                                  <p class="leading-none text-xs xl:text-sm hidden md:block">{{ promo_subtext }}</p>
+                                {%- endif -%}
+                              </div>
+                              {%- render 'icon', icon: 'arrow-right', size: 'xs', class: 'transform shrink-0 hidden md:block' -%}
+                            </div>
+                          {%- endif -%}
+                        </a>
+                      </li>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </ul>
+              </li>
+            {%- endif -%}
+          </div>
+        </div>
       {%- endif -%}
     </ul>
   </div>
 </details>
+
+ 

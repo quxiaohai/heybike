@@ -1,12 +1,21 @@
 <style>
   #shopify-section-{{ section.id }} {
+       
     {%- render 'section-variables', section: section -%}
-  }
+}
+.block {
+  display:block !important;
+  margin-bottom: {{ section.settings.padding_bottom }}px;
+}
+
 </style>
 
-<div class="section inline">
+
+</style>
+
+<div class="section block">
   <div class="relative contents">
-    <reveal-banner class="reveal-banner relative inline">
+    <reveal-banner class="reveal-banner relative block">
       <span class="reveal-banner__tracker absolute top-0 h-full"></span>
       {%- if section.blocks.size > 0 -%}
         <span class="reveal-banner__tracker2nd absolute top-0 h-full"></span>
@@ -348,7 +357,17 @@
       "id": "enable_parallax",
       "label": "t:sections.global.settings.enable_parallax.label",
       "default": true
-    }
+    }, 
+   {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.global.settings.padding_bottom.label",
+      "default": 72
+    },
   ],
   "blocks": [
     {
@@ -1028,7 +1047,7 @@
           "id": "icon_width",
           "label": "t:sections.global.settings.icon_width.label",
           "default": 48,
-          "min": 20,
+          "min": 10,
           "max": 120,
           "step": 2,
           "unit": "px"

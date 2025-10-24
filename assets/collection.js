@@ -7,6 +7,60 @@ class FacetForm extends HTMLFormElement {
 
     this.addEventListener('change', this.onFormChange);
     this.addEventListener('submit', this.onFormSubmit);
+
+    /* Color swatches */
+    var colorSwatches = document.querySelectorAll('.color-swatch'); 
+      colorSwatches.forEach(function(swatch) { 
+        swatch.addEventListener('click', function() { 
+            var imageUrl = swatch.getAttribute('data-image'); 
+            console.log("imageUrl",imageUrl)
+            var variantId = swatch.getAttribute('data-variantid'); 
+            var swatchName = swatch.getAttribute('data-swatchname'); 
+            var productCard = swatch.closest('.product-card'); 
+          
+            var swatchElement = productCard.querySelectorAll('.swatches li a');
+            swatchElement.forEach(function(item) {
+              item.classList.remove('active')
+            });
+            this.classList.add('active')
+            var anchorTag = productCard.querySelector('a'); 
+
+            if(productCard.querySelector('.quick-add button')) { 
+              productCard.querySelector('.quick-add button').setAttribute('data-swatchcolorname',swatchName); 
+            }
+
+            if(productCard.querySelector('quick-view')) { 
+              productCard.querySelector('quick-view').setAttribute('data-swatchcolorname',swatchName); 
+            }
+            
+            
+            var originalHref = anchorTag.getAttribute('href');
+            var newURL;
+            if (originalHref.includes('?variant=')) {
+                newURL = originalHref.replace(/(variant=)[^\&]+/, '$1' + variantId);
+            } else {
+                newURL = originalHref + (originalHref.includes('?') ? '&' : '?') + 'variant=' + variantId;
+            }
+
+            anchorTag.setAttribute('href', newURL);
+            var MainimgElement = productCard.querySelector('.product-card__media img');
+            if (imageUrl) {
+                var allImages = productCard.querySelectorAll('.variant-images img');
+                productCard.querySelector('.variant-images').style.display = 'block';
+                productCard.querySelector('.product-card__media img').style.display = 'none';
+                let findImage = false
+                allImages.forEach(function(imgElement) {
+                    var imgSrc = imgElement.getAttribute('data-image'); 
+                    if (imgSrc === imageUrl && !findImage) { 
+                        imgElement.style.display = 'block'; 
+                        findImage = true;
+                    } else {
+                        imgElement.style.display = 'none';
+                    }
+                });
+            }
+        });
+    });
   }
 
   onFormChange() {
@@ -39,13 +93,16 @@ class FacetForm extends HTMLFormElement {
     return url;
   }
 
-  updateURLHash(url) {
+  updateURLHash(url) { 
+    console.log("Passe through updateURLHash"); 
     const clonedUrl = new URL(url);
     clonedUrl.searchParams.delete('section_id');
     history.replaceState({}, '', clonedUrl.toString());
   }
 
-  beforeRenderSection() {
+  beforeRenderSection() { 
+    console.log("Passed through beforeRenderSection"); 
+
     const container = document.getElementById('ProductGridContainer');
     const items = container.querySelectorAll('.product-card');
     const translateY = theme.config.motionReduced ? 0 : 50;
@@ -67,7 +124,99 @@ class FacetForm extends HTMLFormElement {
     }, 100);
   }
 
-  afterRenderSection() {
+  afterRenderSection() { 
+    console.log("Passed through afterRenderSection"); 
+
+    /* 
+      console.log("1."); 
+      console.log(document.querySelectorAll('.color-swatch')); 
+    */
+
+    /* Re-apply color swatches' function */
+    var colorSwatches = document.querySelectorAll('.color-swatch'); 
+    /* console.log(document.querySelectorAll('.color-swatch')); */
+    
+      colorSwatches.forEach(function(swatch) { 
+        /* console.log("Passed through re-apply loop."); */
+
+        swatch.addEventListener('click', function() { 
+            /* Original function */
+            var imageUrl = swatch.getAttribute('data-image'); 
+            
+            /* console.log("imageUrl", imageUrl); */
+
+            var variantId = swatch.getAttribute('data-variantid'); 
+            var swatchName = swatch.getAttribute('data-swatchname'); 
+            var productCard = swatch.closest('.product-card'); 
+          
+            var swatchElement = productCard.querySelectorAll('.swatches li a'); 
+
+            swatchElement.forEach(function(item) { 
+              item.classList.remove('active')
+            });
+            this.classList.add('active')
+            var anchorTag = productCard.querySelector('a'); 
+
+            if(productCard.querySelector('.quick-add button')) { 
+              productCard.querySelector('.quick-add button').setAttribute('data-swatchcolorname',swatchName); 
+            }
+
+            if(productCard.querySelector('quick-view')) { 
+              productCard.querySelector('quick-view').setAttribute('data-swatchcolorname',swatchName); 
+            }
+            
+            
+            var originalHref = anchorTag.getAttribute('href');
+            var newURL;
+            if (originalHref.includes('?variant=')) {
+                newURL = originalHref.replace(/(variant=)[^\&]+/, '$1' + variantId);
+            } else {
+                newURL = originalHref + (originalHref.includes('?') ? '&' : '?') + 'variant=' + variantId;
+            }
+
+            anchorTag.setAttribute('href', newURL);
+            var MainimgElement = productCard.querySelector('.product-card__media img');
+            if (imageUrl) {
+                var allImages = productCard.querySelectorAll('.variant-images img');
+                productCard.querySelector('.variant-images').style.display = 'block';
+                productCard.querySelector('.product-card__media img').style.display = 'none';
+                let findImage = false
+                allImages.forEach(function(imgElement) {
+                    var imgSrc = imgElement.getAttribute('data-image'); 
+                    if (imgSrc === imageUrl && !findImage) { 
+                        imgElement.style.display = 'block'; 
+                        findImage = true;
+                    } else {
+                        imgElement.style.display = 'none';
+                    }
+                });
+            }
+
+            /* New function */
+            const swatchColors = JSON.parse(swatch.parentElement.getAttribute('data-color')); 
+            const varientImages = swatch.closest('.product-card').querySelectorAll(".varient-image-item"); 
+
+            /* console.log(`varientImages: ${varientImages}`); */
+            /* console.log(swatchColors); */
+
+            swatchColors.forEach((swatchColor, j) => { 
+              varientImages.forEach((varientImage, k) => { 
+                const imgColors = JSON.parse(varientImage.getAttribute('data-color')); 
+
+                imgColors.forEach((imgColor, m) => { 
+                  swatchColors
+                  if(swatchColor == imgColor) { 
+                    varientImage.classList.add("active"); 
+                  } else { 
+                    varientImage.classList.remove("active"); 
+                  }
+                }); 
+              }); 
+            }); 
+        });
+    });
+
+    /* Original functions */
     const container = document.getElementById('ProductGridContainer');
     const items = container.querySelectorAll('.product-card');
     const translateY = theme.config.motionReduced ? 0 : 50;
@@ -81,9 +230,13 @@ class FacetForm extends HTMLFormElement {
     if (drawer) drawer.classList.remove('loading');
 
     document.dispatchEvent(new CustomEvent('collection:reloaded'));
+
+    
   }
 
-  renderSection(url, event) {
+  renderSection(url, event) { 
+    console.log("Passrh through renderSection"); 
+
     this.cachedMap.has(url)
       ? this.renderSectionFromCache(url, event)
       : this.renderSectionFromFetch(url, event);
@@ -93,7 +246,9 @@ class FacetForm extends HTMLFormElement {
     this.dirty = false;
   }
 
-  renderSectionFromFetch(url, event) {
+  renderSectionFromFetch(url, event) { 
+    console.log("Passrh through renderSectionFromFetch"); 
+
     this.abortController?.abort();
     this.abortController = new AbortController();
     
@@ -145,7 +300,7 @@ class FacetForm extends HTMLFormElement {
     }, 500);
   }
 
-  renderFilters(responseText, event) {
+  renderFilters(responseText, event) { 
     const parsedHTML = new DOMParser().parseFromString(responseText, 'text/html');
     const facetElements = parsedHTML.querySelectorAll(
       '#FacetFiltersContainer [data-filter], #MobileFacetFiltersContainer [data-filter]'
@@ -170,7 +325,7 @@ class FacetForm extends HTMLFormElement {
     });
   }
 
-  renderFiltersActive(responseText) {
+  renderFiltersActive(responseText) { 
     const id = 'FacetFiltersActive';
     if (document.getElementById(id) === null) return;
     const parsedHTML = new DOMParser().parseFromString(responseText, 'text/html');
@@ -195,7 +350,7 @@ class FacetForm extends HTMLFormElement {
     document.getElementById(id).innerHTML = parsedHTML.getElementById(id).innerHTML;
   }
 
-  renderSortBy(responseText) {
+  renderSortBy(responseText) { 
     const id = 'SortByContainer';
     if (document.getElementById(id) === null) return;
     const parsedHTML = new DOMParser().parseFromString(responseText, 'text/html');

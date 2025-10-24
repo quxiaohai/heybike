@@ -1,4 +1,5 @@
 {%- liquid
+  assign section_id = section.id
   assign gallery_layout = section.settings.gallery_layout
   assign thumbnail_position = section.settings.thumbnail_position
   assign image_zoom = section.settings.image_zoom
@@ -74,7 +75,7 @@
         </media-dots>
         <template>
           <slot></slot>
-          <s dir="{% render 'direction' %}" style="--t: 0; --b: 0; --l: 0; --r: 0;">
+          <s dir="{{ 'localization.text_direction_trigger' | t | downcase | escape }}">
             <span class="t">{%- render 'icon', icon: 'chevron-up' -%}</span>
             <span class="b">{%- render 'icon', icon: 'chevron-down' -%}</span>
             <span class="l">{%- render 'icon', icon: 'chevron-left' -%}</span>
@@ -90,9 +91,6 @@
             s .l{inset-inline-start:0;inset-block:-5px;border-inline-end:1px solid rgb(var(--color-border));opacity:var(--l);}
             s .r{inset-inline-end:0;inset-block:-5px;border-inline-start:1px solid rgb(var(--color-border));opacity:var(--r);}
             s[dir=rtl] :is(.icon-chevron-left,.icon-chevron-right){transform:scaleX(-1);}
-            @media screen and (max-width: 1023px) {
-              s{display:none}
-            }
           </style>
         </template>
       </scroll-shadow>
@@ -106,6 +104,13 @@
   </media-gallery>
   
   <animate-element class="product__info block{% if section.settings.enable_sticky_info %} sticky{% endif %} w-full" data-animate="fade-up" data-immediate>
+    {%- liquid
+      assign title_block = section.blocks | where: "type", "title" | first
+      assign title_block_show_price = false
+      if title_block.settings.show_price == true
+        assign title_block_show_price = true
+      endif
+    -%}
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when '@app' -%}
@@ -125,7 +130,7 @@
 
         {%- when 'text' -%}
           {%- if block.settings.text != blank -%}
-            <p class="product__text rte {{ block.settings.text_size }}" {{ block.shopify_attributes }}>
+            <p class="{% if block.settings.text != product.vendor %}product__text rte{% else %}product__vendor{% endif %} {{ block.settings.text_size }}" {{ block.shopify_attributes }}>
               {%- liquid
                 render 'icon-accordion', icon: block.settings.icon
                 echo block.settings.text
@@ -137,26 +142,27 @@
           <div class="product__text rte" {{ block.shopify_attributes }}>
             {{- 'onboarding.product_description' | t -}}
           </div>
-
+        
         {%- when 'title' -%}
-          {%- assign price_block = section.blocks | where: "type", "price" | first -%}
-          <div class="product__title{% if price_block == blank and block.settings.show_price %} with-price{% endif %}" {{ block.shopify_attributes }}>
-            <h1 class="heading leading-none {{ block.settings.title_size }} mobile:{{ block.settings.title_size_mobile }} col-span-full">
-              <split-words class="split-words block" data-animate="fade-up">{{ 'onboarding.product_title' | t }}</split-words>
+          <div class="product__title{% if block.settings.show_price %} with-price{% endif %}" {{ block.shopify_attributes }}>
+            <h1 class="leading-none font-bold {{ block.settings.title_size }} col-span-full">
+              <split-words class="split-words flex flex-wrap" data-animate="fade-up">{{ 'onboarding.product_title' | t }}</split-words>
             </h1>
 
-            {%- if price_block == blank and block.settings.show_price -%}
+            {%- if block.settings.show_price -%}
               <div id="Price-{{ section_id }}" class="product__price">
-                {%- render 'product-price', product: product, placeholder: true, use_variant: true, class: 'flex flex-wrap items-baseline gap-2 lg:flex-col xl:items-end lg:gap-1d5' -%}
+                {%- render 'product-price', product: product, use_variant: true, class: 'flex items-baseline gap-2 lg:flex-col xl:items-end lg:gap-1d5' -%}
               </div>
             {%- endif -%}
           </div>
 
         {%- when 'price' -%}
-          <div class="product__price grid gap-3" {{ block.shopify_attributes }}>
-            <div class="no-js-hidden" id="Price-{{ section_id }}">
-              {%- render 'product-price', product: product, placeholder: true, use_variant: true, class: 'flex flex-wrap items-baseline gap-2 lg:gap-1d5' -%}
-            </div>
+          <div class="product__price" {{ block.shopify_attributes }}>
+            {%- unless title_block_show_price -%}
+              <div class="no-js-hidden" id="Price-{{ section_id }}">
+                {%- render 'product-price', product: product, use_variant: true, class: 'flex items-baseline gap-2 lg:gap-1d5' -%}
+              </div>
+            {%- endunless -%}
 
             {%- if block.settings.show_taxes_notice -%}
               {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
@@ -175,76 +181,63 @@
           </div>
 
         {%- when 'quantity_selector' -%}
-          <div id="QuantityForm-{{ section_id }}" class="field" {{ block.shopify_attributes }}>
-            <label for="Quantity-{{ section_id }}" class="quantity__label label" is="quantity-label">
-              {{ 'products.quantity.label' | t }}
-            </label>
-            <div class="flex items-center gap-4">
-              <quantity-input class="quantity inline-flex relative" data-section-id="{{ section_id }}" data-product-id="{{ product.id }}">
-                <button type="button" name="minus" class="quantity__button" aria-label="{{ 'products.quantity.decrease' | t: product: product.title | escape }}">
-                  {%- render 'icon', icon: 'chevron-left', size: 'sm', class: 'stroke-2 transform' -%}
-                </button>
-                <input
-                  id="Quantity-{{ section_id }}"
-                  class="quantity__input text-sm sm:text-base font-medium text-center"
-                  type="number"
-                  name="quantity"
-                  inputmode="numeric"
-                  autocomplete="off"
-                  data-min="1"
-                  min="1"
-                  step="1"
-                  value="1"
-                  form="{{ product_form_id }}"
-                />
-                <button type="button" name="plus" class="quantity__button" aria-label="{{ 'products.quantity.increase' | t: product: product.title | escape }}">
-                  {%- render 'icon', icon: 'chevron-right', size: 'sm', class: 'stroke-2 transform' -%}
-                </button>
-              </quantity-input>
-            </div>
+          <div class="field" {{ block.shopify_attributes }}>
+            <label for="Quantity-{{ section_id }}" class="label">{{ 'products.quantity.label' | t }}</label>
+            <quantity-selector class="quantity-selector inline-flex">
+              <button type="button" name="minus" class="quantity-button" aria-label="{{ 'products.quantity.decrease' | t: product: product.title | escape }}">
+                {%- render 'icon', icon: 'chevron-left', size: 'sm', class: 'stroke-2 transform' -%}
+              </button>
+              <input
+                id="Quantity-{{ section.id }}"
+                class="quantity-input text-sm sm:text-base font-medium text-center"
+                type="text"
+                value="1"
+                min="1"
+                name="quantity"
+                size="2"
+                inputmode="numeric"
+                autocomplete="off"
+                is="quantity-input"
+                form="{{ product_form_id }}"
+              />
+              <button type="button" name="plus" class="quantity-button" aria-label="{{ 'products.quantity.increase' | t: product: product.title | escape }}">
+                {%- render 'icon', icon: 'chevron-right', size: 'sm', class: 'stroke-2 transform' -%}
+              </button>
+            </quantity-selector>
           </div>
 
         {%- when 'buy_buttons' -%}
           <div class="product-form-wrapper" {{ block.shopify_attributes }}>
-            {%- liquid
-              assign quantity_block = section.blocks | where: "type", "quantity_selector" | first
-              assign show_quantity_selector = block.settings.show_quantity_selector
-              if quantity_block
-                assign show_quantity_selector = false
-              endif
-            -%}
             <div class="product-form grid gap-8">
               <div class="product-form__buttons grid gap-4">
                 <div class="flex gap-4">
-                  {%- if show_quantity_selector -%}
-                    <label for="Quantity-{{ section_id }}" class="label sr-only">{{ 'products.quantity.label' | t }}</label>
-                    <quantity-input class="quantity inline-flex flex-auto relative">
-                      <button type="button" name="minus" class="quantity__button" aria-label="{{ 'products.quantity.decrease' | t: product: product.title | escape }}">
+                  {%- if block.settings.show_quantity_selector -%}
+                    <label for="Quantity2-{{ section_id }}" class="label sr-only">{{ 'products.quantity.label' | t }}</label>
+                    <quantity-selector class="quantity-selector inline-flex flex-auto">
+                      <button type="button" name="minus" class="quantity-button" aria-label="{{ 'products.quantity.decrease' | t: product: product.title | escape }}">
                         {%- render 'icon', icon: 'chevron-left', size: 'sm', class: 'stroke-2 transform' -%}
                       </button>
                       <input
-                        id="Quantity-{{ section_id }}"
-                        class="quantity__input text-sm sm:text-base font-medium text-center"
-                        type="number"
+                        id="Quantity2-{{ section_id }}"
+                        class="quantity-input text-sm sm:text-base font-medium text-center"
+                        type="text"
+                        value="1"
+                        min="1"
                         name="quantity"
+                        size="2"
                         inputmode="numeric"
                         autocomplete="off"
-                        data-min="1"
-                        min="1"
-                        step="1"
-                        value="1"
-                        form="{{ product_form_id }}"
+                        is="quantity-input"
                       />
-                      <button type="button" name="plus" class="quantity__button" aria-label="{{ 'products.quantity.increase' | t: product: product.title | escape }}">
+                      <button type="button" name="plus" class="quantity-button" aria-label="{{ 'products.quantity.increase' | t: product: product.title | escape }}">
                         {%- render 'icon', icon: 'chevron-right', size: 'sm', class: 'stroke-2 transform' -%}
                       </button>
-                    </quantity-input>
+                    </quantity-selector>
                   {%- endif -%}
                   
                   <button
                     type="button"
                     name="add"
-                    form="{{ product_form_id }}"
                     class="product-form__submit button button--primary button--fixed w-full"
                     is="hover-button"
                   >
@@ -264,10 +257,9 @@
             -%}
             {%- render 'social-sharing',
               section_id: section_id,
-              share_id: product.id,
               share_label: block.settings.share_label,
               share_title: product.title,
-              share_link: share_url,
+              share_permalink: share_url,
               share_image: share_image
             -%}
 
@@ -309,7 +301,7 @@
                 {%- render 'icon-accordion', icon: block.settings.icon -%}
                 <span class="text-base font-medium leading-none">{{ block.settings.heading | default: block.settings.page.title | escape }}</span>
               </div>
-              {%- render 'icon', icon: 'plus-2', size: 'xs', class: 'flex-auto' -%}
+              {%- render 'icon', icon: 'plus-alt', size: 'xs', class: 'flex-auto' -%}
             </summary>
             <div class="details__content rte text-sm text-opacity">
               {{ block.settings.content }}
@@ -320,7 +312,7 @@
 
         {%- when 'read_more' -%}
           <button type="button" class="product__more flex items-center justify-between w-full" {{ block.shopify_attributes }}>
-            <span class="text-sm-lg font-medium leading-none">
+            <span class="text-sm-base font-medium leading-none">
               {{- 'products.product.read_more' | t -}}
             </span>
             {%- render 'icon', icon: 'arrow-right', size: 'xs', class: 'flex-auto' -%}

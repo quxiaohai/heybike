@@ -1,8 +1,171 @@
 <style>
   #shopify-section-{{ section.id }} {
+    margin-top: 60px; 
     --section-padding-top: {{ section.settings.padding_top }}px;
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
   }
+
+  /* Section header */
+  #shopify-section-{{ section.id }} .title-wrapper { 
+    max-width: 800px; 
+    display: flex; 
+    flex-direction: column; 
+    margin: 0 auto; 
+  }
+
+  #shopify-section-{{ section.id }} .title-wrapper .heading { 
+    font-size: 2.5rem; 
+  }
+
+  /* Search form */
+  #shopify-section-{{ section.id }} .search__form, 
+  #shopify-section-{{ section.id }} .search-input-wrapper {
+    width: 100%; 
+    max-width: 100%; 
+    height: fit-content; 
+    margin: 0; 
+  }
+
+  #shopify-section-{{ section.id }} .search__field, 
+  #shopify-section-{{ section.id }} .search__field .input {
+    width: 100%; 
+  }
+
+  #shopify-section-{{ section.id }} .search__field .input, 
+  #shopify-section-{{ section.id }} .search__form [type=submit] { 
+    height: 62px; 
+    max-height: unset; 
+  }
+
+  /* Search box */
+  #shopify-section-{{ section.id }} .search__box {
+    margin-top: 28px; 
+  }
+
+  #shopify-section-{{ section.id }} .search__box .price {
+    flex-direction: row; 
+    align-items: center; 
+  }
+
+  #shopify-section-{{ section.id }} .search__box .price__regular { 
+    color: var(--color-red); 
+    font-size: .875rem; 
+  }
+
+  #shopify-section-{{ section.id }} .reversed-link { 
+    position: relative; 
+  }
+
+  #shopify-section-{{ section.id }} .reversed-link:after { 
+    content: ''; 
+    bottom: 0; 
+    right: 0; 
+    width: 0; 
+    height: 2px; 
+    position: absolute; 
+    display: block; 
+    background-color: var(--color-black); 
+    transition: all .3s; 
+  }
+
+  #shopify-section-{{ section.id }} .reversed-link:hover:after { 
+    left: 0; 
+    right: unset; 
+    width: 100%; 
+  }
+
+  #shopify-section-{{ section.id }} .drawer__sticky .button--primary { 
+    width: 100%; 
+    border: 2px solid var(--color-black); 
+  }
+
+  #shopify-section-{{ section.id }} .drawer__sticky .button--primary .btn-text { 
+    color: var(--color-primary); 
+  }
+
+  #shopify-section-{{ section.id }} .drawer__sticky .button--primary:hover .btn-text { 
+    color: var(--color-black); 
+  }
+
+  #shopify-section-{{ section.id }} .drawer__sticky .button--primary svg.icon-arrow-right path {
+    stroke: var(--color-primary); 
+  }
+
+  #shopify-section-{{ section.id }} .drawer__sticky .button--primary:hover svg.icon-arrow-right path { 
+    stroke: var(--color-black); 
+  }
+
+  #shopify-section-{{ section.id }} .drawer__sticky .button--primary .btn-fill { 
+    background-color: var(--color-primary); 
+  }
+
+  /* Filters */
+  #shopify-section-{{ section.id }} .facet-wrapper .btn-text { 
+    flex-direction: row-reverse; 
+  }
+  
+  #shopify-section-{{ section.id }} .facet-wrapper .button.icon-with-text .btn-text svg path { 
+    stroke: unset; 
+  }
+
+  /* Sorting */
+  #shopify-section-{{ section.id }} .sort-wrapper hover-element .btn-text * { 
+    color: var(--color-black); 
+  }
+
+  #shopify-section-{{ section.id }} .sort-wrapper hover-element:not([open]):hover .btn-text * { 
+    color: var(--color-primary); 
+  }
+  
+  #shopify-section-{{ section.id }} .sort-wrapper hover-element[open] .btn-text * { 
+    color: var(--color-primary); 
+  }
+
+  #shopify-section-{{ section.id }} hover-element:not([open]):hover .sort-close svg { 
+    filter: invert(1); 
+  }
+
+  #shopify-section-{{ section.id }} hover-element[open] .sort-listbox li:has(input[checked]) label { 
+    display: flex; 
+    width: 100%; 
+  }
+
+   #shopify-section-{{ section.id }} hover-element[open] .sort-listbox li:not(:has(input[checked])) label {
+    position: relative; 
+  }
+
+  #shopify-section-{{ section.id }} hover-element[open] .sort-listbox li:not(:has(input[checked])) label:after { 
+    content: ''; 
+    right: 0; 
+    bottom: 0; 
+    width: 0; 
+    height: 2px; 
+    position: absolute; 
+    display: block; 
+    background-color: var(--color-primary); 
+    transition: all .3s; 
+  }
+
+  #shopify-section-{{ section.id }} hover-element[open] .sort-listbox li:not(:has(input[checked])):hover label:after {
+    left: 0; 
+    right: unset; 
+    width: 100%; 
+  }
+
+  /* Responsive */
+  /* Mobile */
+  @media (max-width: 767px) { 
+    #shopify-section-{{ section.id }} .title-wrapper .heading { 
+      font-size: 1.5rem; 
+    }
+    
+    #shopify-section-{{ section.id }} .search__box {
+      margin-top: 8px; 
+    }
+  }
+
+  /* Tablet */
+  /* Desktop */
 </style>
 
 {{ 'blog.css' | asset_url | stylesheet_tag }}
@@ -85,36 +248,25 @@
                   <button class="button button--secondary icon-with-text" type="button" is="filters-toogle" aria-controls="FacetFiltersContainer" aria-expanded="true">
                     <span class="btn-fill" data-fill></span>
                     <span class="btn-text">
-                      {%- liquid
-                        render 'icon', icon: 'filter'
-                        echo 'collections.filtering.filter_hide_button' | t
-                      -%}
+                      {{ 'collections.filtering.filter_hide_button' | t }}
+                      {% render 'icon', icon: 'cg_filter' %}
                     </span>
                     <span class="btn-text btn-duplicate">
-                      {%- liquid
-                        render 'icon', icon: 'filter'
-                        echo 'collections.filtering.filter_show_button' | t
-                      -%}
-                      <facet-count class="count flex items-center justify-center text-xs font-medium rounded-full"{% if filter_count == 0 %} hidden{% endif %}>{{ filter_count }}</facet-count>
+                      {{ 'collections.filtering.filter_show_button' | t }}
+                      {% render 'icon', icon: 'cg_filter' %}
+                      {% comment %}
+                        <facet-count class="count flex items-center justify-center text-xs font-medium rounded-full"{% if filter_count == 0 %} hidden{% endif %}>{{ filter_count }}</facet-count>
+                      {% endcomment %}
                     </span>
                   </button>
                 </div>
               {%- endif -%}
             {%- endif -%}
-              {%- liquid
-                  assign productList = search.results | where: 'object_type', 'product'
-                  assign count = 0
-                  for product in productList
-                      if product.metafields.custom.hidden_link.value
-                          assign count = count | plus: 1
-                      endif
-                  endfor
-              -%}
+
             <p id="ProductCount" class="text-base lg:text-lg" role="status">
               {%- liquid
                 if search.results_count
-                    assign total = search.results_count | minus: count
-                    echo 'general.search.results_with_count' | t: terms: search.terms, count: total
+                  echo 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count
                 elsif search.products_count == search.all_products_count
                   echo 'collections.general.product_count_simple' | t: count: search.products_count
                 else
@@ -133,7 +285,7 @@
                   endif
                 endfor
               -%}
-              <div class="facet-sorting inline-flex items-center gap-6" id="SortByContainer">
+              <div class="facet-sorting inline-flex gap-6" id="SortByContainer">
                 <span>{{ 'collections.sorting.sort_by_label' | t }}</span>
                 <facet-sort class="sort-wrapper relative">
                   <hover-element class="button button--secondary sort-by whitespace-nowrap overflow-hidden z-3">
@@ -143,7 +295,7 @@
                         <span class="sort-selection">{{ sort_by_name | escape }}</span>
                         <span class="sort-title text-sm uppercase absolute left-0 opacity-0 tracking-widest">{{ 'collections.sorting.sort_button' | t }}</span>
                         <span class="sort-close flex items-center justify-center rounded-full">
-                          {%- render 'icon', icon: 'close', size: 'sm' -%}
+                          {%- render 'icon', icon: 'cg_arrow-down' -%}
                         </span>
                       </span>
                       <ul class="sort-listbox text-left grid gap-2 absolute left-0 opacity-0 invisible w-full h-auto">
@@ -221,8 +373,7 @@
 
                 {%- case item.object_type -%}
                   {%- when 'product' -%}
-                    {%- if item.metafields.custom.hidden_link.value != true -%}
-                    {%- render 'product-card',
+                    {%- render 'cg_product-card',
                       product: item,
                       product_id: item.id,
                       section_id: section.id,
@@ -237,9 +388,10 @@
                       show_quick_add: settings.product_quick_add,
                       show_quick_view: settings.product_quick_view,
                       show_save_amount: settings.product_save_amount,
-                      save_type: settings.product_save_type
+                      save_type: settings.product_save_type,
+                      show_icon_list: settings.product_icon_list
                     -%}
-                    {%- endif -%}
+
                   {%- when 'article' -%}
                     {%- liquid
                       assign article = item
@@ -339,7 +491,6 @@
                         </div>
                       </div>
                     </div>
-
                 {%- endcase -%}
               {%- endfor -%}
             </motion-list>

@@ -1,0 +1,305 @@
+{%comment%}Beae V2.0{%endcomment%}
+{%- comment -%}
+  Default Beae theme
+{%- endcomment -%}
+<!doctype html>
+<html class="no-js" lang="{{ shop.locale }}">
+<head>
+ <!-- START THEME HEADER --> 
+
+<!-- BEAE-GLOBAL-FONT --> 
+{% capture the_snippet_global_font %}{% include 'beae-global-font' %}{% endcapture %} {% unless the_snippet_global_font contains 'Liquid error' %} {{ the_snippet_global_font }} {% endunless %} 
+ <!-- END BEAE-GLOBAL-FONT -->
+<!-- BEAE-HEADER --> 
+{%- render 'beae_header' -%}
+<!-- END BEAE-HEADER -->
+  
+  
+  
+  
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+  {% # theme-check-disable RemoteAsset %}
+  <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+  <link rel="dns-prefetch" href="https://maps.googleapis.com">
+  <link rel="dns-prefetch" href="https://maps.gstatic.com">
+  {% # theme-check-enable RemoteAsset %}
+
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" type="image/png" />
+  {%- endif -%}
+    
+  
+
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- jQuery CDN -->
+  
+  
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+  <!-- Slick -->
+  
+  {{ 'slick.css' | asset_url | stylesheet_tag }}
+  {{ 'slick-theme.css' | asset_url | stylesheet_tag }}
+
+  {% comment %}
+    <!-- Flickity JavaScript -->
+    
+  {% endcomment %}
+
+  <!-- Flickity -->
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.css">
+  
+
+  {%- if page_description -%}
+    
+  {%- endif -%}
+
+  {%- liquid
+    render 'social-meta-tags'
+    
+    render 'css-variables'
+    echo 'theme.css' | asset_url | stylesheet_tag: preload: true
+    
+    if direction == 'rtl'
+      echo 'rtl.css' | asset_url | stylesheet_tag: preload: true
+    endif
+  -%}
+
+  <link rel="stylesheet" href="{{ 'apps.css' | asset_url }}" media="print" fetchpriority="low" onload="this.media='all'">
+  
+  {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
+  
+  {% style %}
+    /* CLEARgo */
+    /* Custom */
+    .button-with-url {
+      display: flex; 
+      align-items: center; 
+      gap: 12px; 
+      color: var(--color-black); 
+    }
+
+    .button-with-url:after { 
+      content: ''; 
+      position: static; 
+      display: block;
+      width: 10px; 
+      height: 10px; 
+      aspect-ratio: 1; 
+      background-image: url({{ 'cg_upright-arrow.svg' | asset_url }}); 
+      background-position: center; 
+      background-size: contain; 
+      background-repeat: no-repeat; 
+      transition: transform .3s; 
+    }
+
+    .button-with-url:hover { 
+      color: var(--color-black) !important; 
+    }
+
+    .button-with-url:hover:after { 
+      transform: rotate(45deg); 
+    }
+
+    .transparent-btn { 
+      position: relative; 
+      background: transparent; 
+      background-color: transparent; 
+      border: 1px solid var(--color-black); 
+      z-index: 1; 
+      transition: border-color .3s; 
+    }
+
+    .transparent-btn:hover { 
+      border-color: transparent; 
+    }
+
+    .transparent-btn:before { 
+      content: ""; 
+      top: 100%; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      position: absolute; 
+      display: block; 
+      background-color: var(--color-button-gradient); 
+      transition: all .3s; 
+      z-index: 0; 
+    }
+
+    .transparent-btn:hover:before { 
+      top: 0; 
+    }
+    
+    .mega-menu__nav-item a:after { 
+      content: "";
+      display: block; 
+      width: calc(20vw / 19.2); 
+      height: calc(20vw / 19.2); 
+      aspect-ratio: 1; 
+      background-image: url({{ 'cg_right-arrow.svg' | asset_url }}); 
+      background-size: contain; 
+      background-repeat: no-repeat; 
+      background-position: center; 
+    }
+
+    details .menu__item:after { 
+      content: ''; 
+      display: block; 
+      width: 8px; 
+      height: 8px; 
+      aspect-ratio: 1; 
+      margin-left: 4px; 
+      background-image: url({{ 'cg_menu-arrow-down.svg' | asset_url }}); 
+      background-size: contain; 
+      background-repeat: no-repeat; 
+      background-position: bottom; 
+    }
+
+    /* Responsive */
+    /* Mobile */
+    @media (max-width: 767px) { 
+      .title-wrapper .button {
+        gap: 4px; 
+        padding: 24px 32px; 
+      }
+    }
+
+    /* Tablet */
+    @media (min-width: 768px) and (max-width: 1366px) { 
+      .mega-menu__nav-item a:after { 
+        width: calc(20vw / 13.66); 
+        height: calc(20vw / 13.66); 
+      }
+    }
+
+    /* Desktop */
+    @media (min-width: 1920px) { 
+      .mega-menu__nav-item a:after { 
+        width: 20px; 
+        height: 20px; 
+      }
+    }
+  {% endstyle %}
+
+  {{ content_for_header }}
+
+  {% comment %}
+    
+  {% endcomment %}
+
+  
+  
+
+  {%- if settings.enable_tab_attention -%}
+    
+  {%- endif -%}
+
+  {%- if request.page_type contains 'customers/' -%}
+    
+  {%- endif -%}
+
+  {%- render 'js-variables' -%}
+<script src="{{ 'global.js' | asset_url }}" defer="defer"></script> 
+ <!-- END THEME HEADER --> 
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="canonical" href="{{ canonical_url }}">
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {%- endif -%}
+
+  {%- capture seo_title -%}
+    {%- if template == 'search' and search.performed == true -%}
+      {{ 'general.search.heading' | t: count: search.results_count }}: {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+    {%- else -%}
+      {{ page_title }}
+    {%- endif -%}
+    
+    {%- if current_tags -%}
+      {%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    {%- endif -%}
+    {%- if current_page != 1 -%}
+      &ndash; {{ 'general.meta.page' | t: page: current_page }}
+    {%- endif -%}
+    {%- assign escaped_page_title = page_title | escape -%}
+    {%- unless escaped_page_title contains shop.name -%}
+      &ndash; {{ shop.name }}
+    {%- endunless -%}
+  {%- endcapture -%}
+  <title>{{ seo_title | strip }}</title>
+ 
+  {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+
+  {%- assign og_title = page_title -%}
+  {%- assign og_url = canonical_url -%}
+  {%- assign og_type = 'website' -%}
+  {%- assign og_description = page_description | default: shop.description | default: shop.name -%}
+
+
+  {% comment %} Template specific overides {% endcomment %}
+  {% if template.name == 'product' %}
+    {%- assign og_title = product.title | strip_html -%}
+    {%- assign og_type = 'product' -%}
+    {% if product.images.size > 0 %}
+      {%- capture og_image_tags -%}{% for image in product.images limit:3 -%}<meta property="og:image" content="http:{{ image.src | product_img_url: '1200x1200' }}">{% endfor -%}{% endcapture -%}
+      {%- capture og_image_secure_url_tags -%}{% for image in product.images limit:3 -%}<meta property="og:image:secure_url" content="https:{{ image.src | product_img_url: '1200x1200' }}">{% endfor -%}{% endcapture -%}
+    {% endif %}
+
+  {% elsif template.name == 'article' %}
+    {%- assign og_title = article.title | strip_html -%}
+    {%- assign og_type = 'article' -%}
+    {%- assign og_description = article.excerpt_or_content | strip_html -%}
+    {% if article.image %}
+      {%- capture og_image_tags -%}<meta property="og:image" content="http:{{ article.image | img_url: '1200x1200' }}">{%- endcapture -%}
+      {%- capture og_image_secure_url_tags -%}<meta property="og:image:secure_url" content="https:{{ article.image | img_url: '1200x1200' }}">{%- endcapture -%}
+    {% endif %}
+
+  {% elsif template.name == 'collection' %}
+    {%- assign og_title = collection.title | strip_html -%}
+    {%- assign og_type = 'product.group' -%}
+    {% if collection.image %}
+      {%- capture og_image_tags -%}<meta property="og:image" content="http:{{ collection.image | img_url: '1200x1200' }}">{%- endcapture -%}
+      {%- capture og_image_secure_url_tags -%}<meta property="og:image:secure_url" content="https:{{ collection.image | img_url: '1200x1200' }}">{%- endcapture -%}
+    {% endif %} 
+
+  {% elsif template.name == 'password' %}
+    {%- assign og_title = shop.name -%}
+    {%- assign og_url = shop.url -%}
+    {%- assign og_description = shop.description | default: shop.name -%}
+  {% endif %}
+
+  <meta property="og:site_name" content="{{ shop.name }}">
+  <meta property="og:url" content="{{ og_url }}">
+  <meta property="og:title" content="{{ og_title }}">
+  <meta property="og:type" content="{{ og_type }}">
+  <meta property="og:description" content="{{ og_description }}">
+  {% if template.name == 'product' %}
+    <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
+    <meta property="og:price:currency" content="{{ cart.currency.iso_code }}">
+  {% endif %}
+  {{ og_image_tags }}
+  {{ og_image_secure_url_tags }}
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ og_title }}">
+  <meta name="twitter:description" content="{{ og_description }}">
+  {%- render 'beae_header', BEAE_THEME: true -%}
+   {{ content_for_header }}
+  
+</head>
+
+<body class="template-{{ template | split: '.' | first }}">
+  {%- render 'beae_ab_snippet' -%}
+  <div class="Beae-theme">
+    {{ content_for_layout }}
+  </div>
+</body>
+</html>

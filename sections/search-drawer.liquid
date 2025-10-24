@@ -1,7 +1,91 @@
+{% comment %}
+  Adjusted by CLEARgo
+{% endcomment %}
+
+<style>
+  #shopify-section-{{ section.id }} #SearchDrawer .drawer__title {
+    font-weight: 700; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .drawer__header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--color-grey-1);
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .drawer__scrollable {
+    padding: 1.5rem; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .search__field {
+    width: 100%; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .search__field .input, 
+  #shopify-section-{{ section.id }} #SearchDrawer .search__form [type=submit] {
+    height: 60px; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .horizontal-product__details .vendor {
+    display: block; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .price {
+    flex-direction: row; 
+    align-items: center; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .price__regular {
+    color: var(--color-red); 
+    font-size: 1rem; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .drawer__sticky [type=submit] {
+    width: 100%; 
+    background-color: var(--color-lemon-yellow); 
+    border: 2px solid var(--color-lemon-yellow); 
+    color: var(--color-black); 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .drawer__sticky [type=submit]:hover .btn-text {
+    color: var(--color-lemon-yellow); 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .drawer__sticky [type=submit] svg.icon-arrow-right {
+    filter: brightness(0); 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .drawer__sticky [type=submit]:hover svg.icon-arrow-right {
+    filter: unset; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .reversed-link { 
+    position: relative; 
+    color: var(--color-black); 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .reversed-link:after { 
+    content: ''; 
+    position: absolute; 
+    bottom: 0; 
+    right: 0; 
+    width: 0; 
+    height: 2px; 
+    background-color: var(--color-black); 
+    transition: all .3s; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .reversed-link:hover:after {
+    width: 100%; 
+    left: 0; 
+    right: unset; 
+  }
+</style>
+
 {%- if settings.enable_search -%}
   {%- if request.page_type != 'search' -%}
     <script src="{{ 'search.js' | asset_url }}" defer></script>
   {%- endif -%}
+  
   <search-drawer id="SearchDrawer" class="search-drawer drawer drawer--end z-35 fixed bottom-0 left-0 h-full w-full pointer-events-none"
     role="dialog"
     aria-modal="true"

@@ -1,30 +1,64 @@
+{% comment %}
+  Adjusted by CLEARgo
+{% endcomment %}
+
 {%- liquid
   assign show_promotions = false
   if block.settings.promo_image_1 != blank or block.settings.promo_image_2 != blank or block.settings.promo_image_3 != blank or block.settings.promo_image_4 != blank or block.settings.promo_image_5 != blank
     assign show_promotions = true
   endif
 -%}
-
+  {% assign show_product = false %}
 <div class="mega-menu__container invisible">
-  <ul class="mega-menu__list page-width{% if full_width %} page-width--full{% endif %} flex flex-wrap w-full h-full overflow-hidden" role="list" tabindex="-1">
+  <ul class="mega-menu__list {% if full_width %} page-width--full{% endif %} flex w-full h-full overflow-hidden" role="list" tabindex="-1">
     {%- if link.links != blank -%}
-      <li class="mega-menu__item mega-menu__item--nav mega-menu__item--{{ block.settings.menu_width }}{% unless show_promotions %} mega-menu__item--full{% endunless %} opacity-0 w-full grid">
-        <ul class="mega-menu__nav{% if link.links.size > 6 %} mega-menu__nav--more{% endif %}{% if show_promotions %} grid{% else %} flex flex-wrap{% endif %}">
+      {% assign link_title = link.title | downcase | handleize  %}
+      {% if link_title == 'ebikes' or link_title == 'equipments' %}
+          {% assign show_product = true %}
+      {% endif %}
+      <div class="inner-wrapper">
+      <li class="mega-menu__item mega-menu__item--nav{% unless show_promotions %} mega-menu__item--full{% endunless %} opacity-0 w-full grid">
+        <ul class="mega-menu__nav{% if link.links.size > 6 %} mega-menu__nav--more{% endif %} {% if show_product %}show-nav{% endif %}{% unless link_title == 'ebikes' or link_title == 'equipments' %}{% if show_promotions %} grid{% else %} flex flex-wrap{% endif %}{% endunless %}">
+         {% assign index = '' %}
           {%- for childlink in link.links -%}
-            <li class="opacity-0">
-              {%- if block.settings.show_menu_image and childlink.type == 'collection_link' and childlink.object.image != blank -%}
+            {% assign collection_url = '' %}
+            {% if childlink.url contains 'collections'  %}
+             {% assign collection_url = childlink.url | split: 'collections/' | last %}
+            {% endif %}
+            
+            <li class="{% if forloop.first %}active-list{% endif %}" data-name="{% if collection_url != blank %}{{ collection_url }}{% else %}#{% endif %}">
+              {%- if block.settings.show_menu_image %}
+                {% comment %}
+                {% if childlink.type == 'collection_link' and childlink.object.image != blank -%}
                 <a href="{{ childlink.url }}" class="media media--wide block relative overflow-hidden">
                   {{- childlink.object.image | image_url: width: childlink.object.image.width | image_tag: loading: 'lazy', widths: '180,360,540,720,900,1080', is: 'lazy-image' -}}
                 </a>
+                
+               {% if childlink.url contains 'collections/' %}
+                  {%- render 'icon', icon: 'arrow-right', size: 'lg', class: 'transform' -%}
+                 {% endif %}
+                {% else %}
+                {% endcomment %}
+              
+                {% assign childlink_handle = childlink.handle  | append: '.png'  %}
+                <a href="javascript:void(0);" class="media media--wide block relative overflow-hidden">
+                 <img src="{{ childlink_handle | file_img_url }}">
+                </a>
+              
               {%- endif -%}
-              <a href="{{ childlink.url }}" class="{% if block.settings.menu_width != 'small' %}heading {% endif %}reversed-link text-base-xl leading-tight tracking-tight{% if childlink.current %} is-active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+            
+              <a href="{% if childlink.url contains 'collections/' %}javascript:void(0);{% else %}{{ childlink.url }}{% endif %}" data-name="{% if collection_url != blank %}{{ collection_url }}{% else %}#{% endif %}" class="heading-title heading text-base-xl leading-tight font-bold tracking-tight{% if forloop.first and show_product  %} is-active highlighted-text relative animate{% endif %}"{% if childlink.current %} aria-current="page"{% endif %} {% if forloop.first %}is="highlighted-text" data-style="full_text"{% endif %}>
                 {{- childlink.title | escape -}}
+                {% if childlink.url contains 'collections/' %}
+                  {%- render 'icon', icon: 'cg_arrow-right' -%}
+                {% endif %}
               </a>
+              
               {%- if childlink.links != blank -%}
                 <ul>
                   {%- for grandchildlink in childlink.links -%}
                     <li>
-                      <a href="{{ grandchildlink.url }}" class="{% if block.settings.menu_width != 'small' %}reversed-link text-base xl:text-lg{% else %}heading reversed-link text-xl-3xl tracking-tighter leading-tight{% endif %}{% if grandchildlink.current %} is-active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                      <a {% if grandchildlink.title == 'Facebook Group' %} target="_blank"{% endif %} href="{{ grandchildlink.url }}" class="reversed-link text-base xl:text-lg{% if grandchildlink.current %} is-active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
                         {{- grandchildlink.title | escape -}}
                       </a>
                     </li>
@@ -33,16 +67,166 @@
               {%- endif -%}
             </li>
           {%- endfor -%}
+          {%- if block.settings.button_label != blank -%}
+            <div class="mega-menu__footer relative">
+              <a href="{{link.url}}" class="shop-all-btn button button--primary flex items-center justify-between w-full h-full"{% if block.settings.button_link != blank %} href="{{ block.settings.button_link }}"{% else %} role="link" aria-disabled="true"{% endif %}>
+                <span class="btn-fill" data-fill></span>
+                <span class="btn-text">
+                  <span class="text-lg-2xl font-bold tracking-tight">{{ block.settings.button_label | escape }}</span>
+                  {% render 'icon', icon: 'cg_arrow-upright' %}
+                  {% render 'icon', icon: 'cg_mega-menu-arrow-right' %}
+                </span>
+              </a>
+            </div>
+          {%- endif -%}
         </ul>
+     
+      {% if show_product %}
+      <div class="collections-list" id="menu-{{ forloop.index }}" {{ index }}>
+      {%- for childlink in link.links -%}
+        {% assign collection_url = childlink.url | split: 'collections/' | last %}
+        {% assign products = collections[collection_url].products %}
+      
+        {% if products.size > 0 %}
+          <div class="collection_url {{ collection_url }}" id="{{ collection_url }}" style="display:none;">
+            <div class="collection_wrapper">
+            {% for product in products %}
+              {% assign product_count = products.size %}
+              {% if forloop.index0 < 3 %}
+                <a class="menu_product-card" href="{{ product.url }}">
+                  {%- if product.metafields.theme.label.value != blank -%}
+                  <div class="badges gap-1 justify-center flex">
+                      {%- capture styles -%}
+                        {%- if product.metafields.theme.label_color.value != blank -%}
+                          --badge-background: {{ product.metafields.theme.label_color.value }}; --badge-foreground: #ffffff;
+                        {%- endif -%}
+                      {%- endcapture -%}
+                      {%- for label in product.metafields.theme.label.value -%}
+                        <span class="badge flex items-center gap-1d5 font-medium leading-none rounded-full"{% if styles != blank %} style="{{ styles }}"{% endif %}>
+                          {{- label | escape -}}
+                        </span>
+                      {%- endfor -%}
+                  </div>
+                  {%- endif -%}
+                  <div class="product-info">
+                  {%- assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
+                  {{- featured_media | image_url: width: featured_media.width | image_tag: size: '160x160' -}}
+                  <div class="product_content">
+                    <div class="product-title">
+                      {{ product.title }}
+                      {% render 'icon', icon: 'cg_arrow-right' %}
+                    </div>
+                    {% comment %}
+                    <div class="product-price">
+                      <span class="regular-price">{{ product.price | money }}</span>
+                    </div>
+                    {% endcomment %}
+                    <div class="product-description">{% if product.metafields.my_fields.short_description != blank %}{{ product.metafields.my_fields.short_description }}{% else %}{{ product.descriptions | split : '.' | first }}{% endif %}</div>
+                  </div>
+                  </div>
+                </a>
+              {% endif %}
+            {% endfor %}
+            </div>
+            {% comment %}
+            <a href="{{ childlink.url }}" class="button button--secondary view-all_btn" is="hover-link">
+              <span class="btn-fill" data-fill></span>
+              <span class="btn-text">
+                View All ({{ product_count }})
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
+                  <path d="M9.5 1.10254L15 6.60254L9.5 12.1025M1 6.60254H14.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+            {% endcomment %}
+          </div>
+        {% endif %}
+      {%- endfor -%}
+      </div>        
+    {% endif %}
+        {% comment %}
         {%- if block.settings.button_label != blank -%}
           <div class="mega-menu__footer relative">
-            <a class="flex items-center justify-between w-full h-full"{% if block.settings.button_link != blank %} href="{{ block.settings.button_link }}"{% if block.settings.button_external %} target="_blank" rel="noopener"{% endif %}{% else %} role="link" aria-disabled="true"{% endif %}>
-              <span class="{% if block.settings.menu_width != 'small' %}heading {% endif %}reversed-link text-lg-2xl tracking-tight">{{ block.settings.button_label | escape }}</span>
+            <a class="flex items-center justify-between w-full h-full"{% if block.settings.button_link != blank %} href="{{ block.settings.button_link }}"{% else %} role="link" aria-disabled="true"{% endif %}>
+              <span class="reversed-link text-lg-2xl font-bold tracking-tight">{{ block.settings.button_label | escape }}</span>
               {%- render 'icon', icon: 'arrow-right', size: 'lg', class: 'transform' -%}
             </a>
           </div>
         {%- endif -%}
+        {% endcomment %}
       </li>
+
+      {% if block.settings.icon_1 != blank or 
+            block.settings.column_heading_1 != blank or 
+            block.settings.column_desc_1 != blank or 
+            block.settings.icon_2 != blank or 
+            block.settings.column_heading_2 != blank or 
+            block.settings.column_desc_2 != blank or 
+            block.settings.icon_3 != blank or 
+            block.settings.column_heading_3 != blank or 
+            block.settings.column_desc_3 != blank or 
+            block.settings.icon_4 != blank or 
+            block.settings.column_heading_4 != blank or 
+            block.settings.column_desc_4 != blank
+      %}
+        <li class="mega-menu__item--footer">
+          <ul class="mega-menu__multicolumns">
+            <li class="mega-menu__column mega-menu__column-1">
+              {% if block.settings.icon_1 != blank %}
+                <img class="column-icon" src="{{ block.settings.icon_1 | image_url: width: 38 }}" />
+              {% endif %}
+              <div class="column-content">
+                {% if block.settings.column_heading_1 != blank %}
+                  <p class="column-heading">{{ block.settings.column_heading_1 }}</p>
+                {% endif %}
+                {% if block.settings.column_desc_1 != blank %}
+                  <p class="column-desc">{{ block.settings.column_desc_1 }}</p>
+                {% endif %}
+              </div>
+            </li>
+            <li class="mega-menu__column mega-menu__column-2">
+              {% if block.settings.icon_2 != blank %}
+                <img class="column-icon" src="{{ block.settings.icon_2 | image_url: width: 38 }}" />
+              {% endif %}
+              <div class="column-content">
+                {% if block.settings.column_heading_2 != blank %}
+                  <p class="column-heading">{{ block.settings.column_heading_2 }}</p>
+                {% endif %}
+                {% if block.settings.column_desc_2 != blank %}
+                  <p class="column-desc">{{ block.settings.column_desc_2 }}</p>
+                {% endif %}
+              </div>
+            </li>
+            <li class="mega-menu__column mega-menu__column-3">
+              {% if block.settings.icon_3 != blank %}
+                <img class="column-icon" src="{{ block.settings.icon_3 | image_url: width: 38 }}" />
+              {% endif %}
+              <div class="column-content">
+                {% if block.settings.column_heading_3 != blank %}
+                  <p class="column-heading">{{ block.settings.column_heading_3 }}</p>
+                {% endif %}
+                {% if block.settings.column_desc_3 != blank %}
+                  <p class="column-desc">{{ block.settings.column_desc_3 }}</p>
+                {% endif %}
+              </div>
+            </li>
+            <li class="mega-menu__column mega-menu__column-4">
+              {% if block.settings.icon_4 != blank %}
+                <img class="column-icon" src="{{ block.settings.icon_4 | image_url: width: 38 }}" />
+              {% endif %}
+              <div class="column-content">
+                {% if block.settings.column_heading_4 != blank %}
+                  <p class="column-heading">{{ block.settings.column_heading_4 }}</p>
+                {% endif %}
+                {% if block.settings.column_desc_4 != blank %}
+                  <p class="column-desc">{{ block.settings.column_desc_4 }}</p>
+                {% endif %}
+              </div>
+            </li>
+          </ul>
+        </li>
+      {% endif %}
+    </div>
     {%- endif -%}
 
     {%- if show_promotions -%}
@@ -80,40 +264,138 @@
             assign promo_overlay_opacity = 'promo_overlay_opacity_' | append: i
             assign promo_overlay_opacity = block.settings[promo_overlay_opacity]
           -%}
-          <li class="mega-menu__item flex opacity-0 w-full">
-            <div class="media-card media-card--{{ settings.card_style }}{% if promo_overlay_content %} media-card--overlap{% endif %} overflow-hidden">
-              <a class="media-card__link flex flex-col w-full h-full relative"{% if promo_link != blank %} href="{{ promo_link }}"{% else %} role="link" aria-disabled="true"{% endif %}
-                aria-label="{{ promo_heading | default: promo_subtext | escape }}"
-                style="--color-foreground: {{ promo_color_text.rgb }}; --color-overlay: {{ promo_color_overlay.rgb }}; --overlay-opacity: {{ promo_overlay_opacity | divided_by: 100.0 }};"
-              >
+          <li class="mega-menu__item media-card media-card--{{ settings.card_style }}{% if promo_overlay_content %} media-card--overlap{% endif %} overflow-hidden opacity-0 w-full">
+            <a class="media-card__link grid w-full h-full relative"{% if promo_link != blank %} href="{{ promo_link }}"{% else %} role="link" aria-disabled="true"{% endif %}
+              style="--color-foreground: {{ promo_color_text.rgb }}; --color-overlay: {{ promo_color_overlay.rgb }}; --overlay-opacity: {{ promo_overlay_opacity | divided_by: 100.0 }};"
+            >
+              {% comment %}
                 {%- if promo_tag != blank -%}
                   <div class="badges z-2 absolute grid gap-3 pointer-events-none">
                     <span class="badge badge--onsale flex items-center gap-1d5 font-medium leading-none rounded-full">{{ promo_tag | escape }}</span>
                   </div>
                 {%- endif -%}
-                <div class="media media--{{ promo_image_ratio }} relative overflow-hidden">
-                  {{- promo_image | image_url: width: promo_image.width | image_tag: loading: 'lazy', widths: '180,360,540,720,900,1080', is: 'lazy-image' -}}
-                </div>
-                {%- if promo_heading != blank or promo_subtext != blank -%}
-                  <div class="media-card__content flex justify-between items-center gap-4 w-full">
-                    <div class="media-card__text opacity-0 shrink-1 grid gap-0d5">
-                      {%- if promo_heading != blank -%}
-                        <p>
-                          <span class="heading reversed-link text-xl-3xl tracking-tighter leading-tight">{{ promo_heading | escape }}</span>
-                        </p>
-                      {%- endif -%}
-                      {%- if promo_subtext != blank -%}
-                        <p class="leading-none text-xs">{{ promo_subtext }}</p>
-                      {%- endif -%}
-                    </div>
-                    {%- render 'icon', icon: 'arrow-right', size: 'xs', class: 'transform shrink-0 hidden xl:block' -%}
+              {% endcomment %}
+              <div class="media media--{{ promo_image_ratio }} relative overflow-hidden">
+                {{- promo_image | image_url: width: promo_image.width | image_tag: loading: 'lazy', widths: '180,360,540,720,900,1080', is: 'lazy-image' -}}
+              </div>
+              {%- if promo_heading != blank or promo_subtext != blank -%}
+                <div class="media-card__content flex justify-between items-center gap-4 w-full">
+                  <div class="media-card__text opacity-0 shrink-1">
+                    {%- if promo_heading != blank -%}
+                      <span class="heading reversed-link text-xl-3xl font-bold tracking-tighter leading-none">{{ promo_heading | escape }}</span>
+                    {%- endif -%}
+                    {%- if promo_subtext != blank -%}
+                      <p class="leading-none text-xs">{{ promo_subtext }}</p>
+                    {%- endif -%}
                   </div>
-                {%- endif -%}
-              </a>
-            </div>
+                  {%- render 'icon', icon: 'arrow-right', size: 'xs', class: 'transform shrink-0 hidden xl:block' -%}
+                </div>
+              {%- endif -%}
+            </a>
           </li>
         {%- endif -%}
       {%- endfor -%}
     {%- endif -%}
   </ul>
 </div>
+  <script>
+  var listMenu = document.querySelectorAll(".list-li");
+  listMenu.forEach(function(listitem) {
+    listitem.addEventListener("mouseenter", function() {
+        var collectionsLists = this.querySelectorAll('.collections-list > div');
+        var menuActive = this.querySelectorAll('.show-nav > li');
+      
+         menuActive.forEach(function(Activemenu, index) {
+            if (index === 0) {
+              Activemenu.classList.add('active-list');
+              Activemenu.querySelector('.heading-title').setAttribute("is", "highlighted-text");
+              Activemenu.querySelector('.heading-title').setAttribute("data-style", "full_text");
+              Activemenu.querySelector('.heading-title').classList.add('highlighted-text','relative','animate')
+            } else {
+              Activemenu.classList.remove('active-list');
+              Activemenu.querySelector('.heading-title').removeAttribute("is", "highlighted-text");
+              Activemenu.querySelector('.heading-title').removeAttribute("data-style", "full_text");
+              Activemenu.querySelector('.heading-title').classList.remove('highlighted-text','relative','animate')
+            }
+        });
+          collectionsLists.forEach(function(collection, index) {
+            if (index === 0) {
+                collection.style.display = 'block'; 
+            } else {
+                collection.style.display = 'none'; 
+            }
+        });
+    });
+});
+
+   
+var menuItems = document.querySelectorAll(".show-nav li");
+ 
+  menuItems.forEach(function(item) {
+    item.addEventListener("click", function() {
+      menuItems.forEach(function(item) {
+         var siblingLiElements = item.parentNode.querySelectorAll('li')
+          siblingLiElements.forEach(function(siblingLi) {
+              siblingLi.classList.remove("active-list");
+          });
+        var otherHeadingTitles = item.parentNode.querySelectorAll('.heading-title');
+        otherHeadingTitles.forEach(function(otherHeadingTitle) {
+        otherHeadingTitle.classList.remove('highlighted-text', 'relative', 'animate');
+        otherHeadingTitle.removeAttribute("is");
+        otherHeadingTitle.removeAttribute("data-style");
+    });
+      });
+      this.classList.add("active-list");
+      this.querySelector('.heading-title').classList.add('highlighted-text','relative','animate');
+      this.querySelector('.heading-title').setAttribute("is", "highlighted-text");
+      this.querySelector('.heading-title').setAttribute("data-style", "full_text");
+
+       showCollection()
+    });
+   
+  });
+
+  function showCollection(){
+    var collectionsList = document.querySelector(".collections-list");
+    collectionsList.style.display = "block";
+    var collectionList = document.querySelector(".collections-list");
+    var links = document.querySelectorAll(".collections-menu a");
+    var listItems = document.querySelectorAll("details[open] .show-nav li");
+    listItems.forEach(function(item) {
+    if (item.classList.contains("active-list")) {
+       var dataName = item.getAttribute("data-name");
+       if(dataName == '#'){
+         var collections = document.querySelector(".collections-list");
+         collections.style.display = "none";
+       }
+       else{
+         var collections = document.querySelectorAll(".collections-list > div");
+         collections.forEach(function(collection) {
+         if (collection.classList.contains(dataName)) {
+          collection.style.display = "block";
+         } else {
+          collection.style.display = "none";
+         }
+        });
+       }
+    }
+   });
+  }
+
+  var collectionItems = document.querySelectorAll(".list-menu .list-li");
+  collectionItems.forEach(function(item) {
+    item.addEventListener("mouseenter", function() {
+      ActiveProducts();
+    });
+  })
+  function ActiveProducts(){
+    var collectionsListItems = document.querySelectorAll('.collections-list');
+    collectionsListItems.forEach(function(item) {
+        var firstDiv = item.querySelector('div');
+        if (firstDiv) {
+            firstDiv.style.display = 'block';
+        }
+    });
+  }
+showCollection();
+</script> 

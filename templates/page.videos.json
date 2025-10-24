@@ -1,0 +1,233 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-sm",
+        "heading_tag": "h1",
+        "text_size": "text-sm",
+        "padding_top": 48,
+        "padding_bottom": 96,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich_text_76Vf3p": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_tmakBB": {
+          "type": "heading",
+          "settings": {
+            "heading": "Videos",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_RkUPU6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>if you're seeking inspiration, advice, or simply want to immerse yourself in the world of riding, look no further than our extensive collection of good reviews from riders.</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tmakBB",
+        "text_RkUPU6"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 48,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "multicolumn_KADA9g": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_d4adY6": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/I_Found_The_Perfect_Electric_Bike_HeyBike_Braap_Vlogs.webp",
+            "image_ratio": "wide",
+            "heading": "I Found The Perfect Electric Bike ! ( Hey Bike ) | Braap Vlogs",
+            "heading_size": "text-base-xl",
+            "text": "<p>By BRAAP VLOGS </p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_YmV7TM": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/Eager_First-Time_Parents_Learn_Patience_e92300d8-2e6d-4133-b6a9-006ea922712b.webp",
+            "image_ratio": "wide",
+            "heading": "Eager First-Time Parents Learn Patience",
+            "heading_size": "text-base-xl",
+            "text": "<p>By Allie & Dan</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_zYmNHL": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/UNBOXING_A_NEW_EBIKE_WITH_MONSTER_POWER_-_HEYBIKE_BRAWN_FIRST_RIDE_05e843a6-617e-497d-b8ee-2318392716a5.webp",
+            "image_ratio": "wide",
+            "heading": "Unboxing An E-bike With Monster Power! - Brawn First Ride",
+            "heading_size": "text-base-xl",
+            "text": "<p>By John Hicks</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_rFVGn4": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/The_HEYBIKE_BRAWN_is_an_Absolute_BEAST_of_an_E_Bike.webp",
+            "image_ratio": "wide",
+            "heading": "Heybike Brawn is an Absolute BEAST of an E–Bike",
+            "heading_size": "text-base-xl",
+            "text": "<p>By The Inja</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_HEFMVC": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/Heybike_Brawn_review_1699_Moto-Inspired_Beastly_Electric_Bike_with_Black_Friday_Sale_Discount.webp",
+            "image_ratio": "wide",
+            "heading": "Heybike Brawn review: $1,699 Moto-Inspired Beastly Electric Bike with Black Friday Sale Discount!",
+            "heading_size": "text-base-xl",
+            "text": "<p>By Electrified Reviews</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_Nwwz6g": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/This_crashes_your_BRAIN_-_Driving_with_a_Third_Person_View_DJI_Avata_Drone_324870c0-96fd-43be-87ce-3d5c3b31c8f8.webp",
+            "image_ratio": "wide",
+            "heading": "This crashes your BRAIN - Driving with a Third Person View (DJI Avata Drone)",
+            "heading_size": "text-base-xl",
+            "text": "<p>By Ken Heron</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_d4adY6",
+        "column_YmV7TM",
+        "column_zYmNHL",
+        "column_rFVGn4",
+        "column_HEFMVC",
+        "column_Nwwz6g"
+      ],
+      "settings": {
+        "columns": 3,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "mailto:social@heybike.com",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "rich_text_76Vf3p",
+    "multicolumn_KADA9g"
+  ]
+}

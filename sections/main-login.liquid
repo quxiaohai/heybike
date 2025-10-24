@@ -3,6 +3,33 @@
     --section-padding-top: {{ section.settings.padding_top }}px;
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
   }
+
+  #shopify-section-{{ section.id }} .heading {
+    justify-content: center; 
+    font-size: 3.5rem; 
+  }
+
+  #shopify-section-{{ section.id }} .page-width {
+    padding: 72px 20px; 
+  }
+
+  /* Responsive */
+  /* Mobile */
+  @media (max-width: 767px) {
+    #shopify-section-{{ section.id }} .heading {
+      font-size: 36px; 
+    }
+  }
+
+  /* Tablet */
+  @media (min-width: 768px) and (max-width: 1366px) { 
+    
+  }
+
+  /* Desktop */
+  @media (min-width: 1920px) {
+    
+  }
 </style>
 
 {{ 'customer.css' | asset_url | stylesheet_tag }}

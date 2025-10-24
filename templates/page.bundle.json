@@ -75,50 +75,25 @@
     },
     "rich-text": {
       "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Buy 3 and <em>save 30%<\/em>",
-            "heading_size": "title-sm",
-            "heading_tag": "h2",
-            "highlighted_text": "scribble",
-            "highlighted_scribble": "squiggle-underline"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>The choice is yours. With our bundle builder, you can select any combination from our range of products. The easiest way to keep everyone happy.<\/p>",
-            "text_size": "subtext-md",
-            "text_max_size": 32,
-            "text_font": "body",
-            "secondary_color": false,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
+      "custom_css": [
+        "@media screen and (min-width: 1536px) {.collage, .collage .title-wrapper {padding-inline: 0; }}"
       ],
       "settings": {
         "text_alignment": "left",
         "text_alignment_mobile": "left",
-        "heading": "",
-        "heading_size": "title-md",
+        "heading": "Buy 3 and <em>save 30%</em>",
+        "heading_size": "title-sm",
         "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_width": "small",
+        "heading_width": "large",
         "heading_tag": "h2",
         "subheading": "",
-        "description": "",
+        "description": "<p>The choice is yours. With our bundle builder, you can select any combination from our range of products. The easiest way to keep everyone happy.</p>",
         "button_label": "",
         "button_link": "",
         "button_external": false,
         "button_icon": true,
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
+        "highlighted_text": "scribble",
+        "highlighted_scribble": "squiggle-underline",
         "color_text": "",
         "color_background": "",
         "gradient_background": "",
@@ -136,6 +111,9 @@
     },
     "product-bundle": {
       "type": "product-bundle",
+      "custom_css": [
+        "@media screen and (min-width: 1536px) {.product-bundle {flex: 0 0 25%; } .product-bundle__sidebar {width: 100%; }}"
+      ],
       "settings": {
         "collection": "",
         "products": [],
@@ -200,7 +178,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Save $30 when buying all 3 items<\/p>",
+            "text": "<p>Save $30 when buying all 3 items</p>",
             "text_size": "subtext-md",
             "text_max_size": 32,
             "text_font": "body",
@@ -273,7 +251,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Save $30 when buying all 3 items<\/p>",
+            "text": "<p>Save $30 when buying all 3 items</p>",
             "text_size": "subtext-md",
             "text_max_size": 32,
             "text_font": "body",

@@ -1,0 +1,1314 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-product": {
+      "type": "main-product",
+      "blocks": {
+        "tab_item_FWzVyw": {
+          "type": "tab_item",
+          "settings": {
+            "link_text": "Features",
+            "link_url": "#shopify-section-template--20332707414235__cg_media_grids_with_content_hgLWqT"
+          }
+        },
+        "tab_item_FjHWMw": {
+          "type": "tab_item",
+          "settings": {
+            "link_text": "Spec&Size",
+            "link_url": "#shopify-section-template--20332707414235__product-details"
+          }
+        },
+        "tab_item_Hn6nfy": {
+          "type": "tab_item",
+          "settings": {
+            "link_text": "FAQs",
+            "link_url": "#shopify-section-template--20332707414235__faq"
+          }
+        },
+        "tab_item_fkaxab": {
+          "type": "tab_item",
+          "settings": {
+            "link_text": "Reviews",
+            "link_url": "#shopify-section-template--20332707414235__1754396315398c2a34"
+          }
+        },
+        "tab_item_xfd7LM": {
+          "type": "tab_item",
+          "disabled": true,
+          "settings": {
+            "link_text": "Components",
+            "link_url": "#shopify-section-template--19983378383067__cg_product_feature_list_WxXtr9"
+          }
+        },
+        "tab_item_hRwAiK": {
+          "type": "tab_item",
+          "disabled": true,
+          "settings": {
+            "link_text": "Spec&Param",
+            "link_url": "#shopify-section-template--19983378383067__product-details"
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "heading": "",
+            "text": "{{ product.vendor }}",
+            "text_size": "text-base"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "product-title-md",
+            "title_size_mobile": "product-title-md",
+            "show_price": true,
+            "show_rating": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "desc_text_size": 16
+          }
+        },
+        "judge_me_reviews_preview_badge_MDPqAg": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        },
+        "rating_hGj8G7": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price_dNzLyq": {
+          "type": "price",
+          "settings": {
+            "show_payment_terms": false,
+            "show_taxes_notice": false
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "settings": {
+            "heading": "",
+            "subheading": "Sale Ends In:",
+            "color_text": "#e11d48",
+            "color_background": "#fff1f2",
+            "gradient_background": ""
+          }
+        },
+        "condition_BKcqTc": {
+          "type": "condition",
+          "disabled": true,
+          "settings": {
+            "bg_color": "linear-gradient(-90deg, rgba(255, 219, 0, 1) 18.85%, rgba(255, 242, 175, 1) 100%)",
+            "left_color": "#fff2ab",
+            "text_content": "Condition: Brand New Open Box",
+            "condition_icon": "shopify://shop_images/condition-icon.svg",
+            "compare_url": "",
+            "compare_text": "Add to compare",
+            "mobile_label": "shopify://shop_images/condition-label.svg"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "show_variant_labels": true,
+            "picker_type": "button",
+            "enable_color_swatches": true,
+            "color_swatch_type": "color",
+            "size_chart": "size-fit-alpha"
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "disabled": true,
+          "settings": {
+            "inventory_threshold": 15,
+            "show_inventory_transfer": true,
+            "show_inventory_quantity": "low",
+            "color_scheme": "accent-1"
+          }
+        },
+        "bundle_collapse_8iAWrd": {
+          "type": "bundle_collapse",
+          "settings": {
+            "show_recommendations": false,
+            "recommendations_title": "<p>Popular Upgrades</p>",
+            "recommendations_limit": 10,
+            "recommendations_expand": true,
+            "recommendations_metafield": "{{ product.metafields.custom.pdp_bundle_collapse_1.value }}",
+            "recommendations_checked_metafield": [],
+            "show_complementary": false,
+            "complementary_title": "<p>More Accessories</p>",
+            "complementary_limit": 10,
+            "complementary_expand": false,
+            "complementary_metafield": "{{ product.metafields.custom.pdp_bundle_collapse_2.value }}",
+            "warranty_product": "extend-protection-plan"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_price": true,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "enable_back_in_stock": false,
+            "show_back_in_stock_name": false,
+            "show_back_in_stock_phone": false
+          }
+        },
+        "extend_product_protection_pdp_gWLMyi": {
+          "type": "shopify://apps/extend/blocks/product-protection-pdp/f3744d3b-bb7a-4029-9541-5ac3d5517b54",
+          "settings": {
+            "modal": true
+          }
+        },
+        "pickup_availability": {
+          "type": "pickup_availability",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share",
+            "show_help_desk": true,
+            "help_label": "Need help?",
+            "help_type": "drawer",
+            "help_page": ""
+          }
+        },
+        "complementary": {
+          "type": "complementary",
+          "disabled": true,
+          "settings": {
+            "heading": "Pairs well with",
+            "product_limit": 4,
+            "show_vendor": false,
+            "show_price": true
+          }
+        },
+        "text-1": {
+          "type": "text",
+          "settings": {
+            "icon": "box",
+            "icon_image": "shopify://shop_images/cg_shipping-icon.svg",
+            "icon_width": 22,
+            "heading": "",
+            "text": "Ships in 1-2 days.",
+            "text_size": "text-sm"
+          }
+        },
+        "text-2": {
+          "type": "text",
+          "settings": {
+            "icon": "headphone",
+            "icon_image": "shopify://shop_images/icon2.svg",
+            "icon_width": 20,
+            "heading": "",
+            "text": "14-day Free Trial",
+            "text_size": "text-sm"
+          }
+        },
+        "text-3": {
+          "type": "text",
+          "settings": {
+            "icon": "award",
+            "icon_image": "shopify://shop_images/icon_2be73aaa-b16c-49a7-9b1e-a2384a5a0555.svg",
+            "icon_width": 20,
+            "heading": "",
+            "text": "2-Year Warranty",
+            "text_size": "text-sm"
+          }
+        },
+        "text-4": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "icon": "box",
+            "icon_width": 20,
+            "heading": "",
+            "text": "Complimentary shipping & returns",
+            "text_size": "text-sm"
+          }
+        },
+        "sticky_buy_button": {
+          "type": "sticky_buy_button",
+          "settings": {}
+        },
+        "payment_methods_rVbRQj": {
+          "type": "payment_methods",
+          "settings": {}
+        },
+        "introduce_icon_UccMMm": {
+          "type": "introduce_icon",
+          "settings": {
+            "use_icon_metafield": "pdc_icon",
+            "use_spec_metafield": "pdc_spec",
+            "title_1": "1400W",
+            "remark_1": "Peak Moter",
+            "title_2": "28 MPH",
+            "remark_2": "Top Speed",
+            "title_3": "85 Miles",
+            "remark_3": "Max Range",
+            "title_4": "1464Wh",
+            "remark_4": "Battery Capacity",
+            "title_5": "440 lbs",
+            "remark_5": "Max Load",
+            "title_6": "20*3\" ",
+            "remark_6": "Fat Tires"
+          }
+        }
+      },
+      "block_order": [
+        "tab_item_FWzVyw",
+        "tab_item_FjHWMw",
+        "tab_item_Hn6nfy",
+        "tab_item_fkaxab",
+        "tab_item_xfd7LM",
+        "tab_item_hRwAiK",
+        "vendor",
+        "title",
+        "description",
+        "judge_me_reviews_preview_badge_MDPqAg",
+        "rating_hGj8G7",
+        "price_dNzLyq",
+        "countdown",
+        "condition_BKcqTc",
+        "variant_picker",
+        "inventory",
+        "bundle_collapse_8iAWrd",
+        "buy_buttons",
+        "extend_product_protection_pdp_gWLMyi",
+        "pickup_availability",
+        "share",
+        "complementary",
+        "text-1",
+        "text-2",
+        "text-3",
+        "text-4",
+        "sticky_buy_button",
+        "payment_methods_rVbRQj",
+        "introduce_icon_UccMMm"
+      ],
+      "custom_css": [
+        "li.product__text .icon {min-width: 32px;}",
+        ".items-center {align-items: inherit;}",
+        ".buy-buttons {margin-bottom: 24px;}"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": 60,
+        "gallery_layout": "thumbnail",
+        "thumbnail_position": "below",
+        "image_ratio": "square",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_autoplay": true,
+        "enable_video_looping": true,
+        "mobile_layout": "full_width",
+        "image_ratio_mobile": "portrait",
+        "mobile_thumbnail": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "bg_color": "#faf9f5",
+        "hide_klarna": true
+      }
+    },
+    "cg_media_grids_with_content_hgLWqT": {
+      "type": "cg_media-grids-with-content",
+      "blocks": {
+        "media_grid_jFaJBA": {
+          "type": "media-grid",
+          "settings": {
+            "bg_image": "shopify://shop_images/S1_e420cc6e-2365-4014-b699-1bad90306339.jpg",
+            "bg_image_mobile": "shopify://shop_images/S1_d3bc1a52-35d3-4477-92da-cca23aee6473.jpg",
+            "grid_heading": "1000W Peak",
+            "grid_heading_color": "#000000",
+            "grid_heading_font_size": 46,
+            "grid_heading_font_size_mobile": 38,
+            "grid_subheading": "Rear Hub Motor",
+            "grid_subheading_color": "#000000",
+            "grid_subheading_font_size": 24,
+            "grid_subheading_font_size_mobile": 16,
+            "vertical_alignment": "bottom",
+            "horizontal_alignment": "left",
+            "padding": 36,
+            "grid_column_start": 1,
+            "grid_column_end": 3,
+            "grid_row_start": 1,
+            "grid_row_end": 3
+          }
+        },
+        "media_grid_T86Afm": {
+          "type": "media-grid",
+          "settings": {
+            "bg_image": "shopify://shop_images/S2_b4d7667a-ec0b-4fbd-b122-ea86f2189a9e.jpg",
+            "bg_image_mobile": "shopify://shop_images/S2_5c2acd07-aee2-42ab-b764-e9e31f090dfd.jpg",
+            "grid_heading": "Hydraulic Disc Brakes",
+            "grid_heading_color": "#000000",
+            "grid_heading_font_size": 24,
+            "grid_heading_font_size_mobile": 16,
+            "grid_subheading": "",
+            "grid_subheading_color": "#000000",
+            "grid_subheading_font_size": 18,
+            "grid_subheading_font_size_mobile": 10,
+            "vertical_alignment": "top",
+            "horizontal_alignment": "left",
+            "padding": 16,
+            "grid_column_start": 3,
+            "grid_column_end": 4,
+            "grid_row_start": 1,
+            "grid_row_end": 2
+          }
+        },
+        "media_grid_fDjatT": {
+          "type": "media-grid",
+          "settings": {
+            "bg_image": "shopify://shop_images/S3_fc29c5e9-1c51-4756-805c-8303b96fd25c.jpg",
+            "bg_image_mobile": "shopify://shop_images/S3_67e5f20e-6729-45a3-98a6-f5f8337cd702.jpg",
+            "grid_heading": "26\"*2.5\"",
+            "grid_heading_color": "#000000",
+            "grid_heading_font_size": 24,
+            "grid_heading_font_size_mobile": 16,
+            "grid_subheading": "Anti-Puncture Tires",
+            "grid_subheading_color": "#000000",
+            "grid_subheading_font_size": 16,
+            "grid_subheading_font_size_mobile": 10,
+            "vertical_alignment": "top",
+            "horizontal_alignment": "left",
+            "padding": 16,
+            "grid_column_start": 3,
+            "grid_column_end": 4,
+            "grid_row_start": 2,
+            "grid_row_end": 3
+          }
+        },
+        "media_grid_7KHhRU": {
+          "type": "media-grid",
+          "settings": {
+            "bg_image": "shopify://shop_images/S4_d22d81fd-6d50-4ccb-8306-daf48dbd4609.jpg",
+            "bg_image_mobile": "shopify://shop_images/S4_c73f913a-6602-4847-82f4-359d23013835.jpg",
+            "grid_heading": "Step-Thru",
+            "grid_heading_color": "#000000",
+            "grid_heading_font_size": 24,
+            "grid_heading_font_size_mobile": 16,
+            "grid_subheading": "Frame",
+            "grid_subheading_color": "#000000",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 10,
+            "vertical_alignment": "top",
+            "horizontal_alignment": "left",
+            "padding": 16,
+            "grid_column_start": 4,
+            "grid_column_end": 5,
+            "grid_row_start": 1,
+            "grid_row_end": 2
+          }
+        },
+        "media_grid_Tc3cgE": {
+          "type": "media-grid",
+          "settings": {
+            "bg_image": "shopify://shop_images/S5_67aadf96-9c9c-417c-88ac-6b7a96ac3782.jpg",
+            "bg_image_mobile": "shopify://shop_images/S5_App_f2e9b2f5-c93d-4b32-8331-2ba67a777a20.jpg",
+            "grid_heading": "21 MPH",
+            "grid_heading_color": "#000000",
+            "grid_heading_font_size": 24,
+            "grid_heading_font_size_mobile": 16,
+            "grid_subheading": "Top Speed",
+            "grid_subheading_color": "#000000",
+            "grid_subheading_font_size": 16,
+            "grid_subheading_font_size_mobile": 10,
+            "vertical_alignment": "top",
+            "horizontal_alignment": "left",
+            "padding": 16,
+            "grid_column_start": 4,
+            "grid_column_end": 5,
+            "grid_row_start": 2,
+            "grid_row_end": 3
+          }
+        },
+        "media_grid_JRdBxW": {
+          "type": "media-grid",
+          "settings": {
+            "bg_image": "shopify://shop_images/S6_2e6f5632-bfe7-4a0b-a4ed-ff9c850ade0b.jpg",
+            "bg_image_mobile": "shopify://shop_images/S6_873dc413-1833-494d-970c-80df164061a7.jpg",
+            "grid_heading": "55 Miles",
+            "grid_heading_color": "#000000",
+            "grid_heading_font_size": 36,
+            "grid_heading_font_size_mobile": 28,
+            "grid_subheading": "Max Range",
+            "grid_subheading_color": "#000000",
+            "grid_subheading_font_size": 16,
+            "grid_subheading_font_size_mobile": 14,
+            "vertical_alignment": "top",
+            "horizontal_alignment": "left",
+            "padding": 16,
+            "grid_column_start": 5,
+            "grid_column_end": 6,
+            "grid_row_start": 1,
+            "grid_row_end": 3
+          }
+        }
+      },
+      "block_order": [
+        "media_grid_jFaJBA",
+        "media_grid_T86Afm",
+        "media_grid_fDjatT",
+        "media_grid_7KHhRU",
+        "media_grid_Tc3cgE",
+        "media_grid_JRdBxW"
+      ],
+      "name": "CG Media Grids with Content",
+      "settings": {
+        "heading": "Why Cityrun",
+        "content": "The Cityrun is an ebike that suits your every need, whether you’re zipping through neighborhoods or tackling long city commutes. It features a durable hydraulic front suspension for absorbing shocks. Safety, convenience, and comfort are perfectly combined in Cityrun.",
+        "btn_url": "",
+        "btn_text": "",
+        "btn_icon": "shopify://shop_images/cg_media-grids-right-arrow.svg",
+        "footer_bg_color": "#faf9f5"
+      }
+    },
+    "help-drawer": {
+      "type": "help-drawer",
+      "blocks": {
+        "content-1": {
+          "type": "content",
+          "settings": {
+            "icon": "rocket",
+            "heading": "Shipping Information",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#b45309",
+            "color_background": "#fffbeb",
+            "gradient_background": "",
+            "color_highlight": "#ffddbf",
+            "gradient_highlight": ""
+          }
+        },
+        "content-2": {
+          "type": "content",
+          "settings": {
+            "icon": "headphone",
+            "heading": "Customer Support",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#0369a1",
+            "color_background": "#f0f9ff",
+            "gradient_background": "",
+            "color_highlight": "#ffddbf",
+            "gradient_highlight": ""
+          }
+        },
+        "content-3": {
+          "type": "content",
+          "settings": {
+            "icon": "chat_bubble",
+            "heading": "FAQ’s",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#be123c",
+            "color_background": "#fff1f2",
+            "gradient_background": "",
+            "color_highlight": "#ffddbf",
+            "gradient_highlight": ""
+          }
+        },
+        "content-4": {
+          "type": "content",
+          "settings": {
+            "icon": "phone",
+            "heading": "Contact Us",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#4d7c0f",
+            "color_background": "#f7fee7",
+            "gradient_background": "",
+            "color_highlight": "#ffddbf",
+            "gradient_highlight": ""
+          }
+        }
+      },
+      "block_order": [
+        "content-1",
+        "content-2",
+        "content-3",
+        "content-4"
+      ],
+      "settings": {
+        "heading": "Need help?",
+        "description": "<p>If you have any questions, you are always welcome to contact us. We'll get back to you as soon as possible, within 24 hours on weekdays.</p>"
+      }
+    },
+    "cg_product_video_GyAeDG": {
+      "type": "cg_product-video",
+      "blocks": {
+        "slide_dtHEVr": {
+          "type": "slide",
+          "settings": {
+            "media_video": "shopify://files/videos/ALPHA KSP Intro Video Final.mp4",
+            "media_video_mobile": "shopify://files/videos/alpha3.mp4",
+            "slide_heading": "",
+            "font_size": 48,
+            "font_size_mobile": 30,
+            "heading_color": "#ffdb00",
+            "ratio_width": "1920",
+            "ratio_height": "800",
+            "ratio_width_mobile": "750",
+            "ratio_height_mobile": "1000"
+          }
+        },
+        "slide_VWLJ4B": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "media_video": "shopify://files/videos/HeybikeTyson_V03_1.mp4",
+            "slide_heading": "Slide Heading B",
+            "font_size": 48,
+            "font_size_mobile": 30,
+            "heading_color": "#ffdb00",
+            "ratio_width": "1920",
+            "ratio_height": "1080",
+            "ratio_width_mobile": "375",
+            "ratio_height_mobile": "500"
+          }
+        }
+      },
+      "block_order": [
+        "slide_dtHEVr",
+        "slide_VWLJ4B"
+      ],
+      "disabled": true,
+      "name": "CG Product Video",
+      "settings": {}
+    },
+    "cg_image_with_text_WPkaQx": {
+      "type": "cg_image-with-text",
+      "blocks": {
+        "row_gUFwex": {
+          "type": "row",
+          "settings": {
+            "row_img": "shopify://shop_images/H1_d48bdaac-df29-4c3c-9529-7ff135b9a5a6.jpg",
+            "row_heading": "1000W Peak Motor",
+            "heading_font_size": 60,
+            "row_content": "<h4>720Wh Battery Capacity<br/>600 Cycle, 80% Battery Life</h4><p>The Cityrun ebike features a powerful 500W motor (peak 1000W), delivering ample power for smooth and efficient rides in urban commuting.</p>",
+            "subheading_font_size": 32,
+            "content_font_size": 22,
+            "content_font_color": "#666666",
+            "flex_direction": "row",
+            "row_caption1": "",
+            "row_caption2": ""
+          }
+        },
+        "row_eC4eHR": {
+          "type": "row",
+          "settings": {
+            "row_img": "shopify://shop_images/H2_7bff5757-6788-4b74-badd-b966e74f8cd6.jpg",
+            "row_heading": "Safety Certified Battery",
+            "heading_font_size": 60,
+            "row_content": "<p>Cityrun has a Safety Certified Battery (UL2849 Standard) with a capacity of 720Wh. It provides safety and enough power for your daily commuting.</p>",
+            "subheading_font_size": 32,
+            "content_font_size": 20,
+            "content_font_color": "#666666",
+            "flex_direction": "row-reverse",
+            "row_caption1": "",
+            "row_caption2": ""
+          }
+        },
+        "row_jJjiUG": {
+          "type": "row",
+          "disabled": true,
+          "settings": {
+            "row_img": "shopify://shop_images/ALPHA_Ebike_Hill_Climb_pc.png",
+            "row_heading": "Power & Efficiency in Perfect Harmony",
+            "heading_font_size": 60,
+            "row_content": "<h4>Mid-drive Mivice Motor 105 N·m of Torquey</h4><p>The ALPHA is the first from the Heybike Galaxy eDrive System. This system utilizes the 500W Mivice mid-drive motor to energize your riding experience. The powerful torque sensor measures rider pedaling power to provide up to 105 N·m of efficient torque energy, giving them longer riding experiences and making the ride smoother.</p>",
+            "subheading_font_size": 32,
+            "content_font_size": 20,
+            "content_font_color": "#666666",
+            "flex_direction": "row",
+            "row_caption1": "",
+            "row_caption2": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_gUFwex",
+        "row_eC4eHR",
+        "row_jJjiUG"
+      ],
+      "name": "CG Image with Text",
+      "settings": {
+        "padding_top_desktop": 118,
+        "padding_bottom_desktop": 118,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "cg_banner_with_features_9VjnrX": {
+      "type": "cg_banner-with-features",
+      "blocks": {
+        "feature_ninLN4": {
+          "type": "feature",
+          "settings": {
+            "heading": "Hydraulic Front Suspension",
+            "description": "<p>The durable hydraulic front suspension fork helps reduce the impacts from the road on the frame to a great extent, which maximizes comfort as well.</p>"
+          }
+        },
+        "feature_NkzM8W": {
+          "type": "feature",
+          "settings": {
+            "heading": "Hydraulic Disc Brakes",
+            "description": "<p>The advanced hydraulic disc brakes provide reliable braking power for enhanced safety and control during your rides.</p>"
+          }
+        },
+        "feature_e9RnWh": {
+          "type": "feature",
+          "settings": {
+            "heading": "Comfortable Saddle",
+            "description": "<p>Enjoy the same comfort on your bike as you do on your sofa. The saddle absorbs shock and ensures you of a pleasant ride.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_ninLN4",
+        "feature_NkzM8W",
+        "feature_e9RnWh"
+      ],
+      "name": "CG Banner with Features",
+      "settings": {
+        "section_heading": "Discover Cityrun",
+        "banner_img": "shopify://shop_images/Discover_Cityrun_5cb76c5e-9701-4848-9ae0-1a6c3d9b75b8.jpg",
+        "banner_img_mobile": "shopify://shop_images/Discover_Cityrun_b674f959-2daa-4e01-bcbf-88b7e0673fb6.jpg"
+      }
+    },
+    "cg_product_feature_list_WxXtr9": {
+      "type": "cg_product-feature-list",
+      "blocks": {
+        "feature_9b3zEb": {
+          "type": "feature",
+          "settings": {
+            "feature_img": "shopify://shop_images/E4_677dcc6b-0970-49c8-a319-896a4985a545.jpg",
+            "feature_heading": "Shimano 7-speed Gears",
+            "feature_desc": "<p>Cityrun features a Shimano 7-speed gear shift system for smooth and precise gear changes, enhancing your riding experience.</p>"
+          }
+        },
+        "feature_ybC4Dj": {
+          "type": "feature",
+          "settings": {
+            "feature_img": "shopify://shop_images/E1_61f38f51-8cd2-4016-aeda-b05d4c7b0719.jpg",
+            "feature_heading": "Automatic Headlight",
+            "feature_desc": "<p>The headlight automatically turns on when the surroundings get dark, offering you more safety and convenience.</p>"
+          }
+        },
+        "feature_fVDXQH": {
+          "type": "feature",
+          "settings": {
+            "feature_img": "shopify://shop_images/E2_7cac9b4d-b58a-452f-9ba0-8fc89ec5cd29.jpg",
+            "feature_heading": "26\"*2.5\" Tires",
+            "feature_desc": "<p>The Cityrun commuter ebike is equipped with 26\"*2.5\" tires, providing great agility for a comfortable and efficient ride in urban areas.</p>"
+          }
+        },
+        "feature_hHWBPT": {
+          "type": "feature",
+          "settings": {
+            "feature_img": "shopify://shop_images/E7_544c007d-90fa-4d20-b1f9-94b18a82f23f.jpg",
+            "feature_heading": "App Connection",
+            "feature_desc": "<p>Connect your bike with the Heybike smart app for convenient control of the bike.</p>"
+          }
+        },
+        "feature_mzDqYy": {
+          "type": "feature",
+          "disabled": true,
+          "settings": {
+            "feature_img": "shopify://shop_images/E3.jpg",
+            "feature_heading": "Hydraulic Disc Brakes",
+            "feature_desc": "<p>Hydraulic disc brakes generate strong stopping force giving ALPHA the ability to stop, fast. Stopping fast means a safer ride and more fun to come.</p>"
+          }
+        },
+        "feature_q7H889": {
+          "type": "feature",
+          "disabled": true,
+          "settings": {
+            "feature_img": "shopify://shop_images/E7.jpg",
+            "feature_heading": "App Connection",
+            "feature_desc": "<p>Connect your bike with the Heybike smart app for convenient control of the bike.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_9b3zEb",
+        "feature_ybC4Dj",
+        "feature_fVDXQH",
+        "feature_hHWBPT",
+        "feature_mzDqYy",
+        "feature_q7H889"
+      ],
+      "name": "CG Product Feature List",
+      "settings": {
+        "slides_to_show": 4,
+        "slides_to_show_tablet": 3,
+        "slides_to_show_mobile": 2.5
+      }
+    },
+    "product-details": {
+      "type": "product-details",
+      "blocks": {
+        "collapsible_tab_kfMgNh": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "none",
+            "icon_width": 24,
+            "heading": "Frameset",
+            "content": "<h6>Frame</h6><p>Aluminum Alloy, removable lithium-ion battery, rear rack included, fender mounts, front & rear mount mechanical disc, kickstand mount</p><h6>Fork</h6><p>Hydraulic Suspension Front Fork</p>",
+            "metafields": "",
+            "child_heading1": "",
+            "child_content1": "",
+            "child_heading2": "",
+            "child_content2": "",
+            "child_heading3": "",
+            "child_content3": "",
+            "child_heading4": "",
+            "child_content4": "",
+            "child_heading5": "",
+            "child_content5": "",
+            "child_heading6": "",
+            "child_content6": "",
+            "child_heading7": "",
+            "child_content7": "",
+            "child_heading8": "",
+            "child_content8": "",
+            "child_heading9": "",
+            "child_content9": "",
+            "child_heading10": "",
+            "child_content10": ""
+          }
+        },
+        "collapsible_tab_fyBX6t": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "none",
+            "icon_width": 24,
+            "heading": "Wheels",
+            "content": "<h6>Hub rear</h6><p>Brushless geared hub motor, 500W Sustained, 1000W Peak, 55Nm Torque</p><h6>Spokes</h6><p>Aluminum alloy</p><h6>Tire</h6><p>26\"x 2.5\"-max tire size without fenders</p>",
+            "metafields": "",
+            "child_heading1": "",
+            "child_content1": "",
+            "child_heading2": "",
+            "child_content2": "",
+            "child_heading3": "",
+            "child_content3": "",
+            "child_heading4": "",
+            "child_content4": "",
+            "child_heading5": "",
+            "child_content5": "",
+            "child_heading6": "",
+            "child_content6": "",
+            "child_heading7": "",
+            "child_content7": "",
+            "child_heading8": "",
+            "child_content8": "",
+            "child_heading9": "",
+            "child_content9": "",
+            "child_heading10": "",
+            "child_content10": ""
+          }
+        },
+        "collapsible_tab_QfzzU7": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "none",
+            "icon_width": 24,
+            "heading": "E-system & Drivetrain",
+            "content": "<h6>Battery</h6><p>UL 2271 Recognized 48V/15Ah</p><h6>Charger</h6><p>48V/4A</p><h6>Display Type</h6><p>Smart LCD display</p><h6>Rear Derailleur</h6><p>Shimano 7 speed</p>",
+            "metafields": "",
+            "child_heading1": "",
+            "child_content1": "",
+            "child_heading2": "",
+            "child_content2": "",
+            "child_heading3": "",
+            "child_content3": "",
+            "child_heading4": "",
+            "child_content4": "",
+            "child_heading5": "",
+            "child_content5": "",
+            "child_heading6": "",
+            "child_content6": "",
+            "child_heading7": "",
+            "child_content7": "",
+            "child_heading8": "",
+            "child_content8": "",
+            "child_heading9": "",
+            "child_content9": "",
+            "child_heading10": "",
+            "child_content10": ""
+          }
+        },
+        "collapsible_tab_mfB7dj": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "none",
+            "icon_width": 24,
+            "heading": "Accessories",
+            "content": "<h6>Light</h6><p>LED, headlight & taillight with turn signals</p><h6>Rear Rack</h6><p>Capacity<strong>: </strong>120 lbs</p><h6>Kickstand</h6><p>Alloy</p>",
+            "metafields": "",
+            "child_heading1": "",
+            "child_content1": "",
+            "child_heading2": "",
+            "child_content2": "",
+            "child_heading3": "",
+            "child_content3": "",
+            "child_heading4": "",
+            "child_content4": "",
+            "child_heading5": "",
+            "child_content5": "",
+            "child_heading6": "",
+            "child_content6": "",
+            "child_heading7": "",
+            "child_content7": "",
+            "child_heading8": "",
+            "child_content8": "",
+            "child_heading9": "",
+            "child_content9": "",
+            "child_heading10": "",
+            "child_content10": ""
+          }
+        },
+        "collapsible_tab_PKmRFw": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "none",
+            "icon_width": 24,
+            "heading": "Weight & Dimensions",
+            "content": "<h6>Weight</h6><p>30 kg / 61.7 lbs</p><h6>Weight limit</h6><p>Maximum total weight limit (combined weight of rider and cargo) of 350 pounds (158.7kg).</p><h6>Ebike Dimensions</h6><p>72.8*26*46.9 inch</p>",
+            "metafields": "",
+            "child_heading1": "",
+            "child_content1": "",
+            "child_heading2": "",
+            "child_content2": "",
+            "child_heading3": "",
+            "child_content3": "",
+            "child_heading4": "",
+            "child_content4": "",
+            "child_heading5": "",
+            "child_content5": "",
+            "child_heading6": "",
+            "child_content6": "",
+            "child_heading7": "",
+            "child_content7": "",
+            "child_heading8": "",
+            "child_content8": "",
+            "child_heading9": "",
+            "child_content9": "",
+            "child_heading10": "",
+            "child_content10": ""
+          }
+        },
+        "specification_gAjGda": {
+          "type": "specification",
+          "settings": {
+            "icon": "shopify://shop_images/cityrun_a059df7d-8f07-42f0-bfe3-1fbdb04afe05.jpg",
+            "heading": "Cityrun"
+          }
+        },
+        "specification_nCQ4Tq": {
+          "type": "specification",
+          "settings": {
+            "icon": "shopify://shop_images/f61005e0dd4ae8c1efd06599ac8dff0b.jpg",
+            "heading": "Charger"
+          }
+        },
+        "specification_TD8YJd": {
+          "type": "specification",
+          "settings": {
+            "icon": "shopify://shop_images/6d4e18650a9c9901fdc5d0469953cf11.jpg",
+            "heading": "User Manual"
+          }
+        },
+        "specification_wMj6VU": {
+          "type": "specification",
+          "settings": {
+            "icon": "shopify://shop_images/b91517fce8151911361ddcad78aeaa92.jpg",
+            "heading": "User Manual"
+          }
+        },
+        "specification_NzMwAN": {
+          "type": "specification",
+          "settings": {
+            "icon": "shopify://shop_images/45b943a42c87dd66716d3c924e8a6de1.jpg",
+            "heading": "Key"
+          }
+        },
+        "collapsible_tab_whiFT8": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "icon_width": 24,
+            "heading": "Collapsible row",
+            "content": "",
+            "metafields": "",
+            "child_heading1": "Frameset",
+            "child_content1": "<p>This is content 1.</p>",
+            "child_heading2": "Frameset",
+            "child_content2": "<p>This is content 2.</p>",
+            "child_heading3": "Frameset",
+            "child_content3": "<p>This is content 3.</p>",
+            "child_heading4": "Frameset",
+            "child_content4": "<p>This is content 4.</p>",
+            "child_heading5": "Frameset",
+            "child_content5": "<p>This is content 5.</p>",
+            "child_heading6": "Frameset",
+            "child_content6": "<p>This is content 6.</p>",
+            "child_heading7": "Frameset",
+            "child_content7": "<p>This is content 7.</p>",
+            "child_heading8": "Frameset",
+            "child_content8": "<p>This is content 8.</p>",
+            "child_heading9": "Frameset",
+            "child_content9": "<p>This is content 9.</p>",
+            "child_heading10": "Frameset",
+            "child_content10": "<p>This is content 10.</p>"
+          }
+        },
+        "collapsible_tab_dPC67W": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "icon_width": 24,
+            "heading": "Collapsible row",
+            "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
+            "metafields": "",
+            "child_heading1": "",
+            "child_content1": "",
+            "child_heading2": "",
+            "child_content2": "",
+            "child_heading3": "",
+            "child_content3": "",
+            "child_heading4": "",
+            "child_content4": "",
+            "child_heading5": "",
+            "child_content5": "",
+            "child_heading6": "",
+            "child_content6": "",
+            "child_heading7": "",
+            "child_content7": "",
+            "child_heading8": "",
+            "child_content8": "",
+            "child_heading9": "",
+            "child_content9": "",
+            "child_heading10": "",
+            "child_content10": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab_kfMgNh",
+        "collapsible_tab_fyBX6t",
+        "collapsible_tab_QfzzU7",
+        "collapsible_tab_mfB7dj",
+        "collapsible_tab_PKmRFw",
+        "specification_gAjGda",
+        "specification_nCQ4Tq",
+        "specification_TD8YJd",
+        "specification_wMj6VU",
+        "specification_NzMwAN",
+        "collapsible_tab_whiFT8",
+        "collapsible_tab_dPC67W"
+      ],
+      "settings": {
+        "style": "with-border",
+        "open_first_row": true,
+        "specifications_heading": "Inside the Box",
+        "heading": "Specifications & Parameters",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#000000",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "border_color": "#cccccc"
+      }
+    },
+    "countdown_timer_zVHnEd": {
+      "type": "countdown-timer",
+      "name": "t:sections.countdown-timer.presets.name",
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/Cityrun_pc_2ff978dd-00c0-4258-afc9-20a2630d4593.jpg",
+        "image_height": "adapt",
+        "content_width": "small",
+        "content_position": "md:items-center md:justify-center",
+        "text_alignment": "center",
+        "image_mobile": "shopify://shop_images/Cityrun_Mobile_a367cbed-6e49-446e-99c2-e9daf981f74e.jpg",
+        "image_height_mobile": "adapt",
+        "content_position_mobile": "items-center justify-center",
+        "text_alignment_mobile": "center",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "question-1": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>Is cityrun suitable for short people to ride?</strong>",
+            "text": "<p>Of course! It can be said that Cityrun is most adaptable to people with short height among all models. This is because it is a tailor-made bike that takes into account people's height and handling ability. The step-through frame makes it easy to straddle the bike, and the wide and soft saddle ensures comfortable rides. The recommended rider's height for Cityrun is 5'4\" ~ 6'5\".</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question-2": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>Can I Buy A Spare Battery?</strong>",
+            "text": "<p>Of course, you can! We have to tell you that extra batteries are always in high demand and sometimes out of stock. So, grab the chance as long as it is available and shows online. And orders for batteries will be fulfilled within our general shipping time the same as e-bikes.<br/><br/>If the battery for your e-bike model shows out of stock, please do not purchase any other Heybike e-bike battery because it will not be compatible with your e-bike model. If it’s in urgent need, we recommend you contact our customer service team to help you register and arrange shipment when the battery is available.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question-3": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>What kind of weather can I ride in?</strong>",
+            "text": "<p>Cityrun can tolerate biking during most weather conditions. However, if it impacts your visibility and has the possibility to affect your bike's functionality, we don’t recommend riding in such unsafe conditions. Please be cautious about the weather and choose to ride in safe conditions.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question-4": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>Is my Cityrun pre-assembled?</strong>",
+            "text": "<p>The Cityrun is partially assembled. All you need to do is some simple assembly of the front wheel, fender, saddle, pedals, and other parts according to the instructions. You can download the Cityrun <a href=\"https://heybike.zendesk.com/hc/en-us/articles/4404612672281-User-Manuals-Bikes-Assembly\" target=\"_blank\" title=\"https://heybike.zendesk.com/hc/en-us/articles/4404612672281-User-Manuals-Bikes-Assembly\">user manual</a> or look at the <a href=\"https://www.youtube.com/playlist?list=PLY2mr2usEhKHF8L_Qrf_jY0CFlBEmzat9\" target=\"_blank\" title=\"https://www.youtube.com/playlist?list=PLY2mr2usEhKHF8L_Qrf_jY0CFlBEmzat9\">assembly video</a> for help.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question-5": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>How to adjust each PAS level speed on the ebike?</strong>",
+            "text": "<ol><li>You can adjust the PAS speed with Cityrun display.</li><li>Cityrun supports App control. You can adjust the PAS level speed in the App. Find the setting button in the App and choose \"personalize\". Then you will find the speed settings.</li></ol>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_drdKfz": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>How to turn off the automatic headlight function?</strong>",
+            "text": "<p>Cityrun's headlight can automatically turn on when the surroundings get dark. If you do not want this feature, just press the \"Auto\" button on its right handlebar and then you can turn on/off the headlight with the common button regardless of the lighting conditions.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "question-1",
+        "question-2",
+        "question-3",
+        "question-4",
+        "question-5",
+        "question_drdKfz"
+      ],
+      "settings": {
+        "style": "with-border",
+        "heading": "FAQs",
+        "heading_size": "title-lg tracking-heading",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#000000",
+        "color_background": "rgba(0,0,0,0)",
+        "gradient_background": "",
+        "panel_background": "",
+        "panel_border": "#e3e3e3",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#ffffff",
+        "overlay_opacity": 0,
+        "padding_top": 84,
+        "padding_bottom": 84,
+        "divider": false,
+        "narrow": false,
+        "rounded": false,
+        "title_margin_bottom": 0,
+        "summary_padding": 32,
+        "summary_icon_bg": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "product_limit": 6,
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "You may also like",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": true
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {
+        "product_limit": 6,
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Recently Viewed",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "1754396315398c2a34": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_WhDXAk": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_WhDXAk"
+      ],
+      "settings": {
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main-product",
+    "cg_media_grids_with_content_hgLWqT",
+    "help-drawer",
+    "cg_product_video_GyAeDG",
+    "cg_image_with_text_WPkaQx",
+    "cg_banner_with_features_9VjnrX",
+    "cg_product_feature_list_WxXtr9",
+    "product-details",
+    "countdown_timer_zVHnEd",
+    "faq",
+    "product-recommendations",
+    "recently-viewed",
+    "1754396315398c2a34"
+  ]
+}

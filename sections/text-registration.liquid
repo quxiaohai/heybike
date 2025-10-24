@@ -1,0 +1,143 @@
+<style>
+.txt-title{
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+.txt-cont.gushi p {
+  margin: 0;
+  line-height: 30px;
+}
+.txt-cont.gushi {
+  width: 80%;
+}
+.txt-cont-by {
+  padding-top: 1rem;
+}
+.txt-cont p {
+  text-align: center;
+  padding-left: 15%;
+}
+.page-width.txt {
+  padding-bottom: 2rem;
+}
+.topSpace { 
+  height:30px; 
+}
+.bredcrumbWrap { 
+  padding-top:6px; 
+  padding-bottom:6px; 
+}
+.breadcrumbs { 
+  padding-top:8px; 
+  padding-bottom:8px;
+}
+.breadcrumbs a,
+.breadcrumbs span { 
+  color: #000; 
+}
+.breadcrumbs a,
+.breadcrumbs span { 
+  display:inline-block; 
+  padding: 0 3px 0 0; 
+  margin-right: 3px; 
+  font-size:12px;
+}
+.breadcrumbs a:first-child, .breadcrumbs span:first-child {
+  padding-left:0;
+}
+.breadcrumbs .title-bold {
+  font-weight: 700;
+}
+  
+@media (max-width: 768px){
+  .txt-cont-by {
+    padding-top: 1rem;
+  } 
+  .page-width.txt {
+    padding: 0 16px;
+  }
+  .txt-cont.gushi{
+    width: 100%;
+    padding: 0;
+    padding-bottom: 2rem;
+  }
+  .txt-cont.gushi p {
+    padding: 0;
+  }
+  .txt-title{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .txt-cont {
+    color: #000;
+    font-size: 18px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    line-height: 30px;
+  }
+}
+</style>
+
+<div class="page-width">
+  {% if true %} {% include 'bss-title-store-locator' %} {% include 'bss-description-store-locator' %} {% else %} <h1 class="page-title">{{ page.title }}</h1> {% endif %}
+  <div class="rte">{{ page.content }}</div>
+</div>
+
+<section class="subtitle-heading">
+    {%- if section.settings.breadcrumb_pg -%}{%- include 'breadcrumb' -%}{%- else -%}<div class="topSpace"></div>{%- endif -%}
+<div class="txt-cont-by">
+    <div class="page-width txt">
+        {%- if section.settings.title != blank -%}
+        <div class="txt-title">
+            {{ section.settings.title }}
+        </div>
+
+        {% endif%}
+        {%- if section.settings.subtitle != blank -%}
+        <div class="txt-cont gushi">
+            {{ section.settings.subtitle}}
+        </div>
+        {% endif%}
+    </div>
+
+
+</div>
+</section>
+
+<script type="text/javascript" src="https://form.jotform.com/jsform/231561548581157"></script>
+
+{% schema %}
+{
+  "name": "Registration Text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"       
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Sub Heading"         
+    },
+    {
+      "type": "checkbox",
+      "id": "breadcrumb_pg",
+      "label": "Enable in Web Pages",
+      "default": true
+    }
+  ],
+  "presets": [{
+    "name": "Registration Text",
+    "category": "3. Banners" 
+  }]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

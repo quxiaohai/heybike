@@ -1,0 +1,169 @@
+{% comment %}
+  Created by CLEARgo
+{% endcomment %}
+
+<style>
+  #shopify-section-{{ section.id }} { 
+    
+  }
+
+  #shopify-section-{{ section.id }} .collection-list { 
+    
+  }
+
+  #shopify-section-{{ section.id }} .slick-track {
+    display: flex; 
+    padding: 0 calc((100% - 1400px) / 2)); 
+  }
+
+  #shopify-section-{{ section.id }} .collection-item {
+    padding: 0 calc(15vw / 19.2); 
+    border-radius: 20px; 
+  }
+
+  #shopify-section-{{ section.id }} .collection-item img { 
+    width: 100%; 
+    height: auto; 
+    aspect-ratio: 494 / 626; 
+    border-radius: 20px; 
+    object-fit: cover; 
+    object-position: center; 
+  }
+
+  /* Responsive */
+  /* Mobile */
+  @media (max-width: 767px) { 
+    
+  }
+  
+  /* Tablet */
+  @media (min-width: 768px) and (max-width: 1366px) {
+    #shopify-section-{{ section.id }} .collection-item {
+      width: calc(494vw / 13.66); 
+      height: calc(626vw / 13.66); 
+    }
+
+    #shopify-section-{{ section.id }} .collection-item img { 
+      width: calc(494vw / 13.66); 
+      height: calc(626vw / 13.66); 
+    }
+  }
+   
+  /* Desktop */
+  @media (min-width: 1920px) {
+    #shopify-section-{{ section.id }} .collection-item {
+      width: 494px; 
+      height: 626px; 
+    }
+
+    #shopify-section-{{ section.id }} .collection-item img { 
+      width: 494px; 
+      height: 626px; 
+    }
+  }
+</style>
+
+<!-- View -->
+<div class="collection-list-container">
+  <div class="section-header">
+    <div class="section-info">
+      {% if section.settings.section_heading != blank %}
+        <h2 class="section-heading">{{ section.settings.section_heading }}</h2>
+      {% endif %}
+      {% if section.settings.section_desc != blank %}
+        <div class="section-desc">{{ section.settings.section_desc }}</div>
+      {% endif %}
+    </div>
+    <ul class="arrow-buttons-row">
+      <li class="slick-prev"><button></button></li>
+      <li class="slick-next"><button></button></li>
+    </ul>
+  </div>
+  <ul class="collection-list">
+    {% for block in section.blocks %}
+      <li class="collection-item item-{{ forloop.index }}">
+        {% if block.settings.collection_image != blank %}
+          <img width="494" height="626" class="collection-img" src="{{ block.settings.collection_image | img_url: 'master' }}" />
+        {% endif %}
+        <div class="collection-item-inner">
+          {% if block.settings.collection_name != blank %}
+            <h3 class="collection-name">{{ block.settings.collection_name }}</h3>
+          {% endif %}
+          {% if block.settings.collection_url != blank %}
+            <a class="link-btn" href="{{ block.settings.btn_url }}"></a>
+          {% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<script>
+  addEventListener("DOMContentLoaded", (e) => { 
+    console.log("Passed through Collection List Slider"); 
+
+    $('#shopify-section-{{ section.id }} .collection-list').slick({
+      arrows: true,
+      dots: false,
+      infinite: false,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      prevArrow: $('#shopify-section-{{ section.id }} .collection-list .arrow-buttons-row .slick-prev'),
+      nextArrow: $('#shopify-section-{{ section.id }} .collection-list .arrow-buttons-row .slick-next')
+    }); 
+  }); 
+</script>
+
+{% schema %}
+  {
+    "name": "CG Collection List Slider", 
+    "tag": "section", 
+    "class": "cg-colleciton-list-slider", 
+    "settings": [
+      {
+        "type": "text", 
+        "id": "section_heading", 
+        "label": "Heading", 
+        "default": "Explore Our Ebikes"
+      }, 
+      {
+        "type": "richtext", 
+        "id": "section_desc", 
+        "label": "Description"
+      }
+    ], 
+    "blocks": [
+      {
+        "type": "collection_item", 
+        "name": "Collection item", 
+        "settings": [
+          {
+            "type": "image_picker", 
+            "id": "collection_image", 
+            "label": "Image"
+          }, 
+          {
+            "type": "text", 
+            "id": "collection_name", 
+            "label": "Name", 
+            "default": "Off-Road Ebikes"
+          }, 
+          {
+            "type": "header", 
+            "content": "Button"
+          }, 
+          {
+            "type": "url", 
+            "id": "collection_url", 
+            "label": "URL"
+          }
+        ]
+      }
+    ], 
+    "presets": [
+      {
+        "name": "CG Collection List Slider"
+      }
+    ]
+  }
+{% endschema %}

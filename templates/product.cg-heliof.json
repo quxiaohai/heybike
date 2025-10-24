@@ -1,0 +1,1675 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-product": {
+      "type": "main-product",
+      "blocks": {
+        "tab_item_FWzVyw": {
+          "type": "tab_item",
+          "settings": {
+            "link_text": "Overviews",
+            "link_url": "#shopify-section-template--20402500763867__cg_media_grids_with_content_hgLWqT"
+          }
+        },
+        "tab_item_FjHWMw": {
+          "type": "tab_item",
+          "settings": {
+            "link_text": "Spec&Size",
+            "link_url": "#shopify-section-template--20402500763867__product_details_LFNzrF"
+          }
+        },
+        "tab_item_Hn6nfy": {
+          "type": "tab_item",
+          "settings": {
+            "link_text": "FAQs",
+            "link_url": "#shopify-section-template--20402500763867__faq"
+          }
+        },
+        "tab_item_fkaxab": {
+          "type": "tab_item",
+          "disabled": true,
+          "settings": {
+            "link_text": "Community Reviews",
+            "link_url": "#shopify-section-template--20332707938523__video_with_text_slide_r7eYWe"
+          }
+        },
+        "tab_item_xfd7LM": {
+          "type": "tab_item",
+          "disabled": true,
+          "settings": {
+            "link_text": "Components",
+            "link_url": "#shopify-section-template--19983378383067__cg_product_feature_list_WxXtr9"
+          }
+        },
+        "tab_item_hRwAiK": {
+          "type": "tab_item",
+          "disabled": true,
+          "settings": {
+            "link_text": "Spec&Param",
+            "link_url": "#shopify-section-template--19983378383067__product-details"
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "heading": "",
+            "text": "{{ product.vendor }}",
+            "text_size": "text-base"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "product-title-md",
+            "title_size_mobile": "product-title-md",
+            "show_price": true,
+            "show_rating": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "desc_text_size": 16
+          }
+        },
+        "judge_me_reviews_preview_badge_MDPqAg": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        },
+        "rating_hGj8G7": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price_dNzLyq": {
+          "type": "price",
+          "settings": {
+            "show_payment_terms": false,
+            "show_taxes_notice": false
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "settings": {
+            "heading": "LAST CALL! Time Left:",
+            "subheading": "",
+            "color_text": "#e11d48",
+            "color_background": "#fff1f2",
+            "gradient_background": ""
+          }
+        },
+        "condition_BKcqTc": {
+          "type": "condition",
+          "disabled": true,
+          "settings": {
+            "bg_color": "linear-gradient(-90deg, rgba(255, 219, 0, 1) 18.85%, rgba(255, 242, 175, 1) 100%)",
+            "left_color": "#fff2ab",
+            "text_content": "Condition: Brand New Open Box",
+            "condition_icon": "shopify://shop_images/condition-icon.svg",
+            "compare_url": "",
+            "compare_text": "Add to compare",
+            "mobile_label": "shopify://shop_images/condition-label.svg"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "show_variant_labels": true,
+            "picker_type": "button",
+            "enable_color_swatches": true,
+            "color_swatch_type": "color",
+            "size_chart": "size-fit-alpha"
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "disabled": true,
+          "settings": {
+            "inventory_threshold": 15,
+            "show_inventory_transfer": true,
+            "show_inventory_quantity": "low",
+            "color_scheme": "accent-1"
+          }
+        },
+        "bundle_collapse_8iAWrd": {
+          "type": "bundle_collapse",
+          "settings": {
+            "show_recommendations": false,
+            "recommendations_title": "<p>Popular Upgrades</p>",
+            "recommendations_limit": 10,
+            "recommendations_expand": true,
+            "recommendations_metafield": "{{ product.metafields.custom.pdp_bundle_collapse_1.value }}",
+            "recommendations_checked_metafield": [],
+            "show_complementary": false,
+            "complementary_title": "<p>More Accessories</p>",
+            "complementary_limit": 10,
+            "complementary_expand": false,
+            "complementary_metafield": "{{ product.metafields.custom.pdp_bundle_collapse_2.value }}",
+            "warranty_product": "extend-protection-plan"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_price": true,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "enable_back_in_stock": false,
+            "show_back_in_stock_name": false,
+            "show_back_in_stock_phone": false
+          }
+        },
+        "extend_product_protection_pdp_nkbADA": {
+          "type": "shopify://apps/extend/blocks/product-protection-pdp/f3744d3b-bb7a-4029-9541-5ac3d5517b54",
+          "settings": {
+            "modal": true
+          }
+        },
+        "pickup_availability": {
+          "type": "pickup_availability",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share",
+            "show_help_desk": true,
+            "help_label": "Need help?",
+            "help_type": "drawer",
+            "help_page": ""
+          }
+        },
+        "complementary": {
+          "type": "complementary",
+          "disabled": true,
+          "settings": {
+            "heading": "Pairs well with",
+            "product_limit": 4,
+            "show_vendor": false,
+            "show_price": true
+          }
+        },
+        "text-1": {
+          "type": "text",
+          "settings": {
+            "icon": "box",
+            "icon_image": "shopify://shop_images/cg_shipping-icon.svg",
+            "icon_width": 22,
+            "heading": "",
+            "text": "Estimated to Ship by Oct. 27",
+            "text_size": "text-sm"
+          }
+        },
+        "text-2": {
+          "type": "text",
+          "settings": {
+            "icon": "headphone",
+            "icon_image": "shopify://shop_images/icon2.svg",
+            "icon_width": 20,
+            "heading": "",
+            "text": "14-day Free Trial",
+            "text_size": "text-sm"
+          }
+        },
+        "text-3": {
+          "type": "text",
+          "settings": {
+            "icon": "award",
+            "icon_image": "shopify://shop_images/icon_2be73aaa-b16c-49a7-9b1e-a2384a5a0555.svg",
+            "icon_width": 20,
+            "heading": "",
+            "text": "2-Year Warranty",
+            "text_size": "text-sm"
+          }
+        },
+        "text-4": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "icon": "box",
+            "icon_width": 20,
+            "heading": "",
+            "text": "Complimentary shipping & returns",
+            "text_size": "text-sm"
+          }
+        },
+        "sticky_buy_button": {
+          "type": "sticky_buy_button",
+          "settings": {}
+        },
+        "payment_methods_rVbRQj": {
+          "type": "payment_methods",
+          "settings": {}
+        },
+        "introduce_icon_UccMMm": {
+          "type": "introduce_icon",
+          "settings": {
+            "use_icon_metafield": "pdc_icon",
+            "use_spec_metafield": "pdc_spec",
+            "title_1": "1400W",
+            "remark_1": "Peak Moter",
+            "title_2": "28 MPH",
+            "remark_2": "Top Speed",
+            "title_3": "85 Miles",
+            "remark_3": "Max Range",
+            "title_4": "1464Wh",
+            "remark_4": "Battery Capacity",
+            "title_5": "440 lbs",
+            "remark_5": "Max Load",
+            "title_6": "20*3\" ",
+            "remark_6": "Fat Tires"
+          }
+        }
+      },
+      "block_order": [
+        "tab_item_FWzVyw",
+        "tab_item_FjHWMw",
+        "tab_item_Hn6nfy",
+        "tab_item_fkaxab",
+        "tab_item_xfd7LM",
+        "tab_item_hRwAiK",
+        "vendor",
+        "title",
+        "description",
+        "judge_me_reviews_preview_badge_MDPqAg",
+        "rating_hGj8G7",
+        "price_dNzLyq",
+        "countdown",
+        "condition_BKcqTc",
+        "variant_picker",
+        "inventory",
+        "bundle_collapse_8iAWrd",
+        "buy_buttons",
+        "extend_product_protection_pdp_nkbADA",
+        "pickup_availability",
+        "share",
+        "complementary",
+        "text-1",
+        "text-2",
+        "text-3",
+        "text-4",
+        "sticky_buy_button",
+        "payment_methods_rVbRQj",
+        "introduce_icon_UccMMm"
+      ],
+      "custom_css": [
+        "li.product__text .icon {min-width: 32px;}",
+        ".items-center {align-items: inherit;}",
+        ".buy-buttons {margin-bottom: 24px;}"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": 60,
+        "gallery_layout": "thumbnail",
+        "thumbnail_position": "below",
+        "image_ratio": "square",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_autoplay": true,
+        "enable_video_looping": true,
+        "mobile_layout": "full_width",
+        "image_ratio_mobile": "portrait",
+        "mobile_thumbnail": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "bg_color": "#faf9f5",
+        "hide_klarna": true
+      }
+    },
+    "cg_media_grids_with_content_hgLWqT": {
+      "type": "cg_media-grids-with-content",
+      "blocks": {
+        "media_grid_jFaJBA": {
+          "type": "media-grid",
+          "settings": {
+            "bg_image": "shopify://shop_images/Helio_F_Fold.png",
+            "bg_image_mobile": "shopify://shop_images/Helio_F_fold_app.png",
+            "grid_heading": "Compact Fold",
+            "grid_heading_color": "#000000",
+            "grid_heading_font_size": 40,
+            "grid_heading_font_size_mobile": 32,
+            "grid_subheading": "Only 40 lbs",
+            "grid_subheading_color": "#000000",
+            "grid_subheading_font_size": 24,
+            "grid_subheading_font_size_mobile": 16,
+            "vertical_alignment": "bottom",
+            "horizontal_alignment": "left",
+            "padding": 24,
+            "grid_column_start": 1,
+            "grid_column_end": 3,
+            "grid_row_start": 1,
+            "grid_row_end": 3
+          }
+        },
+        "media_grid_T86Afm": {
+          "type": "media-grid",
+          "settings": {
+            "bg_image": "shopify://shop_images/latch.png",
+            "bg_image_mobile": "shopify://shop_images/latch.png",
+            "grid_heading": "20MPH+",
+            "grid_heading_color": "#000000",
+            "grid_heading_font_size": 24,
+            "grid_heading_font_size_mobile": 16,
+            "grid_subheading": "Throttle Included",
+            "grid_subheading_color": "#000000",
+            "grid_subheading_font_size": 18,
+            "grid_subheading_font_size_mobile": 10,
+            "vertical_alignment": "top",
+            "horizontal_alignment": "right",
+            "padding": 16,
+            "grid_column_start": 3,
+            "grid_column_end": 4,
+            "grid_row_start": 1,
+            "grid_row_end": 2
+          }
+        },
+        "media_grid_fDjatT": {
+          "type": "media-grid",
+          "settings": {
+            "bg_image": "shopify://shop_images/3_f928dbf5-8fcf-4a29-b1e5-62793fedeccb.png",
+            "bg_image_mobile": "shopify://shop_images/3_86433cf0-3687-4f36-82a7-030a164b736e.png",
+            "grid_heading": "Hidden Latch",
+            "grid_heading_color": "#000000",
+            "grid_heading_font_size": 24,
+            "grid_heading_font_size_mobile": 16,
+            "grid_subheading": "X-Fold-System",
+            "grid_subheading_color": "#000000",
+            "grid_subheading_font_size": 16,
+            "grid_subheading_font_size_mobile": 10,
+            "vertical_alignment": "top",
+            "horizontal_alignment": "right",
+            "padding": 16,
+            "grid_column_start": 3,
+            "grid_column_end": 4,
+            "grid_row_start": 2,
+            "grid_row_end": 3
+          }
+        },
+        "media_grid_7KHhRU": {
+          "type": "media-grid",
+          "settings": {
+            "bg_image": "shopify://shop_images/4_e5ab5ecc-e605-417c-9bcd-dd81905bbb18.png",
+            "bg_image_mobile": "shopify://shop_images/4_ade23efb-1237-4663-8b86-393361bf2912.png",
+            "grid_heading": "Shimano Altus",
+            "grid_heading_color": "#000000",
+            "grid_heading_font_size": 24,
+            "grid_heading_font_size_mobile": 16,
+            "grid_subheading": "8-Speed Gear",
+            "grid_subheading_color": "#000000",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 10,
+            "vertical_alignment": "top",
+            "horizontal_alignment": "left",
+            "padding": 16,
+            "grid_column_start": 4,
+            "grid_column_end": 5,
+            "grid_row_start": 1,
+            "grid_row_end": 2
+          }
+        },
+        "media_grid_Tc3cgE": {
+          "type": "media-grid",
+          "settings": {
+            "bg_image": "shopify://shop_images/5_75f174e6-aefb-4e28-8c40-83e2649ae24d.png",
+            "bg_image_mobile": "shopify://shop_images/5_2879ffb0-66a7-456d-846b-5afd9f064728.png",
+            "grid_heading": "Concealed Battery",
+            "grid_heading_color": "#000000",
+            "grid_heading_font_size": 24,
+            "grid_heading_font_size_mobile": 16,
+            "grid_subheading": "360Wh",
+            "grid_subheading_color": "#000000",
+            "grid_subheading_font_size": 16,
+            "grid_subheading_font_size_mobile": 10,
+            "vertical_alignment": "top",
+            "horizontal_alignment": "left",
+            "padding": 16,
+            "grid_column_start": 4,
+            "grid_column_end": 5,
+            "grid_row_start": 2,
+            "grid_row_end": 3
+          }
+        },
+        "media_grid_JRdBxW": {
+          "type": "media-grid",
+          "settings": {
+            "bg_image": "shopify://shop_images/Helio_F_red1.png",
+            "bg_image_mobile": "shopify://shop_images/6-mobile.png",
+            "grid_heading": "Built-In",
+            "grid_heading_color": "#000000",
+            "grid_heading_font_size": 30,
+            "grid_heading_font_size_mobile": 23,
+            "grid_subheading": "Headlight",
+            "grid_subheading_color": "#000000",
+            "grid_subheading_font_size": 16,
+            "grid_subheading_font_size_mobile": 14,
+            "vertical_alignment": "bottom",
+            "horizontal_alignment": "left",
+            "padding": 16,
+            "grid_column_start": 5,
+            "grid_column_end": 6,
+            "grid_row_start": 1,
+            "grid_row_end": 3
+          }
+        }
+      },
+      "block_order": [
+        "media_grid_jFaJBA",
+        "media_grid_T86Afm",
+        "media_grid_fDjatT",
+        "media_grid_7KHhRU",
+        "media_grid_Tc3cgE",
+        "media_grid_JRdBxW"
+      ],
+      "name": "CG Media Grids with Content",
+      "settings": {
+        "heading": "What is Helio F",
+        "content": "Helio F is a foldable, lightweight eBike with a compact frame and vintage-inspired design. It saves space, unfolds in seconds, and rides with ease. More than a bike, Helio F embodies a lifestyle — turning every half hour into a moment of freedom, and rediscovery in the city.",
+        "btn_url": "",
+        "btn_text": "",
+        "btn_icon": "shopify://shop_images/cg_media-grids-right-arrow.svg",
+        "footer_bg_color": "#e8e9ce"
+      }
+    },
+    "help-drawer": {
+      "type": "help-drawer",
+      "blocks": {
+        "content-1": {
+          "type": "content",
+          "settings": {
+            "icon": "rocket",
+            "heading": "Shipping Information",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#b45309",
+            "color_background": "#fffbeb",
+            "gradient_background": "",
+            "color_highlight": "#ffddbf",
+            "gradient_highlight": ""
+          }
+        },
+        "content-2": {
+          "type": "content",
+          "settings": {
+            "icon": "headphone",
+            "heading": "Customer Support",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#0369a1",
+            "color_background": "#f0f9ff",
+            "gradient_background": "",
+            "color_highlight": "#ffddbf",
+            "gradient_highlight": ""
+          }
+        },
+        "content-3": {
+          "type": "content",
+          "settings": {
+            "icon": "chat_bubble",
+            "heading": "FAQ’s",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#be123c",
+            "color_background": "#fff1f2",
+            "gradient_background": "",
+            "color_highlight": "#ffddbf",
+            "gradient_highlight": ""
+          }
+        },
+        "content-4": {
+          "type": "content",
+          "settings": {
+            "icon": "phone",
+            "heading": "Contact Us",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#4d7c0f",
+            "color_background": "#f7fee7",
+            "gradient_background": "",
+            "color_highlight": "#ffddbf",
+            "gradient_highlight": ""
+          }
+        }
+      },
+      "block_order": [
+        "content-1",
+        "content-2",
+        "content-3",
+        "content-4"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Need help?",
+        "description": "<p>If you have any questions, you are always welcome to contact us. We'll get back to you as soon as possible, within 24 hours on weekdays.</p>"
+      }
+    },
+    "cg_product_video_GyAeDG": {
+      "type": "cg_product-video",
+      "blocks": {
+        "slide_dtHEVr": {
+          "type": "slide",
+          "settings": {
+            "media_video": "shopify://files/videos/Helio F Launch Video pc.mp4",
+            "media_video_mobile": "shopify://files/videos/Helio F Launch Video app.mp4",
+            "slide_heading": "",
+            "font_size": 48,
+            "font_size_mobile": 30,
+            "heading_color": "#ffdb00",
+            "ratio_width": "1920",
+            "ratio_height": "1080",
+            "ratio_width_mobile": "1080",
+            "ratio_height_mobile": "1920"
+          }
+        }
+      },
+      "block_order": [
+        "slide_dtHEVr"
+      ],
+      "name": "CG Product Video",
+      "settings": {}
+    },
+    "cg_image_with_text_WPkaQx": {
+      "type": "cg_image-with-text",
+      "blocks": {
+        "row_gUFwex": {
+          "type": "row",
+          "settings": {
+            "row_img": "shopify://shop_images/1800_1800-1.png",
+            "row_heading": "Unfold. Transit. Imagination along the Route",
+            "heading_font_size": 45,
+            "row_content": "<h5>Your Golden Half Hour with Helio F</h5><p>For commuters, creators, travelers, Helio F makes every thirty minutes yours.<br/><br/>Unfold your bike, <br/>Enjoy your ride.</p>",
+            "subheading_font_size": 30,
+            "content_font_size": 25,
+            "content_font_color": "#666666",
+            "flex_direction": "row",
+            "row_caption1": "",
+            "row_caption2": ""
+          }
+        },
+        "row_eC4eHR": {
+          "type": "row",
+          "settings": {
+            "row_img": "shopify://shop_images/1800_1800.png",
+            "row_heading": "Oh, the Commute can be A Pure JOY!",
+            "heading_font_size": 45,
+            "row_content": "<p>In the half hour between work and life lies a space of your own. <br/><br/><strong>Helio F turns your daily route into a fun journey</strong> — It's the calm before your day work, the gentle release after work, or the quiet freedom of cruising through city. <br/>It’s where you breathe deeper, move lighter, and let imagination flow. </p>",
+            "subheading_font_size": 30,
+            "content_font_size": 25,
+            "content_font_color": "#666666",
+            "flex_direction": "row-reverse",
+            "row_icon1": "shopify://shop_images/icon_19453a89-293e-4e2c-a807-87701f9d722d.png",
+            "row_caption1": "Supersized Super Fun",
+            "row_icon2": "shopify://shop_images/bfe670e2c212b2ca7129014495caea82.png",
+            "row_caption2": "Adapt to Diversed Conditions"
+          }
+        },
+        "row_jJjiUG": {
+          "type": "row",
+          "settings": {
+            "row_img": "shopify://shop_images/1800_1800-2.png",
+            "row_heading": "In the Motion. Own the Moment.",
+            "heading_font_size": 45,
+            "row_content": "<p>The city is never the same twice.Helio F is made to set you free from the traffic jams and travel anxiety.</p><p><br/>In the golden half hour, there’s always a unseen street corner, a fleeting light, an idea waiting to surface. <strong>Just Go with Your Flow!</strong></p>",
+            "subheading_font_size": 30,
+            "content_font_size": 25,
+            "content_font_color": "#666666",
+            "flex_direction": "row",
+            "row_icon1": "shopify://shop_images/56b14fbb1da9c3fef30b29b868a65c48_e96765db-731b-4252-b6f2-00155c90d635.webp",
+            "row_caption1": "Torque Sensor",
+            "row_icon2": "shopify://shop_images/climb.png",
+            "row_caption2": "Easy to Maneur"
+          }
+        },
+        "row_DeBTFc": {
+          "type": "row",
+          "settings": {
+            "row_img": "shopify://shop_images/1800_1800-3.png",
+            "row_heading": "The Pocket Size Explorer",
+            "heading_font_size": 45,
+            "row_content": "<p><strong>Tiny when folded, mighty when riding. </strong><br/>Helio F sneaks into your RV or yacht without fuss, then unfolds to take you places bigger vehicles will never do. <br/>Small, compact, and light — your secret key to explore the world in half-hour escapes.</p>",
+            "subheading_font_size": 30,
+            "content_font_size": 25,
+            "content_font_color": "#666666",
+            "flex_direction": "row-reverse",
+            "row_icon1": "shopify://shop_images/fold.png",
+            "row_caption1": "Fold in 3S & Magnetic Buckle",
+            "row_caption2": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_gUFwex",
+        "row_eC4eHR",
+        "row_jJjiUG",
+        "row_DeBTFc"
+      ],
+      "name": "CG Image with Text",
+      "settings": {
+        "padding_top_desktop": 118,
+        "padding_bottom_desktop": 118,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "cg_hero_slideshow_ezTdMp": {
+      "type": "cg_hero-slideshow",
+      "blocks": {
+        "slide_yP33di": {
+          "type": "slide",
+          "settings": {
+            "tab_name": "",
+            "banner_img": "shopify://shop_images/Helio_F_Artist_Version.png",
+            "banner_img_mobile": "shopify://shop_images/Helio_F_Artist_Version_app.png",
+            "text_alignment": "left",
+            "subheading": "Your Plus One Bike",
+            "subheading_font_size": 32,
+            "subheading_font_mobile": 14,
+            "subheading_color": "#000000",
+            "heading": "Helio F - Artists Limited Edition",
+            "heading_font_size": 44,
+            "heading_font_mobile": 24,
+            "heading_color": "#000000",
+            "cta_url": "",
+            "cta_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_yP33di"
+      ],
+      "name": "CG Hero Slideshow",
+      "settings": {
+        "autoplay": false,
+        "autoplay_ms": "4000"
+      }
+    },
+    "images_with_text_overlay_iU8JNx": {
+      "type": "images-with-text-overlay",
+      "blocks": {
+        "subheading_wJ3yGL": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Heybike × Artists | Your Plus One Bike",
+            "subheading_size": "subtitle-lg",
+            "secondary_color": false
+          }
+        },
+        "heading_BqdAwY": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Heybike × Artists | Your Plus One Bike",
+            "heading_size": "title-sm",
+            "heading_tag": "p",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_AafgkG": {
+          "type": "text",
+          "settings": {
+            "text": "<h4><strong>Heybike × Artists | Your Plus One Bike</strong></h4><p>Helio F collaborated three artists to create unique editions that blend design with daily life. Each artwork conveys the spirit of Helio F — turning every ride into moments of exploration, time for relaxation.</p>",
+            "text_size": "subtext-lg",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_wJ3yGL",
+        "heading_BqdAwY",
+        "text_AafgkG"
+      ],
+      "name": "t:sections.images-with-text-overlay.presets.name",
+      "settings": {
+        "transparent_header": false,
+        "image_height": "650px",
+        "content_width": "small",
+        "content_position": "md:items-end md:justify-start",
+        "text_alignment": "left",
+        "image_1": "shopify://shop_images/emilianoponzi.png",
+        "image_2": "shopify://shop_images/HEOOF.png",
+        "image_3": "shopify://shop_images/malarko.png",
+        "image_height_mobile": "400px",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#000000",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": true
+      }
+    },
+    "cg_hero_slideshow_HAgU6C": {
+      "type": "cg_hero-slideshow",
+      "blocks": {
+        "slide_LjgRPj": {
+          "type": "slide",
+          "settings": {
+            "tab_name": "Limited Gift Box",
+            "banner_img": "shopify://shop_images/Helio_F_Gift_Box_pc.png",
+            "banner_img_mobile": "shopify://shop_images/Helio_F_Gift_Box.png",
+            "text_alignment": "left",
+            "subheading": "",
+            "subheading_font_size": 32,
+            "subheading_font_mobile": 14,
+            "subheading_color": "#000000",
+            "heading": "",
+            "heading_font_size": 44,
+            "heading_font_mobile": 24,
+            "heading_color": "#000000",
+            "cta_url": "",
+            "cta_caption": ""
+          }
+        },
+        "slide_TAMVRR": {
+          "type": "slide",
+          "settings": {
+            "tab_name": "",
+            "banner_img": "shopify://shop_images/Helio_F_Box-pc.png",
+            "banner_img_mobile": "shopify://shop_images/Helio_F_Box-app.png",
+            "text_alignment": "left",
+            "subheading": "",
+            "subheading_font_size": 32,
+            "subheading_font_mobile": 14,
+            "subheading_color": "#000000",
+            "heading": "",
+            "heading_font_size": 44,
+            "heading_font_mobile": 24,
+            "heading_color": "#000000",
+            "cta_url": "",
+            "cta_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_LjgRPj",
+        "slide_TAMVRR"
+      ],
+      "name": "CG Hero Slideshow",
+      "settings": {
+        "autoplay": false,
+        "autoplay_ms": "4000"
+      }
+    },
+    "cg_banner_with_features_9VjnrX": {
+      "type": "cg_banner-with-features",
+      "blocks": {
+        "feature_ninLN4": {
+          "type": "feature",
+          "settings": {
+            "heading": "X Fold System",
+            "description": "<p>Patented X Fold system makes folding a ritual of ease: open the hidden latch,fold, click to magnet. The bike can carry or store without a second thought.</p>"
+          }
+        },
+        "feature_NkzM8W": {
+          "type": "feature",
+          "settings": {
+            "heading": "Compact Size",
+            "description": "<p>Once folded (35.4\"×20.5\"×26.0\"), Helio F slips quietly into the corner of a café, an office, or living room. It's not just about saving space -it's about a bike that lives with you.</p>"
+          }
+        },
+        "feature_e9RnWh": {
+          "type": "feature",
+          "settings": {
+            "heading": "Ultra Lightweight 40lbs",
+            "description": "<p>Easy to lift, easy to carry. Just 40lbs, built for stairs, trains, and tight city spaces</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_ninLN4",
+        "feature_NkzM8W",
+        "feature_e9RnWh"
+      ],
+      "name": "CG Banner with Features",
+      "settings": {
+        "section_heading": "Discover Helio F",
+        "banner_img": "shopify://shop_images/KV-1400_500.png",
+        "banner_img_mobile": "shopify://shop_images/Frame_128720891.png"
+      }
+    },
+    "cg_product_feature_list_WxXtr9": {
+      "type": "cg_product-feature-list",
+      "blocks": {
+        "feature_9b3zEb": {
+          "type": "feature",
+          "settings": {
+            "feature_img": "shopify://shop_images/Helio_F_Handle_Bar.png",
+            "feature_heading": "Shimano 8-Speed Gear System",
+            "feature_desc": "<p>The Shimano Altus 8-speed drivetrain ensures smooth, precise, and reliable shifting—whether you’re cruising through the city, tackling gentle climbs, or riding longer distances. Perfect for riders who value both control and comfort.</p>"
+          }
+        },
+        "feature_fVDXQH": {
+          "type": "feature",
+          "settings": {
+            "feature_img": "shopify://shop_images/Helio_F_Seatpost.png",
+            "feature_heading": "Removable Battery",
+            "feature_desc": "<p>The 360Wh battery delivers a range of 80–120 km and can be easily removed for convenient charging anywhere—at home, at the office, or on the go. No need to move your bike just to recharge.</p>"
+          }
+        },
+        "feature_hHWBPT": {
+          "type": "feature",
+          "settings": {
+            "feature_img": "shopify://shop_images/Helio_F_Torque.png",
+            "feature_heading": "Torque Sensor",
+            "feature_desc": "<p>The torque sensor detects how much pressure you put on the pedals and adjusts the motor support accordingly. This makes every ride more efficient, more natural, and simply more enjoyable.</p>"
+          }
+        },
+        "feature_q7H889": {
+          "type": "feature",
+          "settings": {
+            "feature_img": "shopify://shop_images/air_tag.png",
+            "feature_heading": "AirTag-Tracking",
+            "feature_desc": "<p>With the AirTag, you can track your Helio F at any time. Whether in the city, while traveling, or in daily life — an Apple AirTag adds extra security and ensures your bike is always within reach.</p>"
+          }
+        },
+        "feature_mzDqYy": {
+          "type": "feature",
+          "settings": {
+            "feature_img": "shopify://shop_images/Helio_F_Front_Tire.png",
+            "feature_heading": "Premium Schwalbe Tires",
+            "feature_desc": "<p>Equipped with Schwalbe tires for excellent grip, superior comfort, and long-lasting performance. From cobblestone streets to narrow alleys or light trails, your ride stays smooth, stable, and secure.</p>"
+          }
+        },
+        "feature_ybC4Dj": {
+          "type": "feature",
+          "settings": {
+            "feature_img": "shopify://shop_images/Helio_F_Headlight.png",
+            "feature_heading": "Integrated Headlight",
+            "feature_desc": "<p>The built-in headlight keeps your path illuminated, ensuring safety and visibility day and night. Dark streets and unexpected obstacles are no longer a concern.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_9b3zEb",
+        "feature_fVDXQH",
+        "feature_hHWBPT",
+        "feature_q7H889",
+        "feature_mzDqYy",
+        "feature_ybC4Dj"
+      ],
+      "name": "CG Product Feature List",
+      "settings": {
+        "slides_to_show": 4.5,
+        "slides_to_show_tablet": 3,
+        "slides_to_show_mobile": 2.5
+      }
+    },
+    "video_with_text_slide_r7eYWe": {
+      "type": "video-with-text-slide",
+      "blocks": {
+        "content_xrYHYh": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/YouTube_Logo_2017_svg.png",
+            "image_width": "custom",
+            "image_max_width": 100,
+            "image_max_width_mobile": 50,
+            "text_1": "<h4>THE FASTEST FOLDING E-BIKE // HeyBike Ranger 3.0 Pro X-Series</h4>",
+            "text_size_1": "subtext-sm",
+            "text_max_size_1": 32,
+            "text_font_1": "heading",
+            "secondary_color_1": false,
+            "highlighted_text_1": "none",
+            "highlighted_scribble_1": "circle",
+            "text_2": "<p>-Mike Fede</p>",
+            "text_size_2": "subtext-sm",
+            "text_max_size_2": 32,
+            "text_font_2": "body",
+            "secondary_color_2": false,
+            "highlighted_text_2": "none",
+            "highlighted_scribble_2": "circle",
+            "video_url": "https://www.youtube.com/watch?v=Uk3p6Xlsfzs",
+            "cover_image": "shopify://shop_images/maxresdefault_9a024aec-ee86-40f4-8fe8-e69deb6023d4.jpg",
+            "description": "",
+            "enable_video_autoplay": false,
+            "enable_video_looping": false,
+            "enable_parallax": false,
+            "parallax_direction": "vertical"
+          }
+        },
+        "content_aUHAjP": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/YouTube_Logo_2017_svg.png",
+            "image_width": "custom",
+            "image_max_width": 100,
+            "image_max_width_mobile": 50,
+            "text_1": "<h4>The ULTIMATE Folding Fat-Tire Ebike? Heybike Ranger 3.0 Pro Review</h4>",
+            "text_size_1": "subtext-sm",
+            "text_max_size_1": 32,
+            "text_font_1": "body",
+            "secondary_color_1": false,
+            "highlighted_text_1": "none",
+            "highlighted_scribble_1": "circle",
+            "text_2": "<p>-Chris Crossed</p>",
+            "text_size_2": "subtext-sm",
+            "text_max_size_2": 32,
+            "text_font_2": "body",
+            "secondary_color_2": false,
+            "highlighted_text_2": "none",
+            "highlighted_scribble_2": "circle",
+            "video_url": "https://www.youtube.com/watch?v=04oRaO1GSF8",
+            "cover_image": "shopify://shop_images/Untitled_design.png",
+            "description": "",
+            "enable_video_autoplay": false,
+            "enable_video_looping": false,
+            "enable_parallax": false,
+            "parallax_direction": "vertical"
+          }
+        }
+      },
+      "block_order": [
+        "content_xrYHYh",
+        "content_aUHAjP"
+      ],
+      "disabled": true,
+      "name": "Video with text slide",
+      "settings": {
+        "heading": "Rider's Review",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "image_height": "adapt",
+        "layout": "video_first",
+        "text_alignment": "left",
+        "image_height_mobile": "auto",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "multicolumn_gKcYxp": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_xd7JN4": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/lQLPKGmAklga-pXNCmrNBdywLRzOs2fNNwEIw0dfzSiQAA_1500_2666.png",
+            "image_ratio": "adapt",
+            "heading": "Leisure Ride",
+            "heading_size": "text-lg-2xl",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_MkaAkR": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/lQLPKHtEC60hBtXNCmrNBdywUcvEG1HxzGQIw0dXfRxeAg_1500_2666.png",
+            "image_ratio": "adapt",
+            "heading": "RV Trip",
+            "heading_size": "text-lg-2xl",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_9hihzV": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/lQDPKczGCrrzAtXNCmrNBdyw1YaUWJzVXO8Iw0dXfRxeAA_1500_2666.jpg",
+            "image_ratio": "adapt",
+            "heading": "Yacht Trip",
+            "heading_size": "text-lg-2xl",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_CycYac": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/lQLPJw1WF09h49XNCmrNBdyw1YYkuO9S4uUIw0dXfRxeAQ_1500_2666.png",
+            "image_ratio": "adapt",
+            "heading": "Daily Commute",
+            "heading_size": "text-lg-2xl",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_xd7JN4",
+        "column_MkaAkR",
+        "column_9hihzV",
+        "column_CycYac"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "gap": "large",
+        "columns": 4,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Small Bike, Big Life",
+        "heading_size": "title-lg tracking-heading",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "product_details_LFNzrF": {
+      "type": "product-details",
+      "blocks": {
+        "description_8xLyXQ": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "icon_width": 24,
+            "heading": "Description",
+            "split_mode": false
+          }
+        },
+        "collapsible_tab_EVLkVz": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "none",
+            "icon_width": 24,
+            "heading": "Specifications",
+            "content": "",
+            "metafields": "",
+            "child_heading1": "ELECTRONICS",
+            "child_content1": "<p><strong>Motor: </strong>36V 250W Rear Hub Motor<br/><br/><strong>Sensor Type: </strong>Torque Sensor<br/><br/><strong>Display: </strong>LCD Left Mounted<br/><br/><strong>Battery: </strong>360Wh Lithium Battery<br/><br/><strong>Charger: </strong>42V 100-240V 2A<br/><br/><strong>Lights: </strong>Front: LED / Rear: LED with Braking Light</p>",
+            "child_heading2": "COMPONENTS",
+            "child_content2": "<p><strong>Frame: </strong>Aluminum Alloy 6061<br/><br/><strong>Tyres: </strong>Schwalbe Billy Bonkers 20'' × 2.0''<br/><br/><strong>Speed Gears: </strong>Shimano 8-Speed Gear<br/><br/><strong>Brake: </strong>TEKTRO Hydraulic Disc Brakes HD-T275<br/><br/><strong>Front Fork: </strong>Hydroformed Rigid Fork with Thru Axle</p>",
+            "child_heading3": "PERFORMANCE",
+            "child_content3": "<p><strong>Max Speed: </strong>25 km/h<br/><br/><strong>Max Torque: </strong>40 N·m<br/><br/><strong>Range: </strong>Up to 80–120 km with PAS Mode<br/><br/><strong>Recharging Time: </strong>4–6 hours<br/><br/><strong>Weight: </strong>18 kg</p>",
+            "child_heading4": "What's in the box?",
+            "child_content4": "<p>Manual Flyer x1<br/>Stickers x2<br/>Tools x7<br/>Phone Mount x1<br/>Decorative Tie x1<br/>Charger x1<br/>Electric Bicycle x1<br/>Heybike Tag × 1</p>",
+            "child_heading5": "",
+            "child_content5": "",
+            "child_heading6": "",
+            "child_content6": "",
+            "child_heading7": "",
+            "child_content7": "",
+            "child_heading8": "",
+            "child_content8": "",
+            "child_heading9": "",
+            "child_content9": "",
+            "child_heading10": "",
+            "child_content10": ""
+          }
+        },
+        "specification_khTiFB": {
+          "type": "specification",
+          "disabled": true,
+          "settings": {
+            "heading": "Example heading"
+          }
+        },
+        "collapsible_tab_w6xFfe": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "icon_width": 24,
+            "heading": "Collapsible row",
+            "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
+            "metafields": "",
+            "child_heading1": "Frameset",
+            "child_content1": "",
+            "child_heading2": "Frameset",
+            "child_content2": "",
+            "child_heading3": "Frameset",
+            "child_content3": "",
+            "child_heading4": "Frameset",
+            "child_content4": "",
+            "child_heading5": "Frameset",
+            "child_content5": "",
+            "child_heading6": "Frameset",
+            "child_content6": "",
+            "child_heading7": "Frameset",
+            "child_content7": "",
+            "child_heading8": "Frameset",
+            "child_content8": "",
+            "child_heading9": "Frameset",
+            "child_content9": "",
+            "child_heading10": "Frameset",
+            "child_content10": ""
+          }
+        }
+      },
+      "block_order": [
+        "description_8xLyXQ",
+        "collapsible_tab_EVLkVz",
+        "specification_khTiFB",
+        "collapsible_tab_w6xFfe"
+      ],
+      "name": "t:sections.product-details.presets.name",
+      "settings": {
+        "style": "with-border",
+        "open_first_row": true,
+        "specifications_heading": "",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "border_color": "#cccccc"
+      }
+    },
+    "scrolling_banner_kdJzeJ": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "image_z8UBbf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Helio_F_Geometry_ef33ec56-428e-4ac8-8267-54f29b27bccb.png",
+            "icon": "none",
+            "icon_width": 48,
+            "heading": "Geometry",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "subheading": "",
+            "description": "<p>A. Seat Tube: 12.8\"<br/>B. Chainstay: 16.7\"<br/>C. Effective Top Tube: 23.4\"<br/>D. Head Tube: 5.4\"<br/>E. Handlebar Height: 42.1\"<br/>F. Minimum Seat Height: 29.1\"<br/>G. Maximum Seat Height: 40.6\"<br/>H. Wheelbase: 38.1\"<br/>I. Total Length: 59.4\"</p><p><br/>Reach: 16.6\"<br/>Stand Height: 24.0\"<br/>Handlebar Length: 24.8\"</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "image_z8UBbf"
+      ],
+      "name": "t:sections.scrolling-banner.presets.name",
+      "settings": {
+        "image_height": "650px",
+        "image_width": "medium",
+        "layout": "image_first",
+        "text_alignment": "left",
+        "content_position": "items-center",
+        "image_height_mobile": "auto",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_background_2": "",
+        "gradient_background_2": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "countdown_timer_B47Gay": {
+      "type": "countdown-timer",
+      "disabled": true,
+      "name": "t:sections.countdown-timer.presets.name",
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/Ranger_3.0_Pro_size_fit_pca.png",
+        "image_height": "adapt",
+        "content_width": "small",
+        "content_position": "md:items-center md:justify-center",
+        "text_alignment": "center",
+        "image_mobile": "shopify://shop_images/Ranger_3.0_Pro_size_fit_app.png",
+        "image_height_mobile": "adapt",
+        "content_position_mobile": "items-center justify-center",
+        "text_alignment_mobile": "center",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "countdown_timer_wXzFbh": {
+      "type": "countdown-timer",
+      "disabled": true,
+      "name": "t:sections.countdown-timer.presets.name",
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/Ranger_3.0_Propc.png",
+        "image_height": "adapt",
+        "content_width": "small",
+        "content_position": "md:items-center md:justify-center",
+        "text_alignment": "center",
+        "image_mobile": "shopify://shop_images/Ranger_3.0_Pro_pc.png",
+        "image_height_mobile": "adapt",
+        "content_position_mobile": "items-center justify-center",
+        "text_alignment_mobile": "center",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "cg_info_with_counters_qgyL3G": {
+      "type": "cg_info-with-counters",
+      "disabled": true,
+      "name": "CG Info with Counters",
+      "settings": {
+        "section_bg": "rgba(0,0,0,0)",
+        "section_subheading": "",
+        "section_heading": "",
+        "section_desc": "",
+        "section_banner": "shopify://shop_images/Ranger_3.0_Pro_size_fit_pca.png",
+        "section_banner_mobile": "shopify://shop_images/Ranger_3.0_Pro_size_fit_app.png",
+        "value_gradient": "",
+        "counter_font_color": "#777776"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "question-1": {
+          "type": "question",
+          "disabled": true,
+          "settings": {
+            "title": "<strong>Where can I test ride the Helio F?</strong>",
+            "text": "<p>Visit https://eu.heybike.com/pages/store-locator to find your nearest test ride location.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question-5": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>Does the Helio F have a throttle?</strong>",
+            "text": "<p>Yes! The Helio F includes a throttle and can reach speeds up to 20 mph.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question-2": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>How long does the Helio F battery last?</strong>",
+            "text": "<p>The 360Wh battery provides a range of <strong>80–120 km</strong>, depending on riding style, terrain, and level of assistance. With its removable design, you can easily charge it at home or at the office.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question-3": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>Is the Helio F easy to carry and store?</strong>",
+            "text": "<p>Yes! Weighing only <strong>18 kg</strong>, it’s ultra-light. Thanks to the patented <strong>X-Fold System</strong>, it folds in seconds and fits effortlessly into trains, offices, or compact city apartments.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question-4": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>Is the Helio F suitable for daily commuting?</strong>",
+            "text": "<p>Absolutely. With a <strong>Shimano 8-speed gear system</strong>, <strong>torque sensor</strong>, and <strong>Schwalbe tires</strong>, it’s built for urban rides and commuting. Comfort, efficiency, and fun are guaranteed.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_dwVzWa": {
+          "type": "question",
+          "disabled": true,
+          "settings": {
+            "title": "<strong>Can I convert the Ranger 3.0 Pro to Class 3 or Class 1?</strong>",
+            "text": "<p>Yes. The Ranger 3.0 Pro is configured as Class 2 by default, with a throttle and a 20 MPH top speed. To convert it to Class 3, disable the throttle and unlock the top speed to 28 MPH using the display settings or the Heybike App. To convert it to Class 1, simply disable the throttle and keep the top speed at 20 MPH.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_qUDBFQ": {
+          "type": "question",
+          "disabled": true,
+          "settings": {
+            "title": "<strong>Does the Ranger 3.0 Pro come with fenders and a rear rack? </strong>",
+            "text": "<p>Yes. The Ranger 3.0 Pro includes both front and rear fenders as well as a rear rack, offering added protection and utility right out of the box.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_4Q4k3D": {
+          "type": "question",
+          "disabled": true,
+          "settings": {
+            "title": "<strong>What does it mean to have an adjustable air shock?</strong>",
+            "text": "<p>An adjustable air shock allows you to change the suspension stiffness by adjusting the air pressure inside the shock. Lowering the air pressure makes the suspension softer for a more cushioned ride, while increasing the pressure makes it firmer for better support on rough terrain or heavier loads.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_i9N8q6": {
+          "type": "question",
+          "disabled": true,
+          "settings": {
+            "title": "<strong>Where can I find the Ranger 3.0 Pro user manual?</strong>",
+            "text": "<p>A user manual card is included in the product package. Scan the QR code on the card to access our <a href=\"https://heybike.zendesk.com/hc/en-us/articles/4404612672281-2-User-Manuals\" target=\"_blank\" title=\"https://heybike.zendesk.com/hc/en-us/articles/4404612672281-2-User-Manuals\">user manual page</a>. You can also download from here<a href=\"https://cdn.shopify.com/s/files/1/0516/9804/1009/files/Heybike_Ranger_3.0_Pro_User_Manual-V3_1.pdf?v=1755503048\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0516/9804/1009/files/Heybike_Ranger_3.0_Pro_User_Manual-V3_1.pdf?v=1755503048\"> <strong>Ranger 3.0 Pro User Manual &gt;&gt;</strong></a><br/><a href=\"https://www.youtube.com/watch?v=qRlOBdhp5Ms\" target=\"_blank\" title=\"https://www.youtube.com/watch?v=qRlOBdhp5Ms\">Ranger 3.0 Pro Assembly Video&gt;&gt;</a><br/></p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_MFjNrW": {
+          "type": "question",
+          "disabled": true,
+          "settings": {
+            "title": "<strong>Can I transport Mars 2.0 in a car trunk?</strong>",
+            "text": "<p>Mars 2.0 can be folded and stored in a car trunk. Its folded dimensions are 37.4*21.7*27.95 inch, and its unfolded dimensions are 67*25*49 inch.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "question-1",
+        "question-5",
+        "question-2",
+        "question-3",
+        "question-4",
+        "question_dwVzWa",
+        "question_qUDBFQ",
+        "question_4Q4k3D",
+        "question_i9N8q6",
+        "question_MFjNrW"
+      ],
+      "settings": {
+        "style": "with-border",
+        "heading": "FAQs",
+        "heading_size": "title-lg tracking-heading",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#000000",
+        "color_background": "rgba(0,0,0,0)",
+        "gradient_background": "",
+        "panel_background": "",
+        "panel_border": "#e3e3e3",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#ffffff",
+        "overlay_opacity": 0,
+        "padding_top": 84,
+        "padding_bottom": 84,
+        "divider": false,
+        "narrow": false,
+        "rounded": false,
+        "title_margin_bottom": 0,
+        "summary_padding": 32,
+        "summary_icon_bg": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "product_limit": 6,
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "You may also like",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": true
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {
+        "product_limit": 6,
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Recently Viewed",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "1756780063b87690c9": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_q8aMLn": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget",
+            "max_width": 1200
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_q8aMLn"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main-product",
+    "cg_media_grids_with_content_hgLWqT",
+    "help-drawer",
+    "cg_product_video_GyAeDG",
+    "cg_image_with_text_WPkaQx",
+    "cg_hero_slideshow_ezTdMp",
+    "images_with_text_overlay_iU8JNx",
+    "cg_hero_slideshow_HAgU6C",
+    "cg_banner_with_features_9VjnrX",
+    "cg_product_feature_list_WxXtr9",
+    "video_with_text_slide_r7eYWe",
+    "multicolumn_gKcYxp",
+    "product_details_LFNzrF",
+    "scrolling_banner_kdJzeJ",
+    "countdown_timer_B47Gay",
+    "countdown_timer_wXzFbh",
+    "cg_info_with_counters_qgyL3G",
+    "faq",
+    "product-recommendations",
+    "recently-viewed",
+    "1756780063b87690c9"
+  ]
+}

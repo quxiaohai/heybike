@@ -18,14 +18,14 @@
       {%- endif -%}
     {%- endcapture -%}
     {%- for label in product.metafields.theme.label.value -%}
-      <span class="badge flex items-center gap-1d5 font-medium leading-none rounded-full"{% if styles != blank %} style="{{ styles }}"{% endif %}>
+      <span class="badge flex items-center gap-1d5 font-medium leading-none"{% if styles != blank %} style="{{ styles }}"{% endif %}>
         {{- label | escape -}}
       </span>
     {%- endfor -%}
   {%- endif -%}
 
   {%- if saved_amount != blank -%}
-     <span class="badge {{ size_class }} badge--onsale flex items-center gap-1d5 font-medium leading-none rounded-full">
+     <span class="badge badge--onsale flex items-center gap-1d5 font-medium leading-none">
       {%- liquid
         if save_type == 'label'
           echo 'products.general.sale' | t

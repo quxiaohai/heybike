@@ -1,0 +1,356 @@
+{% comment %}
+  Created by CLEARgo
+{% endcomment %}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    
+  }
+
+  #shopify-section-{{ section.id }} .testimonials-with-logos-container {
+    padding: 120px 20px; 
+  }
+
+  #shopify-section-{{ section.id }} .testimonial-list { 
+    display: flex; 
+    cursor: grab; 
+  }
+
+  #shopify-section-{{ section.id }} .testimonial h2 { 
+    position: relative; 
+    margin: calc(45vw / 19.2) calc(276vw / 19.2); 
+    padding: 0; 
+    text-align: center; 
+    color: var(--color-black); 
+    font-size: calc(32vw / 19.2); 
+  }
+
+  #shopify-section-{{ section.id }} .testimonial h2:before, 
+  #shopify-section-{{ section.id }} .testimonial h2:after { 
+    content: ''; 
+    top: 0; 
+    position: absolute; 
+    display: block; 
+    width: calc(40vw / 19.2); 
+    height: calc(40vw / 19.2); 
+    aspect-ratio: 1; 
+    background-size: contain; 
+    bacground-position: center; 
+    background-repeat: no-repeat; 
+  }
+
+  #shopify-section-{{ section.id }} .testimonial h2:before {
+    left: calc(-40vw / 19.2); 
+    background-image: url({{ 'opening-inverted-comma.svg' | asset_url }}); 
+  }
+
+  #shopify-section-{{ section.id }} .testimonial h2:after {
+   right: calc(-40vw / 19.2); 
+    background-image: url({{ 'closing-inverted-comma.svg' | asset_url }}); 
+  }
+
+  #shopify-section-{{ section.id }} .logo-list { 
+    display: flex; 
+    margin-top: calc(75vw / 19.2); 
+  }
+
+  #shopify-section-{{ section.id }} .logo-list .slick-list {
+    padding: 0 !important; 
+  }
+
+  #shopify-section-{{ section.id }} .slick-track { 
+    display: flex; 
+  }
+ 
+  #shopify-section-{{ section.id }} .logo { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    cursor: pointer; 
+    opacity: .8; 
+    transform: scale(.6); 
+    transition: all .3s; 
+  }
+
+  #shopify-section-{{ section.id }} .logo.slick-cloned {
+    opacity: 0; 
+    pointer-events: none; 
+  }
+
+  #shopify-section-{{ section.id }} .slick-center { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+
+  #shopify-section-{{ section.id }} .progress-bar { 
+    width: 74px; 
+    height: 10px; 
+    display: flex; 
+    border-radius: 20px; 
+    margin: calc(40vw / 19.2) auto 0 auto; 
+    overflow: hidden; 
+    
+    {% if section.settings.progress_bar_bg != blank %}
+      background-color: {{ section.settings.progress_bar_bg }}; 
+    {% endif %}
+  }
+
+  #shopify-section-{{ section.id }} .progress-bar .progress { 
+    cursor: pointer; 
+    flex: 1; 
+  }
+
+  #shopify-section-{{ section.id }} .progress-bar .progress:after {
+    content: ''; 
+    left: 0; 
+    display: block; 
+    width: 0; 
+    height: 100%; 
+    background-color: var(--color-secondary); 
+    transition: all .3s; 
+  }
+
+  #shopify-section-{{ section.id }} .progress-bar .progress.active:after { 
+    width: 100%; 
+  }
+
+  #shopify-section-{{ section.id }} .progress-bar .progress.active:first-child:after {
+    border-top-left-radius: 20px; 
+    border-bottom-left-radius: 20px; 
+  }
+
+  #shopify-section-{{ section.id }} .progress-bar .progress.active:last-child:after {
+    border-top-right-radius: 20px; 
+    border-bottom-right-radius: 20px; 
+  }
+
+  #shopify-section-{{ section.id }} .slick-dots {
+    display: none !important; 
+  }
+
+  /* Responsive */
+  /* Mobile */
+  @media (max-width: 767px) { 
+    #shopify-section-{{ section.id }} .testimonials-with-logos-container {
+      padding: 46px 20px; 
+    }
+    
+    #shopify-section-{{ section.id }} .logo-list {
+      flex-direction: column; 
+    }
+    
+    #shopify-section-{{ section.id }} .testimonial h2 { 
+      margin: 40px 0; 
+      padding: 0 32px; 
+      font-size: 16px; 
+    }
+
+    #shopify-section-{{ section.id }} .testimonial h2:before, 
+    #shopify-section-{{ section.id }} .testimonial h2:after { 
+      width: 24px; 
+      height: 24px; 
+      aspect-ratio: 1; 
+    }
+
+    #shopify-section-{{ section.id }} .testimonial h2:before {
+      left: 0; 
+    }
+
+    #shopify-section-{{ section.id }} .testimonial h2:after {
+      right: 0; 
+    }
+
+    #shopify-section-{{ section.id }} .progress-bar { 
+      display: none; 
+      /* margin: 32px auto 0 auto; */
+    }
+
+    #shopify-section-{{ section.id }} .slick-dots { 
+      width: 100%; 
+      position: static; 
+      display: flex !important; 
+      justify-content: center; 
+      gap: 12px; 
+      margin-top: 32px; 
+    }
+
+    #shopify-section-{{ section.id }} .slick-dots li, 
+    #shopify-section-{{ section.id }} .slick-dots li button:before { 
+      width: fit-content; 
+      height: fit-content; 
+      margin: 0; 
+      padding: 0; 
+    }
+
+    #shopify-section-{{ section.id }} .slick-dots li button { 
+      width: 32px; 
+      height: 4px; 
+      border-radius: 20px; 
+      padding: 0; 
+      background-color: var(--color-secondary); 
+      opacity: .1; 
+      transition: all .3s; 
+    }
+
+    #shopify-section-{{ section.id }} .slick-dots .slick-active button { 
+      opacity: 1; 
+    }
+  }
+  
+  /* Tablet */
+  @media (min-width: 768px) and (max-width: 1366px) {
+    #shopify-section-{{ section.id }} .testimonial h2 {
+      font-size: calc(32vw / 13.66); 
+    }
+  }
+  
+  /* Desktop */
+  @media (min-width: 1920px) { 
+    #shopify-section-{{ section.id }} .testimonial h2 {
+      font-size: 32px; 
+    }
+  }
+</style>
+
+<!-- View -->
+<div class="testimonials-with-logos-container page-width">
+  <ul class="testimonial-list">
+    {% for block in section.blocks %}
+      <li class="testimonial testimonial-{{ forloop.index }}">
+        {% comment %}<p>{{ forloop.index }}</p>{% endcomment %}
+        <h2>{{ block.settings.testimonial }}</h2>
+      </li>
+    {% endfor %}
+  </ul>
+  <ul class="logo-list">
+    {% for block in section.blocks %}
+      <li class="logo logo-{{ forloop.index }}">
+        {% comment %}<p>{{ forloop.index }}</p>{% endcomment %}
+        {% if block.settings.logo != blank %}
+          <img width="auto" height="44" src="{{ block.settings.logo | img_url: 'master' }}" />
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+  <ul class="progress-bar">
+    {% for block in section.blocks %}
+      <li class="progress {% if forloop.first %}active{% endif %}"></li>
+    {% endfor %}
+  </ul>
+</div>
+
+<script>
+  addEventListener("DOMContentLoaded", (e) => { 
+    const progresses = document.querySelectorAll("#shopify-section-{{ section.id }} .progress"); 
+    const logos = document.querySelectorAll("#shopify-section-{{ section.id }} .logo"); 
+    
+    $('#shopify-section-{{ section.id }} .testimonial-list').slick({
+        arrows: false,
+    	dots: false,
+    	infinite: true,
+    	slidesToShow: 1,
+    	slidesToScroll: 1, 
+        autoplay: true, 
+        autoplaySpeed: 3000
+    }); 
+
+    $('#shopify-section-{{ section.id }} .logo-list').slick({
+        arrows: false,
+    	dots: true, 
+    	infinite: true,
+    	centerMode: true,
+    	slidesToShow: 3,
+    	slidesToScroll: 1, 
+        autoplay: true, 
+        autoplaySpeed: 3000
+    }); 
+
+    $('#shopify-section-{{ section.id }} .testimonial-list').on('afterChange', function(event, slick, currentSlide){
+      $('#shopify-section-{{ section.id }} .logo-list').slick('slickGoTo', currentSlide); 
+
+      progresses.forEach((progress, i) => { 
+        if(i > currentSlide) { 
+          progress.classList.remove("active"); 
+        } else {
+          progress.classList.add("active"); 
+        }
+      }); 
+    });
+  
+    $('#shopify-section-{{ section.id }} .logo-list').on('afterChange', function(event, slick, currentSlide){
+      $('#shopify-section-{{ section.id }} .testimonial-list').slick('slickGoTo', currentSlide); 
+    });
+
+    /* Progress and logo as dots */
+    function goToBoth(i) {
+      $('#shopify-section-{{ section.id }} .logo-list').slick('slickGoTo', i); 
+      $('#shopify-section-{{ section.id }} .testimonial-list').slick('slickGoTo', i); 
+    }
+    
+    progresses.forEach((progress, i) => { 
+      progress.addEventListener("click", (e) => { 
+        goToBoth(i); 
+      }); 
+    }); 
+    
+    logos.forEach((logo, i) => { 
+      logo.addEventListener("click", (e) => { 
+        goToBoth(i); 
+      }); 
+    }); 
+  }); 
+</script>
+  
+{% schema %}
+  {
+    "name": "Testimonials with Logos", 
+    "tag": "section", 
+    "class": "testimonials-with-logos", 
+    "settings": [
+      {
+        "type": "color", 
+        "id": "progress_bar_bg", 
+        "label": "Progress bar background", 
+        "default": "#E9E8E8"
+      }
+    ], 
+    "blocks": [
+      {
+        "type": "slide", 
+        "name": "Slide", 
+        "settings": [
+          {
+            "type": "text", 
+            "id": "testimonial", 
+            "label": "Testimonial", 
+            "default": "Heybike Ranger S is a killer city cruiser with one unfortunate quirk. Heybike continues produce quality e-bikes"
+          }, 
+          {
+            "type": "image_picker", 
+            "id": "logo", 
+            "label": "Logo"
+          }
+        ]
+      }
+    ], 
+    "presets": [
+      {
+        "name": "Testimonials with Logos", 
+        "blocks": [
+          {
+            "type": "slide"
+          }, 
+          {
+            "type": "slide"
+          }, 
+          {
+            "type": "slide"
+          }, 
+          {
+            "type": "slide"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

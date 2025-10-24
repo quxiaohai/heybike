@@ -9,12 +9,10 @@
 
   assign article_alt = article_image.alt | default: article.title
 
-  # theme-check-disable UndefinedObject
   assign number_of_comments = article.comments_count
   if comment.status == 'pending'
     assign number_of_comments = article.comments_count | plus: 1
   endif
-  # theme-check-enable UndefinedObject
 -%}
 
 <style>

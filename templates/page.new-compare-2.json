@@ -1,0 +1,89 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-md",
+        "heading_tag": "h1",
+        "text_size": "text-base",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "compare_table_NKkGUD": {
+      "type": "compare-table",
+      "blocks": {
+        "collection_aEB9m4": {
+          "type": "collection",
+          "settings": {
+            "title": "One Tab",
+            "product_list_group": "",
+            "product_list": [
+              "mars-2-0",
+              "horizon",
+              "ranger-s",
+              "alpha",
+              "heybike-ranger-step-thru-electric-bike",
+              "tyson",
+              "heybike-cityrun-electric-bike",
+              "hauler",
+              "hero",
+              "heybike-brawn-electric-bike",
+              "heybike-explore-electric-bike"
+            ],
+            "product_list_group_1": "",
+            "product_list_1": [],
+            "product_list_group_2": "",
+            "product_list_2": [],
+            "product_list_group_3": "",
+            "product_list_3": [],
+            "product_list_group_4": "",
+            "product_list_4": [],
+            "product_list_group_5": "",
+            "product_list_5": [],
+            "product_list_group_6": "",
+            "product_list_6": [],
+            "product_list_group_7": "",
+            "product_list_7": [],
+            "product_parameter_1": "Performance",
+            "product_parameter_2": "E-system & Drivetrain",
+            "product_parameter_3": "Frameset",
+            "product_parameter_4": "Weight & Dimensions",
+            "product_parameter_5": "",
+            "product_parameter_6": "",
+            "product_parameter_7": "",
+            "product_parameter_8": "",
+            "product_parameter_9": "",
+            "product_parameter_10": "",
+            "product_parameter_11": "",
+            "product_parameter_12": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_aEB9m4"
+      ],
+      "settings": {
+        "heading": "Compare Models",
+        "info_btn_text": "View details"
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "compare_table_NKkGUD"
+  ]
+}

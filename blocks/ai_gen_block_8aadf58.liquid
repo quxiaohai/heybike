@@ -1,0 +1,1287 @@
+{% doc %}
+  @prompt
+    Create a hero banner section with image and text overlay with these specifications:
+    - Separate image uploads for desktop and mobile versions - use picture element with source tags for responsive images
+    - CRITICAL HEIGHT CONTROLS: Desktop height mode select (adapt to image OR custom height). When "adapt to image" is selected, container height is auto and image displays at natural aspect ratio with height auto. When "custom height" is selected, container has fixed height from number input and image uses object-fit cover to fill container. Mobile height mode select (adapt to image OR custom height) works same way independently. Use inline styles or CSS custom properties to apply height values dynamically.
+    - Desktop custom height number input (default 600px) - only applies when custom height mode selected
+    - Mobile custom height number input (default 400px) - only applies when custom height mode selected
+    - CRITICAL: Use single content block with CSS media queries for responsive behavior - do NOT duplicate content
+    - Desktop controls applied via CSS at desktop breakpoint: horizontal alignment (left, center, right), vertical alignment (top, middle, bottom), content padding (top, right, bottom, left) with number inputs, content width (small 400px, medium 600px, large 800px, or custom), text alignment (left, center, right)
+    - Mobile controls applied via CSS at mobile breakpoint: horizontal alignment (left, center, right), vertical alignment (top, middle, bottom), content padding (top, right, bottom, left) with number inputs, content width (small 280px, medium 340px, large 400px, or custom), text alignment (left, center, right)
+    - CRITICAL FLEXIBLE CONTENT ORDER: Each content element (subheading, main heading, countdown timer, description, button) has a "display order" number input (1-5) so you can arrange them in any order. When elements are hidden, remaining elements automatically adjust spacing with no gaps.
+    - CRITICAL COUNTDOWN TIMER: Must use JavaScript to dynamically calculate time remaining from current time to target date/time. Timer updates every second. Date/time input field for target date. Timer style options: "simple" (plain text), "boxes" (numbers in boxes), "flip cards" (animated flip effect). Timer background color picker, timer text/number color picker. Timer must recalculate when date setting changes.
+    - Font sizes controlled by CSS media queries: Desktop - subheading (default 16px), main heading (default 48px), countdown timer (default 32px), description (default 18px), button text (default 16px). Mobile - subheading (default 14px), main heading (default 32px), countdown timer (default 24px), description (default 16px), button text (default 14px)
+    - Button with text field, button background color picker, button text color picker, button font size controls (separate for desktop and mobile), button link URL, button can be shown/hidden
+    - Text alignment controls ALL content including countdown timer and button
+    - Adjustable overlay opacity slider (0-100%) with dark semi-transparent overlay
+    - Content elements: subheading text (can hide), main heading (can hide), countdown timer with date/time setting (can hide), description text (can hide), button with link URL (can hide)
+    - All text colors adjustable: separate color pickers for subheading, main heading, countdown timer background, countdown timer text, description
+    - Use CSS flexbox with order property for flexible content ordering
+    - Clean, modern styling with good typography hierarchy
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hero-banner-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .ai-hero-banner-container-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-hero-banner-container-{{ ai_gen_id }} {
+      {% if block.settings.desktop_height_mode == 'custom' %}
+        height: {{ block.settings.desktop_custom_height }}px;
+      {% else %}
+        height: auto;
+      {% endif %}
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-container-{{ ai_gen_id }} {
+      {% if block.settings.mobile_height_mode == 'custom' %}
+        height: {{ block.settings.mobile_custom_height }}px;
+      {% else %}
+        height: auto;
+      {% endif %}
+    }
+  }
+
+  .ai-hero-banner-picture-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ai-hero-banner-image-{{ ai_gen_id }} {
+    width: 100%;
+    display: block;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-hero-banner-image-{{ ai_gen_id }} {
+      {% if block.settings.desktop_height_mode == 'custom' %}
+        height: 100%;
+        object-fit: cover;
+      {% else %}
+        height: auto;
+      {% endif %}
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-image-{{ ai_gen_id }} {
+      {% if block.settings.mobile_height_mode == 'custom' %}
+        height: 100%;
+        object-fit: cover;
+      {% else %}
+        height: auto;
+      {% endif %}
+    }
+  }
+
+  .ai-hero-banner-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, {{ block.settings.overlay_opacity | divided_by: 100.0 }});
+    pointer-events: none;
+  }
+
+  .ai-hero-banner-content-wrapper-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 1;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-hero-banner-content-wrapper-{{ ai_gen_id }} {
+      {% if block.settings.desktop_horizontal_align == 'left' %}
+        justify-content: flex-start;
+      {% elsif block.settings.desktop_horizontal_align == 'center' %}
+        justify-content: center;
+      {% else %}
+        justify-content: flex-end;
+      {% endif %}
+
+      {% if block.settings.desktop_vertical_align == 'top' %}
+        align-items: flex-start;
+      {% elsif block.settings.desktop_vertical_align == 'middle' %}
+        align-items: center;
+      {% else %}
+        align-items: flex-end;
+      {% endif %}
+
+      padding: {{ block.settings.desktop_padding_top }}px {{ block.settings.desktop_padding_right }}px {{ block.settings.desktop_padding_bottom }}px {{ block.settings.desktop_padding_left }}px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-content-wrapper-{{ ai_gen_id }} {
+      {% if block.settings.mobile_horizontal_align == 'left' %}
+        justify-content: flex-start;
+      {% elsif block.settings.mobile_horizontal_align == 'center' %}
+        justify-content: center;
+      {% else %}
+        justify-content: flex-end;
+      {% endif %}
+
+      {% if block.settings.mobile_vertical_align == 'top' %}
+        align-items: flex-start;
+      {% elsif block.settings.mobile_vertical_align == 'middle' %}
+        align-items: center;
+      {% else %}
+        align-items: flex-end;
+      {% endif %}
+
+      padding: {{ block.settings.mobile_padding_top }}px {{ block.settings.mobile_padding_right }}px {{ block.settings.mobile_padding_bottom }}px {{ block.settings.mobile_padding_left }}px;
+    }
+  }
+
+  .ai-hero-banner-content-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-hero-banner-content-{{ ai_gen_id }} {
+      {% if block.settings.desktop_content_width == 'small' %}
+        width: 400px;
+      {% elsif block.settings.desktop_content_width == 'medium' %}
+        width: 600px;
+      {% elsif block.settings.desktop_content_width == 'large' %}
+        width: 800px;
+      {% else %}
+        width: {{ block.settings.desktop_content_width_custom }}px;
+      {% endif %}
+
+      text-align: {{ block.settings.desktop_text_align }};
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-content-{{ ai_gen_id }} {
+      {% if block.settings.mobile_content_width == 'small' %}
+        width: 280px;
+      {% elsif block.settings.mobile_content_width == 'medium' %}
+        width: 340px;
+      {% elsif block.settings.mobile_content_width == 'large' %}
+        width: 400px;
+      {% else %}
+        width: {{ block.settings.mobile_content_width_custom }}px;
+      {% endif %}
+
+      text-align: {{ block.settings.mobile_text_align }};
+    }
+  }
+
+  .ai-hero-banner-subheading-{{ ai_gen_id }} {
+    color: {{ block.settings.subheading_color }};
+    margin: 0;
+    font-weight: 500;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-hero-banner-subheading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.desktop_subheading_size }}px;
+      order: {{ block.settings.subheading_order }};
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-subheading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_subheading_size }}px;
+      order: {{ block.settings.subheading_order }};
+    }
+  }
+
+  .ai-hero-banner-heading-{{ ai_gen_id }} {
+    color: {{ block.settings.heading_color }};
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-hero-banner-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.desktop_heading_size }}px;
+      order: {{ block.settings.heading_order }};
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_heading_size }}px;
+      order: {{ block.settings.heading_order }};
+    }
+  }
+
+  .ai-hero-banner-countdown-{{ ai_gen_id }} {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-hero-banner-countdown-{{ ai_gen_id }} {
+      order: {{ block.settings.countdown_order }};
+      {% if block.settings.desktop_text_align == 'center' %}
+        justify-content: center;
+      {% elsif block.settings.desktop_text_align == 'right' %}
+        justify-content: flex-end;
+      {% else %}
+        justify-content: flex-start;
+      {% endif %}
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-countdown-{{ ai_gen_id }} {
+      order: {{ block.settings.countdown_order }};
+      {% if block.settings.mobile_text_align == 'center' %}
+        justify-content: center;
+      {% elsif block.settings.mobile_text_align == 'right' %}
+        justify-content: flex-end;
+      {% else %}
+        justify-content: flex-start;
+      {% endif %}
+    }
+  }
+
+  .ai-hero-banner-countdown-item-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .ai-hero-banner-countdown-number-{{ ai_gen_id }} {
+    color: {{ block.settings.countdown_text_color }};
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-hero-banner-countdown-number-{{ ai_gen_id }} {
+      font-size: {{ block.settings.desktop_countdown_size }}px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-countdown-number-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_countdown_size }}px;
+    }
+  }
+
+  .ai-hero-banner-countdown-label-{{ ai_gen_id }} {
+    color: {{ block.settings.countdown_text_color }};
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  {% if block.settings.countdown_style == 'boxes' %}
+    .ai-hero-banner-countdown-number-{{ ai_gen_id }} {
+      background-color: {{ block.settings.countdown_bg_color }};
+      padding: 12px 16px;
+      border-radius: 8px;
+      min-width: 60px;
+    }
+  {% elsif block.settings.countdown_style == 'flip' %}
+    .ai-hero-banner-countdown-number-{{ ai_gen_id }} {
+      background-color: {{ block.settings.countdown_bg_color }};
+      padding: 12px 16px;
+      border-radius: 8px;
+      min-width: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ai-hero-banner-countdown-number-{{ ai_gen_id }}::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  {% endif %}
+
+  .ai-hero-banner-description-{{ ai_gen_id }} {
+    color: {{ block.settings.description_color }};
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-hero-banner-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.desktop_description_size }}px;
+      order: {{ block.settings.description_order }};
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_description_size }}px;
+      order: {{ block.settings.description_order }};
+    }
+  }
+
+  .ai-hero-banner-button-wrapper-{{ ai_gen_id }} {
+    display: flex;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-hero-banner-button-wrapper-{{ ai_gen_id }} {
+      order: {{ block.settings.button_order }};
+      {% if block.settings.desktop_text_align == 'center' %}
+        justify-content: center;
+      {% elsif block.settings.desktop_text_align == 'right' %}
+        justify-content: flex-end;
+      {% else %}
+        justify-content: flex-start;
+      {% endif %}
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-button-wrapper-{{ ai_gen_id }} {
+      order: {{ block.settings.button_order }};
+      {% if block.settings.mobile_text_align == 'center' %}
+        justify-content: center;
+      {% elsif block.settings.mobile_text_align == 'right' %}
+        justify-content: flex-end;
+      {% else %}
+        justify-content: flex-start;
+      {% endif %}
+    }
+  }
+
+  .ai-hero-banner-button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-hero-banner-button-{{ ai_gen_id }}:hover {
+    opacity: 0.9;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-hero-banner-button-{{ ai_gen_id }} {
+      font-size: {{ block.settings.desktop_button_size }}px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-button-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_button_size }}px;
+    }
+  }
+
+  .ai-hero-banner-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-hero-banner-image-placeholder-{{ ai_gen_id }} {
+      {% if block.settings.desktop_height_mode == 'custom' %}
+        height: {{ block.settings.desktop_custom_height }}px;
+      {% else %}
+        min-height: 400px;
+      {% endif %}
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-image-placeholder-{{ ai_gen_id }} {
+      {% if block.settings.mobile_height_mode == 'custom' %}
+        height: {{ block.settings.mobile_custom_height }}px;
+      {% else %}
+        min-height: 300px;
+      {% endif %}
+    }
+  }
+
+  .ai-hero-banner-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    opacity: 0.3;
+  }
+
+  .ai-hero-banner-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+{% endstyle %}
+
+<hero-countdown-{{ ai_gen_id }}
+  class="ai-hero-banner-{{ ai_gen_id }}"
+  data-target-date="{{ block.settings.countdown_target_date }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-hero-banner-container-{{ ai_gen_id }}">
+    {% if block.settings.desktop_image != blank or block.settings.mobile_image != blank %}
+      <picture class="ai-hero-banner-picture-{{ ai_gen_id }}">
+        {% if block.settings.mobile_image != blank %}
+          <source
+            media="(max-width: 749px)"
+            srcset="{{ block.settings.mobile_image | image_url: width: 750 }} 750w,
+                    {{ block.settings.mobile_image | image_url: width: 1500 }} 1500w"
+          >
+        {% endif %}
+        {% if block.settings.desktop_image != blank %}
+          <source
+            media="(min-width: 750px)"
+            srcset="{{ block.settings.desktop_image | image_url: width: 1500 }} 1500w,
+                    {{ block.settings.desktop_image | image_url: width: 2000 }} 2000w,
+                    {{ block.settings.desktop_image | image_url: width: 3000 }} 3000w"
+          >
+          <img
+            src="{{ block.settings.desktop_image | image_url: width: 2000 }}"
+            alt="{{ block.settings.desktop_image.alt | escape }}"
+            class="ai-hero-banner-image-{{ ai_gen_id }}"
+            loading="lazy"
+            width="{{ block.settings.desktop_image.width }}"
+            height="{{ block.settings.desktop_image.height }}"
+          >
+        {% elsif block.settings.mobile_image != blank %}
+          <img
+            src="{{ block.settings.mobile_image | image_url: width: 750 }}"
+            alt="{{ block.settings.mobile_image.alt | escape }}"
+            class="ai-hero-banner-image-{{ ai_gen_id }}"
+            loading="lazy"
+            width="{{ block.settings.mobile_image.width }}"
+            height="{{ block.settings.mobile_image.height }}"
+          >
+        {% endif %}
+      </picture>
+    {% else %}
+      <div class="ai-hero-banner-image-placeholder-{{ ai_gen_id }}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag }}
+        <div class="ai-hero-banner-empty-state-{{ ai_gen_id }}">
+          Add desktop and mobile images
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="ai-hero-banner-overlay-{{ ai_gen_id }}"></div>
+
+    <div class="ai-hero-banner-content-wrapper-{{ ai_gen_id }}">
+      <div class="ai-hero-banner-content-{{ ai_gen_id }}">
+        {% if block.settings.show_subheading and block.settings.subheading != blank %}
+          <p class="ai-hero-banner-subheading-{{ ai_gen_id }}">{{ block.settings.subheading }}</p>
+        {% endif %}
+
+        {% if block.settings.show_heading and block.settings.heading != blank %}
+          <h1 class="ai-hero-banner-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h1>
+        {% endif %}
+
+        {% if block.settings.show_countdown %}
+          <div class="ai-hero-banner-countdown-{{ ai_gen_id }}" data-countdown>
+            <div class="ai-hero-banner-countdown-item-{{ ai_gen_id }}">
+              <div class="ai-hero-banner-countdown-number-{{ ai_gen_id }}" data-days>00</div>
+              <div class="ai-hero-banner-countdown-label-{{ ai_gen_id }}">Days</div>
+            </div>
+            <div class="ai-hero-banner-countdown-item-{{ ai_gen_id }}">
+              <div class="ai-hero-banner-countdown-number-{{ ai_gen_id }}" data-hours>00</div>
+              <div class="ai-hero-banner-countdown-label-{{ ai_gen_id }}">Hours</div>
+            </div>
+            <div class="ai-hero-banner-countdown-item-{{ ai_gen_id }}">
+              <div class="ai-hero-banner-countdown-number-{{ ai_gen_id }}" data-minutes>00</div>
+              <div class="ai-hero-banner-countdown-label-{{ ai_gen_id }}">Minutes</div>
+            </div>
+            <div class="ai-hero-banner-countdown-item-{{ ai_gen_id }}">
+              <div class="ai-hero-banner-countdown-number-{{ ai_gen_id }}" data-seconds>00</div>
+              <div class="ai-hero-banner-countdown-label-{{ ai_gen_id }}">Seconds</div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.show_description and block.settings.description != blank %}
+          <p class="ai-hero-banner-description-{{ ai_gen_id }}">{{ block.settings.description }}</p>
+        {% endif %}
+
+        {% if block.settings.show_button and block.settings.button_text != blank %}
+          <div class="ai-hero-banner-button-wrapper-{{ ai_gen_id }}">
+            <a
+              href="{{ block.settings.button_link }}"
+              class="ai-hero-banner-button-{{ ai_gen_id }}"
+            >
+              {{ block.settings.button_text }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</hero-countdown-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class HeroCountdown{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.targetDate = this.dataset.targetDate;
+        this.countdownElement = this.querySelector('[data-countdown]');
+        this.daysElement = this.querySelector('[data-days]');
+        this.hoursElement = this.querySelector('[data-hours]');
+        this.minutesElement = this.querySelector('[data-minutes]');
+        this.secondsElement = this.querySelector('[data-seconds]');
+        this.intervalId = null;
+      }
+
+      connectedCallback() {
+        if (this.targetDate && this.countdownElement) {
+          this.startCountdown();
+        }
+      }
+
+      disconnectedCallback() {
+        if (this.intervalId) {
+          clearInterval(this.intervalId);
+        }
+      }
+
+      startCountdown() {
+        this.updateCountdown();
+        this.intervalId = setInterval(() => {
+          this.updateCountdown();
+        }, 1000);
+      }
+
+      updateCountdown() {
+        const now = new Date().getTime();
+        const target = new Date(this.targetDate).getTime();
+        const distance = target - now;
+
+        if (distance < 0) {
+          if (this.intervalId) {
+            clearInterval(this.intervalId);
+          }
+          this.daysElement.textContent = '00';
+          this.hoursElement.textContent = '00';
+          this.minutesElement.textContent = '00';
+          this.secondsElement.textContent = '00';
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        this.daysElement.textContent = String(days).padStart(2, '0');
+        this.hoursElement.textContent = String(hours).padStart(2, '0');
+        this.minutesElement.textContent = String(minutes).padStart(2, '0');
+        this.secondsElement.textContent = String(seconds).padStart(2, '0');
+      }
+    }
+
+    customElements.define('hero-countdown-{{ ai_gen_id }}', HeroCountdown{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Hero banner",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image"
+    },
+    {
+      "type": "header",
+      "content": "Desktop height"
+    },
+    {
+      "type": "select",
+      "id": "desktop_height_mode",
+      "label": "Height mode",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "custom",
+          "label": "Custom height"
+        }
+      ],
+      "default": "custom"
+    },
+    {
+      "type": "range",
+      "id": "desktop_custom_height",
+      "min": 300,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "label": "Custom height",
+      "default": 600
+    },
+    {
+      "type": "header",
+      "content": "Mobile height"
+    },
+    {
+      "type": "select",
+      "id": "mobile_height_mode",
+      "label": "Height mode",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "custom",
+          "label": "Custom height"
+        }
+      ],
+      "default": "custom"
+    },
+    {
+      "type": "range",
+      "id": "mobile_custom_height",
+      "min": 200,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "label": "Custom height",
+      "default": 400
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Desktop layout"
+    },
+    {
+      "type": "select",
+      "id": "desktop_horizontal_align",
+      "label": "Horizontal alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "desktop_vertical_align",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "middle",
+          "label": "Middle"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "middle"
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_right",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding right",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding_left",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding left",
+      "default": 40
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_width",
+      "label": "Content width",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small (400px)"
+        },
+        {
+          "value": "medium",
+          "label": "Medium (600px)"
+        },
+        {
+          "value": "large",
+          "label": "Large (800px)"
+        },
+        {
+          "value": "custom",
+          "label": "Custom"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "range",
+      "id": "desktop_content_width_custom",
+      "min": 300,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "label": "Custom content width",
+      "default": 600
+    },
+    {
+      "type": "select",
+      "id": "desktop_text_align",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "select",
+      "id": "mobile_horizontal_align",
+      "label": "Horizontal alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "mobile_vertical_align",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "middle",
+          "label": "Middle"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "middle"
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_right",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding right",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_left",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding left",
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_width",
+      "label": "Content width",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small (280px)"
+        },
+        {
+          "value": "medium",
+          "label": "Medium (340px)"
+        },
+        {
+          "value": "large",
+          "label": "Large (400px)"
+        },
+        {
+          "value": "custom",
+          "label": "Custom"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_width_custom",
+      "min": 200,
+      "max": 500,
+      "step": 20,
+      "unit": "px",
+      "label": "Custom content width",
+      "default": 340
+    },
+    {
+      "type": "select",
+      "id": "mobile_text_align",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Subheading"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_subheading",
+      "label": "Show subheading",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading text",
+      "default": "Limited Time Offer"
+    },
+    {
+      "type": "range",
+      "id": "subheading_order",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Display order",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "desktop_subheading_size",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Desktop font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_subheading_size",
+      "min": 10,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile font size",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Main heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading text",
+      "default": "Summer Sale Ends Soon"
+    },
+    {
+      "type": "range",
+      "id": "heading_order",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Display order",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "min": 24,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Desktop font size",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Mobile font size",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Countdown timer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_countdown",
+      "label": "Show countdown",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "countdown_target_date",
+      "label": "Target date and time",
+      "default": "2025-12-31T23:59:59"
+    },
+    {
+      "type": "range",
+      "id": "countdown_order",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Display order",
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "countdown_style",
+      "label": "Timer style",
+      "options": [
+        {
+          "value": "simple",
+          "label": "Simple"
+        },
+        {
+          "value": "boxes",
+          "label": "Boxes"
+        },
+        {
+          "value": "flip",
+          "label": "Flip cards"
+        }
+      ],
+      "default": "boxes"
+    },
+    {
+      "type": "color",
+      "id": "countdown_bg_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "countdown_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "desktop_countdown_size",
+      "min": 20,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Desktop font size",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "mobile_countdown_size",
+      "min": 16,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "Mobile font size",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Show description",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description text",
+      "default": "Don't miss out on our biggest sale of the year. Shop now and save up to 50% on select items."
+    },
+    {
+      "type": "range",
+      "id": "description_order",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Display order",
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "desktop_description_size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Desktop font size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "mobile_description_size",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile font size",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "range",
+      "id": "button_order",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Display order",
+      "default": 5
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background color",
+      "default": "#ffdb00"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "desktop_button_size",
+      "min": 12,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "label": "Desktop font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_size",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile font size",
+      "default": 14
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero banner"
+    }
+  ]
+}
+{% endschema %}

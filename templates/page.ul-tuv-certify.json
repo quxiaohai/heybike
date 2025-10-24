@@ -1,0 +1,287 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-xl tracking-heading",
+        "heading_tag": "h1",
+        "text_size": "text-base",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "image-with-text-overlay": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Safety Certified E-Bikes",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading"
+      ],
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/out-stor_banner_2048x_3a3d6c59-f2a0-43da-b899-499690c58cf6.webp",
+        "image_height": "500px",
+        "content_width": "large",
+        "content_position": "md:items-center md:justify-start",
+        "text_alignment": "left",
+        "image_height_mobile": "200px",
+        "content_position_mobile": "items-center justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#000000",
+        "overlay_opacity": 24,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "images_with_text_FryBMN": {
+      "type": "images-with-text",
+      "blocks": {
+        "image_YGdRCp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CERTIFIED-UL-300x294.webp",
+            "image_width": "custom",
+            "image_max_width": 100,
+            "image_max_width_mobile": 80
+          }
+        },
+        "heading_9BB4Qp": {
+          "type": "heading",
+          "settings": {
+            "heading": "UL Certification",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_BHbgM6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Currently UL is one of the few organizations which have devised a set of safety standards for e-bike safety. UL certifications are currently not mandatory for manufacturers to sell e-bikes in most US states, and are a cost that most manufacturers have opted out of. Most Heybike e-bikes are both UL 2271 Recognized and UL 2849 Certified, ensuring the highest level of regulatory compliance in the industry.</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "image_YGdRCp",
+        "heading_9BB4Qp",
+        "text_BHbgM6"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/1_4616c21a-5d3b-4ee5-a0e6-a59a3d7b1d29.png",
+        "image_ratio": "adapt",
+        "image_width": "medium",
+        "layout": "image_first",
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": false
+      }
+    },
+    "faq_zVhER9": {
+      "type": "faq",
+      "blocks": {
+        "question_34rtYJ": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>What are UL 2849 and UL 2271 certification?</strong>",
+            "text": "<p>UL 2849 is a safety standard established by Underwriters Laboratories (UL), a globally recognized safety organization. This certification specifically focuses on the safety of electric bikes, including their electrical systems and battery packs. UL 2849 evaluates aspects such as electrical and fire safety, mechanical stability, and performance of e-bike components.</p><p>UL 2271 is a safety standard developed by UL specifically for e-bike lithium-ion battery packs. This certification evaluates the safety and performance of the battery pack, including its electrical and thermal characteristics, mechanical integrity, and protection against potential hazards.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_hFAB43": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>What does UL 2849 certification ensure?</strong>",
+            "text": "<p>UL 2849 certification ensures that the e-bike's electrical components, including the battery pack, charger, and controller, have undergone rigorous testing for safety and reliability. It verifies that the e-bike meets specific standards related to electrical insulation, protection against short circuits, thermal performance, and resistance to fire hazards. This certification helps minimize the risk of electrical malfunctions, fires, and other safety issues.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_CeLHtL": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>Why is UL 2271 certification important for eBike safety?</strong>",
+            "text": "<p>UL 2271 certification ensures that the e-bike's lithium-ion battery pack has undergone rigorous testing for safety and performance. It verifies that the battery pack meets stringent criteria for electrical and thermal protection, preventing issues such as overheating, short circuits, and fires. UL 2271 certification is crucial in assuring the reliability and safety of the e-bike's power source.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_yePEWe": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>How can UL 2849 and UL 2271 certifications benefit eBike riders?</strong>",
+            "text": "<p>UL 2849 and UL 2271 certifications provide several benefits to e-bike riders, including:</p><ul><li><strong>Enhanced safety:</strong> These certifications assure riders that the e-bike and its battery pack meet stringent safety standards, minimizing the risk of electrical malfunctions, fires, and other potential hazards.</li><li><strong>Reliability and quality:</strong> The certifications indicate that the e-bike and its battery pack have undergone rigorous testing for performance, ensuring a reliable and high-quality product.</li><li><strong>Peace of mind:</strong> By choosing an e-bike with UL 2849 and UL 2271 certifications, riders can have peace of mind knowing that the manufacturer has prioritized safety and adhered to industry-recognized standards.</li></ul>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_Atp6tN": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>How can I verify if an eBike or battery pack has UL 2849 or UL 2271 certification?</strong>",
+            "text": "<p>To verify if an e-bike or battery pack has UL 2849 or UL 2271 certification, you can:</p><ul><li><strong>Check the product documentation or packaging:</strong> Look for specific mention of UL 2849 or UL 2271 certification on the e-bike or battery pack's packaging, user manual, or promotional materials.</li><li><strong>Visit the UL online certification directory:</strong> UL provides an online directory where you can search for certified products. Visit the UL website and navigate to their certification directory, then enter the manufacturer's name or product model to check for certifications.</li></ul>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "question_34rtYJ",
+        "question_hFAB43",
+        "question_CeLHtL",
+        "question_yePEWe",
+        "question_Atp6tN"
+      ],
+      "settings": {
+        "style": "with-background",
+        "heading": "FAQs",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "#fafafa",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "images_with_text_8PWUqK": {
+      "type": "images-with-text",
+      "blocks": {
+        "heading_RnNxXE": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ride with safety",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_CfFeU7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>UL 2849 and UL 2271 certifications play a vital role in ensuring e-bike safety by evaluating the electrical systems and battery packs for reliability and performance. These certifications provide peace of mind to riders, assuring them of enhanced safety, reliability, and adherence to rigorous industry standards. When choosing an e-bike, it is recommended to look for UL 2849 and UL 2271 certifications to prioritize safety and enjoy a worry-free riding experience.</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_Ma43PC": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Ebikes",
+            "button_link": "shopify://collections/deals-bikes",
+            "button_size": "sm"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RnNxXE",
+        "text_CfFeU7",
+        "button_Ma43PC"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/undulating-road.jpg",
+        "image_2": "shopify://shop_images/02_e5b414e4-2500-4905-ae0a-8d0034761c7c.jpg",
+        "image_ratio": "portrait",
+        "image_width": "medium",
+        "layout": "text_first",
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image-with-text-overlay",
+    "images_with_text_FryBMN",
+    "faq_zVhER9",
+    "images_with_text_8PWUqK"
+  ]
+}

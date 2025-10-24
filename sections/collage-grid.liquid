@@ -48,16 +48,12 @@
     {%- render 'section-heading', section: section -%}
 
     {%- if section.blocks.size > 0 -%}
-      <div class="collage with-grid grid md:!tw-grid-cols-12 items-start gap-2d5 md:gap-4 lg:gap-6">
+      <div class="collage with-grid grid items-start gap-2d5 md:gap-4 lg:gap-6">
         {%- render 'collage-grid', section: section -%}
       </div>
     {%- endif -%}
   </div>
 </div>
-
-
-
-
 
 {% schema %}
 {
@@ -394,7 +390,7 @@
           "id": "column_size",
           "label": "t:sections.collage-grid.blocks.global.settings.column_size.label",
           "min": 1,
-          "max": 12,
+          "max": 10,
           "step": 1,
           "default": 5
         },

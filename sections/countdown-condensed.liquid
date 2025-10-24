@@ -29,19 +29,16 @@
             <div class="{% if section.blocks.size > 1 %}col-span-6{% if forloop.first %} text-left{% else %} text-right{% endif %}{% else %}col-span-full text-center{% endif %} md:text-{{ block.settings.text_alignment }}" {{ block.shopify_attributes }}>
               <div class="inline-flex gap-3">
                 {%- liquid
-                  assign icon_class = 'flex-auto'
+                  assign icon_class = 'shrink-0'
                   unless block.settings.compact
-                    assign icon_class = 'flex-auto md:hidden'
+                    assign icon_class = 'shrink-0 md:hidden'
                   endunless
                   render 'icon', icon: 'countdown-compact', size: 'sm', class: icon_class
                 -%}
+                {%- capture expiration_date -%}{{ block.settings.year }}-{{ block.settings.month }}-{{ block.settings.day }} {{ block.settings.hour }}:{{ block.settings.minute }}:00{%- endcapture -%}
                 <countdown-timer
                   class="countdown__timer leading-tight {{ block.settings.text_font }} inline-flex gap-3 text-center"
-                  data-year="{{ block.settings.year }}"
-                  data-month="{{ block.settings.month }}"
-                  data-day="{{ block.settings.day }}"
-                  data-hour="{{ block.settings.hour }}"
-                  data-minute="{{ block.settings.minute }}"
+                  data-expires="{{ expiration_date | date: '%FT%T%:z' | escape }}"
                   data-compact="{% if block.settings.compact %}true{% else %}mobile{% endif %}"
                 >
                   <div class="countdown__item">
@@ -263,10 +260,8 @@
       "limit": 1,
       "settings": [
         {
-          "type": "checkbox",
-          "id": "compact",
-          "label": "t:sections.countdown-timer.blocks.timer.settings.compact.label",
-          "default": true
+          "type": "paragraph",
+          "content": "t:sections.countdown-timer.blocks.timer.settings.paragraph.content"
         },
         {
           "type": "select",
@@ -874,6 +869,12 @@
           "type": "richtext",
           "id": "message",
           "label": "t:sections.countdown-timer.blocks.timer.settings.message.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "compact",
+          "label": "t:sections.countdown-timer.blocks.timer.settings.compact.label",
+          "default": true
         }
       ]
     }

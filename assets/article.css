@@ -190,9 +190,11 @@
 }
 
 @media screen and (min-width: 1280px) {
+  /*
   .comments-section .page-width--narrow .article-card:nth-child(1) {
     margin-inline-start: calc(var(--sp-20) * -1);
   }
+  */
 
   .comments-section .page-width--narrow .article-card:nth-child(2) {
     margin-inline-end: calc(var(--sp-20) * -1);

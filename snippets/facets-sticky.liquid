@@ -28,9 +28,11 @@
             echo 'collections.filtering.filter_show_button' | t
           endif
         -%}
+        {% comment %}
         {%- if enable_filtering -%}
           <facet-count class="count flex items-center justify-center text-xs font-medium rounded-full"{% if filter_count == 0 %} hidden{% endif %}>{{ filter_count }}</facet-count>
         {%- endif -%}
+        {% endcomment %}
       </span>
     </button>
     <drawer-element id="FacetDrawerSticky" class="facet-drawer drawer drawer--start z-30 fixed bottom-0 left-0 h-full w-full pointer-events-none"
@@ -63,10 +65,7 @@
           </button>
         </gesture-element>
         <div class="drawer__content opacity-0 invisible flex flex-col h-full grow shrink" id="MobileFacetFiltersContainer">
-            <div class="drawer__scrollable relative flex flex-col grow shrink">
-                {%- if coll_list.size > 0 -%}
-                    {% render 'collection-menu', list: coll_list, key: 'sticky' %}
-                {%- endif -%}
+          <div class="drawer__scrollable relative flex flex-col grow shrink">
             {%- render 'facets',
               context: 'sticky',
               results: results,

@@ -1,0 +1,46 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-md",
+        "heading_tag": "h1",
+        "text_size": "text-base",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "registration_qMYUnx": {
+      "type": "Registration",
+      "settings": {
+        "image": "shopify://shop_images/PC_97d95215-02ec-49e9-a4e4-c0aa7a1b86c5.jpg",
+        "image_mobile": "shopify://shop_images/94d53239037849179c79285840325f32_c4170c0a-49f9-4d92-8e28-0d21a8f8806d.jpg"
+      }
+    },
+    "text_registration_6MN8NH": {
+      "type": "text-registration",
+      "settings": {
+        "title": "",
+        "subtitle": "<p>To register your Heybike E-Bike and activate its warranty please fill out the requested information below. <a href=\"https://www.heybike.com/pages/warranty\" target=\"_blank\" title=\"https://www.heybike.com/pages/warranty\"><strong>Click here to find out more</strong></a> about what’s included in the manufactures warranty. </p>"
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "registration_qMYUnx",
+    "text_registration_6MN8NH"
+  ]
+}

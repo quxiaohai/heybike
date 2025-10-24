@@ -1,0 +1,449 @@
+{% comment %}
+    Adjusted by CLEARgo
+{% endcomment %}
+
+{% style %}
+    product-bundle.section-{{ section.id }} { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 32px; 
+        margin: 32px 0; 
+    }
+
+    .section-{{ section.id }} .details__content { 
+        display: flex; 
+        flex-direction: column; 
+        gap: calc(20vw / 19.2); 
+    }
+    
+    .section-{{ section.id }} .details__content input[type="checkbox"] { 
+      width: 30px; 
+      height: 30px; 
+      aspect-ratio: 1; 
+    }
+
+    .section-{{ section.id }} .details__summary { 
+        align-items: center !important; 
+    }
+
+    .section-{{ section.id }} .details__summary * { 
+        line-height: normal; 
+        font-size: 1.5rem; 
+        font-weight: 600; 
+    }
+
+    .section-{{ section.id }} [aria-expanded="false"] .details__summary .icon-arrow-collapse { 
+        transform: rotate(180deg); 
+        transition: transform .3s; 
+    }
+
+    .section-{{ section.id }} [aria-expanded="true"] .details__summary .icon-arrow-collapse { 
+        transform: rotate(0); 
+    }
+    
+    .section-{{ section.id }} .product-bundle-inner { 
+        width: 100%; 
+    }
+
+    .section-{{ section.id }}.product-bundle .product-bundle__title { 
+        margin-bottom: 4px; 
+        line-height: normal; 
+        font-size: calc(24vw / 19.2); 
+        color: var(--color-secondary); 
+    }
+
+    .section-{{ section.id }}.product-bundle .price__regular { 
+        line-height: normal; 
+        font-size: 1.25rem !important; 
+    }
+
+    .section-{{ section.id }}.product-bundle .price__regular.price__free { 
+        color: var(--color-red); 
+    }
+
+    .product__price :is(.price__sale,.unit-price) { 
+        /* font-size: 2rem; */
+        font-size: 1rem; 
+    }
+
+    .section-{{ section.id }}.product-bundle .product-bundle__info.hide { 
+        display: none; 
+    }
+
+    .section-{{ section.id }} .details__footer { 
+        display: flex; 
+        justify-content: space-between; 
+        flex-wrap: wrap; 
+        font-size: calc(26vw / 19.2); 
+        color: var(--color-secondary); 
+    }
+
+    .section-{{ section.id }} .select-counter .count { 
+        font-weight: 700; 
+    }
+
+    .section-{{ section.id }} .show-more span.less, 
+    .section-{{ section.id }} .show-more.less span.more { 
+        display: none; 
+    }
+
+    .section-{{ section.id }} .show-more.less span.less { 
+        display: block; 
+    }
+
+    /* Responsive */
+    /* Mobile */
+    @media (max-width: 767px) { 
+      .section-{{ section.id }} .details__content {
+        gap: 16px; 
+      }
+
+      .section-{{ section.id }} .details__content input[type="checkbox"] { 
+        width: 20px; 
+        height: 20px; 
+      }
+      
+      .section-{{ section.id }}.product-bundle .product-bundle__title { 
+        font-size: 16px; 
+      }
+
+      .section-{{ section.id }} .product__accordion .price {
+        align-items: center; 
+      }
+
+      .section-{{ section.id }}.product-bundle .price__regular { 
+        font-size: 14px !important; 
+      }
+
+      .section-{{ section.id }} .details__summary * { 
+        font-size: 16px; 
+      }
+
+      .section-{{ section.id }} .product-bundle__info img { 
+        width: 64px; 
+        height: 64px; 
+        margin: 0 20px 0 0; 
+      }
+
+      .section-{{ section.id }} .details__footer { 
+        font-size: 16px; 
+      }
+    }
+
+    /* Tablet */
+    @media (min-width: 768px) and (max-width: 1366px) { 
+        .section-{{ section.id }} .details__content {
+          gap: calc(20vw / 13.66); 
+        }
+      
+        .section-{{ section.id }}.product-bundle .product-bundle__title { 
+            font-size: calc(24vw / 13.66); 
+        }
+
+        .section-{{ section.id }} .details__footer { 
+            font-size: calc(26vw / 13.66); 
+        }
+    }
+
+    /* Desktop */
+    @media (min-width: 1920px) { 
+        .section-{{ section.id }} .details__content {
+          gap: 20px; 
+        }
+        
+        .section-{{ section.id }}.product-bundle .product-bundle__title { 
+            font-size: 24px; 
+        }
+
+        .section-{{ section.id }} .details__footer { 
+            font-size: 26px; 
+        }
+    }
+{% endstyle %}
+
+{% assign show_recommendations = false %}
+{% if block.settings.recommendations_metafield != blank or block.settings.show_recommendations %}
+  {% assign show_recommendations = true %}
+{% endif %}
+
+{% assign show_complementary = false %}
+{% if block.settings.complementary_metafield != blank or block.settings.show_complementary %}
+  {% assign show_complementary = true %}
+{% endif %}
+{% if show_complementary or show_recommendations or true %}
+<product-bundle class="section-{{ section.id }} product-bundle">
+	{% if block.settings.recommendations_title != blank %}
+	<details class="product__accordion details" is="accordion-details" {{ block.shopify_attributes }} {% if block.settings.recommendations_expand %} open {% endif %}>
+		<summary class="details__summary flex items-center justify-between gap-2 cursor-pointer">
+			<div class="flex items-center gap-2d5">
+				<span class="leading-none">{{block.settings.recommendations_title }}</span>
+			</div>            
+			<svg class="icon icon-arrow-collapse icon-xs flex-auto" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M13 9.01001L7 3.51001L1 9.01001" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+		</summary>
+		<div class="details__content rte text-sm text-opacity" {% if block.settings.show_recommendations %} data-url="{{ routes.product_recommendations_url }}?section_id={{ section_id }}&product_id={{ product_id }}&limit={{ block.settings.recommendations_limit }}&intent=related" {% endif %}>
+            {% if block.settings.show_recommendations %}
+              {%- if recommendations.performed -%}
+				{%- for product in recommendations.products -%}
+					<label class="product-bundle__info product-bundle-{{ forloop.index }} {% if forloop.index > 3 %}product-bundle-extra hide{% endif %}" for="Recommendations_{{product.handle}}" class="flex items-baseline gap-1">
+						{%- liquid
+							if product.featured_media
+								echo product.featured_media | image_url: width: product.featured_media.width | image_tag: loading: 'lazy', widths: '180,360,540', is: 'lazy-image'
+							else
+								echo 'image' | placeholder_svg_tag
+							endif
+						-%}
+                        <div class="product-bundle-inner">
+                            <div class="product-bundle__title">
+                                {{product.title}}
+                            </div>
+                            {% render 'product-price', product: product,showFree: true, class: 'flex items-end gap-2 text-sm' %}
+                        </div>
+                        <input name="bundles" value="{{product.first_available_variant.id}}" class="checkbox"  id="Recommendations_{{product.handle}}" type="checkbox"/>
+					</label>
+                    
+                    {% if forloop.last %}
+                        <div class="details__footer">
+                            <span class="select-counter"><span class="count">0</span> Selected</span>
+
+                            {% if forloop.index > 3 %}
+                                <button class="show-more">
+                                    <span class="more">Show More</span>
+                                    <span class="less">Show Less</span>
+                                </button>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+				{%- endfor -%}
+			{%- endif -%}
+            {% else %}
+              {%- for product in block.settings.recommendations_checked_metafield -%}
+                    <span>forloop index B: {{ forloop.index }}</span>
+
+  					<label class="product-bundle__info product-bundle-{{ forloop.index }} {% if forloop.index > 3 %}product-bundle-extra hide{% endif %}" for="Recommendations_{{product.handle}}" class="flex items-baseline gap-1">
+  						{%- liquid
+  							if product.featured_media
+  								echo product.featured_media | image_url: width: product.featured_media.width | image_tag: loading: 'lazy', widths: '180,360,540', is: 'lazy-image'
+  							else
+  								echo 'image' | placeholder_svg_tag
+  							endif
+  						-%}
+                        <div class="product-bundle-inner">
+                            <div class="product-bundle__title">
+                                {{product.title}}
+                            </div>
+                            {% render 'product-price', product: product, showFree: true, class: 'flex items-end gap-2 text-sm' %}
+                        </div>
+                        <input name="bundles" value="{{product.first_available_variant.id}}" class="checkbox"  id="Recommendations_{{product.handle}}" type="checkbox" checked disabled/>
+  					</label>
+
+                    {% if forloop.last %}
+                        <div class="details__footer">
+                            <span class="select-counter"><span class="count">0</span> Selected</span>
+
+                            {% if forloop.index > 3 %}
+                                <button class="show-more">
+                                    <span class="more">Show More</span>
+                                    <span class="less">Show Less</span>
+                                </button>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+  				{%- endfor -%}
+				{%- for product in block.settings.recommendations_metafield -%}
+					<label class="product-bundle__info product-bundle-{{ forloop.index }} {% if forloop.index > 3 %}product-bundle-extra hide{% endif %}" for="Recommendations_{{product.handle}}" class="flex items-baseline gap-1">
+						{%- liquid
+							if product.featured_media
+								echo product.featured_media | image_url: width: product.featured_media.width | image_tag: loading: 'lazy', widths: '180,360,540', is: 'lazy-image'
+							else
+								echo 'image' | placeholder_svg_tag
+							endif
+						-%}
+                        <div class="product-bundle-inner">
+                            <div class="product-bundle__title">
+                                {{product.title}}
+                            </div>
+                            {% render 'product-price', product: product,showFree: true, class: 'flex items-end gap-2 text-sm' %}
+                        </div>
+                        <input name="bundles" value="{{product.first_available_variant.id}}" class="checkbox"  id="Recommendations_{{product.handle}}" type="checkbox"/>
+					</label>
+
+                    {% if forloop.last %}
+                        <div class="details__footer">
+                            <span class="select-counter"><span class="count">0</span> Selected</span>
+
+                            {% if forloop.index > 3 %}
+                                <button class="show-more">
+                                    <span class="more">Show More</span>
+                                    <span class="less">Show Less</span>
+                                </button>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+				{%- endfor -%}
+            {% endif %}
+		</div>
+	</details>
+	{% endif %}
+	{% if block.settings.complementary_title != blank  and  show_complementary  %}
+		<details class="product__accordion details" is="accordion-details" {{ block.shopify_attributes }}  {% if block.settings.complementary_expand %} open {% endif %}>
+			<summary class="details__summary flex items-center justify-between gap-2 cursor-pointer">
+				<div class="flex items-center gap-2d5">
+					<span class="leading-none">{{block.settings.complementary_title  }}</span>
+				</div>
+				<svg class="icon icon-arrow-collapse icon-xs flex-auto" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M13 9.01001L7 3.51001L1 9.01001" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+			</summary>
+			<div class="details__content rte text-sm text-opacity" {% if block.settings.show_complementary %} data-url="{{ routes.product_recommendations_url }}?section_id={{ section_id }}&product_id={{ product_id }}&limit={{ block.settings.complementary_limit }}&intent=complementary" {% endif %}>
+			{% if block.settings.show_complementary %}
+                {%- if recommendations.performed -%}
+				    {%- for product in recommendations.products -%}
+                        <label class="product-bundle__info product-bundle-{{ forloop.index }} {% if forloop.index > 3 %}product-bundle-extra hide{% endif %}" for="Complementary_{{product.handle}}">
+                            <input name="bundles" value="{{product.first_available_variant.id}}" class="checkbox"  id="Complementary_{{product.handle}}" type="checkbox"/>
+                            {%- liquid
+                                if product.featured_media
+                                    echo product.featured_media | image_url: width: product.featured_media.width | image_tag: loading: 'lazy', widths: '180,360,540', is: 'lazy-image'
+                                else
+                                    echo 'image' | placeholder_svg_tag
+                                endif
+                            -%}
+                            <div class="product-bundle-inner">
+                                <div class="product-bundle__title">
+                                    {{product.title}}
+                                </div>
+                                {% render 'product-price', product: product,showFree: true, class: 'flex items-end gap-2 text-sm' %}
+                            </div>
+                        </label>
+
+                        {% if forloop.last %}
+                            <div class="details__footer">
+                                <span class="select-counter"><span class="count">0</span> Selected</span>
+
+                                {% if forloop.index > 3 %}
+                                    <button class="show-more">
+                                        <span class="more">Show More</span>
+                                        <span class="less">Show Less</span>
+                                    </button>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    {%- endfor -%}
+                {%- endif -%}
+            {% else %}
+                {%- for product in block.settings.complementary_metafield -%}
+                    <label class="product-bundle__info product-bundle-{{ forloop.index }} {% if forloop.index > 3 %}product-bundle-extra hide{% endif %}" for="Complementary_{{product.handle}}">
+						{%- liquid
+							if product.featured_media
+								echo product.featured_media | image_url: width: product.featured_media.width | image_tag: loading: 'lazy', widths: '180,360,540', is: 'lazy-image'
+							else
+								echo 'image' | placeholder_svg_tag
+							endif
+						-%}
+                        <div class="product-bundle-inner">
+                            <div class="product-bundle__title">
+                                {{product.title}}
+                            </div>
+                            {% render 'product-price', product: product,showFree: true, class: 'flex items-end gap-2 text-sm' %}
+                        </div>
+                        <input name="bundles" value="{{product.first_available_variant.id}}" class="checkbox" id="Complementary_{{product.handle}}" type="checkbox"/>
+					</label>
+                    
+                    {% if forloop.last %}
+                        <div class="details__footer">
+                            <span class="select-counter"><span class="count">0</span> Selected</span>
+
+                            {% if forloop.index > 3 %}
+                                <button class="show-more">
+                                    <span class="more">Show More</span>
+                                    <span class="less">Show Less</span>
+                                </button>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+				{%- endfor -%}
+			{% endif %}
+			</div>
+		</details>
+		{% endif %}
+
+		{% if block.settings.warranty_product.available %}
+           {%- for variant in block.settings.warranty_product.variants -%}
+               {% assign optionName = variant.options | downcase %}
+               {% if optionName contains 'year' and variant.available%}
+                    <label class="product-warranty" for="Warrant_{{ variant.id }}" class="flex items-baseline gap-1">
+                        <input name="bundles" value="{{ variant.id }}" class="checkbox"  id="Warrant_{{ variant.id }}" type="checkbox"/>
+                        <div>Add <strong>{{ variant.price | money }}</strong>, enjoy extra {{ variant.options }} warranty</div>
+					    {% render 'product-price', product: variant, class: 'hidden' %}
+                    </label>
+               {% endif %}
+           {%- endfor -%}
+		{% endif %}
+	</product-bundle>
+	<script>
+		window.Currency = {
+			"money_format":"{{shop.money_format}}",
+			"money_with_currency_format": "{{shop.money_with_currency_format}}",
+			"currency_code_enabled": {{settings.currency_code_enabled}}
+		}
+	</script>
+    
+    <script>
+        addEventListener("DOMContentLoaded", (e) => { 
+            console.log("-----------Passed through product bundles.--------------"); 
+
+            /* Show more buttons */
+            const showMores = document.querySelectorAll(".section-{{ section.id }} .show-more"); 
+
+            showMores.forEach((showMore, i) => { 
+                showMore.addEventListener("click", (event) => { 
+                    const productBundleExtras = showMore.parentElement.parentElement.querySelectorAll(".product-bundle-extra"); 
+
+                    productBundleExtras.forEach((productBundleExtra, j) => { 
+                        if(!productBundleExtra.classList.contains("hide")) { 
+                            productBundleExtra.classList.add("hide"); 
+                        } else { 
+                            productBundleExtra.classList.remove("hide"); 
+                        }
+                    }); 
+
+                    if(!showMore.classList.contains("less")) { 
+                        showMore.classList.add("less"); 
+                    } else { 
+                        showMore.classList.remove("less"); 
+                    }
+                }); 
+            }); 
+
+            /* Select count */
+            const detailsContents = document.querySelectorAll(".section-{{ section.id }} .details__content"); 
+
+            detailsContents.forEach((detailsContent, i) => { 
+                const checkboxes = detailsContent.querySelectorAll('.product-bundle__info input[type="checkbox"]'); 
+
+                checkboxes.forEach((checkbox, j) => { 
+                    checkbox.addEventListener("change", (event) => { 
+                        const count = detailsContent.querySelector(".select-counter .count"); 
+
+                        if(event.currentTarget.checked) { 
+                            count.innerText = parseInt(count.innerText) + 1; 
+                        } else { 
+                            count.innerText = parseInt(count.innerText) - 1; 
+                        }
+                    }); 
+                }); 
+            }); 
+
+            /* Quickview */
+            const bundleItems = document.querySelectorAll(".quick-view .product-bundle__info"); 
+
+            bundleItems.forEach((bundleItem, i) => { 
+                bundleItem.addEventListener("click", (e) => { 
+                    const quickviewCheckbox = bundleItem.querySelector('[type="checkbox"]'); 
+                    quickviewCheckbox.setAttribute("checked", ""); 
+                }); 
+            }); 
+        }); 
+    </script>
+  {% endif %}

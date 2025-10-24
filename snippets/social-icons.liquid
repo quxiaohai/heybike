@@ -1,5 +1,5 @@
 {%- if settings.social_facebook_link != blank or settings.social_twitter_link != blank or settings.social_instagram_link != blank or settings.social_youtube_link != blank or settings.social_tiktok_link != blank or settings.social_pinterest_link != blank or settings.social_snapchat_link != blank or settings.social_tumblr_link != blank or settings.social_vimeo_link != blank -%}
-  <ul class="flex flex-wrap items-center gap-{{ gap }}">
+  <ul class="flex items-center gap-{{ gap }}">
     {%- if settings.social_facebook_link != blank -%}
       <li>
         {%- assign platform =  'general.social.links.facebook' | t -%}

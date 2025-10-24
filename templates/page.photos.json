@@ -1,0 +1,537 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-sm",
+        "heading_tag": "h1",
+        "text_size": "text-sm",
+        "padding_top": 48,
+        "padding_bottom": 96,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "image_with_text_overlay_enexKw": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_cyEGX8": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Add a tagline",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true
+          }
+        },
+        "heading_tf9jDb": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image with text overlay",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_6aNjK9": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_cyEGX8",
+        "heading_tf9jDb",
+        "text_6aNjK9"
+      ],
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/Photos_Wall.jpg",
+        "image_height": "adapt",
+        "content_width": "small",
+        "content_position": "md:items-end md:justify-start",
+        "text_alignment": "left",
+        "image_mobile": "shopify://shop_images/Photos_Wall-app.jpg",
+        "image_height_mobile": "adapt",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "custom_slideshow_bebVYg": {
+      "type": "custom-slideshow",
+      "blocks": {
+        "image_FBBiKg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Photos_Wall.jpg",
+            "image_height": "adapt",
+            "content_width": "small",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_mobile": "shopify://shop_images/Photos_Wall-app.jpg",
+            "image_height_mobile": "auto",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "color_text": "#ffffff",
+            "color_highlight": "#e0a580",
+            "gradient_highlight": "",
+            "color_button_text": "#171717",
+            "color_button_background": "#ffffff",
+            "color_button_gradient": "",
+            "block_color_overlay": "#171717",
+            "overlay_opacity": 0,
+            "subheading": "",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true,
+            "heading": "",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "text": "",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color_text": false,
+            "highlighted_text_text": "none",
+            "highlighted_scribble_text": "circle",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "md",
+            "button_secondary_style": false,
+            "label": "",
+            "link": "",
+            "liquid": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_FBBiKg"
+      ],
+      "disabled": true,
+      "settings": {
+        "transparent_header": false,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "custom_liquid_BQmmh6": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "liquid": "<script src =\"https://form.jotform.com/static/feedback2.js\" type=\"text/javascript\"></script>\n    <script type=\"text/javascript\">\n        var JFL_251061245934150 = new JotformFeedback({\n          formId: '251061245934150',\n          base: 'https://form.jotform.com/',\n          windowTitle: 'image Submission',\n          backgroundColor: '#FFA500',\n          fontColor: '#FFFFFF',\n          type: 'false',\n          height: 500,\n          width: 700,\n          openOnLoad: false\n        });\n    </script>\n    <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>\n    <script>window.jotformEmbedHandler(\"iframe[id='251061245934150']\", \"https://form.jotform.com/\")</script>\n      <a class=\"btn lightbox-251061245934150\"\n      style=\"\n      margin-top: 16px;\n      text-transform: uppercase;\n      font-size: 14px;\n      text-decoration: none;\n      cursor: pointer;\n      display: inline-block;\n      padding: 10px;\n      font-family: inherit;\n      text-shadow: none;\n      user-select: none;\n      transition: all,.1s,ease-in;\n      background-color: #FFA500;\n      border: 1px solid #FFA500;\n      color: #FFFFFF;\n      \">\n        image Submission\n      </a>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "custom_liquid_UJNnBt": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "liquid": "<!-- Load Jotform Feedback Script -->\n<script type=\"text/javascript\" src=\"https://form.jotform.com/static/feedback2.js\"></script>\n\n<!-- Create the Lightbox Trigger Button -->\n<a class=\"lightbox-251061245934150\" style=\"cursor:pointer; text-decoration:underline; color:#FFA500;\">\n  Image Submission\n</a>\n\n<!-- Initialize the Lightbox Form -->\n<script type=\"text/javascript\">\n  var JFL_251061245934150 = new JotformFeedback({\n    formId: '251061245934150',\n    base: 'https://form.jotform.com/',\n    windowTitle: 'Image Submission',\n    backgroundColor: '#FFA500',\n    fontColor: '#FFFFFF',\n    type: '1', // 1 = Lightbox\n    height: 500,\n    width: 700,\n    openOnLoad: false // 👈 Only opens when button is clicked\n  });\n</script>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "rich_text_76Vf3p": {
+      "type": "rich-text",
+      "blocks": {
+        "text_P6Pyap": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Smile With Heybike</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "heading_tmakBB": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Submit Your Video Today!",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_RkUPU6": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Submit your Lectric experience photos or videos to be featured on our social media. All participants will be entered to win $250 toward their next Lectric accessory purchase! By clicking submit, you agree to our <a href=\"/policies/terms-of-service\" target=\"_blank\" title=\"Terms of Service\"><em>Terms & Conditions</em></a>.</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_YUwRGD": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Submit photo",
+            "button_link": "mailto:social@heybike.com",
+            "button_size": "sm"
+          }
+        }
+      },
+      "block_order": [
+        "text_P6Pyap",
+        "heading_tmakBB",
+        "text_RkUPU6",
+        "button_YUwRGD"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 48,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich_text_pcyaN8": {
+      "type": "rich-text",
+      "blocks": {
+        "text_Va7J3y": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Smile With Heybike</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "heading_ALCzcJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Submit Your Video Today!",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_KR3apC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We love bringing joy to all the Heybike riders and your smile iis the best present we could get. Heybike anniversary is coming and we want to see you smile!<br/>Record a video of you smiling with your bike—whether you're riding or posing next to it. Short videos (3-5 seconds) are qualified as well. Feel free to include an anniversary message or any personal words you'd like to share with us. Creativity is always welcome!<br/><br/>One lucky winner will receive a <em>$200 Coupon</em> on a second battery or any order (including eBikes). Plus, if we receive 30 or more entries, we'll add an <em>extra bonus</em> winner for every 30 entries!</p><p>Submission Starts: April 1st, 2025<br/>Submission Deadline: April 30th, 2025<br/>Winner Announcement: by May 7th, 2025</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_Dngxja": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Submit photo",
+            "button_link": "mailto:social@heybike.com",
+            "button_size": "sm"
+          }
+        }
+      },
+      "block_order": [
+        "text_Va7J3y",
+        "heading_ALCzcJ",
+        "text_KR3apC",
+        "button_Dngxja"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "multicolumn_KADA9g": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_d4adY6": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/Leah_Bryan--fb.webp",
+            "image_ratio": "square",
+            "heading": "",
+            "heading_size": "text-lg-2xl",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_YmV7TM": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/Bella_Tyler--FB_cb36adb2-5bca-4317-84e7-3b1bc24eea5b.jpg",
+            "image_ratio": "square",
+            "heading": "",
+            "heading_size": "text-lg-2xl",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_zYmNHL": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/Let_s_Roll-FB_1.webp",
+            "image_ratio": "square",
+            "heading": "",
+            "heading_size": "text-lg-2xl",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_rFVGn4": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/JoAnn_Williamson_Ellis-FB_f73348ec-d5e1-4a1c-abf7-e58dfcde329e.jpg",
+            "image_ratio": "square",
+            "heading": "",
+            "heading_size": "text-lg-2xl",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_HEFMVC": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/Jay_s_Pedal_Center-FB.webp",
+            "image_ratio": "square",
+            "heading": "",
+            "heading_size": "text-lg-2xl",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_Nwwz6g": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/Bob_Carlsen--fb_873048a2-d962-485d-8666-09840d10ea0e.jpg",
+            "image_ratio": "square",
+            "heading": "",
+            "heading_size": "text-lg-2xl",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_d4adY6",
+        "column_YmV7TM",
+        "column_zYmNHL",
+        "column_rFVGn4",
+        "column_HEFMVC",
+        "column_Nwwz6g"
+      ],
+      "disabled": true,
+      "settings": {
+        "columns": 3,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "mailto:social@heybike.com",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "custom_liquid_83hyDH": {
+      "type": "custom-liquid",
+      "settings": {
+        "liquid": "<script type=\"text/javascript\" src=\"https://form.jotform.com/jsform/250548364423154\"></script>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "image_with_text_overlay_enexKw",
+    "custom_slideshow_bebVYg",
+    "custom_liquid_BQmmh6",
+    "custom_liquid_UJNnBt",
+    "rich_text_76Vf3p",
+    "rich_text_pcyaN8",
+    "multicolumn_KADA9g",
+    "custom_liquid_83hyDH"
+  ]
+}

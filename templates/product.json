@@ -12,27 +12,112 @@
     "main-product": {
       "type": "main-product",
       "blocks": {
+        "tab_item_FWzVyw": {
+          "type": "tab_item",
+          "settings": {
+            "link_text": "Why ALPHA",
+            "link_url": "#shopify-section-template--19983378383067__cg_media_grids_with_content_hgLWqT"
+          }
+        },
+        "tab_item_FjHWMw": {
+          "type": "tab_item",
+          "settings": {
+            "link_text": "Video",
+            "link_url": "#shopify-section-template--19983378383067__cg_product_video_GyAeDG"
+          }
+        },
+        "tab_item_Hn6nfy": {
+          "type": "tab_item",
+          "settings": {
+            "link_text": "Highlights",
+            "link_url": "#shopify-section-template--19983378383067__cg_image_with_text_WPkaQx"
+          }
+        },
+        "tab_item_fkaxab": {
+          "type": "tab_item",
+          "settings": {
+            "link_text": "Discover",
+            "link_url": "#shopify-section-template--19983378383067__cg_banner_with_features_9VjnrX"
+          }
+        },
+        "tab_item_xfd7LM": {
+          "type": "tab_item",
+          "settings": {
+            "link_text": "Components",
+            "link_url": "#shopify-section-template--19983378383067__cg_product_feature_list_WxXtr9"
+          }
+        },
+        "tab_item_hRwAiK": {
+          "type": "tab_item",
+          "settings": {
+            "link_text": "Spec&Param",
+            "link_url": "#shopify-section-template--19983378383067__product-details"
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "heading": "",
+            "text": "{{ product.vendor }}",
+            "text_size": "text-base"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
             "title_size": "product-title-md",
             "title_size_mobile": "product-title-md",
             "show_price": true,
-            "show_rating": true,
-            "pr_info": "<p>{{ product.metafields.custom.short_text.value }}</p>",
-            "line": true,
-            "line_top": "md:tw-mt-12",
-            "line_bottom": "md:tw-mb-2"
+            "show_rating": true
           }
         },
-        "countdown_NPztC6": {
+        "description": {
+          "type": "description",
+          "settings": {
+            "desc_text_size": 24
+          }
+        },
+        "rating_hGj8G7": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price_dNzLyq": {
+          "type": "price",
+          "settings": {
+            "show_payment_terms": false,
+            "show_taxes_notice": false
+          }
+        },
+        "profy_banner_countdown_timer_app_block_6YNRBn": {
+          "type": "shopify://apps/profy-banner-countdown-timer/blocks/app_block/243a639f-ca73-4afe-b6aa-3a23277fb424",
+          "settings": {
+            "banner_id": ""
+          }
+        },
+        "countdown": {
           "type": "countdown",
           "settings": {
-            "heading": "Hurry up!",
-            "subheading": "Sale end in:",
-            "color_text": "#171717",
-            "color_background": "#ffac00",
+            "heading": "Ebike",
+            "subheading": "XXXXX sale",
+            "color_text": "#e11d48",
+            "color_background": "#fff1f2",
             "gradient_background": ""
+          }
+        },
+        "condition_BKcqTc": {
+          "type": "condition",
+          "disabled": true,
+          "settings": {
+            "bg_color": "linear-gradient(-90deg, rgba(255, 219, 0, 1) 18.85%, rgba(255, 242, 175, 1) 100%)",
+            "left_color": "#fff2ab",
+            "text_content": "Condition: Brand New Open Box",
+            "condition_icon": "shopify://shop_images/condition-icon.svg",
+            "compare_url": "",
+            "compare_text": "Add to compare",
+            "mobile_label": "shopify://shop_images/condition-label.svg"
           }
         },
         "variant_picker": {
@@ -45,191 +130,349 @@
             "size_chart": ""
           }
         },
-        "bundled_sale_m69hF9": {
-          "type": "bundled_sale",
-          "settings": {
-            "heading": "Compatible Accessories",
-            "gift_list": [
-              "jasion-eb7-series-outer-tire-and-innder-tube"
-            ],
-            "product_list": [
-              "universal-bicycle-combination-lock",
-              "jasion®-bike-cover",
-              "fenders-for-jasion-eb7",
-              "copy-of-jasion®pet-bike-basket",
-              "jasion-crank-arm-and-pedals",
-              "jasion-eb7-series-outer-tire-and-innder-tube"
-            ]
-          }
-        },
-        "highlights_icons_HEfgKC": {
-          "type": "highlights_icons",
-          "settings": {
-            "bg_color": "#733939"
-          }
-        },
-        "quantity_selector_d6GJ77": {
-          "type": "quantity_selector",
+        "inventory": {
+          "type": "inventory",
           "disabled": true,
-          "settings": {}
+          "settings": {
+            "inventory_threshold": 15,
+            "show_inventory_transfer": true,
+            "show_inventory_quantity": "low",
+            "color_scheme": "accent-1"
+          }
+        },
+        "bundle_collapse_8iAWrd": {
+          "type": "bundle_collapse",
+          "settings": {
+            "show_recommendations": false,
+            "recommendations_title": "<p>Popular Upgrades</p>",
+            "recommendations_limit": 10,
+            "recommendations_expand": true,
+            "recommendations_metafield": "{{ product.metafields.custom.pdp_bundle_collapse_1.value }}",
+            "recommendations_checked_metafield": [],
+            "show_complementary": false,
+            "complementary_title": "<p>More Accessories</p>",
+            "complementary_limit": 10,
+            "complementary_expand": false,
+            "complementary_metafield": "{{ product.metafields.custom.pdp_bundle_collapse_2.value }}",
+            "warranty_product": "extend-protection-plan"
+          }
         },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_quantity_selector": false,
-            "show_dynamic_checkout": true,
+            "show_quantity_selector": true,
+            "show_price": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true,
             "enable_back_in_stock": false,
             "show_back_in_stock_name": false,
             "show_back_in_stock_phone": false
           }
         },
-        "show_payment_icons_RbYfHc": {
-          "type": "show_payment_icons",
+        "extend_product_protection_pdp_X9XGmM": {
+          "type": "shopify://apps/extend/blocks/product-protection-pdp/f3744d3b-bb7a-4029-9541-5ac3d5517b54",
+          "settings": {
+            "modal": true
+          }
+        },
+        "pickup_availability": {
+          "type": "pickup_availability",
           "settings": {}
         },
-        "sticky_buy_button": {
-          "type": "sticky_buy_button",
-          "settings": {}
-        },
-        "anchor_DWTAQW": {
-          "type": "anchor",
+        "share": {
+          "type": "share",
           "disabled": true,
           "settings": {
-            "title": "Specifications",
-            "anchor_id": "Specification (img)"
-          }
-        },
-        "highlights_icons_kU88Jz": {
-          "type": "highlights_icons",
-          "settings": {
-            "bg_color": ""
-          }
-        },
-        "help_desk_LK3HNi": {
-          "type": "help_desk",
-          "settings": {
+            "share_label": "Share",
+            "show_help_desk": true,
             "help_label": "Need help?",
             "help_type": "drawer",
             "help_page": ""
           }
         },
-        "drawer_NiEjcP": {
-          "type": "drawer",
+        "complementary": {
+          "type": "complementary",
           "disabled": true,
           "settings": {
-            "title": "Specs",
-            "content": ""
+            "heading": "Pairs well with",
+            "product_limit": 4,
+            "show_vendor": false,
+            "show_price": true
           }
         },
-        "anchor_8VjwmL": {
-          "type": "anchor",
-          "disabled": true,
-          "settings": {
-            "title": "What's In The Box",
-            "anchor_id": "whats-in-the-box-txt"
-          }
-        },
-        "collapsible_tab_Lt8myP": {
-          "type": "collapsible_tab",
-          "disabled": true,
-          "settings": {
-            "icon": "none",
-            "heading": "Collapsible row",
-            "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
-            "page": "",
-            "liquid": ""
-          }
-        },
-        "text_wt9CQN": {
+        "text-1": {
           "type": "text",
           "settings": {
-            "text": "Black: Pre-sale ends on February 20th.Contact Email: support@jasionbike.comContact Phone：(+1) 888-825-6366Notice: The new version of the X-hunter has updated handlebars and stems. Both versions are shipped randomly.",
-            "text_size": "text-base"
+            "icon": "truck",
+            "icon_width": 20,
+            "heading": "",
+            "text": "In stock! Ships within 1-2 business days.",
+            "text_size": "text-sm"
+          }
+        },
+        "text-2": {
+          "type": "text",
+          "settings": {
+            "icon": "headphone",
+            "icon_width": 20,
+            "heading": "",
+            "text": "90-day risk-free trial",
+            "text_size": "text-sm"
+          }
+        },
+        "text-3": {
+          "type": "text",
+          "settings": {
+            "icon": "award",
+            "icon_width": 20,
+            "heading": "",
+            "text": "2-Year Warranty",
+            "text_size": "text-sm"
+          }
+        },
+        "text-4": {
+          "type": "text",
+          "settings": {
+            "icon": "box",
+            "icon_width": 20,
+            "heading": "",
+            "text": "Complimentary shipping & returns",
+            "text_size": "text-sm"
+          }
+        },
+        "sticky_buy_button": {
+          "type": "sticky_buy_button",
+          "settings": {}
+        },
+        "payment_methods_rVbRQj": {
+          "type": "payment_methods",
+          "settings": {}
+        },
+        "introduce_icon_UccMMm": {
+          "type": "introduce_icon",
+          "settings": {
+            "use_icon_metafield": "pdc_icon",
+            "use_spec_metafield": "pdc_spec",
+            "title_1": "1400W",
+            "remark_1": "Peak Moter",
+            "title_2": "28 MPH",
+            "remark_2": "Top Speed",
+            "title_3": "85 Miles",
+            "remark_3": "Max Range",
+            "title_4": "1464Wh",
+            "remark_4": "Battery Capacity",
+            "title_5": "440 lbs",
+            "remark_5": "Max Load",
+            "title_6": "20*3\" ",
+            "remark_6": "Fat Tires"
           }
         }
       },
       "block_order": [
+        "tab_item_FWzVyw",
+        "tab_item_FjHWMw",
+        "tab_item_Hn6nfy",
+        "tab_item_fkaxab",
+        "tab_item_xfd7LM",
+        "tab_item_hRwAiK",
+        "vendor",
         "title",
-        "countdown_NPztC6",
+        "description",
+        "rating_hGj8G7",
+        "price_dNzLyq",
+        "profy_banner_countdown_timer_app_block_6YNRBn",
+        "countdown",
+        "condition_BKcqTc",
         "variant_picker",
-        "bundled_sale_m69hF9",
-        "highlights_icons_HEfgKC",
-        "quantity_selector_d6GJ77",
+        "inventory",
+        "bundle_collapse_8iAWrd",
         "buy_buttons",
-        "show_payment_icons_RbYfHc",
+        "extend_product_protection_pdp_X9XGmM",
+        "pickup_availability",
+        "share",
+        "complementary",
+        "text-1",
+        "text-2",
+        "text-3",
+        "text-4",
         "sticky_buy_button",
-        "anchor_DWTAQW",
-        "highlights_icons_kU88Jz",
-        "help_desk_LK3HNi",
-        "drawer_NiEjcP",
-        "anchor_8VjwmL",
-        "collapsible_tab_Lt8myP",
-        "text_wt9CQN"
+        "payment_methods_rVbRQj",
+        "introduce_icon_UccMMm"
       ],
       "custom_css": [
-        ".product__gallery {top: 100px;}"
+        "li.product__text .icon {min-width: 32px;}",
+        ".items-center {align-items: inherit;}",
+        ".buy-buttons {margin-bottom: 24px;}"
       ],
       "settings": {
         "enable_sticky_info": true,
-        "enable_specs": true,
-        "specs_limit": "6",
         "media_size": 60,
         "gallery_layout": "thumbnail",
-        "thumbnail_position": "beside",
-        "image_ratio": "adapt_first",
-        "image_zoom": "hover",
-        "hide_variants": true,
+        "thumbnail_position": "below",
+        "image_ratio": "square",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
         "enable_video_autoplay": true,
         "enable_video_looping": true,
         "mobile_layout": "full_width",
-        "image_ratio_mobile": "adapt_first",
+        "image_ratio_mobile": "portrait",
         "mobile_thumbnail": false,
-        "padding_top": 64,
+        "padding_top": 0,
         "padding_bottom": 84,
-        "divider": true,
-        "full_width": false,
-        "rounded": false
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "bg_color": "#faf9f5",
+        "hide_klarna": true
       }
     },
-    "drawer_content_hb_qzp8WX": {
-      "type": "drawer-content-hb",
+    "cg_media_grids_with_content_hgLWqT": {
+      "type": "cg_media-grids-with-content",
       "blocks": {
-        "content_9grYEm": {
-          "type": "content",
+        "media_grid_jFaJBA": {
+          "type": "media-grid",
           "settings": {
-            "content": "<h1><strong>Please note: </strong></h1><p><br/>There may be a difference of 0~5 cm between measured and actual data.</p>"
+            "bg_image": "shopify://shop_images/mid-drive-motor.jpg",
+            "bg_image_mobile": "shopify://shop_images/Heybike_ALPHA_Comfort.jpg",
+            "grid_heading": "500W",
+            "grid_heading_color": "#ffa000",
+            "grid_heading_font_size": 56,
+            "grid_heading_font_size_mobile": 10,
+            "grid_subheading": "Mid-Drive Motor",
+            "grid_subheading_color": "#ffffff",
+            "grid_subheading_font_size": 24,
+            "grid_subheading_font_size_mobile": 40,
+            "vertical_alignment": "bottom",
+            "horizontal_alignment": "left",
+            "padding": 36,
+            "grid_column_start": 1,
+            "grid_column_end": 3,
+            "grid_row_start": 1,
+            "grid_row_end": 3
           }
         },
-        "table_aCTBik": {
-          "type": "table",
+        "media_grid_T86Afm": {
+          "type": "media-grid",
           "settings": {
-            "list": "A--Wheelbase|113.5 cm\nB--Total Length|170 cm\nC--Reach|46 cm\nD--Standover Height|69 cm\nE--Minimum Saddle Height|86 cm\nF--Maximum Saddle Height|102 cm\nG--Minimum Handlebar Height|120 cm\nH--Maximum Handlebar Height|130 cm"
+            "bg_image": "shopify://shop_images/power-and-efficiency.jpg",
+            "grid_heading": "60 Miles",
+            "grid_heading_color": "#ffa000",
+            "grid_heading_font_size": 36,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "Mid-Drive Motor",
+            "grid_subheading_color": "#000000",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "top",
+            "horizontal_alignment": "left",
+            "padding": 16,
+            "grid_column_start": 3,
+            "grid_column_end": 4,
+            "grid_row_start": 1,
+            "grid_row_end": 2
           }
         },
-        "table_4CpLLg": {
-          "type": "table",
-          "disabled": true,
+        "media_grid_fDjatT": {
+          "type": "media-grid",
           "settings": {
-            "list": "Information"
+            "bg_image": "shopify://shop_images/power-and-efficiency-in-perfect-harmony.jpg",
+            "grid_heading": "105 N·m",
+            "grid_heading_color": "#ffa000",
+            "grid_heading_font_size": 36,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "Mid-Drive Motor",
+            "grid_subheading_color": "#000000",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "bottom",
+            "horizontal_alignment": "left",
+            "padding": 16,
+            "grid_column_start": 3,
+            "grid_column_end": 4,
+            "grid_row_start": 2,
+            "grid_row_end": 3
           }
         },
-        "img_rmqdEK": {
-          "type": "img",
+        "media_grid_7KHhRU": {
+          "type": "media-grid",
           "settings": {
-            "img_1": "shopify://shop_images/1_6.png",
-            "img_3": "shopify://shop_images/1_8.png"
+            "bg_image": "shopify://shop_images/media-grid-demo-bg.png",
+            "grid_heading": "105 N·m",
+            "grid_heading_color": "#ffa000",
+            "grid_heading_font_size": 36,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "Mid-Drive Motor",
+            "grid_subheading_color": "#000000",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "bottom",
+            "horizontal_alignment": "left",
+            "padding": 16,
+            "grid_column_start": 4,
+            "grid_column_end": 5,
+            "grid_row_start": 1,
+            "grid_row_end": 2
+          }
+        },
+        "media_grid_Tc3cgE": {
+          "type": "media-grid",
+          "settings": {
+            "bg_image": "shopify://shop_images/a-man-is-riding-Heybike-Brawn-ebike_7a75b2eb-4c8b-429d-a10c-92d872cbc41c.jpg",
+            "grid_heading": "105 N·m",
+            "grid_heading_color": "#ffa000",
+            "grid_heading_font_size": 36,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "Mid-Drive Motor",
+            "grid_subheading_color": "#ffffff",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "bottom",
+            "horizontal_alignment": "left",
+            "padding": 16,
+            "grid_column_start": 4,
+            "grid_column_end": 5,
+            "grid_row_start": 2,
+            "grid_row_end": 3
+          }
+        },
+        "media_grid_JRdBxW": {
+          "type": "media-grid",
+          "settings": {
+            "bg_image": "shopify://shop_images/App_07_2.jpg",
+            "grid_heading": "60 Miles",
+            "grid_heading_color": "#ffa000",
+            "grid_heading_font_size": 36,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "Mid-Drive Motor",
+            "grid_subheading_color": "#000000",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "top",
+            "horizontal_alignment": "left",
+            "padding": 16,
+            "grid_column_start": 5,
+            "grid_column_end": 6,
+            "grid_row_start": 1,
+            "grid_row_end": 3
           }
         }
       },
       "block_order": [
-        "content_9grYEm",
-        "table_aCTBik",
-        "table_4CpLLg",
-        "img_rmqdEK"
+        "media_grid_jFaJBA",
+        "media_grid_T86Afm",
+        "media_grid_fDjatT",
+        "media_grid_7KHhRU",
+        "media_grid_Tc3cgE",
+        "media_grid_JRdBxW"
       ],
+      "name": "CG Media Grids with Content",
       "settings": {
-        "heading": "Specs"
+        "heading": "Why ALPHA",
+        "content": "ALPHA is for those looking for exceptional and straightforward. With high performance and ease-of-use as a key feature focus, the ALPHA is meant to appeal to both newcomers and seasoned riders. Built with all-terrain tires, a powerful mid-drive motor, and a torque sensor that makes pedaling feel more natural, ALPHA bikes give each rider the means to conquer all types of terrain with ease.",
+        "btn_url": "",
+        "btn_text": "",
+        "btn_icon": "shopify://shop_images/cg_media-grids-right-arrow.svg",
+        "footer_bg_color": "#faf9f5"
       }
     },
     "help-drawer": {
@@ -307,118 +550,248 @@
         "description": "<p>If you have any questions, you are always welcome to contact us. We'll get back to you as soon as possible, within 24 hours on weekdays.</p>"
       }
     },
-    "collage": {
-      "type": "collage",
+    "cg_product_video_GyAeDG": {
+      "type": "cg_product-video",
       "blocks": {
-        "image-1": {
-          "type": "image",
+        "slide_dtHEVr": {
+          "type": "slide",
           "settings": {
-            "subheading": "<em>Tagline</em>",
-            "heading": "Example heading",
-            "link": "",
-            "invert_subheading_heading": false,
-            "image_ratio": "landscape",
-            "content_position": "md:items-end md:justify-center",
-            "text_alignment": "center",
-            "image_ratio_mobile": "landscape",
-            "content_position_mobile": "items-end justify-center",
-            "text_alignment_mobile": "center",
-            "highlighted_text": "text",
-            "highlighted_scribble": "circle",
-            "color_text": "#ffffff",
-            "color_highlight": "#fde047",
-            "gradient_highlight": "",
-            "color_overlay": "#000000",
-            "overlay_opacity": 40
-          }
-        },
-        "image-2": {
-          "type": "image",
-          "settings": {
-            "subheading": "<em>Tagline</em>",
-            "heading": "Example heading",
-            "link": "",
-            "invert_subheading_heading": false,
-            "image_ratio": "portrait",
-            "content_position": "md:items-end md:justify-start",
-            "text_alignment": "left",
-            "image_ratio_mobile": "portrait",
-            "content_position_mobile": "items-end justify-start",
-            "text_alignment_mobile": "left",
-            "highlighted_text": "text",
-            "highlighted_scribble": "circle",
-            "color_text": "#ffffff",
-            "color_highlight": "#fde047",
-            "gradient_highlight": "",
-            "color_overlay": "#000000",
-            "overlay_opacity": 40
-          }
-        },
-        "image-3": {
-          "type": "image",
-          "settings": {
-            "subheading": "<em>Tagline</em>",
-            "heading": "Example heading",
-            "link": "",
-            "invert_subheading_heading": false,
-            "image_ratio": "portrait",
-            "content_position": "md:items-start md:justify-end",
-            "text_alignment": "right",
-            "image_ratio_mobile": "portrait",
-            "content_position_mobile": "items-start justify-end",
-            "text_alignment_mobile": "right",
-            "highlighted_text": "text",
-            "highlighted_scribble": "circle",
-            "color_text": "#ffffff",
-            "color_highlight": "#fde047",
-            "gradient_highlight": "",
-            "color_overlay": "#000000",
-            "overlay_opacity": 40
-          }
-        },
-        "image-4": {
-          "type": "image",
-          "settings": {
-            "subheading": "<em>Tagline</em>",
-            "heading": "Example heading",
-            "link": "",
-            "invert_subheading_heading": true,
-            "image_ratio": "landscape",
-            "content_position": "md:items-end md:justify-end",
-            "text_alignment": "right",
-            "image_ratio_mobile": "landscape",
-            "content_position_mobile": "items-end justify-end",
-            "text_alignment_mobile": "right",
-            "highlighted_text": "text",
-            "highlighted_scribble": "circle",
-            "color_text": "#ffffff",
-            "color_highlight": "#fde047",
-            "gradient_highlight": "",
-            "color_overlay": "#000000",
-            "overlay_opacity": 40
+            "media_video": "shopify://files/videos/pc v2.mp4",
+            "media_video_mobile": "shopify://files/videos/手机端 v2.mp4",
+            "slide_heading": "For Your Better All-Terrain Adventure",
+            "font_size": 48,
+            "font_size_mobile": 30,
+            "heading_color": "#ffdb00",
+            "ratio_width": "1920",
+            "ratio_height": "1080",
+            "ratio_width_mobile": "375",
+            "ratio_height_mobile": "500"
           }
         }
       },
       "block_order": [
-        "image-1",
-        "image-2",
-        "image-3",
-        "image-4"
+        "slide_dtHEVr"
       ],
-      "disabled": true,
+      "name": "CG Product Video",
+      "settings": {}
+    },
+    "cg_image_with_text_WPkaQx": {
+      "type": "cg_image-with-text",
+      "blocks": {
+        "row_gUFwex": {
+          "type": "row",
+          "settings": {
+            "row_img": "shopify://shop_images/heybike-row-img-demo.jpg",
+            "row_img_mobile": "shopify://shop_images/Heybike-Mars-3-0-fold-up-electric-bike_ac69865e-ece0-4fb1-a37d-da43454b5b3c.jpg",
+            "row_heading": "Power & Efficiency in Perfect Harmony",
+            "heading_font_size": 60,
+            "row_content": "<h4>Mid-drive Mivice Motor 105 N·m of Torquey</h4><p>The ALPHA is the first from the Heybike Galaxy eDrive System. This system utilizes the 500W Mivice mid-drive motor to energize your riding experience. The powerful torque sensor measures rider pedaling power to provide up to 105 N·m of efficient torque energy, giving them longer riding experiences and making the ride smoother.</p>",
+            "subheading_font_size": 32,
+            "content_font_size": 20,
+            "content_font_color": "#666666",
+            "flex_direction": "row",
+            "row_icon1": "shopify://shop_images/gearwheel.svg",
+            "row_caption1": "Up to 105 N·m of efficient",
+            "row_icon2": "shopify://shop_images/machine.svg",
+            "row_caption2": "500W Mivice mid-drive motort"
+          }
+        },
+        "row_eC4eHR": {
+          "type": "row",
+          "settings": {
+            "row_img": "shopify://shop_images/power-and-efficiency.jpg",
+            "row_heading": "Power & Efficiency in Perfect Harmony",
+            "heading_font_size": 60,
+            "row_content": "<h4>Mid-drive Mivice Motor 105 N·m of Torquey</h4><p>The ALPHA is the first from the Heybike Galaxy eDrive System. This system utilizes the 500W Mivice mid-drive motor to energize your riding experience. The powerful torque sensor measures rider pedaling power to provide up to 105 N·m of efficient torque energy, giving them longer riding experiences and making the ride smoother.</p>",
+            "subheading_font_size": 32,
+            "content_font_size": 20,
+            "content_font_color": "#666666",
+            "flex_direction": "row-reverse",
+            "row_caption1": "",
+            "row_caption2": ""
+          }
+        },
+        "row_jJjiUG": {
+          "type": "row",
+          "settings": {
+            "row_video": "shopify://files/videos/R3P Folding.mp4",
+            "row_video_mobile": "shopify://files/videos/X Series NFC app.mp4",
+            "row_heading": "Power & Efficiency in Perfect Harmony",
+            "heading_font_size": 60,
+            "row_content": "<h4>Mid-drive Mivice Motor 105 N·m of Torquey</h4><p>The ALPHA is the first from the Heybike Galaxy eDrive System. This system utilizes the 500W Mivice mid-drive motor to energize your riding experience. The powerful torque sensor measures rider pedaling power to provide up to 105 N·m of efficient torque energy, giving them longer riding experiences and making the ride smoother.</p>",
+            "subheading_font_size": 32,
+            "content_font_size": 20,
+            "content_font_color": "#666666",
+            "flex_direction": "row",
+            "row_caption1": "",
+            "row_caption2": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_gUFwex",
+        "row_eC4eHR",
+        "row_jJjiUG"
+      ],
+      "name": "CG Image with Text",
       "settings": {
-        "heading": "Collage",
+        "padding_top_desktop": 118,
+        "padding_bottom_desktop": 118,
+        "padding_top": 50,
+        "padding_bottom": 0
+      }
+    },
+    "cg_banner_with_features_9VjnrX": {
+      "type": "cg_banner-with-features",
+      "blocks": {
+        "feature_ninLN4": {
+          "type": "feature",
+          "settings": {
+            "heading": "Mid-Drive Motor",
+            "description": "<p>The ALPHA is the first from the Heybike Galaxy eDrive System. This system utilizes the 500W Mivice mid-drive motor to energize your riding experience. The Powerful Torque Sensor</p>"
+          }
+        },
+        "feature_NkzM8W": {
+          "type": "feature",
+          "settings": {
+            "heading": "Step-Thru / Step-Over Frame",
+            "description": "<p>The ALPHA is the first from the Heybike Galaxy eDrive System. This system utilizes the 500W Mivice mid-drive motor to energize your riding experience. The Powerful Torque Sensor</p>"
+          }
+        },
+        "feature_e9RnWh": {
+          "type": "feature",
+          "settings": {
+            "heading": "Shimano Altus 8-Speed Shifter",
+            "description": "<p>The ALPHA is the first from the Heybike Galaxy eDrive System. This System Utilizes</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_ninLN4",
+        "feature_NkzM8W",
+        "feature_e9RnWh"
+      ],
+      "name": "CG Banner with Features",
+      "settings": {
+        "section_heading": "Discover ALPHA",
+        "banner_img": "shopify://shop_images/discover-alpha-banner.png",
+        "banner_img_mobile": "shopify://shop_images/E5.jpg"
+      }
+    },
+    "video_with_text_slide_dy4MqT": {
+      "type": "video-with-text-slide",
+      "blocks": {
+        "content_bMWB9c": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/YouTube_Logo_2017_svg.png",
+            "image_width": "custom",
+            "image_max_width": 130,
+            "image_max_width_mobile": 70,
+            "text_1": "<h4><strong>An Updated Budget Friendly Ebike That Goes 28 MPH</strong></h4>",
+            "text_size_1": "subtext-sm",
+            "text_max_size_1": 32,
+            "text_font_1": "heading",
+            "secondary_color_1": false,
+            "highlighted_text_1": "none",
+            "highlighted_scribble_1": "circle",
+            "text_2": "<p><strong>Freshly Charged</strong></p>",
+            "text_size_2": "subtext-md",
+            "text_max_size_2": 32,
+            "text_font_2": "body",
+            "secondary_color_2": false,
+            "highlighted_text_2": "text",
+            "highlighted_scribble_2": "circle",
+            "video_url": "https://www.youtube.com/watch?v=NEn_b-Ta-rw&t=7s",
+            "cover_image": "shopify://shop_images/Screenshot_2024-02-14_at_5.03.17_PM.png",
+            "description": "",
+            "enable_video_autoplay": false,
+            "enable_video_looping": false,
+            "enable_parallax": true,
+            "parallax_direction": "vertical"
+          }
+        },
+        "content_iyDEnY": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/YouTube_Logo_2017_svg.png",
+            "image_width": "custom",
+            "image_max_width": 130,
+            "image_max_width_mobile": 70,
+            "text_1": "<h4><strong>An Updated Budget Friendly Ebike That Goes 28 MPH</strong></h4>",
+            "text_size_1": "subtext-sm",
+            "text_max_size_1": 32,
+            "text_font_1": "heading",
+            "secondary_color_1": false,
+            "highlighted_text_1": "none",
+            "highlighted_scribble_1": "circle",
+            "text_2": "<p><strong>Freshly Charged</strong></p>",
+            "text_size_2": "subtext-md",
+            "text_max_size_2": 32,
+            "text_font_2": "body",
+            "secondary_color_2": false,
+            "highlighted_text_2": "text",
+            "highlighted_scribble_2": "circle",
+            "video_url": "https://www.youtube.com/watch?v=NEn_b-Ta-rw&t=7s",
+            "cover_image": "shopify://shop_images/Screenshot_2024-02-14_at_5.03.17_PM.png",
+            "description": "",
+            "enable_video_autoplay": false,
+            "enable_video_looping": false,
+            "enable_parallax": true,
+            "parallax_direction": "vertical"
+          }
+        },
+        "content_zV3MnG": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/YouTube_Logo_2017_svg.png",
+            "image_width": "custom",
+            "image_max_width": 130,
+            "image_max_width_mobile": 70,
+            "text_1": "<h4><strong>An Updated Budget Friendly Ebike That Goes 28 MPH</strong></h4>",
+            "text_size_1": "subtext-sm",
+            "text_max_size_1": 32,
+            "text_font_1": "heading",
+            "secondary_color_1": false,
+            "highlighted_text_1": "none",
+            "highlighted_scribble_1": "circle",
+            "text_2": "<p><strong>Freshly Charged</strong></p>",
+            "text_size_2": "subtext-md",
+            "text_max_size_2": 32,
+            "text_font_2": "body",
+            "secondary_color_2": false,
+            "highlighted_text_2": "text",
+            "highlighted_scribble_2": "circle",
+            "video_url": "https://www.youtube.com/watch?v=NEn_b-Ta-rw&t=7s",
+            "cover_image": "shopify://shop_images/Screenshot_2024-02-14_at_5.03.17_PM.png",
+            "description": "",
+            "enable_video_autoplay": false,
+            "enable_video_looping": false,
+            "enable_parallax": true,
+            "parallax_direction": "vertical"
+          }
+        }
+      },
+      "block_order": [
+        "content_bMWB9c",
+        "content_iyDEnY",
+        "content_zV3MnG"
+      ],
+      "name": "Video with text slide",
+      "settings": {
+        "heading": "Timeline",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
         "subheading": "",
-        "description": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-        "button_label": "View more",
-        "button_link": "",
-        "button_external": false,
-        "button_icon": true,
-        "highlighted_text": "scribble",
-        "highlighted_scribble": "basic-underline",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "image_height": "adapt",
+        "layout": "text_first",
+        "text_alignment": "left",
+        "image_height_mobile": "auto",
+        "text_alignment_mobile": "left",
         "color_text": "",
         "color_background": "",
         "gradient_background": "",
@@ -428,822 +801,144 @@
         "color_button_background": "",
         "color_button_gradient": "",
         "padding_top": 72,
-        "padding_bottom": 0,
-        "divider": false,
-        "full_width": false,
-        "rounded": false,
-        "enable_parallax": true
-      }
-    },
-    "large_header_slider_NDH3Xx": {
-      "type": "large-header-slider-hb",
-      "blocks": {
-        "item_A4zK3m": {
-          "type": "item",
-          "settings": {
-            "img_1": "shopify://shop_images/image.jpg",
-            "tab_con": "Establishment",
-            "title": "Establishment：Specially designed1\nfor off - road adventures.",
-            "content": "The adventurous off-road genes of jasionbike were born with X-Hunter, defining what a bicycle can achieve in adventure and off-roading. It symbolizes jasionbike's bold innovation. X-Hunter integrates sports and leisure, allowing consumers to adapt perfectly to any scene. It represents rugged durability and unparalleled performance, urging you to embark on new paths and embrace the thrill of the unknown."
-          }
-        },
-        "item_pphRKd": {
-          "type": "item",
-          "settings": {
-            "img_1": "shopify://shop_images/image_1.jpg",
-            "img_2": "shopify://shop_images/image.jpg",
-            "tab_con": "Design",
-            "title": "Hydraulic Disc Brakes",
-            "content": "The advanced hydraulic disc brakes provide reliable braking power for enhanced safety and control during your rides."
-          }
-        },
-        "item_6WGyaR": {
-          "type": "item",
-          "settings": {
-            "img_1": "shopify://shop_images/image.jpg",
-            "img_2": "shopify://shop_images/EB7_2.0-3.jpg",
-            "tab_con": "Finished Product",
-            "title": "Add a Pop of Color to Your Ride",
-            "content": "There are 4 color options of Ranger S: merlot-red, stone-blue, shark-grey, metallic-sand. Choose the one you like and ride in style."
-          }
-        },
-        "item_nKfTj6": {
-          "type": "item",
-          "settings": {
-            "img_1": "shopify://shop_images/image_1.jpg",
-            "img_2": "shopify://shop_images/image.jpg",
-            "tab_con": "Craftsmanship",
-            "title": "Specially designed for off - road adventures.",
-            "content": "The Ranger S ebike features a Safety Certified Battery (UL2849 Standard) with a capacity of 692Wh. It can provide reliable power for a versatile and eco-friendly ride."
-          }
-        },
-        "item_Y4Ak7p": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "tab_con": "Design",
-            "title": "Establishment：Specially designed for off - road adventures.",
-            "content": "The adventurous off-road genes of jasionbike were born with X-Hunter, defining what a bicycle can achieve in adventure and off-roading. It symbolizes jasionbike's bold innovation. X-Hunter integrates sports and leisure, allowing consumers to adapt perfectly to any scene. It represents rugged durability and unparalleled performance, urging you to embark on new paths and embrace the thrill of the unknown."
-          }
-        }
-      },
-      "block_order": [
-        "item_A4zK3m",
-        "item_pphRKd",
-        "item_6WGyaR",
-        "item_nKfTj6",
-        "item_Y4Ak7p"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 68,
-        "padding_bottom": 68,
-        "divider": false,
-        "narrow": false,
-        "rounded": false
-      }
-    },
-    "image-with-text-1": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Designed, Assembled, </p><p>& Certified in Europe</p><p></p>",
-            "heading_size": "title-sm",
-            "heading_tag": "h2",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>The synergy of the customized motor and torque sensor ensures optimal efficiency, enabling an impressive 80-mile range on a single charge. Enhanced by the Shimano 8-speed gear shift system, it tackles diverse terrains with ease. Start an ebike tour now!</p>",
-            "text_size": "subtext-sm",
-            "text_max_size": 32,
-            "text_color": "#000000",
-            "text_font": "body",
-            "secondary_color": false,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "text_BbLhqQ": {
-          "type": "text",
-          "settings": {
-            "text": "50% <span style=\"font-size: 50%;\n    font-weight: normal;\">\nLighter</span>",
-            "text_size": "subtext-custom",
-            "text_max_size": 48,
-            "text_color": "#ee4d19",
-            "text_font": "heading",
-            "secondary_color": false,
-            "highlighted_text": "text",
-            "highlighted_scribble": "circle"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "text_BbLhqQ"
-      ],
-      "disabled": true,
-      "settings": {
-        "img_placeholder": true,
-        "image": "shopify://shop_images/test_2_6480eac8-95b3-4b9e-b37f-e80cc8524569.png",
-        "image_height": "750px",
-        "image_width": "medium",
-        "layout": "text_first",
-        "text_alignment": "left",
-        "content_position": "align-self-center",
-        "img_placeholder_mb": true,
-        "image_mobile": "shopify://shop_images/test_3_e6c0b476-0555-4add-a62d-53d42b49100d.png",
-        "image_height_mobile": "300px",
-        "text_alignment_mobile": "left",
-        "color_text": "#171717",
-        "color_background": "rgba(0,0,0,0)",
-        "bg_img": "shopify://shop_images/image.png",
-        "bg_img_mb": "shopify://shop_images/66adaf5ce49d17f79468311434a3f249.png",
-        "gradient_background": "",
-        "color_background_2": "rgba(0,0,0,0)",
-        "gradient_background_2": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 68,
-        "padding_bottom": 68,
-        "divider": false,
-        "full_width": false,
-        "rounded": false,
-        "enable_parallax": false,
-        "parallax_direction": "vertical"
-      }
-    },
-    "image_with_text_WTzzHX": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_NQN9Un": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Comfort or Cargo?</p><p> Customize Your Ride!</p>",
-            "heading_size": "title-sm",
-            "heading_tag": "h2",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "text_rA7CmC": {
-          "type": "text",
-          "settings": {
-            "text": "The synergy of the customized motor and torque sensor ensures optimal efficiency, enabling an impressive 80-mile range on a single charge. Enhanced by the Shimano 8-speed gear shift system, it tackles diverse terrains with ease. Start an ebike tour now!",
-            "text_size": "subtext-sm",
-            "text_max_size": 32,
-            "text_color": "#000000",
-            "text_font": "body",
-            "secondary_color": false,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "text_P7YzCp": {
-          "type": "text",
-          "settings": {
-            "text": "50% <span style=\"font-size: 50%;\n    font-weight: normal;\">\nLighter</span>",
-            "text_size": "subtext-custom",
-            "text_max_size": 48,
-            "text_color": "#ee4d19",
-            "text_font": "heading",
-            "secondary_color": false,
-            "highlighted_text": "text",
-            "highlighted_scribble": "circle"
-          }
-        }
-      },
-      "block_order": [
-        "heading_NQN9Un",
-        "text_rA7CmC",
-        "text_P7YzCp"
-      ],
-      "disabled": true,
-      "settings": {
-        "img_placeholder": false,
-        "image": "shopify://shop_images/image_1_c0f2dba2-f85f-4e6c-9523-a4be281fd67d.jpg",
-        "image_height": "adapt",
-        "image_width": "medium",
-        "layout": "text_first",
-        "text_alignment": "left",
-        "content_position": "align-self-center",
-        "img_placeholder_mb": false,
-        "image_height_mobile": "400px",
-        "text_alignment_mobile": "left",
-        "color_text": "#171717",
-        "color_background": "rgba(0,0,0,0)",
-        "gradient_background": "",
-        "color_background_2": "rgba(0,0,0,0)",
-        "gradient_background_2": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 68,
-        "padding_bottom": 32,
-        "divider": false,
-        "full_width": false,
-        "rounded": false,
-        "enable_parallax": false,
-        "parallax_direction": "vertical"
-      }
-    },
-    "image_with_text_mFYwAt": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_AwQUyV": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Comfort or Cargo?</p><p> Customize Your Ride!</p>",
-            "heading_size": "title-sm",
-            "heading_tag": "h2",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "text_Lg8THC": {
-          "type": "text",
-          "settings": {
-            "text": "The synergy of the customized motor and torque sensor ensures optimal efficiency, enabling an impressive 80-mile range on a single charge. Enhanced by the Shimano 8-speed gear shift system, it tackles diverse terrains with ease. Start an ebike tour now!",
-            "text_size": "subtext-sm",
-            "text_max_size": 32,
-            "text_color": "#000000",
-            "text_font": "body",
-            "secondary_color": false,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "text_cHMnAd": {
-          "type": "text",
-          "settings": {
-            "text": "50% <span style=\"font-size: 50%;\n    font-weight: normal;\">\nLighter</span>",
-            "text_size": "subtext-custom",
-            "text_max_size": 48,
-            "text_color": "#ee4d19",
-            "text_font": "heading",
-            "secondary_color": false,
-            "highlighted_text": "text",
-            "highlighted_scribble": "circle"
-          }
-        }
-      },
-      "block_order": [
-        "heading_AwQUyV",
-        "text_Lg8THC",
-        "text_cHMnAd"
-      ],
-      "disabled": true,
-      "settings": {
-        "img_placeholder": false,
-        "image": "shopify://shop_images/image_87b0e5a4-03fe-4e3a-9f9a-47ec50d980d3.jpg",
-        "image_height": "adapt",
-        "image_width": "medium",
-        "layout": "image_first",
-        "text_alignment": "left",
-        "content_position": "align-self-center",
-        "img_placeholder_mb": false,
-        "image_height_mobile": "400px",
-        "text_alignment_mobile": "left",
-        "color_text": "#171717",
-        "color_background": "rgba(0,0,0,0)",
-        "gradient_background": "",
-        "color_background_2": "rgba(0,0,0,0)",
-        "gradient_background_2": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 32,
-        "padding_bottom": 68,
-        "divider": false,
-        "full_width": false,
-        "rounded": false,
-        "enable_parallax": false,
-        "parallax_direction": "vertical"
-      }
-    },
-    "video_BjHb7i": {
-      "type": "video",
-      "disabled": true,
-      "settings": {
-        "transparent_header": false,
-        "video": "shopify://files/videos/悍马视频.mp4",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "enable_video_autoplay": true,
-        "enable_video_looping": false,
-        "image_height": "650px",
-        "video_url_mobile": "",
-        "image_height_mobile": "auto",
-        "padding_top": 68,
-        "padding_bottom": 68,
-        "divider": false,
-        "full_width": true,
-        "rounded": false
-      }
-    },
-    "product_modal_popup_hb_exNHwH": {
-      "type": "product-modal-popup-hb",
-      "blocks": {
-        "hotspot_t7dNQN": {
-          "type": "hotspot",
-          "settings": {
-            "content": "Selle Royal Saddle",
-            "color_text": "#ffac00",
-            "vertical": 50,
-            "horizontal": 50,
-            "vertical_mobile": 22,
-            "horizontal_mobile": 17,
-            "modal_img": "shopify://shop_images/test_1.png",
-            "modal_title": "Selle Royal Saddle",
-            "modal_content": "Long Rides Are Made Easy With Cushioned Comfort."
-          }
-        },
-        "hotspot_RtLe4E": {
-          "type": "hotspot",
-          "settings": {
-            "content": "Selle Royal Saddle",
-            "color_text": "#ffac00",
-            "vertical": 25,
-            "horizontal": 37,
-            "vertical_mobile": 50,
-            "horizontal_mobile": 50,
-            "modal_img": "shopify://shop_images/test_3_e6c0b476-0555-4add-a62d-53d42b49100d.png",
-            "modal_title": "Selle Royal Saddle",
-            "modal_content": "Long Rides Are Made Easy With Cushioned Comfort."
-          }
-        }
-      },
-      "block_order": [
-        "hotspot_t7dNQN",
-        "hotspot_RtLe4E"
-      ],
-      "disabled": true,
-      "settings": {
-        "image": "shopify://shop_images/test_311e598a-8549-410a-b440-07d4d5d2ac38.png",
-        "image_mobile": "shopify://shop_images/test.png",
-        "heading": "Details you’ll fall in love with",
-        "heading_size": "title-sm",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "<p>Every detail has been carefully crafted to captivate</p>",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 68,
-        "padding_bottom": 68,
+        "padding_bottom": 72,
         "divider": false,
         "full_width": false,
         "rounded": false
       }
     },
-    "multicolumn_slide_hb_GKkqHc": {
-      "type": "multicolumn-slide-hb",
+    "cg_product_feature_list_WxXtr9": {
+      "type": "cg_product-feature-list",
       "blocks": {
-        "item_97kqG3": {
-          "type": "item",
+        "feature_9b3zEb": {
+          "type": "feature",
           "settings": {
-            "img": "shopify://shop_images/test_2_6480eac8-95b3-4b9e-b37f-e80cc8524569.png",
-            "date": "",
-            "title": "NEW: Torque Sensor",
-            "title_sz": "h3",
-            "content": "Utilizing torque sensing pedal assist ensures a beautifully responsive ride feels and there's virtually zero latency. Translate your every movement into smooth motor power. <b>(1000W Version Only)\n</b>",
-            "author": "RVdaydream"
+            "feature_img": "shopify://shop_images/product-feature-list-img1.jpg",
+            "feature_heading": "Step-Thru / Step-Thru Frame",
+            "feature_desc": "<p>The ALPHA is the first from the Heybike Galaxy eDrive System. This system utilizes the 500W Mivice mid-drive motor to energize your riding experience. The powerful torque sensor </p>"
           }
         },
-        "item_efmfGR": {
-          "type": "item",
+        "feature_ybC4Dj": {
+          "type": "feature",
           "settings": {
-            "img": "shopify://shop_images/test_2_6480eac8-95b3-4b9e-b37f-e80cc8524569.png",
-            "date": "",
-            "title": "Hydraulic Disc Brakes",
-            "title_sz": "h3",
-            "content": "The advanced hydraulic disc brakes provide reliable braking power for enhanced safety and control during your rides.",
-            "author": "RVdaydream"
+            "feature_img": "shopify://shop_images/product-feature-list-img2.jpg",
+            "feature_heading": "Mid-Drive Motor",
+            "feature_desc": "<p>The ALPHA is the first from the Heybike Galaxy eDrive System. This system utilizes the 500W Mivice mid-drive motor to energize your riding experience. The powerful torque sensor </p>"
           }
         },
-        "item_UQU9h3": {
-          "type": "item",
+        "feature_fVDXQH": {
+          "type": "feature",
           "settings": {
-            "img": "shopify://shop_images/test_2_6480eac8-95b3-4b9e-b37f-e80cc8524569.png",
-            "date": "",
-            "title": "400 lbs Payload Capacity",
-            "title_sz": "h3",
-            "content": "Ranger S 's large payload capacity allows you to carry enough necessities during outdoor traveling.",
-            "author": "RVdaydream"
+            "feature_img": "shopify://shop_images/product-feature-list-img3.jpg",
+            "feature_heading": "Mid-Drive Motor",
+            "feature_desc": "<p>The ALPHA is the first from the Heybike Galaxy eDrive System. This system utilizes the 500W Mivice mid-drive motor to energize your riding experience. The powerful torque sensor </p>"
           }
         },
-        "item_EN6kyG": {
-          "type": "item",
+        "feature_mzDqYy": {
+          "type": "feature",
           "settings": {
-            "img": "shopify://shop_images/test_2_6480eac8-95b3-4b9e-b37f-e80cc8524569.png",
-            "date": "",
-            "title": "Your Long-range, Touring E-bike",
-            "title_sz": "h3",
-            "content": "The synergy of the customized motor and torque sensor ensures optimal efficiency, enabling an impressive 80-mile range on a single charge. Enhanced by the Shimano 8-speed gear shift system, it tackles diverse terrains with ease. Start an ebike tour now!",
-            "author": "RVdaydream"
+            "feature_img": "shopify://shop_images/product-feature-list-img4.jpg",
+            "feature_heading": "Mid-Drive Motor",
+            "feature_desc": "<p>The ALPHA is the first from the Heybike Galaxy eDrive System. This system utilizes the 500W Mivice mid-drive motor to energize your riding experience. The powerful torque sensor </p>"
           }
         },
-        "item_BEWmqD": {
-          "type": "item",
+        "feature_hHWBPT": {
+          "type": "feature",
           "settings": {
-            "img": "shopify://shop_images/test_2_6480eac8-95b3-4b9e-b37f-e80cc8524569.png",
-            "date": "",
-            "title": "Your Long-range, Touring E-bike",
-            "title_sz": "h3",
-            "content": "5",
-            "author": "RVdaydream"
-          }
-        },
-        "item_ewmnnU": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "img": "shopify://shop_images/test_2_6480eac8-95b3-4b9e-b37f-e80cc8524569.png",
-            "date": "",
-            "title": "Your Long-range, Touring E-bike",
-            "title_sz": "h3",
-            "content": "6",
-            "author": "RVdaydream"
-          }
-        },
-        "item_bbFPRL": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "img": "shopify://shop_images/test_2_6480eac8-95b3-4b9e-b37f-e80cc8524569.png",
-            "date": "",
-            "title": "Your Long-range, Touring E-bike",
-            "title_sz": "h3",
-            "content": "7",
-            "author": "RVdaydream"
+            "feature_img": "shopify://shop_images/alpha_payload_sp5.jpg",
+            "feature_heading": "Mid-Drive Motor",
+            "feature_desc": "<p>The ALPHA is the first from the Heybike Galaxy eDrive System. This system utilizes the 500W Mivice mid-drive motor to energize your riding experience. The powerful torque sensor </p>"
           }
         }
       },
       "block_order": [
-        "item_97kqG3",
-        "item_efmfGR",
-        "item_UQU9h3",
-        "item_EN6kyG",
-        "item_BEWmqD",
-        "item_ewmnnU",
-        "item_bbFPRL"
+        "feature_9b3zEb",
+        "feature_ybC4Dj",
+        "feature_fVDXQH",
+        "feature_mzDqYy",
+        "feature_hHWBPT"
       ],
-      "disabled": true,
+      "name": "CG Product Feature List",
       "settings": {
-        "pw-overflow-hidden": true,
-        "columns": 4,
-        "carousel_on_desktop": true,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "heading": "Quality in details",
-        "heading_size": "title-sm",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "#171717",
-        "color_button_gradient": "",
-        "padding_top": 68,
-        "padding_bottom": 68,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
+        "slides_to_show": 4,
+        "slides_to_show_tablet": 3,
+        "slides_to_show_mobile": 2.5
       }
     },
-    "multicolumn_slide_hb_QEk8x8": {
-      "type": "multicolumn-slide-hb",
+    "product-details": {
+      "type": "product-details",
       "blocks": {
-        "video_CdhUFd": {
-          "type": "video",
+        "collapsible_tab_whiFT8": {
+          "type": "collapsible_tab",
           "settings": {
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "cover_image": "shopify://shop_images/image_1_c0f2dba2-f85f-4e6c-9523-a4be281fd67d.jpg",
-            "description": "",
-            "enable_video_autoplay": false,
-            "enable_video_looping": false,
-            "image_height": "adapt",
-            "video_url_mobile": "",
-            "image_height_mobile": "auto",
-            "date": "Jun 29, 2024",
-            "title": "Your Long-range, Touring E-bike",
-            "title_sz": "h4",
+            "icon": "none",
+            "icon_width": 24,
+            "heading": "Collapsible row",
             "content": "",
-            "avatar": "shopify://shop_images/image_446041e2-2f27-4bbc-9d9e-939967bddb8b.png",
-            "author": "RVdaydream"
+            "metafields": "",
+            "child_heading1": "Frameset",
+            "child_content1": "<p>This is content 1.</p>",
+            "child_heading2": "Frameset",
+            "child_content2": "<p>This is content 2.</p>",
+            "child_heading3": "Frameset",
+            "child_content3": "<p>This is content 3.</p>",
+            "child_heading4": "Frameset",
+            "child_content4": "<p>This is content 4.</p>",
+            "child_heading5": "Frameset",
+            "child_content5": "<p>This is content 5.</p>",
+            "child_heading6": "Frameset",
+            "child_content6": "<p>This is content 6.</p>",
+            "child_heading7": "Frameset",
+            "child_content7": "<p>This is content 7.</p>",
+            "child_heading8": "Frameset",
+            "child_content8": "<p>This is content 8.</p>",
+            "child_heading9": "Frameset",
+            "child_content9": "<p>This is content 9.</p>",
+            "child_heading10": "Frameset",
+            "child_content10": "<p>This is content 10.</p>"
           }
         },
-        "video_ddPNFB": {
-          "type": "video",
+        "collapsible_tab_dPC67W": {
+          "type": "collapsible_tab",
           "settings": {
-            "video_url": "https://www.youtube.com/watch?v=Y7tO69rdA3I",
-            "cover_image": "shopify://shop_images/image_87b0e5a4-03fe-4e3a-9f9a-47ec50d980d3.jpg",
-            "description": "",
-            "enable_video_autoplay": false,
-            "enable_video_looping": false,
-            "image_height": "adapt",
-            "video_url_mobile": "",
-            "image_height_mobile": "auto",
-            "date": "Jun 29, 2024",
-            "title": "Your Long-range, Touring E-bike",
-            "title_sz": "h4",
-            "content": "",
-            "avatar": "shopify://shop_images/image_446041e2-2f27-4bbc-9d9e-939967bddb8b.png",
-            "author": "RVdaydream"
-          }
-        },
-        "video_nAJUWq": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/修改2.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "cover_image": "shopify://shop_images/image_1_c0f2dba2-f85f-4e6c-9523-a4be281fd67d.jpg",
-            "description": "",
-            "enable_video_autoplay": false,
-            "enable_video_looping": false,
-            "image_height": "adapt",
-            "video_url_mobile": "",
-            "image_height_mobile": "auto",
-            "date": "Jun 29, 2024",
-            "title": "Your Long-range, Touring E-bike",
-            "title_sz": "h4",
-            "content": "",
-            "avatar": "shopify://shop_images/image_446041e2-2f27-4bbc-9d9e-939967bddb8b.png",
-            "author": "RVdaydream"
-          }
-        },
-        "video_h66XiD": {
-          "type": "video",
-          "settings": {
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "enable_video_autoplay": false,
-            "enable_video_looping": false,
-            "image_height": "adapt",
-            "video_url_mobile": "",
-            "image_height_mobile": "auto",
-            "date": "Jun 29, 2024",
-            "title": "Your Long-range, Touring E-bike",
-            "title_sz": "h4",
-            "content": "",
-            "avatar": "shopify://shop_images/image_446041e2-2f27-4bbc-9d9e-939967bddb8b.png",
-            "author": "RVdaydream"
-          }
-        },
-        "video_4tbFaF": {
-          "type": "video",
-          "settings": {
-            "video": "shopify://files/videos/修改2.mp4",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "description": "",
-            "enable_video_autoplay": false,
-            "enable_video_looping": false,
-            "image_height": "adapt",
-            "video_url_mobile": "",
-            "image_height_mobile": "auto",
-            "date": "Jun 29, 2024",
-            "title": "Your Long-range, Touring E-bike",
-            "title_sz": "h4",
-            "content": "",
-            "avatar": "shopify://shop_images/image_446041e2-2f27-4bbc-9d9e-939967bddb8b.png",
-            "author": "RVdaydream"
-          }
-        },
-        "item_tb6W4z": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "img": "shopify://shop_images/test_3_e6c0b476-0555-4add-a62d-53d42b49100d.png",
-            "date": "Jun 29, 2024",
-            "title": "Your Long-range, Touring E-bike",
-            "title_sz": "h3",
-            "content": "The synergy of the customized motor and torque sensor ensures optimal efficiency, enabling an impressive 80-mile range on a single charge. Enhanced by the Shimano 8-speed gear shift system, it tackles diverse terrains with ease. Start an ebike tour now!",
-            "author": "RVdaydream"
+            "icon": "none",
+            "icon_width": 24,
+            "heading": "Collapsible row",
+            "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
+            "metafields": "",
+            "child_heading1": "",
+            "child_content1": "",
+            "child_heading2": "",
+            "child_content2": "",
+            "child_heading3": "",
+            "child_content3": "",
+            "child_heading4": "",
+            "child_content4": "",
+            "child_heading5": "",
+            "child_content5": "",
+            "child_heading6": "",
+            "child_content6": "",
+            "child_heading7": "",
+            "child_content7": "",
+            "child_heading8": "",
+            "child_content8": "",
+            "child_heading9": "",
+            "child_content9": "",
+            "child_heading10": "",
+            "child_content10": ""
           }
         }
       },
       "block_order": [
-        "video_CdhUFd",
-        "video_ddPNFB",
-        "video_nAJUWq",
-        "video_h66XiD",
-        "video_4tbFaF",
-        "item_tb6W4z"
+        "collapsible_tab_whiFT8",
+        "collapsible_tab_dPC67W"
       ],
-      "disabled": true,
       "settings": {
-        "pw-overflow-hidden": true,
-        "columns": 3,
-        "carousel_on_desktop": true,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "heading": "Community Reviews",
-        "heading_size": "title-sm",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "#171717",
-        "color_button_gradient": "",
-        "padding_top": 68,
-        "padding_bottom": 68,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
-    "specifications_parameters_hb_84CbEA": {
-      "type": "specifications-parameters-hb",
-      "blocks": {
-        "img_list_tUDfBK": {
-          "type": "img_list",
-          "settings": {
-            "order_title": "Geometry (txt&img)",
-            "img": "shopify://shop_images/test_9162f141-d7f0-4782-8325-c87a10c3f8b7.png",
-            "img_w": 40,
-            "list": "|SIZE (mm)|One Size\nA|Effective top tube|480\nB|Seat tube length|480\nC|Head tube|480\nD|Steering angle|480\nE|Seat tube angle|480\nF|Chainstay|457",
-            "item_justify": "tw-justify-between",
-            "list_border": true,
-            "list_col": "2"
-          }
-        },
-        "img_list_QVkBjk": {
-          "type": "img_list",
-          "settings": {
-            "order_title": "Specification (txt)",
-            "img_w": 50,
-            "list": "|Bottom Bracket |Fully-concealed Bottom Bracket\n|Frame |6061 Aluminium Frame\n|Front Fork |SR SUNTOUR Suspension Front Fork\n|Crankset |Gates CDX Crankset\n|Drivetrain |Single-speed Drivetrain<br>Gates CDN Carbon Belt\n|Tires |CST Puncture-proof 700*48C size Tires\n|Bottom Bracket |Fully-concealed Bottom Bracket\n|Wheels |28\" Aluminium Rims\n|Brake |TEKTRO Hydraulic Disc Brakes\n|Drivetrain |Single-speed Drivetrain<br>Gates CDN Carbon Belt\n|Tires |CST Puncture-proof 700*48C size Tires\n|Bottom Bracket |Fully-concealed Bottom Bracket\n|Weight* |Net weight: 19 kg (excluding all accessories)<br> Full weight: 23 kg (including all accessories) <br>Permissible Max. Weight: 145 kg|*All stated weight numbers have a +/- 3%-5% tolerance. Net weight includes the battery but excludes all accessories. Full weight includes the battery and all accessories.",
-            "item_justify": "tw-justify-left",
-            "list_border": true,
-            "list_col": "2"
-          }
-        },
-        "img_list_LHUEbm": {
-          "type": "img_list",
-          "settings": {
-            "order_title": "What's In The Box (img)",
-            "img": "shopify://shop_images/Valentine_s-Day1.png",
-            "img_w": 50,
-            "list": "",
-            "item_justify": "tw-justify-between",
-            "list_border": true,
-            "list_col": "1"
-          }
-        }
-      },
-      "block_order": [
-        "img_list_tUDfBK",
-        "img_list_QVkBjk",
-        "img_list_LHUEbm"
-      ],
-      "disabled": true,
-      "settings": {
-        "heading": "Specifications and parameters",
-        "heading_size": "title-sm",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 68,
-        "padding_bottom": 68,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
-    "faq_LAqHrA": {
-      "type": "faq",
-      "blocks": {
-        "question_VkiK8E": {
-          "type": "question",
-          "settings": {
-            "title": "1. What areas do you ship to?",
-            "text": "<p>We offer shipping services to most countries within the European Union (excluding Malta, Cyprus, Iceland, and the EU Outermost Regions) as well as the United Kingdom. At this time, we do not deliver to P.O. boxes.</p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "question_WydWCH": {
-          "type": "question",
-          "settings": {
-            "title": "2. Do you offer free shipping?",
-            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "question_RxbMnX": {
-          "type": "question",
-          "settings": {
-            "title": "3. What is the Jasion warranty period?",
-            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "question_8w3AJM": {
-          "type": "question",
-          "settings": {
-            "title": "4. What should I do if my e-bike is damaged during shipping?",
-            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "question_dADpwD": {
-          "type": "question",
-          "settings": {
-            "title": "5. What is the return policy?",
-            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "question_qtF3Vm": {
-          "type": "question",
-          "settings": {
-            "title": "6. What is the return and exchange process?",
-            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "question_gH97gL": {
-          "type": "question",
-          "settings": {
-            "title": "7. How to find the e-bike that fits me?",
-            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        }
-      },
-      "block_order": [
-        "question_VkiK8E",
-        "question_WydWCH",
-        "question_RxbMnX",
-        "question_8w3AJM",
-        "question_dADpwD",
-        "question_qtF3Vm",
-        "question_gH97gL"
-      ],
-      "disabled": true,
-      "settings": {
-        "style": "tw-default-faq",
-        "heading": "Frequently asked questions",
-        "heading_size": "title-sm",
+        "style": "with-border",
+        "open_first_row": true,
+        "specifications_heading": "",
+        "heading": "Specifications & Parameters",
+        "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
         "subheading": "",
@@ -1254,7 +949,7 @@
         "button_icon": true,
         "highlighted_text": "none",
         "highlighted_scribble": "circle",
-        "color_text": "",
+        "color_text": "#000000",
         "color_background": "",
         "gradient_background": "",
         "color_highlight": "",
@@ -1262,13 +957,12 @@
         "color_button_text": "",
         "color_button_background": "",
         "color_button_gradient": "",
-        "color_overlay": "#ffffff",
-        "overlay_opacity": 4,
-        "padding_top": 68,
-        "padding_bottom": 68,
+        "padding_top": 28,
+        "padding_bottom": 28,
         "divider": false,
-        "narrow": false,
-        "rounded": false
+        "full_width": false,
+        "rounded": false,
+        "border_color": "#cccccc"
       }
     },
     "faq": {
@@ -1357,6 +1051,8 @@
         "color_text": "#ffffff",
         "color_background": "#171717",
         "gradient_background": "",
+        "panel_background": "",
+        "panel_border": "#e3e3e3",
         "color_highlight": "",
         "gradient_highlight": "",
         "color_button_text": "#171717",
@@ -1368,7 +1064,10 @@
         "padding_bottom": 84,
         "divider": false,
         "narrow": false,
-        "rounded": false
+        "rounded": false,
+        "title_margin_bottom": 68,
+        "summary_padding": 32,
+        "summary_icon_bg": ""
       }
     },
     "product-recommendations": {
@@ -1396,8 +1095,8 @@
         "color_button_text": "",
         "color_button_background": "",
         "color_button_gradient": "",
-        "padding_top": 68,
-        "padding_bottom": 68,
+        "padding_top": 72,
+        "padding_bottom": 72,
         "divider": false,
         "full_width": false,
         "rounded": true
@@ -1438,19 +1137,14 @@
   },
   "order": [
     "main-product",
-    "drawer_content_hb_qzp8WX",
+    "cg_media_grids_with_content_hgLWqT",
     "help-drawer",
-    "collage",
-    "large_header_slider_NDH3Xx",
-    "image-with-text-1",
-    "image_with_text_WTzzHX",
-    "image_with_text_mFYwAt",
-    "video_BjHb7i",
-    "product_modal_popup_hb_exNHwH",
-    "multicolumn_slide_hb_GKkqHc",
-    "multicolumn_slide_hb_QEk8x8",
-    "specifications_parameters_hb_84CbEA",
-    "faq_LAqHrA",
+    "cg_product_video_GyAeDG",
+    "cg_image_with_text_WPkaQx",
+    "cg_banner_with_features_9VjnrX",
+    "video_with_text_slide_dy4MqT",
+    "cg_product_feature_list_WxXtr9",
+    "product-details",
     "faq",
     "product-recommendations",
     "recently-viewed"

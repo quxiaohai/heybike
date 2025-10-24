@@ -1,0 +1,723 @@
+{% doc %}
+  @prompt
+    Create a hero banner section with image and text overlay with these specifications:
+    - Separate image uploads for desktop and mobile versions
+    - Desktop height options: adapt to image (natural height), or custom pixel height with number input field
+    - Mobile height options: adapt to image (natural height), or custom pixel height with number input field
+    - Height mode toggle: choose between "adapt to image" or "custom height"
+    - CRITICAL CONTENT POSITIONING: Horizontal alignment options (left, center, right) and Vertical alignment options (top, middle, bottom) - content can be positioned in any combination like top-left, middle-center, bottom-right, etc.
+    - Content margin/padding controls: adjustable padding from edges (top, right, bottom, left) with number inputs so content position can be fine-tuned
+    - Adjustable overlay opacity slider (0-100%) with dark semi-transparent overlay over the image
+    - Content structure from top to bottom: subheading text, main heading, countdown timer (displays days, hours, minutes, seconds), description text
+    - CRITICAL TEXT SIZE CONTROLS: Separate font size inputs for subheading (default 16px), main heading (default 48px), countdown timer (default 32px), and description (default 18px) - all adjustable with number inputs
+    - All text colors are adjustable: separate color pickers for subheading, main heading, countdown timer, and description
+    - Timer setting to set target date and time for countdown
+    - When custom height is selected, image should cover the container using object-fit cover
+    - When adapt to image is selected, show full image at natural aspect ratio
+    - Responsive design that works beautifully on all devices
+    - Clean, modern styling with good typography hierarchy
+    - All text fields are editable in theme customizer
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hero-banner-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .ai-hero-banner-container-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+  }
+
+  {% if block.settings.desktop_height_mode == 'custom' %}
+    .ai-hero-banner-container-{{ ai_gen_id }} {
+      height: {{ block.settings.desktop_custom_height }}px;
+    }
+  {% endif %}
+
+  @media screen and (max-width: 749px) {
+    {% if block.settings.mobile_height_mode == 'custom' %}
+      .ai-hero-banner-container-{{ ai_gen_id }} {
+        height: {{ block.settings.mobile_custom_height }}px;
+      }
+    {% endif %}
+  }
+
+  .ai-hero-banner-image-{{ ai_gen_id }} {
+    width: 100%;
+    display: block;
+  }
+
+  {% if block.settings.desktop_height_mode == 'custom' %}
+    .ai-hero-banner-image-{{ ai_gen_id }} {
+      height: 100%;
+      object-fit: cover;
+    }
+  {% else %}
+    .ai-hero-banner-image-{{ ai_gen_id }} {
+      height: auto;
+    }
+  {% endif %}
+
+  @media screen and (max-width: 749px) {
+    {% if block.settings.mobile_height_mode == 'custom' %}
+      .ai-hero-banner-image-{{ ai_gen_id }} {
+        height: 100%;
+        object-fit: cover;
+      }
+    {% else %}
+      .ai-hero-banner-image-{{ ai_gen_id }} {
+        height: auto;
+      }
+    {% endif %}
+  }
+
+  .ai-hero-banner-mobile-image-{{ ai_gen_id }} {
+    display: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-desktop-image-{{ ai_gen_id }} {
+      display: none;
+    }
+
+    .ai-hero-banner-mobile-image-{{ ai_gen_id }} {
+      display: block;
+    }
+  }
+
+  .ai-hero-banner-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, {{ block.settings.overlay_opacity | divided_by: 100.0 }});
+    pointer-events: none;
+  }
+
+  .ai-hero-banner-content-{{ ai_gen_id }} {
+    position: absolute;
+    z-index: 2;
+    padding-top: {{ block.settings.content_padding_top }}px;
+    padding-right: {{ block.settings.content_padding_right }}px;
+    padding-bottom: {{ block.settings.content_padding_bottom }}px;
+    padding-left: {{ block.settings.content_padding_left }}px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  {% case block.settings.horizontal_alignment %}
+    {% when 'left' %}
+      .ai-hero-banner-content-{{ ai_gen_id }} {
+        left: 0;
+      }
+    {% when 'center' %}
+      .ai-hero-banner-content-{{ ai_gen_id }} {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    {% when 'right' %}
+      .ai-hero-banner-content-{{ ai_gen_id }} {
+        right: 0;
+      }
+  {% endcase %}
+
+  {% case block.settings.vertical_alignment %}
+    {% when 'top' %}
+      .ai-hero-banner-content-{{ ai_gen_id }} {
+        top: 0;
+      }
+    {% when 'middle' %}
+      .ai-hero-banner-content-{{ ai_gen_id }} {
+        top: 50%;
+        {% if block.settings.horizontal_alignment == 'center' %}
+          transform: translate(-50%, -50%);
+        {% else %}
+          transform: translateY(-50%);
+        {% endif %}
+      }
+    {% when 'bottom' %}
+      .ai-hero-banner-content-{{ ai_gen_id }} {
+        bottom: 0;
+      }
+  {% endcase %}
+
+  .ai-hero-banner-subheading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subheading_font_size }}px;
+    color: {{ block.settings.subheading_color }};
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+  }
+
+  .ai-hero-banner-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_font_size }}px;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .ai-hero-banner-countdown-{{ ai_gen_id }} {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .ai-hero-banner-countdown-item-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ai-hero-banner-countdown-number-{{ ai_gen_id }} {
+    font-size: {{ block.settings.countdown_font_size }}px;
+    color: {{ block.settings.countdown_color }};
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+
+  .ai-hero-banner-countdown-label-{{ ai_gen_id }} {
+    font-size: calc({{ block.settings.countdown_font_size }}px * 0.4);
+    color: {{ block.settings.countdown_color }};
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .ai-hero-banner-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_font_size }}px;
+    color: {{ block.settings.description_color }};
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .ai-hero-banner-placeholder-{{ ai_gen_id }} {
+    background-color: #f4f4f4;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  {% if block.settings.desktop_height_mode == 'custom' %}
+    .ai-hero-banner-placeholder-{{ ai_gen_id }} {
+      height: {{ block.settings.desktop_custom_height }}px;
+    }
+  {% else %}
+    .ai-hero-banner-placeholder-{{ ai_gen_id }} {
+      min-height: 500px;
+    }
+  {% endif %}
+
+  @media screen and (max-width: 749px) {
+    {% if block.settings.mobile_height_mode == 'custom' %}
+      .ai-hero-banner-placeholder-{{ ai_gen_id }} {
+        height: {{ block.settings.mobile_custom_height }}px;
+      }
+    {% else %}
+      .ai-hero-banner-placeholder-{{ ai_gen_id }} {
+        min-height: 400px;
+      }
+    {% endif %}
+  }
+
+  .ai-hero-banner-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .ai-hero-banner-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_font_size }}px * 0.7);
+    }
+
+    .ai-hero-banner-subheading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.subheading_font_size }}px * 0.9);
+    }
+
+    .ai-hero-banner-countdown-number-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.countdown_font_size }}px * 0.8);
+    }
+
+    .ai-hero-banner-description-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.description_font_size }}px * 0.9);
+    }
+
+    .ai-hero-banner-countdown-{{ ai_gen_id }} {
+      gap: 15px;
+    }
+  }
+{% endstyle %}
+
+<hero-countdown-{{ ai_gen_id }}
+  class="ai-hero-banner-{{ ai_gen_id }}"
+  data-target-date="{{ block.settings.countdown_target_date }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-hero-banner-container-{{ ai_gen_id }}">
+    {% if block.settings.desktop_image or block.settings.mobile_image %}
+      {% if block.settings.desktop_image %}
+        <img
+          src="{{ block.settings.desktop_image | image_url: width: 2000 }}"
+          alt="{{ block.settings.desktop_image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.desktop_image.width }}"
+          height="{{ block.settings.desktop_image.height }}"
+          class="ai-hero-banner-image-{{ ai_gen_id }} ai-hero-banner-desktop-image-{{ ai_gen_id }}"
+        >
+      {% endif %}
+
+      {% if block.settings.mobile_image %}
+        <img
+          src="{{ block.settings.mobile_image | image_url: width: 1000 }}"
+          alt="{{ block.settings.mobile_image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.mobile_image.width }}"
+          height="{{ block.settings.mobile_image.height }}"
+          class="ai-hero-banner-image-{{ ai_gen_id }} ai-hero-banner-mobile-image-{{ ai_gen_id }}"
+        >
+      {% elsif block.settings.desktop_image %}
+        <img
+          src="{{ block.settings.desktop_image | image_url: width: 1000 }}"
+          alt="{{ block.settings.desktop_image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.desktop_image.width }}"
+          height="{{ block.settings.desktop_image.height }}"
+          class="ai-hero-banner-image-{{ ai_gen_id }} ai-hero-banner-mobile-image-{{ ai_gen_id }}"
+        >
+      {% endif %}
+
+      <div class="ai-hero-banner-overlay-{{ ai_gen_id }}"></div>
+    {% else %}
+      <div class="ai-hero-banner-placeholder-{{ ai_gen_id }}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag }}
+        <div class="ai-hero-banner-empty-state-{{ ai_gen_id }}">
+          Add desktop and mobile images to get started
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="ai-hero-banner-content-{{ ai_gen_id }}">
+      {% if block.settings.subheading != blank %}
+        <div class="ai-hero-banner-subheading-{{ ai_gen_id }}">
+          {{ block.settings.subheading }}
+        </div>
+      {% endif %}
+
+      {% if block.settings.heading != blank %}
+        <h1 class="ai-hero-banner-heading-{{ ai_gen_id }}">
+          {{ block.settings.heading }}
+        </h1>
+      {% endif %}
+
+      {% if block.settings.show_countdown %}
+        <div class="ai-hero-banner-countdown-{{ ai_gen_id }}">
+          <div class="ai-hero-banner-countdown-item-{{ ai_gen_id }}">
+            <div class="ai-hero-banner-countdown-number-{{ ai_gen_id }}" data-countdown-days>00</div>
+            <div class="ai-hero-banner-countdown-label-{{ ai_gen_id }}">Days</div>
+          </div>
+          <div class="ai-hero-banner-countdown-item-{{ ai_gen_id }}">
+            <div class="ai-hero-banner-countdown-number-{{ ai_gen_id }}" data-countdown-hours>00</div>
+            <div class="ai-hero-banner-countdown-label-{{ ai_gen_id }}">Hours</div>
+          </div>
+          <div class="ai-hero-banner-countdown-item-{{ ai_gen_id }}">
+            <div class="ai-hero-banner-countdown-number-{{ ai_gen_id }}" data-countdown-minutes>00</div>
+            <div class="ai-hero-banner-countdown-label-{{ ai_gen_id }}">Minutes</div>
+          </div>
+          <div class="ai-hero-banner-countdown-item-{{ ai_gen_id }}">
+            <div class="ai-hero-banner-countdown-number-{{ ai_gen_id }}" data-countdown-seconds>00</div>
+            <div class="ai-hero-banner-countdown-label-{{ ai_gen_id }}">Seconds</div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.description != blank %}
+        <div class="ai-hero-banner-description-{{ ai_gen_id }}">
+          {{ block.settings.description }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</hero-countdown-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class HeroCountdown{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.targetDate = this.dataset.targetDate;
+        this.countdownInterval = null;
+      }
+
+      connectedCallback() {
+        if (this.targetDate) {
+          this.startCountdown();
+        }
+      }
+
+      disconnectedCallback() {
+        if (this.countdownInterval) {
+          clearInterval(this.countdownInterval);
+        }
+      }
+
+      startCountdown() {
+        this.updateCountdown();
+        this.countdownInterval = setInterval(() => {
+          this.updateCountdown();
+        }, 1000);
+      }
+
+      updateCountdown() {
+        const targetTime = new Date(this.targetDate).getTime();
+        const now = new Date().getTime();
+        const distance = targetTime - now;
+
+        if (distance < 0) {
+          if (this.countdownInterval) {
+            clearInterval(this.countdownInterval);
+          }
+          this.setCountdownValues(0, 0, 0, 0);
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        this.setCountdownValues(days, hours, minutes, seconds);
+      }
+
+      setCountdownValues(days, hours, minutes, seconds) {
+        const daysEl = this.querySelector('[data-countdown-days]');
+        const hoursEl = this.querySelector('[data-countdown-hours]');
+        const minutesEl = this.querySelector('[data-countdown-minutes]');
+        const secondsEl = this.querySelector('[data-countdown-seconds]');
+
+        if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+        if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+        if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+        if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+      }
+    }
+
+    customElements.define('hero-countdown-{{ ai_gen_id }}', HeroCountdown{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Hero banner",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop image"
+    },
+    {
+      "type": "select",
+      "id": "desktop_height_mode",
+      "label": "Desktop height mode",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "custom",
+          "label": "Custom height"
+        }
+      ],
+      "default": "custom"
+    },
+    {
+      "type": "range",
+      "id": "desktop_custom_height",
+      "min": 300,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "label": "Desktop custom height",
+      "default": 600
+    },
+    {
+      "type": "header",
+      "content": "Mobile image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image"
+    },
+    {
+      "type": "select",
+      "id": "mobile_height_mode",
+      "label": "Mobile height mode",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "custom",
+          "label": "Custom height"
+        }
+      ],
+      "default": "custom"
+    },
+    {
+      "type": "range",
+      "id": "mobile_custom_height",
+      "min": 200,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "Mobile custom height",
+      "default": 500
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Content positioning"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment",
+      "label": "Horizontal alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "middle",
+          "label": "Middle"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "middle"
+    },
+    {
+      "type": "header",
+      "content": "Content padding"
+    },
+    {
+      "type": "range",
+      "id": "content_padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "content_padding_right",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Right",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "content_padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "content_padding_left",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Left",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading text",
+      "default": "Limited Time Offer"
+    },
+    {
+      "type": "range",
+      "id": "subheading_font_size",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Main heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading text",
+      "default": "Summer Sale Ends Soon"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "min": 20,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Font size",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Countdown timer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_countdown",
+      "label": "Show countdown timer",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "countdown_target_date",
+      "label": "Target date and time",
+      "default": "2025-12-31T23:59:59"
+    },
+    {
+      "type": "range",
+      "id": "countdown_font_size",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Font size",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "countdown_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description text",
+      "default": "Don't miss out on incredible savings across our entire collection"
+    },
+    {
+      "type": "range",
+      "id": "description_font_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero banner"
+    }
+  ]
+}
+{% endschema %}

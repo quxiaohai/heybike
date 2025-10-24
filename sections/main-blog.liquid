@@ -3,13 +3,63 @@
     --section-padding-top: {{ section.settings.padding_top }}px;
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
   }
+
+  .subcollection-wrapper {
+    max-width: 1415px;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .subcollections {
+    justify-content: unset;
+    overflow: auto;
+    scrollbar-width: none;
+    width: 100%;
+  }
+
+  .button-wrapper,
+  .title-wrapper {
+    justify-content: center;
+    display: block;
+  }
+
+.blog-collage .article-card:nth-child(3):before, .blog-collage.with-only4 .article-card:nth-child(4):before { border-block-start: unset !important;}
+
+.subcollections {
+  overflow-x: auto;        /* Allows horizontal scrolling */
+  overflow-y: hidden;      /* Hides vertical scrollbar */
+  cursor: grab;            /* Indicates draggable */
+  user-select: none;       /* Prevents text selection while dragging */
+  white-space: nowrap;     /* Ensures items inside don't wrap */
+  scrollbar-width: unset ;   /* Hides scrollbar in Firefox */
+}
+
+.subcollections:active {
+  cursor: grabbing;        /* Changes cursor while dragging */
+}
+
+h1.heading {display:none;}
+
+
+@media screen and (min-width: 768px) {
+    .blog-collage .article-card {
+        margin-bottom: 48px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .blog-collage .article-card {
+        margin-bottom: 24px;
+    }
+}
+
 </style>
 
 {{ 'blog.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'blog.js' | asset_url }}" defer></script>
 
 {%- paginate blog.articles by section.settings.per_page -%}
-  <div class="main-blog section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
+  <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
     <div class="page-width{% if section.settings.full_width %} page-width--full{% endif %} relative">
       <div class="title-wrapper{% if section.settings.heading_size == 'title-xl' %} title-wrapper-lg{% endif %} {{ section.settings.heading_alignment }} grid gap-4">
         {%- if section.settings.subheading != blank -%}
@@ -25,7 +75,7 @@
           </p>
         {%- endif -%}
 
-        <{{ section.settings.heading_tag }} class="tw-hidden heading {{ section.settings.heading_size }}">
+        <{{ section.settings.heading_tag }} class="heading {{ section.settings.heading_size }}">
           <split-words class="split-words block" data-animate="fade-up-large">{{ blog.title }}</split-words>
         </{{ section.settings.heading_tag }}>
 
@@ -38,45 +88,79 @@
             endif
           -%}
           <div class="inline-flex justify-center rte">
-            <div class="page-width--narrow rte leading-normal {{ subtext_size }}">{{ section.settings.description }}</div>
+            <div class="page-width--narrow rte leading-normal {{ subtext_size }}">
+              {{ section.settings.description }}
+            </div>
           </div>
         {%- endif -%}
 
         {%- if section.settings.show_tag_filter and blog.tags.size > 0 -%}
-          <div class="hidden md:block">
-            <ul class="subcollections inline-flex flex-wrap justify-center max-w-full tw-gap-5">
-              <li class="flex items-center justify-center relative{% if current_tags == blank %} active{% endif %}">
-                <a href="{{ blog.url }}" class="subcollection flex items-center relative leading-tight tw-button--outline tw-rounded-full !tw-px-4 tw-py-2">
-                  <span class="btn-text">{{ 'blogs.article.all_tags' | t }}</span>
-                </a>
-              </li>
-              {%- for tag in blog.all_tags -%}
-                <li class="flex items-center justify-center relative{% if current_tags contains tag %} active{% endif %}">
-                  <a href="{{ blog.url }}/tagged/{{ tag | handleize }}" class="subcollection flex items-center relative leading-tight tw-button--outline tw-rounded-full tw-px-4 tw-py-2">
-                    <span class="btn-text">{{ tag }}</span>
+          <div class="subcollection-wrapper">
+            {% comment %}
+              <ul class="subcollections inline-flex flex-wrap justify-center max-w-full">
+                <li class="flex items-center justify-center relative{% if current_tags == blank %} active{% endif %}">
+                  <a href="{{ blog.url }}" class="subcollection flex items-center relative leading-tight text-lg-2xl">
+                    <span class="btn-text">{{ 'blogs.article.all_tags' | t }}</span>
                   </a>
                 </li>
-              {%- endfor -%}
-            </ul>
+                {%- for tag in blog.all_tags -%}
+                  <li class="flex items-center justify-center relative{% if current_tags contains tag %} active{% endif %}">
+                    <a
+                      href="{{ blog.url }}/tagged/{{ tag | handleize }}"
+                      class="subcollection flex items-center relative leading-tight text-lg-2xl"
+                    >
+                      <span class="btn-text">{{ tag }}</span>
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {% endcomment %}
+
+            <div class="overflow-x-auto">
+              <ul class="subcollections flex whitespace-nowrap space-x-4 px-4">
+                <li class="{% if current_tags == blank %}active{% endif %}">
+                  <a href="{{ blog.url }}" class="subcollection inline-block leading-tight text-lg-2xl">
+                    <span class="btn-text">{{ 'blogs.article.all_tags' | t }}</span>
+                  </a>
+                </li>
+                {% for tag in blog.all_tags %}
+                  <li class="{% if current_tags contains tag %}active{% endif %}">
+                    <a
+                      href="{{ blog.url }}/tagged/{{ tag | handleize }}"
+                      class="subcollection inline-block leading-tight text-lg-2xl"
+                    >
+                      <span class="btn-text">{{ tag }}</span>
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
           </div>
 
-          <div class="blog-filter field md:hidden">
+          {% comment %} <div class="blog-filter field md:hidden">
             <div class="inline-block relative">
               <label for="TagFilter" class="sr-only">{{ 'blogs.article.filter' | t }}</label>
               <select id="TagFilter" class="select" is="tag-filter">
                 <option value="{{ blog.url }}">{{ 'blogs.article.all_tags' | t }}</option>
                 {%- for tag in blog.all_tags -%}
-                  <option value="{{ blog.url }}/tagged/{{ tag | handleize }}" {% if current_tags contains tag %}selected{% endif %}>{{ tag }}</option>
+                  <option
+                    value="{{ blog.url }}/tagged/{{ tag | handleize }}"
+                    {% if current_tags contains tag %}
+                      selected
+                    {% endif %}
+                  >
+                    {{ tag }}
+                  </option>
                 {%- endfor -%}
               </select>
               {%- render 'icon', icon: 'chevron-up', size: 'sm', class: 'absolute pointer-events-none' -%}
             </div>
-          </div>
+          </div> {% endcomment %}
         {%- endif -%}
       </div>
 
       <div class="blog flex flex-col gap-12">
-        <motion-list class="tw-gap-7 blog-grid{% if section.settings.layout == 'collage' %} blog-collage{% if blog.articles_count == 1 %} with-only1{% endif %}{% endif %} card-grid card-grid--3 mobile:card-grid--1 grid">
+        <motion-list class="blog-grid{% if section.settings.layout == 'collage' %} blog-collage{% if blog.articles_count == 1 %} with-only1{% endif %}{% endif %} card-grid card-grid--3 mobile:card-grid--1">
           {%- for article in blog.articles -%}
             {%- if section.settings.layout == 'collage' and forloop.first -%}
               {%- capture sizes -%}(max-width: 1023px) 100vw, calc(min(100vw, {{ settings.page_width }}px) * 0.65){%- endcapture -%}
@@ -86,13 +170,14 @@
 
             {%- render 'article-card',
               article: article,
+              blog: blog,
               sizes: sizes,
               image_ratio: section.settings.image_ratio,
               show_tags: section.settings.show_tags,
               show_date: section.settings.show_date,
               show_author: section.settings.show_author,
               show_comments: section.settings.show_comments,
-              show_excerpt: section.settings.show_excerpt,
+              show_excerpt: section.settings.show_excerpt
             -%}
           {%- endfor -%}
         </motion-list>
@@ -105,6 +190,8 @@
       </div>
     </div>
   </div>
+
+ 
 {%- endpaginate -%}
 
 {% schema %}

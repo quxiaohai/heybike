@@ -150,13 +150,10 @@
 
                   {%- when 'timer' -%}
                     <animate-element data-animate="zoom-out" class="block" {{ block.shopify_attributes }}>
+                      {%- capture expiration_date -%}{{ block.settings.year }}-{{ block.settings.month }}-{{ block.settings.day }} {{ block.settings.hour }}:{{ block.settings.minute }}:00{%- endcapture -%}
                       <countdown-timer
                         class="countdown__timer {{ block.settings.text_font }} {{ block.settings.text_size }} inline-flex text-center"
-                        data-year="{{ block.settings.year }}"
-                        data-month="{{ block.settings.month }}"
-                        data-day="{{ block.settings.day }}"
-                        data-hour="{{ block.settings.hour }}"
-                        data-minute="{{ block.settings.minute }}"
+                        data-expires="{{ expiration_date | date: '%FT%T%:z' | escape }}"
                       >
                         <div class="countdown__item">
                           <p>--</p><span>{{ 'general.date.days' | t }}</span>
@@ -572,6 +569,10 @@
       "name": "t:sections.countdown-timer.blocks.timer.name",
       "limit": 1,
       "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.countdown-timer.blocks.timer.settings.paragraph.content"
+        },
         {
           "type": "select",
           "id": "year",
@@ -1873,7 +1874,7 @@
           "id": "icon_width",
           "label": "t:sections.global.settings.icon_width.label",
           "default": 48,
-          "min": 20,
+          "min": 10,
           "max": 120,
           "step": 2,
           "unit": "px"

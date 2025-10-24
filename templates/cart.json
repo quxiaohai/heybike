@@ -14,14 +14,14 @@
       "blocks": {
         "free_shipping": {
           "type": "free_shipping",
-          "disabled": true,
           "settings": {
             "minimum_amount": "1000"
           }
         },
         "subtotal": {
           "type": "subtotal",
-          "settings": {}
+          "settings": {
+          }
         },
         "cart_note": {
           "type": "cart_note",
@@ -32,7 +32,6 @@
         "buttons": {
           "type": "buttons",
           "settings": {
-            "show_accelerated_buttons": true
           }
         }
       },
@@ -47,8 +46,7 @@
         "heading_alignment": "md:items-end",
         "heading_tag": "h1",
         "show_vendor": false,
-        "show_payment_icons": true,
-        "show_shipping_calculator": false,
+        "show_shipping_calculator": true,
         "padding_top": 72,
         "padding_bottom": 60,
         "divider": false,
@@ -58,7 +56,6 @@
     },
     "recently-viewed": {
       "type": "recently-viewed",
-      "disabled": true,
       "settings": {
         "product_limit": 6,
         "columns": 4,

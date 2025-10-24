@@ -438,17 +438,6 @@
     },
     {
       "type": "color",
-      "id": "color_background",
-      "label": "t:sections.global.settings.color_background.label",
-      "default": "#171717"
-    },
-    {
-      "type": "color_background",
-      "id": "gradient_background",
-      "label": "t:sections.global.settings.gradient_background.label"
-    },
-    {
-      "type": "color",
       "id": "color_highlight",
       "label": "t:sections.global.settings.color_highlight.label",
       "default": "#e0a580"
@@ -474,6 +463,22 @@
       "type": "color_background",
       "id": "color_button_gradient",
       "label": "t:sections.global.settings.color_button_gradient.label"
+    },
+    {
+      "type": "color",
+      "id": "color_overlay",
+      "label": "t:sections.global.settings.color_overlay.label",
+      "default": "#171717"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "t:sections.global.settings.overlay_opacity.label",
+      "default": 100
     },
     {
       "type": "header",
@@ -1207,7 +1212,7 @@
           "id": "icon_width",
           "label": "t:sections.global.settings.icon_width.label",
           "default": 48,
-          "min": 20,
+          "min": 10,
           "max": 120,
           "step": 2,
           "unit": "px"

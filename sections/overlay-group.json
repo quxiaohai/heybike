@@ -17,7 +17,7 @@
         "show_vendor": false,
         "show_cart_note": true,
         "show_shipping_calculator": false,
-        "show_view_cart_button": true,
+        "show_view_cart_button": false,
         "show_checkout_button": true,
         "show_free_shipping_bar": false,
         "free_shipping_minimum_amount": "1000",
@@ -29,7 +29,7 @@
         "cart_recommendations_products": [],
         "empty_cart_message": "<p>Not sure where to start?<br/>Try these collections:</p>",
         "empty_cart_collections": [],
-        "recent_products_enabled": false,
+        "recent_products_enabled": true,
         "recent_products_heading": "Recently viewed",
         "recent_products_limit": 5,
         "show_recent_products_vendor": false,
@@ -58,7 +58,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Sign up and get <em>20% off</em> your first order",
+            "heading": "Sign up and get 20% off your first order",
             "heading_size": "text-2xl lg:text-3xl",
             "heading_tag": "h2",
             "highlighted_text": "scribble",
@@ -243,7 +243,6 @@
         "spacing",
         "buttons"
       ],
-      "disabled": true,
       "settings": {
         "mode": "enabled",
         "delay": 5,
@@ -313,6 +312,7 @@
         "mobile-dock-5",
         "mobile-dock-6"
       ],
+      "disabled": true,
       "settings": {
         "color_text": "#000000",
         "color_background": "#ffffff",

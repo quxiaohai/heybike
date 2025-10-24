@@ -1,0 +1,225 @@
+{% comment %}
+  Created by CLEARgo
+{% endcomment %}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    
+  }
+
+  #shopify-section-{{ section.id }} .slide { 
+    position: relative; 
+  }
+
+  #shopify-section-{{ section.id }} .slide .media {
+    width: 100%; 
+    object-fit: cover;
+  }
+
+  #shopify-section-{{ section.id }} .slide .media.mobile {
+    display: none; 
+  }
+
+  #shopify-section-{{ section.id }} .slide .media-inner { 
+    top: 50%; 
+    left: 50%; 
+    width: 100%;
+    max-width: 1440px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+    position: absolute; 
+    transform: translate(-50%, -50%); 
+  }
+
+  #shopify-section-{{ section.id }} .slide .media-inner .slide-heading { 
+    text-align: center; 
+  }
+
+  /* Responsive */
+  /* Mobile */
+  @media (max-width: 767px) {
+    #shopify-section-{{ section.id }} .slide .media.desktop {
+      display: none; 
+    }
+  
+    #shopify-section-{{ section.id }} .slide .media.mobile {
+      display: block; 
+    }
+  }
+</style>
+
+<!-- View -->
+<div class="product-video-container">
+  <ul class="slide-list">
+    {% for block in section.blocks %}
+      <li class="slide slide-{{ forloop.index }}">
+        <style>
+          #shopify-section-{{ section.id }} .slide-{{ forloop.index }} .media { 
+            aspect-ratio: {{ block.settings.ratio_width }} / {{ block.settings.ratio_height }}; 
+          }
+          
+          #shopify-section-{{ section.id }} .slide-{{ forloop.index }} .media-inner .slide-heading { 
+            {% if block.settings.font_size != blank %}
+              font-size: calc({{ block.settings.font_size }}vw / 19.2); 
+            {% endif %}
+            {% if block.settings.heading_color != blank %}
+              color: {{ block.settings.heading_color }}; 
+            {% endif %}
+          }
+
+          /* Responsive */
+          /* Mobile */
+          @media (max-width: 767px) {
+            #shopify-section-{{ section.id }} .slide-{{ forloop.index }} .media { 
+              aspect-ratio: {{ block.settings.ratio_width_mobile }} / {{ block.settings.ratio_height_mobile }}; 
+            }
+            
+            #shopify-section-{{ section.id }} .slide-{{ forloop.index }} .media-inner .slide-heading {
+              {% if block.settings.font_size != blank %}
+                font-size: {{ block.settings.font_size_mobile }}px; 
+              {% endif %}
+            }
+          }
+
+          /* Tablet */
+          @media (min-width: 768px) and (max-width: 1366px) { 
+            #shopify-section-{{ section.id }} .slide-{{ forloop.index }} .media-inner .slide-heading {
+              {% if block.settings.font_size != blank %}
+                font-size: calc({{ block.settings.font_size }}vw / 13.66); 
+              {% endif %}
+            }
+          }
+
+          /* Desktop */
+          @media (min-width: 1920px) { 
+            #shopify-section-{{ section.id }} .slide-{{ forloop.index }} .media-inner .slide-heading {
+              {% if block.settings.font_size != blank %}
+                font-size: {{ block.settings.font_size }}px; 
+              {% endif %}
+            }
+          }
+        </style>
+        {% if block.settings.media_video != blank %}
+          {% comment %}
+            {{ block.settings.media_video | video_tag: playsinline: true, muted: muted, autoplay: true, loop: loop, controls: false, preload: 'metadata', image_size: '800x', class: 'media desktop' }}
+          {% endcomment %}
+
+          {{ block.settings.media_video | video_tag: autoplay: true, loop: true, muted: true, controls: false, outline: false, controlList: nofullscreen, class: 'media desktop' }}
+        {% endif %}
+        {% if block.settings.media_video_mobile != blank %}
+          {% comment %}
+            {{ block.settings.media_video_mobile | video_tag: playsinline: true, muted: muted, autoplay: true, loop: loop, controls: false, preload: 'metadata', image_size: '800x', class: 'media mobile' }}
+          {% endcomment %}
+
+          {{ block.settings.media_video_mobile | video_tag: autoplay: true, loop: true, muted: true, controls: false, outline: false, controlList: nofullscreen, class: 'media mobile' }}
+        {% elsif block.settings.media_video != blank %}
+          {% comment %}
+            {{ block.settings.media_video | video_tag: playsinline: true, muted: muted, autoplay: true, loop: loop, controls: false, preload: 'metadata', image_size: '800x', class: 'media mobile' }}
+          {% endcomment %}
+
+          {{ block.settings.media_video | video_tag: autoplay: true, loop: true, muted: true, controls: false, outline: false, controlList: nofullscreen, class: 'media mobile' }}
+        {% endif %}
+        
+        <div class="media-inner">
+          {% if block.settings.slide_heading != blank %}
+            <h2 class="slide-heading">{{ block.settings.slide_heading }}</h2>
+          {% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+  {
+    "name": "CG Product Video", 
+    "tag": "section", 
+    "class": "cg-product-video", 
+    "settings": [
+      
+    ], 
+    "blocks": [
+      {
+        "type": "slide", 
+        "name": "Slide", 
+        "settings": [
+          {
+            "type": "video", 
+            "id": "media_video", 
+            "label": "Video (Desktop)"
+          }, 
+          {
+            "type": "video", 
+            "id": "media_video_mobile", 
+            "label": "Video (Mobile)"
+          }, 
+          {
+            "type": "text", 
+            "id": "slide_heading", 
+            "label": "Heading", 
+            "default": "For Your Better All-Terrain Adventure"
+          }, 
+          {
+            "type": "range", 
+            "id": "font_size", 
+            "label": "Font size (Desktop)", 
+            "min": 0, 
+            "max": 72, 
+            "step": 1, 
+            "unit": "px",
+            "default": 48
+          }, 
+          {
+            "type": "range", 
+            "id": "font_size_mobile", 
+            "label": "Font size (Mobile)", 
+            "min": 0, 
+            "max": 72, 
+            "step": 1, 
+            "unit": "px",
+            "default": 30
+          }, 
+          {
+            "type": "color", 
+            "id": "heading_color", 
+            "label": "Heading color", 
+            "default": "#FFDB00"
+          }, 
+          {
+            "type": "header", 
+            "content": "Ratio"
+          },
+          {
+            "type": "text", 
+            "id": "ratio_width", 
+            "label": "Width (Desktop)", 
+            "default": "1920"
+          }, 
+          {
+            "type": "text", 
+            "id": "ratio_height", 
+            "label": "Height (Desktop)", 
+            "default": "1080"
+          }, 
+          {
+            "type": "text", 
+            "id": "ratio_width_mobile", 
+            "label": "Width (Mobile)", 
+            "default": "375"
+          }, 
+          {
+            "type": "text", 
+            "id": "ratio_height_mobile", 
+            "label": "Height (Mobile)", 
+            "default": "500"
+          }
+        ]
+      }
+    ], 
+    "presets": [
+      {
+        "name": "CG Product Video"
+      }
+    ]
+  }
+{% endschema %}

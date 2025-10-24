@@ -8,54 +8,14 @@
 {%- liquid
   echo 'article.css' | asset_url | stylesheet_tag
 
-  # theme-check-disable UndefinedObject
   assign number_of_comments = article.comments_count
   if comment.status == 'pending'
     assign number_of_comments = article.comments_count | plus: 1
   endif
-  # theme-check-enable UndefinedObject
 -%}
 
 <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
-  
-  
-
-  <div class="grid gap-5" {{ block.shopify_attributes }}>
-    <div class="page-width page-width--narrow tw-grid tw-gap-7 article-wrapper">
-      <animate-element class="inline-flex flex-wrap items-center gap-6" data-animate="fade-up" data-animate-delay="{{ delay | times: 250 }}">
-          {%- for tag in article.tags -%}
-            <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="badge badge--custom tw-text-black tw-bg-vi tw-border-vi font-medium leading-none rounded-full">{{ tag }}</a>
-          {%- endfor -%}
-      </animate-element>
-      
-
-      {%- assign delay = delay | plus: 1 -%}
-      <h1 class=" banner__title heading leading-none md:tw-text-4xl tw-text-2xl tw-leading-none" itemprop="headline">
-        <split-words class="split-words block" data-animate="fade-up-large" data-animate-delay="{{ delay | times: 250 }}">{{ article.title }}</split-words>
-      </h1>
-
-      <div class="tw-flex gap-6 tw-text-vi tw-mt-0 ">
-        <div class="inline-flex items-center gap-2 relative tw-mt-0" itemprop="dateCreated pubdate datePublished">
-          {%- render 'icon', icon: 'calendar', size: 'xs', class: 'stroke-1' -%}
-          {{- article.published_at | time_tag: format: 'month_day_year' -}}
-        </div>
-        <div class="inline-flex items-center gap-2 relative tw-capitalize" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          {%- render 'icon', icon: 'account', size: 'xs', class: 'stroke-1' -%}
-          {%- capture author -%}<span itemprop="name">{{ article.author }}</span>{%- endcapture -%}
-          {{- 'blogs.article.written_by_html' | t: author: author -}}
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-
-
-
-
-  
-  
-  <article class="article tw-pt-6 tw-mt-6 tw-border-t tw-border-solid tw-border-viGray-200 tw-border-0 page-width{% if section.settings.narrow %} page-width--narrow{% endif %} relative" itemscope itemtype="http://schema.org/BlogPosting">
+  <article class="article page-width{% if section.settings.narrow %} page-width--narrow{% endif %} relative" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="rte text-base md:text-lg" itemprop="articleBody">
       {{- article.content -}}
     </div>
@@ -95,7 +55,7 @@
               <ul class="grid md:grid-cols-2 gap-5" {{ block.shopify_attributes }}>
                 {%- if blog.previous_article -%}
                   <li class="article-card flex gap-5">
-                    {%- render 'icon', icon: 'arrow-left', class: 'transform flex-auto' -%}
+                    {%- render 'icon', icon: 'arrow-left', class: 'transform shrink-0' -%}
                     <div class="flex flex-col gap-3 grow">
                       {%- if block.settings.show_date or block.settings.show_comments or block.settings.show_author -%}
                         <ul class="article-card__top flex flex-wrap gap-4">
@@ -167,7 +127,7 @@
                         </a>
                       </p>
                     </div>
-                    {%- render 'icon', icon: 'arrow-right', class: 'transform flex-auto' -%}
+                    {%- render 'icon', icon: 'arrow-right', class: 'transform shrink-0' -%}
                   </li>
                 {%- endif -%}
               </ul>
@@ -184,13 +144,11 @@
                       </h3>
 
                       <ul class="grid gap-5">
-                        {% # theme-check-disable UndefinedObject %}
                         {%- if comment.status == 'pending' -%}
                           <li id="Comment-{{ comment.id }}" class="comment-card">
                             {%- render 'article-comment', comment: comment, show_gravatar: block.settings.show_gravatar -%}
                           </li>
                         {%- endif -%}
-                        {% # theme-check-enable UndefinedObject %}
           
                         {%- for comment in article.comments -%}
                           <li id="Comment-{{ comment.id }}" class="comment-card">

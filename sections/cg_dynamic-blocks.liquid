@@ -1,0 +1,306 @@
+{% comment %}
+  Created by CLEARgo
+{% endcomment %}
+
+{% style %}
+  .section-{{ section.id }} { 
+    padding: 100px 0; 
+  }
+
+  .section-{{ section.id }} .title-wrapper { 
+    display: flex; 
+    justify-content: space-between; 
+  }
+
+  .section-{{ section.id }} .dynamic-block-list-wrapper {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+
+  .section-{{ section.id }} .dynamic-block-list-wrapper::-webkit-scrollbar { 
+    display: none;
+  }
+
+  .section-{{ section.id }} .dynamic-block-list { 
+    display: flex; 
+    gap: calc(30vw / 19.2); 
+  }
+
+  .section-{{ section.id }} .dynamic-block { 
+    width: calc(45% - (15vw / 19.2)); 
+    height: calc(416vw / 19.2); 
+    border-radius: 1.25rem; 
+    background-size: cover; 
+    background-position: center; 
+    transition: width .6s; 
+  }
+
+  .section-{{ section.id }} .dynamic-block.active { 
+    width: calc(55% - (15vw / 19.2)); 
+    aspect-ratio: 900 / 416; 
+  }
+
+  .section-{{ section.id }} .block-inner { 
+    width: 100%; 
+    height: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-end; 
+    margin: auto; 
+    padding: calc(24vw / 19.2) calc(56vw / 19.2); 
+  }
+
+  .section-{{ section.id }} .block-inner * { 
+    color: var(--color-white); 
+  }
+
+  .section-{{ section.id }} .block-inner .heading { 
+    font-size: 2.5rem; 
+    font-weight: 500; 
+    /* margin-bottom: calc(20vw / 19.2); */
+  }
+
+  .section-{{ section.id }} .block-desc { 
+    font-size: 1rem; 
+  }
+  
+  /* Responsive */
+  /* Mobile */
+  @media (max-width: 767px) { 
+
+  .section-{{ section.id }} { 
+    padding: 24px 0; 
+  }
+
+    .section-{{ section.id }} .title-wrapper { 
+      margin-bottom: 28px; 
+    }
+    .section-{{ section.id }} .title-wrapper-inner { 
+      display: flex; 
+      align-items: center; 
+    }
+
+    .section-{{ section.id }} .dynamic-block-list-wrapper { 
+      width: 100vw; 
+      margin: 0 -20px; 
+      padding: 0 20px; 
+      overflow-x: auto; 
+    }
+
+    .section-{{ section.id }} .dynamic-block-list { 
+      width: fit-content; 
+      max-width: unset; 
+      gap: 16px; 
+    }
+
+    .section-{{ section.id }} .dynamic-block, 
+    .section-{{ section.id }} .dynamic-block.active { 
+      width: 75vw; 
+      height: auto; 
+      aspect-ratio: 600 / 742; 
+      border-radius: 10px; 
+      padding: 20px; 
+      background-size: 200%; 
+      transition: background-size .6s; 
+    }
+
+    .section-{{ section.id }} .dynamic-block:hover { 
+      background-size: 250%; 
+    }
+
+    .section-{{ section.id }} .block-inner .heading { 
+      /* box-shadow: var(--theme-box-shadow); */
+      font-size: 20px; 
+    }
+
+    .section-{{ section.id }} .block-desc { 
+      font-size: 10px; 
+    }
+  }
+
+  /* Tablet */
+  @media (min-width: 768px) and (max-width: 1366px) { 
+    .section-{{ section.id }} .dynamic-block-list { 
+      gap: calc(30vw / 13.66); 
+    }
+
+    .section-{{ section.id }} .dynamic-block { 
+      height: calc(416vw / 13.66); 
+    }
+
+    .section-{{ section.id }} .block-inner { 
+      padding: calc(24vw / 13.66) calc(56vw / 13.66); 
+    }
+
+    .section-{{ section.id }} .block-inner .heading { 
+      /* margin-bottom: calc(20vw / 13.66); */
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 1920px) { 
+    .section-{{ section.id }} .dynamic-block { 
+      height: 416px; 
+    }
+
+    .section-{{ section.id }} .block-inner { 
+      padding: 24px 56px; 
+    }
+
+    .section-{{ section.id }} .block-inner .heading { 
+      /* margin-bottom: 20px; */
+    }
+  }
+{% endstyle %}
+
+<!-- View -->
+<div class="section-{{ section.id }} dynamic-blocks-container section--padding">
+  <div class="page-width">
+    <div class="title-wrapper">
+      <div class="title-wrapper-inner">
+      {% if section.settings.section_heading != blank %}
+        <h2 class="heading">
+          <split-words class="split-words block" data-animate="fade-up-large">{{ section.settings.section_heading | escape }}</split-words>
+        </h2>
+      {% endif %}
+      {% if section.settings.section_desc != blank %}
+        <p class="section-desc">{{ section.settings.section_desc }}</p>
+      {% endif %}
+      </div>
+      {% if section.settings.btn_url != blank or section.settings.btn_text != blank %}
+        <a class="button button--primary button-with-url" href="{{ section.settings.btn_url }}" is="hover-link">
+          <span class="btn-fill" data-fill></span>
+          <span class="btn-text">
+            {{ section.settings.btn_text }}
+          </span>
+        </a>
+      {% endif %}
+    </div>
+    <div class="dynamic-block-list-wrapper">
+      <ul class="dynamic-block-list">
+        {% for block in section.blocks %}
+          <li class="dynamic-block index-{{ forloop.index }} {% if forloop.index == 1 %}active{% endif %}">
+        <a class="dynamic-block-link" {% if block.settings.block_link != block %} href="{{ block.settings.block_link }}" {% endif %}>
+              {% style %}
+                .section-{{ section.id }} .dynamic-block.index-{{ forloop.index }} { 
+                  background-image: url({{ block.settings.bg_img | image_url }}); 
+                }
+              {% endstyle %}
+              <div class="block-inner">
+                {% if block.settings.block_title != blank %}
+                  <h3 class="heading title-sm">
+                    <split-words class="split-words block" data-animate="fade-up-large">{{ block.settings.block_title | escape }}</split-words>
+                  </h3>
+                {% endif %}
+                {% if block.settings.block_desc != blank %}
+                  <p class="block-desc">
+                    <split-words class="split-words block" data-animate="fade-up-large">{{ block.settings.block_desc | escape }}</split-words>
+                  </p>
+                {% endif %}
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  addEventListener("DOMContentLoaded", (event) => { 
+    const dynamicBlocks = document.querySelectorAll(".section-{{ section.id }} .dynamic-block"); 
+
+    /* Hover event for expanding block */
+    dynamicBlocks.forEach((dynamicBlock, index) => { 
+      dynamicBlock.addEventListener("mouseover", (e) => { 
+        /* Clear all active element */
+        dynamicBlocks.forEach((item, i) => { 
+          item.classList.remove("active"); 
+        }); 
+
+        /* Assign new active element */
+        e.currentTarget.classList.add("active"); 
+      }); 
+    }); 
+  })
+</script>
+
+{% schema %}
+{
+  "name": "CG Dynamic Blocks", 
+  "tag": "section", 
+  "class": "cg-dynamic-blocks", 
+  "max_blocks": 2, 
+  "settings": [ 
+    {
+      "type": "text", 
+      "id": "section_heading", 
+      "label": "Section heading", 
+      "default": "Find a Dealer"
+    }, 
+    {
+      "type": "text", 
+      "id": "section_desc", 
+      "label": "Section description"
+    }, 
+    {
+      "type": "header", 
+      "content": "Button"
+    }, 
+    {
+      "type": "text", 
+      "id": "btn_text", 
+      "label": "Display text", 
+      "default": "Learn More"
+    }, 
+    {
+      "type": "url", 
+      "id": "btn_url", 
+      "label": "URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "dynamic_block", 
+      "name": "Dynamic block", 
+      "settings": [
+        {
+          "type": "text", 
+          "id": "block_title", 
+          "label": "Title", 
+          "default": "Fat Tire Ebikes"
+        }, 
+        {
+          "type": "text", 
+          "id": "block_desc", 
+          "label": "Description", 
+          "default": "Shop Heybike collection of fat tire electric bikes."
+        }, 
+        {
+          "type": "image_picker", 
+          "id": "bg_img", 
+          "label": "Background image"
+        }, 
+        {
+          "type": "url", 
+          "id": "block_link", 
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "CG Dynamic Blocks",
+      "blocks": [
+        {
+          "type": "dynamic_block"
+        },
+        {
+          "type": "dynamic_block"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

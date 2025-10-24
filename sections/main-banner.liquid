@@ -1,0 +1,2250 @@
+{% assign ss = section.settings %}
+{% assign secId = section.id | split: '__' | last %}
+{%- assign preload = false -%}
+{%- if section.index == 1 -%}
+    {%- assign preload = true -%}
+{%- endif -%}
+{%- assign pcHeight = 42.1875 -%}
+{%- if ss.media_type == 'image' and ss.pc_image_url != blank -%}
+    {%- assign pc_w = ss.pc_image_url.width | divided_by: 100.0 -%}
+    {%- assign pcHeight = ss.pc_image_url.height | divided_by: pc_w -%}
+{%- elsif ss.media_type == 'video_new' and ss.pc_video != blank -%}
+    {%- for source in pc_video.sources -%}
+        {%- if source.format == 'mp4' -%}
+            {%- assign pc_w = source.width | divided_by: 100.0 -%}
+            {%- assign pcHeight = source.height | divided_by: pc_w -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endif -%}
+{%- assign mbHeight = 159.2 -%}
+{%- if ss.media_type == 'image' and ss.mb_image_url != blank -%}
+    {%- assign mb_w = ss.mb_image_url.width | divided_by: 100.0 -%}
+    {%- assign mbHeight = ss.mb_image_url.height | divided_by: mb_w -%}
+{%- elsif ss.media_type == 'video_new' and ss.mb_video != blank -%}
+    {%- for source in mb_video.sources -%}
+        {%- if source.format == 'mp4' -%}
+            {%- assign mb_w = source.width | divided_by: 100.0 -%}
+            {%- assign mbHeight = source.height | divided_by: mb_w -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endif -%}
+<style>
+    {%- assign pcW = ss.pc_width | divided_by: 100.0 -%}
+    .{{ secId }} {
+        width: 100%;
+        height: {% if ss.pc_height > 0 %}{{ ss.pc_height | divided_by: pcW }}{% else %}{{ pcHeight }}{% endif %}vw;
+        position: relative;
+    {%- if ss.page_color != blank -%} background-color: {{ ss.page_color }};
+    {%- endif -%}
+    }
+
+    {%- if ss.overlay_show -%}
+    .{{ secId }}:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background: {{ ss.overlay_color }};
+        opacity: {{ ss.overlay_opacity | divided_by: 100.0 }};
+    }
+
+    {%- endif -%}
+
+    .{{ secId }} .backdrop-img, .{{ secId }} .backdrop-video {
+        width: 100%;
+        height: 100%;
+        object-fit: {% if ss.pc_height > 0 %}fill{% else %}cover{% endif %};
+    }
+
+    .{{ secId }} .main-content {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: {% if ss.content_pos == 'top' %}flex-start{% elsif  ss.content_pos == 'center' %}center{% else %}flex-end{% endif %};
+        max-width: {{ ss.pc_content_width }}px;
+        padding: 0 48px;
+    }
+
+    .{{ secId }} .main-content.hidden {
+        display: none;
+    }
+
+    .{{ secId }} .main-content .date-name {
+        padding-bottom: 16px;
+    }
+
+    .{{ secId }} .main-content .date-name .text {
+        padding: 6px 32px;
+        color: #181623;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.17;
+        border-radius: 1000px;
+        border: 1px solid #181623;
+    }
+
+    .{{ secId }} .main-content .image-info {
+        width: auto;
+        overflow: hidden;
+        padding-bottom: 20px;
+    }
+
+    .{{ secId }} .main-content .image-info .image {
+        width: auto;
+        height: 155px;
+    }
+
+    .{{ secId }} .main-content .image-wrap {
+        width: 100%;
+    }
+
+    @media screen and (max-width: 1440px) {
+        .{{ secId }} .main-content {
+            padding: 0 36px;
+        }
+
+        .{{ secId }} .main-content .date-name {
+            padding-bottom: 11.2px;
+        }
+
+        .{{ secId }} .main-content .date-name .text {
+            padding: 4.2px 22.4px;
+            font-size: 12.6px;
+        }
+    }
+
+    {%- assign mbW = ss.mb_width | divided_by: 100.0 -%}
+    @media screen and (max-width: 1023px) {
+        .{{ secId }} {
+            height: {% if ss.mb_height > 0 %}{{ ss.mb_height | divided_by: mbW }}{% else %}{{ mbHeight }}{% endif %}vw;
+        }
+
+        .{{ secId }} .main-content {
+            transform: translate3d(0, 0, 0);
+            padding: 0;
+            align-items: center;
+            justify-content: {% if ss.mb_content_pos == 'mb_top' %}flex-start{% elsif  ss.mb_content_pos == 'mb_center' %}center{% else %}flex-end{% endif %};
+        }
+
+        .{{ secId }} .main-content .date-name .text {
+            padding: 0.25rem 1.66667rem;
+            font-size: 0.66667rem;
+        }
+
+        .{{ secId }} .main-content .image-wrap.mobile-done {
+            display: flex;
+        }
+    }
+
+</style>
+<div
+    {% if ss.backdrop_link != blank %}
+        style="cursor: pointer"
+        onclick="location.href='{{ ss.backdrop_link }}'"
+    {% endif %}
+    id="{{ secId }}-banner"
+    class="main-banner {{ secId }}">
+    {% if ss.media_type == 'image' %}
+        {% render 'ndev-global-image',
+            desktop_img: ss.pc_image_url,
+            desktop_size: 1920,
+            mobile_img: ss.mb_image_url,
+            mobile_size: 750,
+            desktop_class: 'backdrop-img',
+            mobile_class: 'backdrop-img',
+            preload: preload
+        %}
+    {% elsif ss.media_type == 'video' %}
+            {% render 'ndev-global-video',
+                desktop_video: ss.pc_video,
+                desktop_cover: ss.pc_video_cover_url,
+                desktop_size: '1920x',
+                desktop_node: 'desktop_banner_video',
+                mobile_video: ss.mb_video,
+                mobile_cover: ss.mb_video_cover_url,
+                mobile_size: '750x',
+                mobile_node: 'mobile_banner_video',
+                desktop_class: 'backdrop-video',
+                mobile_class: 'backdrop-video'
+            %}
+    {% endif %}
+    <div
+        node-name="content"
+        class="main-content w-full {% if ss.video_play_show %} hidden{% endif %}">
+        {%- for block in section.blocks -%}
+            {% assign bs = block.settings %}
+            {%- case block.type -%}
+                {%- when 'tag' -%}
+                    <div
+                        style="padding: {{ bs.top | divided_by: 19.2 }}vw 0 {{ bs.bottom | divided_by: 19.2 }}vw 0;"
+                        class="date-name pc-done">
+                        <span
+                            style="border-radius: {{ bs.radius }}px;{% if bs.bg_color != blank %}background: {{ bs.bg_color }};border: 0 none;{% else %} border-color: {{ bs.tag_color }};{% endif %}color: {{ bs.tag_color }}"
+                            class="text">{{ bs.tag }}</span>
+                    </div>
+                    <div
+                        style="padding: {{ bs.mb_top }}px 0 {{ bs.mb_bottom }}px 0;"
+                        class="date-name mobile-done">
+                        <span
+                            style="border-radius: {{ bs.radius }}px;{% if bs.bg_color != blank %}background: {{ bs.bg_color }};border: 0 none;font-size: 16px;padding: 4px 12px;{% else %} border-color: {{ bs.tag_color }};{% endif %}color: {{ bs.tag_color }}"
+                            class="text">{{ bs.tag }}</span>
+                    </div>
+                {%- when 'button' -%}
+                {% render 'banner-button', info: bs, order: forloop.index0 %}
+                {%- when 'text' -%}
+                    {% render 'banner-text', info: bs, order: forloop.index0 %}
+                {%- when 'countdown' -%}
+                    {% render 'ndev-countdown', info: bs %}
+                {%- when 'subscribe' -%}
+                    {% render 'banner-subscribe', info: bs %}
+                {%- when 'image' -%}
+                    <div
+                        class="image-wrap pc-done {{ bs.pc_align }}"
+                        style="padding: {{ bs.top | divided_by: 19.2 }}vw 0 {{ bs.bottom | divided_by: 19.2 }}vw 0;">
+                        <img
+                            style="width: {{ bs.pc_img_w | divided_by: 19.2 }}vw"
+                            class="image pc-done"
+                            alt=""
+                            loading="lazy"
+                            src="{{ bs.pc_img | image_url: width: bs.pc_img_w }}"/>
+                    </div>
+                    <div
+                        style="padding: {{ bs.mb_top }}px 0 {{ bs.mb_bottom }}px 0;"
+                        class="image-wrap mobile-done {{ bs.mb_align }}">
+                        <img
+                            class="image mobile-done"
+                            alt=""
+                            loading="lazy"
+                            style="width: {{ bs.mb_img_w }}px"
+                            src="{{ bs.mb_img | image_url: width: bs.mb_img_w }}"/>
+                    </div>
+            {%- endcase -%}
+        {%- endfor -%}
+    </div>
+</div>
+{%- if ss.media_type == 'video' -%}
+    <script>
+        (function() {
+            const node = document.getElementById('{{ secId }}-banner');
+            const nodeList = $heybike.getNodeList(node);
+            {%- if preload == false -%}
+            let vInfo = {};
+            const scrollRun = (top) => {
+                if (!vInfo.play
+                    && top + $heybike.screenHeight > vInfo.top
+                    && top - $heybike.screenHeight < vInfo.top
+                ) {
+                    vInfo.node.play().then(() => {
+                        console.log('play');
+                    }).catch(() => {
+                        vInfo.play = false;
+                    });
+                    vInfo.play = true;
+                } else if (vInfo.play && (top > vInfo.top + $heybike.screenHeight || top + $heybike.screenHeight < vInfo.top)) {
+                    vInfo.node.pause();
+                    vInfo.play = false;
+                    console.log('pause');
+                }
+            };
+            const initData = () => {
+                if (vInfo.node) {
+                    vInfo.node.pause();
+                }
+                const videoNode = $heybike.isMobile ? nodeList.mobile_banner_video : nodeList.desktop_banner_video;
+                const offset = $heybike.getOffset(videoNode);
+                vInfo = {
+                    node: videoNode,
+                    play: false,
+                    top: offset.top
+                };
+
+                scrollRun(window.scrollY || document.documentElement.scrollTop);
+            };
+
+            initData();
+            $heybike.on('scroll', opt => {
+                scrollRun(opt.top);
+            });
+            $heybike.on('resize', initData);
+            {%- else -%}
+            $heybike.on('DOMContentLoaded', () => {
+                const videoNode = $narwal.isMobile ? nodeList.mobile_banner_video : nodeList.desktop_banner_video;
+                videoNode.play()
+                    .then(() => {
+                        {% if ss.video_play_show %}
+                        videoNode.addEventListener('ended', () => {
+                            nodeList.content.classList.remove('hidden');
+                        });
+                        videoNode.duration > 0 && setTimeout(() => {
+                            nodeList.content.classList.remove('hidden');
+                        }, videoNode.duration * 1000);
+                        {% endif %}
+                    });
+            });
+            {%- endif -%}
+        })();
+    </script>
+{%- endif -%}
+{% schema %}
+{
+    "name": "Main Banner",
+    "class": "shopify-ndev-narwal-main",
+    "tag": "section",
+    "presets": [
+        {
+            "name": "main-banner"
+        }
+    ],
+    "settings": [
+        {
+            "type": "color",
+            "id": "page_color",
+            "label": "Background color"
+        },
+        {
+            "type": "number",
+            "id": "pc_width",
+            "label": "Desktop banner width",
+            "default": 1920
+        },
+        {
+            "type": "number",
+            "id": "pc_height",
+            "label": "Desktop banner height"
+        },
+        {
+            "type": "number",
+            "id": "mb_width",
+            "label": "Mobile banner width",
+            "default": 750
+        },
+        {
+            "type": "number",
+            "id": "mb_height",
+            "label": "Mobile banner height"
+        },
+        {
+            "type": "select",
+            "id": "media_type",
+            "label": "Media type",
+            "options": [
+                {
+                    "value": "image",
+                    "label": "Image"
+                },
+                {
+                    "value": "video",
+                    "label": "Video"
+                }
+            ],
+            "default": "image"
+        },
+        {
+            "label": "Desktop image",
+            "type": "image_picker",
+            "info": "Please upload an image no larger than 2 megabytes.",
+            "id": "pc_image_url"
+        },
+        {
+            "label": "Mobile image",
+            "type": "image_picker",
+            "info": "Please upload an image no larger than 2 megabytes.",
+            "id": "mb_image_url"
+        },
+        {
+            "label": "Desktop video",
+            "type": "video",
+            "id": "pc_video"
+        },
+        {
+            "label": "Desktop video cover",
+            "type": "image_picker",
+            "info": "Please upload an image no larger than 2 megabytes.",
+            "id": "pc_video_cover_url"
+        },
+        {
+            "label": "Mobile video",
+            "type": "video",
+            "id": "mb_video"
+        },
+        {
+            "label": "Mobile video cover",
+            "type": "image_picker",
+            "info": "Please upload an image no larger than 2 megabytes.",
+            "id": "mb_video_cover_url"
+        },
+        {
+            "type": "select",
+            "id": "content_pos",
+            "label": "Desktop content display position",
+            "options": [
+                {
+                    "value": "top",
+                    "label": "Top"
+                },
+                {
+                    "value": "center",
+                    "label": "Center"
+                },
+                {
+                    "value": "bottom",
+                    "label": "Bottom"
+                }
+            ],
+            "default": "center"
+        },
+        {
+            "type": "select",
+            "id": "mb_content_pos",
+            "label": "Mobile content display position",
+            "options": [
+                {
+                    "value": "mb_top",
+                    "label": "Top"
+                },
+                {
+                    "value": "mb_center",
+                    "label": "Center"
+                },
+                {
+                    "value": "mb_bottom",
+                    "label": "Bottom"
+                }
+            ],
+            "default": "mb_top"
+        },
+        {
+            "label": "Content video ended show",
+            "type": "checkbox",
+            "id": "video_play_show",
+            "default": false
+        },
+        {
+            "type": "url",
+            "id": "backdrop_link",
+            "label": "Background link"
+        },
+        {
+            "type": "number",
+            "id": "pc_content_width",
+            "label": "Desktop content width",
+            "default": 1440
+        },
+        {
+            "label": "Show overlay",
+            "type": "checkbox",
+            "id": "overlay_show",
+            "default": false
+        },
+        {
+            "label": "Overlay color",
+            "type": "color",
+            "id": "overlay_color",
+            "default": "#000000"
+        },
+        {
+            "type": "range",
+            "id": "overlay_opacity",
+            "label": "Overlay opacity",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "unit": "sec",
+            "default": 20
+        }
+    ],
+    "blocks": [
+        {
+            "type": "tag",
+            "name": "Tag",
+            "settings": [
+                {
+                    "type": "color_background",
+                    "id": "bg_color",
+                    "label": "Background color"
+                },
+                {
+                    "type": "range",
+                    "id": "radius",
+                    "label": "Radius",
+                    "min": 4,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "deg",
+                    "default": 50
+                },
+                {
+                    "type": "text",
+                    "id": "tag",
+                    "label": "Tag text",
+                    "default": "Aug. 12 - 26"
+                },
+                {
+                    "type": "color",
+                    "id": "tag_color",
+                    "label": "Tag text color",
+                    "default": "#181623"
+                },
+                {
+                    "label": "Desktop top margin",
+                    "type": "number",
+                    "id": "top",
+                    "default": 0
+                },
+                {
+                    "label": "Desktop bottom margin",
+                    "type": "number",
+                    "id": "bottom",
+                    "default": 0
+                },
+                {
+                    "label": "Mobile top margin",
+                    "type": "number",
+                    "id": "mb_top",
+                    "default": 0
+                },
+                {
+                    "label": "Mobile bottom margin",
+                    "type": "number",
+                    "id": "mb_bottom",
+                    "default": 0
+                }
+            ]
+        },
+        {
+            "type": "button",
+            "name": "Button",
+            "limit": 1,
+            "settings": [
+                {
+                    "label": "Desktop left margin",
+                    "type": "number",
+                    "id": "left",
+                    "default": 0
+                },
+                {
+                    "label": "Desktop top margin",
+                    "type": "number",
+                    "id": "top",
+                    "default": 0
+                },
+                {
+                    "label": "Desktop right margin",
+                    "type": "number",
+                    "id": "right",
+                    "default": 0
+                },
+                {
+                    "label": "Desktop bottom margin",
+                    "type": "number",
+                    "id": "bottom",
+                    "default": 0
+                },
+                {
+                    "label": "Mobile left margin",
+                    "type": "number",
+                    "id": "mb_left",
+                    "default": 0
+                },
+                {
+                    "label": "Mobile top margin",
+                    "type": "number",
+                    "id": "mb_top",
+                    "default": 0
+                },
+                {
+                    "label": "Mobile right margin",
+                    "type": "number",
+                    "id": "mb_right",
+                    "default": 0
+                },
+                {
+                    "label": "Mobile bottom margin",
+                    "type": "number",
+                    "id": "mb_bottom",
+                    "default": 0
+                },
+                {
+                    "type": "select",
+                    "id": "pc_align",
+                    "label": "Desktop display position",
+                    "options": [
+                        {
+                            "value": "flex-left",
+                            "label": "Left"
+                        },
+                        {
+                            "value": "flex-center",
+                            "label": "Center"
+                        },
+                        {
+                            "value": "flex-right",
+                            "label": "Right"
+                        }
+                    ],
+                    "default": "flex-left"
+                },
+                {
+                    "type": "select",
+                    "id": "mb_align",
+                    "label": "Mobile display position",
+                    "options": [
+                        {
+                            "value": "flex-left",
+                            "label": "Left"
+                        },
+                        {
+                            "value": "flex-center",
+                            "label": "Center"
+                        },
+                        {
+                            "value": "flex-right",
+                            "label": "Right"
+                        }
+                    ],
+                    "default": "flex-center"
+                },
+                {
+                    "type": "header",
+                    "content": "Button #1"
+                },
+                {
+                    "label": "Show button #1",
+                    "type": "checkbox",
+                    "id": "show_btn1",
+                    "default": true
+                },
+                {
+                    "type": "select",
+                    "id": "btn1_ability",
+                    "label": "Button #1 function",
+                    "options": [
+                        {
+                            "value": "link",
+                            "label": "Link"
+                        },
+                        {
+                            "value": "pos",
+                            "label": "Position"
+                        },
+                    ],
+                    "default": "link"
+                },
+                {
+                    "label": "Button #1 text",
+                    "type": "text",
+                    "id": "btn1_text",
+                    "default": "Button"
+                },
+                {
+                    "label": "Button #1 prefix icon",
+                    "type": "image_picker",
+                    "id": "btn1_prefix_url"
+                },
+                {
+                    "label": "Button #1 suffix icon",
+                    "type": "image_picker",
+                    "id": "btn1_suffix_url"
+                },
+                {
+                    "label": "Button #1 text color",
+                    "type": "color",
+                    "id": "btn1_color",
+                    "default": "#181623"
+                },
+                {
+                    "label": "Button #1 background color",
+                    "type": "color_background",
+                    "id": "btn1_bg_color",
+                    "default": "linear-gradient(#F8CD21, #F8CD21)"
+                },
+                {
+                    "label": "Button #1 show border",
+                    "type": "checkbox",
+                    "id": "btn1_show_border",
+                    "default": false
+                },
+                {
+                    "label": "Button #1 border color",
+                    "type": "color",
+                    "id": "btn1_border_color",
+                    "default": "#FFFFFF"
+                },
+                {
+                    "type": "url",
+                    "id": "btn1_link",
+                    "label": "Button #1 link"
+                },
+                {
+                    "type": "range",
+                    "id": "btn1_position",
+                    "label": "Button #1 position section",
+                    "min": 1,
+                    "max": 25,
+                    "step": 1,
+                    "unit": "sec",
+                    "default": 3
+                },
+                {
+                    "type": "range",
+                    "id": "btn1_pc_size",
+                    "label": "Desktop Button #1 font size",
+                    "min": 12,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 28
+                },
+                {
+                    "type": "range",
+                    "id": "btn1_pc_weight",
+                    "label": "Desktop Button #1 font weight",
+                    "min": 200,
+                    "max": 900,
+                    "step": 100,
+                    "unit": "w",
+                    "default": 400
+                },
+                {
+                    "type": "range",
+                    "id": "btn1_pc_x",
+                    "label": "Desktop Button #1 left and right padding",
+                    "min": 1,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 48
+                },
+                {
+                    "type": "range",
+                    "id": "btn1_pc_y",
+                    "label": "Desktop Button #1 top and bottom padding",
+                    "min": 1,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 1
+                },
+                {
+                    "type": "range",
+                    "id": "btn1_mb_size",
+                    "label": "Mobile Button #1 font size",
+                    "min": 6,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 16
+                },
+                {
+                    "type": "range",
+                    "id": "btn1_mb_weight",
+                    "label": "Mobile Button #1 font weight",
+                    "min": 200,
+                    "max": 900,
+                    "step": 100,
+                    "unit": "w",
+                    "default": 400
+                },
+                {
+                    "type": "range",
+                    "id": "btn1_mb_x",
+                    "label": "Mobile Button #1 left and right padding",
+                    "min": 1,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 28
+                },
+                {
+                    "type": "range",
+                    "id": "btn1_mb_y",
+                    "label": "Mobile Button #1 top and bottom padding",
+                    "min": 1,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 4
+                },
+              {
+                "type": "header",
+                "content": "Button #2"
+              },
+              {
+                "label": "Show button #2",
+                "type": "checkbox",
+                "id": "show_btn2",
+                "default": true
+              },
+              {
+                "type": "select",
+                "id": "btn2_ability",
+                "label": "Button #2 function",
+                "options": [
+                  {
+                    "value": "link",
+                    "label": "Link"
+                  },
+                  {
+                    "value": "pos",
+                    "label": "Position"
+                  }
+                ],
+                "default": "link"
+              },
+              {
+                "label": "Button #2 text",
+                "type": "text",
+                "id": "btn2_text",
+                "default": "Button"
+              },
+              {
+                "label": "Button #2 prefix icon",
+                "type": "image_picker",
+                "id": "btn2_prefix_url"
+              },
+              {
+                "label": "Button #2 suffix icon",
+                "type": "image_picker",
+                "id": "btn2_suffix_url"
+              },
+              {
+                "label": "Button #2 text color",
+                "type": "color",
+                "id": "btn2_color",
+                "default": "#181623"
+              },
+              {
+                "label": "Button #2 background color",
+                "type": "color_background",
+                "id": "btn2_bg_color",
+                "default": "linear-gradient(#F8CD21, #F8CD21)"
+              },
+              {
+                "label": "Button #2 show border",
+                "type": "checkbox",
+                "id": "btn2_show_border",
+                "default": false
+              },
+              {
+                "label": "Button #2 border color",
+                "type": "color",
+                "id": "btn2_border_color",
+                "default": "#FFFFFF"
+              },
+              {
+                "type": "url",
+                "id": "btn2_link",
+                "label": "Button #2 link"
+              },
+              {
+                "type": "range",
+                "id": "btn2_position",
+                "label": "Button #2 position section",
+                "min": 1,
+                "max": 25,
+                "step": 1,
+                "unit": "sec",
+                "default": 3
+              },
+              {
+                "type": "range",
+                "id": "btn2_pc_size",
+                "label": "Desktop Button #2 font size",
+                "min": 12,
+                "max": 100,
+                "step": 1,
+                "unit": "px",
+                "default": 28
+              },
+              {
+                "type": "range",
+                "id": "btn2_pc_weight",
+                "label": "Desktop Button #2 font weight",
+                "min": 200,
+                "max": 900,
+                "step": 100,
+                "unit": "w",
+                "default": 400
+              },
+              {
+                "type": "range",
+                "id": "btn2_pc_x",
+                "label": "Desktop Button #2 left and right padding",
+                "min": 1,
+                "max": 100,
+                "step": 1,
+                "unit": "px",
+                "default": 48
+              },
+              {
+                "type": "range",
+                "id": "btn2_pc_y",
+                "label": "Desktop Button #2 top and bottom padding",
+                "min": 1,
+                "max": 100,
+                "step": 1,
+                "unit": "px",
+                "default": 1
+              },
+              {
+                "type": "range",
+                "id": "btn2_mb_size",
+                "label": "Mobile Button #2 font size",
+                "min": 6,
+                "max": 100,
+                "step": 1,
+                "unit": "px",
+                "default": 16
+              },
+              {
+                "type": "range",
+                "id": "btn2_mb_weight",
+                "label": "Mobile Button #2 font weight",
+                "min": 200,
+                "max": 900,
+                "step": 100,
+                "unit": "w",
+                "default": 400
+              },
+              {
+                "type": "range",
+                "id": "btn2_mb_x",
+                "label": "Mobile Button #2 left and right padding",
+                "min": 1,
+                "max": 100,
+                "step": 1,
+                "unit": "px",
+                "default": 28
+              },
+              {
+                "type": "range",
+                "id": "btn2_mb_y",
+                "label": "Mobile Button #2 top and bottom padding",
+                "min": 1,
+                "max": 100,
+                "step": 1,
+                "unit": "px",
+                "default": 4
+              }
+            ]
+        },
+        {
+            "type": "text",
+            "name": "Banner Text",
+            "settings": [
+                {
+                    "type": "select",
+                    "id": "text_show_type",
+                    "label": "Content display device",
+                    "options": [
+                        {
+                            "value": "all",
+                            "label": "Desktop & Mobile"
+                        },
+                        {
+                            "value": "pc",
+                            "label": "Desktop"
+                        },
+                        {
+                            "value": "h5",
+                            "label": "Mobile"
+                        }
+                    ],
+                    "default": "all"
+                },
+                {
+                    "label": "Content prefix icon",
+                    "type": "image_picker",
+                    "id": "prefix_url"
+                },
+                {
+                    "label": "Content suffix icon",
+                    "type": "image_picker",
+                    "id": "suffix_url"
+                },
+                {
+                    "type": "header",
+                    "content": "Desktop config"
+                },
+                {
+                    "label": "Desktop content",
+                    "type": "richtext",
+                    "id": "pc_text",
+                    "default": "<p>Heybike</p>"
+                },
+                {
+                    "type": "text_alignment",
+                    "id": "pc_align",
+                    "label": "Desktop content alignment",
+                    "default": "center"
+                },
+                {
+                    "label": "Desktop content color",
+                    "type": "color",
+                    "id": "pc_color",
+                    "default": "#181623"
+                },
+                {
+                    "label": "Desktop content bold color",
+                    "type": "color",
+                    "id": "pc_emphasize_color",
+                    "default": "#181623"
+                },
+                {
+                    "type": "range",
+                    "id": "pc_weight",
+                    "label": "Desktop content font weight",
+                    "min": 200,
+                    "max": 900,
+                    "step": 100,
+                    "unit": "w",
+                    "default": 700
+                },
+                {
+                    "type": "range",
+                    "id": "pc_size",
+                    "label": "Desktop content font size",
+                    "min": 12,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 40
+                },
+                {
+                    "type": "range",
+                    "id": "pc_line",
+                    "label": "Desktop content line height",
+                    "min": 100,
+                    "max": 300,
+                    "step": 10,
+                    "unit": "%",
+                    "default": 120
+                },
+                {
+                    "label": "Desktop top margin",
+                    "type": "number",
+                    "id": "pc_top",
+                    "default": 0
+                },
+                {
+                    "label": "Desktop right margin",
+                    "type": "number",
+                    "id": "pc_right",
+                    "default": 0
+                },
+                {
+                    "label": "Desktop bottom margin",
+                    "type": "number",
+                    "id": "pc_bottom",
+                    "default": 0
+                },
+                {
+                    "label": "Desktop left margin",
+                    "type": "number",
+                    "id": "pc_left",
+                    "default": 0
+                },
+                {
+                    "type": "header",
+                    "content": "Mobile config"
+                },
+                {
+                    "label": "Mobile content",
+                    "type": "richtext",
+                    "id": "mb_text",
+                    "default": "<p>Heybike</p>"
+                },
+                {
+                    "type": "text_alignment",
+                    "id": "mb_align",
+                    "label": "Desktop content alignment",
+                    "default": "center"
+                },
+                {
+                    "label": "Mobile content font color",
+                    "type": "color",
+                    "id": "mb_color",
+                    "default": "#181623"
+                },
+                {
+                    "label": "Mobile content bold color",
+                    "type": "color",
+                    "id": "mb_emphasize_color",
+                    "default": "#181623"
+                },
+                {
+                    "type": "range",
+                    "id": "mb_weight",
+                    "label": "Mobile content font weight",
+                    "min": 200,
+                    "max": 900,
+                    "step": 100,
+                    "unit": "w",
+                    "default": 700
+                },
+                {
+                    "type": "range",
+                    "id": "mb_size",
+                    "label": "Mobile content font size",
+                    "min": 6,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 40
+                },
+                {
+                    "type": "range",
+                    "id": "h5_line",
+                    "label": "Mobile content line height",
+                    "min": 100,
+                    "max": 300,
+                    "step": 10,
+                    "unit": "%",
+                    "default": 120
+                },
+                {
+                    "label": "Mobile top margin",
+                    "type": "number",
+                    "id": "mb_top",
+                    "default": 20
+                },
+                {
+                    "label": "Mobile right margin",
+                    "type": "number",
+                    "id": "mb_right",
+                    "default": 0
+                },
+                {
+                    "label": "Mobile bottom margin",
+                    "type": "number",
+                    "id": "mb_bottom",
+                    "default": 20
+                },
+                {
+                    "label": "Mobile left margin",
+                    "type": "number",
+                    "id": "mb_left",
+                    "default": 0
+                }
+            ]
+        },
+        {
+            "type": "countdown",
+            "name": "Countdown",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "select",
+                    "id": "style",
+                    "label": "Countdown stype",
+                    "options": [
+                        {
+                            "value": "1",
+                            "label": "style #1"
+                        },
+                        {
+                            "value": "2",
+                            "label": "style #2"
+                        }
+                    ],
+                    "default": "2"
+                },
+                {
+                    "label": "Border color",
+                    "type": "color",
+                    "id": "border_color",
+                    "default": "#000000"
+                },
+                {
+                    "label": "Fill color",
+                    "type": "color",
+                    "id": "bg_color"
+                },
+                {
+                    "label": "Num color",
+                    "type": "color",
+                    "id": "num_color"
+                },
+                {
+                    "label": "Font color",
+                    "type": "color",
+                    "id": "font_color",
+                    "default": "#000000"
+                },
+                {
+                    "type": "text",
+                    "id": "end_date",
+                    "label": "End date",
+                    "default": "2024-12-30 12:01:01",
+                    "info": "format: yyyy-MM-dd HH:mm:ss"
+                },
+                {
+                    "type": "text",
+                    "id": "day",
+                    "label": "Day",
+                    "default": "Days"
+                },
+                {
+                    "type": "text",
+                    "id": "hour",
+                    "label": "Hour",
+                    "default": "Hours"
+                },
+                {
+                    "type": "text",
+                    "id": "minute",
+                    "label": "Minute",
+                    "default": "Mins"
+                },
+                {
+                    "type": "text",
+                    "id": "second",
+                    "label": "Second",
+                    "default": "Secs"
+                },
+                {
+                    "type": "header",
+                    "content": "Desktop config"
+                },
+                {
+                    "label": "Desktop top margin",
+                    "type": "number",
+                    "id": "pc_top",
+                    "default": 20
+                },
+                {
+                    "label": "Desktop right margin",
+                    "type": "number",
+                    "id": "pc_right",
+                    "default": 0
+                },
+                {
+                    "label": "Desktop bottom margin",
+                    "type": "number",
+                    "id": "pc_bottom",
+                    "default": 20
+                },
+                {
+                    "label": "Desktop left margin",
+                    "type": "number",
+                    "id": "pc_left",
+                    "default": 0
+                },
+                {
+                    "type": "select",
+                    "id": "pc_align",
+                    "label": "Desktop show position",
+                    "options": [
+                        {
+                            "value": "flex-left",
+                            "label": "Left"
+                        },
+                        {
+                            "value": "flex-center",
+                            "label": "Center"
+                        },
+                        {
+                            "value": "flex-right",
+                            "label": "Right"
+                        }
+                    ],
+                    "default": "flex-center"
+                },
+                {
+                    "type": "range",
+                    "id": "pc_size",
+                    "label": "Desktop size",
+                    "min": 5,
+                    "max": 15,
+                    "step": 0.1,
+                    "unit": "px",
+                    "default": 10
+                },
+                {
+                    "type": "header",
+                    "content": "Mobile config"
+                },
+                {
+                    "label": "Mobile top margin",
+                    "type": "number",
+                    "id": "mb_top",
+                    "default": 20
+                },
+                {
+                    "label": "Mobile right margin",
+                    "type": "number",
+                    "id": "mb_right",
+                    "default": 0
+                },
+                {
+                    "label": "Mobile bottom margin",
+                    "type": "number",
+                    "id": "mb_bottom",
+                    "default": 20
+                },
+                {
+                    "label": "Mobile left margin",
+                    "type": "number",
+                    "id": "mb_left",
+                    "default": 0
+                },
+                {
+                    "type": "select",
+                    "id": "mb_align",
+                    "label": "Mobile show position",
+                    "options": [
+                        {
+                            "value": "flex-left",
+                            "label": "Left"
+                        },
+                        {
+                            "value": "flex-center",
+                            "label": "Center"
+                        },
+                        {
+                            "value": "flex-right",
+                            "label": "Right"
+                        }
+                    ],
+                    "default": "flex-center"
+                },
+                {
+                    "type": "range",
+                    "id": "mb_size",
+                    "label": "Mobile size",
+                    "min": 5,
+                    "max": 15,
+                    "step": 0.1,
+                    "unit": "px",
+                    "default": 10
+                }
+            ]
+        },
+        {
+            "type": "subscribe",
+            "name": "订阅",
+            "limit": 1,
+            "settings": [
+                {
+                    "label": "PC端-上间距",
+                    "type": "number",
+                    "id": "top",
+                    "default": 20
+                },
+                {
+                    "label": "PC端-下间距",
+                    "type": "number",
+                    "id": "bottom",
+                    "default": 0
+                },
+                {
+                    "label": "PC端-左间距",
+                    "type": "number",
+                    "id": "left",
+                    "default": 0
+                },
+                {
+                    "label": "PC端-右间距",
+                    "type": "number",
+                    "id": "right",
+                    "default": 0
+                },
+                {
+                    "label": "H5端-上间距",
+                    "type": "number",
+                    "id": "mb_top",
+                    "default": 20
+                },
+                {
+                    "label": "H5端-下间距",
+                    "type": "number",
+                    "id": "mb_bottom",
+                    "default": 0
+                },
+                {
+                    "type": "select",
+                    "id": "pc_align",
+                    "label": "PC端-显示位置",
+                    "options": [
+                        {
+                            "value": "flex-left",
+                            "label": "居左"
+                        },
+                        {
+                            "value": "flex-center",
+                            "label": "居中"
+                        },
+                        {
+                            "value": "flex-right",
+                            "label": "居右"
+                        }
+                    ],
+                    "default": "flex-left"
+                },
+                {
+                    "label": "显示订阅描述",
+                    "type": "checkbox",
+                    "id": "show_intro",
+                    "default": true
+                },
+                {
+                    "label": "订阅描述",
+                    "type": "richtext",
+                    "id": "intro",
+                    "default": "<p>Subscribe for Extra Prime Day Savings-AX6 form just <strong>$5??</strong></p>"
+                },
+                {
+                    "label": "订阅描述颜色",
+                    "type": "color",
+                    "id": "intro_color",
+                    "default": "#000000"
+                },
+                {
+                    "label": "订阅描述标粗颜色",
+                    "type": "color",
+                    "id": "intro_bold_color",
+                    "default": "#683DF5"
+                },
+                {
+                    "type": "text_alignment",
+                    "id": "info_align",
+                    "label": "订阅描述显示位置",
+                    "default": "left"
+                },
+                {
+                    "type": "range",
+                    "id": "pc_intro_size",
+                    "label": "PC端-订阅描述字体大小",
+                    "min": 12,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 14
+                },
+                {
+                    "type": "number",
+                    "id": "pc_intro_bottom",
+                    "label": "PC端-订阅描述下间距",
+                    "default": 10
+                },
+                {
+                    "type": "range",
+                    "id": "mb_intro_size",
+                    "label": "H5端-订阅描述字体大小",
+                    "min": 6,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 10
+                },
+                {
+                    "type": "number",
+                    "id": "mb_intro_bottom",
+                    "label": "H5端-订阅描述下间距",
+                    "default": 10
+                },
+                {
+                    "type": "text",
+                    "id": "klaviyo_api_key",
+                    "label": "Klaviyo API Key",
+                    "default": "YqBXTD"
+                },
+                {
+                    "type": "text",
+                    "id": "klaviyo_list_id",
+                    "label": "Klaviyo List ID",
+                    "default": "Yvr8Ns"
+                },
+                {
+                    "type": "text",
+                    "id": "klaviyo_coupon_name",
+                    "label": "Klaviyo端优惠券名称"
+                },
+                {
+                    "label": "订阅条款",
+                    "type": "richtext",
+                    "id": "privacy_text",
+                    "default": "<p>I agree to the <a href=\"/pages/narwal-privacy-policy\" title=\"PrivacyPolicy\">Privacy Policy</a>.</p>"
+                },
+                {
+                    "type": "range",
+                    "id": "pc_privacy_size",
+                    "label": "PC端-订阅条款字体大小",
+                    "min": 12,
+                    "max": 20,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 16
+                },
+                {
+                    "type": "number",
+                    "id": "pc_privacy_top",
+                    "label": "PC端-订阅条款上间距"
+                },
+                {
+                    "type": "range",
+                    "id": "mb_privacy_size",
+                    "label": "H5端-订阅条款字体大小",
+                    "min": 6,
+                    "max": 20,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 10
+                },
+                {
+                    "type": "number",
+                    "id": "mb_privacy_top",
+                    "label": "H5端-订阅条款上间距"
+                },
+                {
+                    "label": "订阅是否默认勾选",
+                    "type": "checkbox",
+                    "id": "privacy_checked",
+                    "default": true
+                },
+                {
+                    "label": "订阅条款颜色",
+                    "type": "color",
+                    "id": "privacy_color",
+                    "default": "#6d6d80"
+                },
+                {
+                    "label": "订阅条款链接颜色",
+                    "type": "color",
+                    "id": "privacy_link_color",
+                    "default": "#9e9daa"
+                },
+                {
+                    "label": "订阅条款链接hover颜色",
+                    "type": "color",
+                    "id": "privacy_link_hover_color",
+                    "default": "#ffffff"
+                },
+                {
+                    "label": "订阅条款选中颜色",
+                    "type": "color",
+                    "id": "privacy_active_color",
+                    "default": "#683DF5"
+                },
+                {
+                    "label": "订阅条款未勾选提示",
+                    "type": "text",
+                    "id": "privacy_required",
+                    "default": "This field is required"
+                },
+                {
+                    "label": "PC端-输入框宽度",
+                    "type": "number",
+                    "id": "input_w"
+                },
+                {
+                    "label": "PC端-输入框高度",
+                    "type": "number",
+                    "id": "input_h"
+                },
+                {
+                    "label": "PC端-输入框边角度",
+                    "type": "number",
+                    "id": "input_deg"
+                },
+                {
+                    "type": "range",
+                    "id": "input_size",
+                    "label": "PC端-输入框字体大小",
+                    "min": 12,
+                    "max": 50,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 18
+                },
+                {
+                    "type": "text_alignment",
+                    "id": "input_align",
+                    "label": "PC端-输入框字体显示位置",
+                    "default": "left"
+                },
+                {
+                    "label": "H5端-输入框宽度",
+                    "type": "number",
+                    "id": "mb_input_w"
+                },
+                {
+                    "label": "H5端-输入框高度",
+                    "type": "number",
+                    "id": "mb_input_h"
+                },
+                {
+                    "label": "PC端-输入框边角度",
+                    "type": "number",
+                    "id": "mb_input_deg"
+                },
+                {
+                    "type": "range",
+                    "id": "mb_input_size",
+                    "label": "H5端-输入框字体大小",
+                    "min": 6,
+                    "max": 50,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 14
+                },
+                {
+                    "type": "text_alignment",
+                    "id": "mb_input_align",
+                    "label": "H5端-输入框字体显示位置",
+                    "default": "left"
+                },
+                {
+                    "label": "输入框背景颜色",
+                    "type": "color",
+                    "id": "input_bg_color"
+                },
+                {
+                    "label": "输入框边框颜色",
+                    "type": "color",
+                    "id": "input_border_color",
+                    "default": "#683DF5"
+                },
+                {
+                    "label": "输入框字体颜色",
+                    "type": "color",
+                    "id": "input_color",
+                    "default": "#ffffff"
+                },
+                {
+                    "label": "输入框placeholder",
+                    "type": "text",
+                    "id": "input_placeholder",
+                    "default": "Email"
+                },
+                {
+                    "label": "输入框为空提示",
+                    "type": "text",
+                    "id": "input_empty",
+                    "default": "This field is required"
+                },
+                {
+                    "label": "邮箱格式错误提示",
+                    "type": "text",
+                    "id": "input_required",
+                    "default": "This email is invalid"
+                },
+                {
+                    "label": "订阅按钮排列",
+                    "type": "select",
+                    "id": "sub_btn_align",
+                    "options": [
+                        {
+                            "value": "row",
+                            "label": "水平"
+                        },
+                        {
+                            "value": "col",
+                            "label": "垂直"
+                        }
+                    ],
+                    "default": "row"
+                },
+                {
+                    "type": "number",
+                    "id": "pc_sub_btn_top",
+                    "label": "PC端-订阅按钮上间距"
+                },
+                {
+                    "type": "range",
+                    "id": "pc_sub_btn_size",
+                    "label": "PC端-订阅按钮字体大小",
+                    "min": 6,
+                    "max": 50,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 16
+                },
+                {
+                    "type": "number",
+                    "id": "mb_sub_btn_top",
+                    "label": "H5端-订阅按钮上间距"
+                },
+                {
+                    "type": "range",
+                    "id": "mb_sub_btn_size",
+                    "label": "H5端-订阅按钮字体大小",
+                    "min": 6,
+                    "max": 50,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 14
+                },
+                {
+                    "label": "订阅按钮文案",
+                    "type": "text",
+                    "id": "sub_btn",
+                    "default": "Subscribe"
+                },
+                {
+                    "label": "订阅按钮文案颜色",
+                    "type": "color",
+                    "id": "btn_color",
+                    "default": "#FFFFFF"
+                },
+                {
+                    "label": "订阅按钮背景颜色",
+                    "type": "color_background",
+                    "id": "btn_bg_color"
+                },
+                {
+                    "label": "订阅成功文案",
+                    "type": "textarea",
+                    "id": "sub_success",
+                    "default": "Subscribe Success!"
+                },
+                {
+                    "label": "订阅成功文案颜色",
+                    "type": "color",
+                    "id": "sub_success_color",
+                    "default": "#ffffff"
+                },
+                {
+                    "label": "显示订阅成功弹框",
+                    "type": "checkbox",
+                    "id": "show_success_popup",
+                    "default": true
+                },
+                {
+                    "label": "订阅成功弹框名称",
+                    "type": "text",
+                    "id": "popup_title",
+                    "default": "Subscribe"
+                },
+                {
+                    "label": "订阅成功弹框内容",
+                    "type": "richtext",
+                    "id": "popup_content",
+                    "default": "<p>Subscribe</p>"
+                }
+            ]
+        },
+        {
+            "type": "card_subscribe",
+            "name": "订阅-卡片模式",
+            "limit": 1,
+            "settings": [
+                {
+                    "label": "PC端-上间距",
+                    "type": "number",
+                    "id": "top",
+                    "default": 20
+                },
+                {
+                    "label": "PC端-下间距",
+                    "type": "number",
+                    "id": "bottom",
+                    "default": 0
+                },
+                {
+                    "label": "PC端-左间距",
+                    "type": "number",
+                    "id": "left",
+                    "default": 0
+                },
+                {
+                    "label": "PC端-右间距",
+                    "type": "number",
+                    "id": "right",
+                    "default": 0
+                },
+                {
+                    "label": "H5端-上间距",
+                    "type": "number",
+                    "id": "mb_top",
+                    "default": 20
+                },
+                {
+                    "label": "H5端-下间距",
+                    "type": "number",
+                    "id": "mb_bottom",
+                    "default": 0
+                },
+                {
+                    "type": "select",
+                    "id": "pc_align",
+                    "label": "PC端-显示位置",
+                    "options": [
+                        {
+                            "value": "flex-left",
+                            "label": "居左"
+                        },
+                        {
+                            "value": "flex-center",
+                            "label": "居中"
+                        },
+                        {
+                            "value": "flex-right",
+                            "label": "居右"
+                        }
+                    ],
+                    "default": "flex-left"
+                },
+                {
+                    "type": "header",
+                    "content": "卡片配置"
+                },
+                {
+                    "label": "卡片背景颜色",
+                    "type": "color",
+                    "id": "card_bg_color",
+                    "default": "#FFFFFF"
+                },
+                {
+                    "type": "range",
+                    "id": "card_opacity",
+                    "label": "卡片背景透明度",
+                    "min": 1,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%",
+                    "default": 70
+                },
+                {
+                    "label": "卡片左边图片",
+                    "type": "image_picker",
+                    "info": "请上传1M以内图片",
+                    "id": "left_image"
+                },
+                {
+                    "label": "卡片描述文案",
+                    "type": "textarea",
+                    "id": "title",
+                    "default": "Subscribe for a May 5th Limited-Time Offer on Freo Z Ultra/Silver!"
+                },
+                {
+                    "label": "卡片描述文案颜色",
+                    "type": "color",
+                    "id": "title_color",
+                    "default": "#000000"
+                },
+                {
+                    "type": "range",
+                    "id": "pc_title_size",
+                    "label": "PC端-卡片描述文案字体大小",
+                    "min": 12,
+                    "max": 50,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 20
+                },
+                {
+                    "type": "range",
+                    "id": "mb_title_size",
+                    "label": "H5端-卡片描述文案字体大小",
+                    "min": 12,
+                    "max": 50,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 12
+                },
+                {
+                    "type": "header",
+                    "content": "订阅配置"
+                },
+                {
+                    "type": "text",
+                    "id": "klaviyo_api_key",
+                    "label": "Klaviyo API Key",
+                    "default": "YqBXTD"
+                },
+                {
+                    "type": "text",
+                    "id": "klaviyo_list_id",
+                    "label": "Klaviyo List ID",
+                    "default": "Yvr8Ns"
+                },
+                {
+                    "type": "text",
+                    "id": "klaviyo_coupon_name",
+                    "label": "Klaviyo端优惠券名称"
+                },
+                {
+                    "label": "订阅条款",
+                    "type": "richtext",
+                    "id": "privacy_text",
+                    "default": "<p>I agree to the <a href=\"/pages/narwal-privacy-policy\" title=\"PrivacyPolicy\">Privacy Policy</a>.</p>"
+                },
+                {
+                    "label": "PC端-订阅条款字体大小",
+                    "type": "select",
+                    "id": "pc_privacy_size",
+                    "options": [
+                        {
+                            "value": "12",
+                            "label": "小"
+                        },
+                        {
+                            "value": "14",
+                            "label": "中"
+                        },
+                        {
+                            "value": "16",
+                            "label": "大"
+                        }
+                    ],
+                    "default": "12"
+                },
+                {
+                    "type": "number",
+                    "id": "pc_privacy_top",
+                    "label": "PC端-订阅条款上间距",
+                    "default": 7
+                },
+                {
+                    "label": "H5端-订阅条款字体大小",
+                    "type": "select",
+                    "id": "mb_privacy_size",
+                    "options": [
+                        {
+                            "value": "10",
+                            "label": "小"
+                        },
+                        {
+                            "value": "12",
+                            "label": "中"
+                        },
+                        {
+                            "value": "14",
+                            "label": "大"
+                        }
+                    ],
+                    "default": "10"
+                },
+                {
+                    "type": "number",
+                    "id": "mb_privacy_top",
+                    "label": "H5端-订阅条款上间距",
+                    "default": 2
+                },
+                {
+                    "label": "订阅是否默认勾选",
+                    "type": "checkbox",
+                    "id": "privacy_checked",
+                    "default": true
+                },
+                {
+                    "label": "订阅条款颜色",
+                    "type": "color",
+                    "id": "privacy_color",
+                    "default": "#000000"
+                },
+                {
+                    "label": "订阅条款链接颜色",
+                    "type": "color",
+                    "id": "privacy_link_color",
+                    "default": "#000000"
+                },
+                {
+                    "label": "订阅条款链接hover颜色",
+                    "type": "color",
+                    "id": "privacy_link_hover_color",
+                    "default": "#000000"
+                },
+                {
+                    "label": "订阅条款选中颜色",
+                    "type": "color",
+                    "id": "privacy_active_color",
+                    "default": "#FF5F1A"
+                },
+                {
+                    "label": "订阅条款未勾选提示",
+                    "type": "text",
+                    "id": "privacy_required",
+                    "default": "This field is required"
+                },
+                {
+                    "type": "range",
+                    "id": "input_size",
+                    "label": "PC端-输入框字体大小",
+                    "min": 12,
+                    "max": 50,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 18
+                },
+                {
+                    "type": "range",
+                    "id": "mb_input_size",
+                    "label": "H5端-输入框字体大小",
+                    "min": 6,
+                    "max": 50,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 11
+                },
+                {
+                    "label": "输入框背景颜色",
+                    "type": "color",
+                    "id": "input_bg_color"
+                },
+                {
+                    "label": "输入框边框颜色",
+                    "type": "color",
+                    "id": "input_border_color",
+                    "default": "#FF5F1A"
+                },
+                {
+                    "label": "输入框字体颜色",
+                    "type": "color",
+                    "id": "input_color",
+                    "default": "#000000"
+                },
+                {
+                    "label": "输入框placeholder",
+                    "type": "text",
+                    "id": "input_placeholder",
+                    "default": "Email"
+                },
+                {
+                    "label": "输入框为空提示",
+                    "type": "text",
+                    "id": "input_empty",
+                    "default": "This field is required"
+                },
+                {
+                    "label": "邮箱格式错误提示",
+                    "type": "text",
+                    "id": "input_required",
+                    "default": "This email is invalid"
+                },
+                {
+                    "type": "range",
+                    "id": "pc_sub_btn_size",
+                    "label": "PC端-订阅按钮字体大小",
+                    "min": 12,
+                    "max": 50,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 18
+                },
+                {
+                    "type": "range",
+                    "id": "mb_sub_btn_size",
+                    "label": "H5端-订阅按钮字体大小",
+                    "min": 6,
+                    "max": 50,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 11
+                },
+                {
+                    "label": "订阅按钮文案",
+                    "type": "text",
+                    "id": "sub_btn",
+                    "default": "Subscribe"
+                },
+                {
+                    "label": "订阅按钮文案颜色",
+                    "type": "color",
+                    "id": "btn_color",
+                    "default": "#FFFFFF"
+                },
+                {
+                    "label": "订阅按钮背景颜色",
+                    "type": "color_background",
+                    "id": "btn_bg_color"
+                },
+                {
+                    "label": "订阅成功文案",
+                    "type": "textarea",
+                    "id": "sub_success",
+                    "default": "Subscribe Success!"
+                },
+                {
+                    "label": "订阅成功文案颜色",
+                    "type": "color",
+                    "id": "sub_success_color",
+                    "default": "#000000"
+                }
+            ]
+        },
+        {
+            "type": "image",
+            "name": "图片&图标",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "模块名称",
+                    "default": "图片&图标"
+                },
+                {
+                    "label": "PC端模块上间距",
+                    "type": "number",
+                    "id": "top",
+                    "default": 0
+                },
+                {
+                    "label": "PC端模块下间距",
+                    "type": "number",
+                    "id": "bottom",
+                    "default": 0
+                },
+                {
+                    "label": "H5端模块上间距",
+                    "type": "number",
+                    "id": "mb_top",
+                    "default": 0
+                },
+                {
+                    "label": "H5端模块下间距",
+                    "type": "number",
+                    "id": "mb_bottom",
+                    "default": 0
+                },
+                {
+                    "type": "select",
+                    "id": "pc_align",
+                    "label": "PC端显示位置",
+                    "options": [
+                        {
+                            "value": "flex-left",
+                            "label": "居左"
+                        },
+                        {
+                            "value": "flex-center",
+                            "label": "居中"
+                        },
+                        {
+                            "value": "flex-right",
+                            "label": "居右"
+                        }
+                    ],
+                    "default": "flex-left"
+                },
+                {
+                    "type": "select",
+                    "id": "mb_align",
+                    "label": "H5端显示位置",
+                    "options": [
+                        {
+                            "value": "flex-left",
+                            "label": "居左"
+                        },
+                        {
+                            "value": "flex-center",
+                            "label": "居中"
+                        },
+                        {
+                            "value": "flex-right",
+                            "label": "居右"
+                        }
+                    ],
+                    "default": "flex-center"
+                },
+                {
+                    "label": "PC端-图片&图标",
+                    "type": "image_picker",
+                    "info": "请上传1M以内图片",
+                    "id": "pc_img"
+                },
+                {
+                    "label": "PC端-图片宽度",
+                    "type": "number",
+                    "id": "pc_img_w",
+                    "default": 300
+                },
+                {
+                    "label": "H5端-图片&图标",
+                    "type": "image_picker",
+                    "info": "请上传1M以内图片",
+                    "id": "mb_img"
+                },
+                {
+                    "label": "H5端-图片宽度",
+                    "type": "number",
+                    "id": "mb_img_w",
+                    "default": 300
+                }
+            ]
+        },
+        {
+            "type": "discount_text",
+            "name": "优惠文案",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "模块名称",
+                    "default": "优惠文案"
+                },
+                {
+                    "type": "select",
+                    "id": "discount_style",
+                    "label": "优惠文案样式",
+                    "options": [
+                        {
+                            "value": "normal",
+                            "label": "标准"
+                        },
+                        {
+                            "value": "italic",
+                            "label": "斜体"
+                        }
+                    ],
+                    "default": "italic"
+                },
+                {
+                    "type": "text",
+                    "id": "prefix_text",
+                    "label": "前缀文案",
+                    "default": "Up to"
+                },
+                {
+                    "type": "color",
+                    "id": "prefix_text_color",
+                    "label": "前缀文案颜色",
+                    "default": "#181623"
+                },
+                {
+                    "type": "text",
+                    "id": "price_text",
+                    "label": "金额文案",
+                    "default": "$80"
+                },
+                {
+                    "type": "color_background",
+                    "id": "price_text_color",
+                    "label": "金额文案颜色",
+                    "default": "linear-gradient(94deg, #018DDC 33.91%, #49C8FF 62.12%, #B1F5FF 76.6%)"
+                },
+                {
+                    "type": "text",
+                    "id": "suffix_text",
+                    "label": "后缀文案",
+                    "default": "OFF"
+                },
+                {
+                    "type": "color",
+                    "id": "suffix_text_color",
+                    "label": "后缀文案颜色",
+                    "default": "#181623"
+                },
+                {
+                    "label": "文案图标",
+                    "type": "image_picker",
+                    "info": "请上传1M以内图片",
+                    "id": "text_icon_url"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

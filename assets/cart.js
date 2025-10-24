@@ -360,21 +360,13 @@ class ShippingCalculator extends HTMLFormElement {
   constructor() {
     super();
 
-    this.onSubmitHandler = this.onSubmit.bind(this);
-  }
-
-  connectedCallback() {
     this.submitButton = this.querySelector('[type="submit"]');
     this.resultsElement = this.lastElementChild;
 
-    this.submitButton.addEventListener('click', this.onSubmitHandler);
+    this.submitButton.addEventListener('click', this.handleFormSubmit.bind(this));
   }
 
-  disconnectedCallback() {
-    this.submitButton.removeEventListener('click', this.onSubmitHandler);
-  }
-
-  onSubmit(event) {
+  handleFormSubmit(event) {
     event.preventDefault();
 
     this.abortController?.abort();
@@ -416,6 +408,7 @@ class ShippingCalculator extends HTMLFormElement {
         this.resultsElement.hidden = false;
         this.submitButton.removeAttribute('aria-busy');
       });
+
   }
 
   formatError(errors) {

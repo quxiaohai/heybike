@@ -20,7 +20,6 @@
         "one": "{{ count }} review",
         "other": "{{ count }} reviews"
       },
-      "reviews_count": " Review(s)",
       "total_reviews": "total reviews",
       "star_reviews_info": "{{ rating_value }} out of {{ rating_max }} stars",
       "play_video": "Play video",
@@ -55,7 +54,7 @@
       "login_form_password": "Password",
       "login_form_error": "Wrong password!",
       "login_form_submit": "Enter",
-      "admin_link_html": "Are you the store owner? <a href=\"/admin\" class=\"link\">Log in here</a>",
+      "admin_link_html": "Are you the store owner? <a href=\"\/admin\" class=\"link\">Log in here<\/a>",
       "powered_by_shopify_html": "This shop will be powered by {{ shopify }}"
     },
     "breadcrumbs": {
@@ -101,7 +100,6 @@
       "title": "Search",
       "title_results": "Search results",
       "placeholder": "Search for ...",
-      "menu_placeholder": "Customer Stories",
       "clear": "Clear",
       "suggestions": "Suggestions",
       "products": "Products",
@@ -174,19 +172,16 @@
     },
     "featured_collection": {
       "view_all": "View all",
-      "shop_all": "Shop All Ebike",
       "view_all_label": "View all products in the {{ collection_name }} collection"
     },
     "collection_list": {
       "view_all": "View all"
     },
     "map": {
-      "back": "Back",
-      "view_details": "View details",
       "address_error": "Error looking up that address",
       "address_no_results": "No results for that address",
-      "address_query_limit_html": "You have exceeded the Google API usage limit. Consider upgrading to a <a href=\"https://developers.google.com/maps/premium/usage-limits\">Premium Plan</a>.",
-      "auth_error_html": "There was a problem authenticating your Google Maps account. Create and enable the <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">JavaScript API</a> and  <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">Geocoding API</a> permissions of your app."
+      "address_query_limit_html": "You have exceeded the Google API usage limit. Consider upgrading to a <a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">Premium Plan<\/a>.",
+      "auth_error_html": "There was a problem authenticating your Google Maps account. Create and enable the <a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key\">JavaScript API<\/a> and  <a href=\"https:\/\/developers.google.com\/maps\/documentation\/geocoding\/get-api-key\">Geocoding API<\/a> permissions of your app."
     },
     "slideshow": {
       "play_slideshow": "Play slideshow",
@@ -201,7 +196,7 @@
     "quick_order_list": {
       "product_total": "Subtotal",
       "view_cart": "View cart",
-      "each": "{{ money }}/ea",
+      "each": "{{ money }}\/ea",
       "product": "Product",
       "variant": "Variant",
       "variant_total": "Variant total",
@@ -222,67 +217,6 @@
       "min_error": "This item has a minimum of {{ min }}",
       "max_error": "This item has a maximum of {{ max }}",
       "step_error": "You can only add this item in increments of {{ step }}"
-    },
-    "beae-test-": {
-      "be76480_html": "N/A",
-      "be430210269_html": "Tax included. ",
-      "be72458158275_html": "<a href=\"{{shop.shipping_policy.url}}\">Shipping</a> calculated at checkout.",
-      "be427520332_html": "Save { sale }",
-      "be1538363906_html": "Sold Out",
-      "be1066872809_html": "Save {{ sale }}%",
-      "be2569319_html": "Sale",
-      "be1715090679_html": "BLACK FRIDAY OFFERS",
-      "be2100648951_html": "SAVE up to 50% and more",
-      "be1901317396_html": "Shop Deal Now",
-      "be3645428_html": "week",
-      "be3076183_html": "days",
-      "be99469071_html": "hours",
-      "be1064901855_html": "minutes",
-      "be1970096767_html": "seconds",
-      "be545783456_html": "No-Contact Delivery",
-      "be2023523433_html": "Free on orders over $120",
-      "be403761537_html": "Fast, Free Returns",
-      "be1827950203_html": "Easy with original receipt",
-      "be278915184_html": "Chat With Us",
-      "be1244873000_html": "Talk to our team via chat",
-      "be1116765796_html": "Buy Now, Pay Later",
-      "be1236623786_html": "Finance interest-free today",
-      "be1488231531_html": "Best deals",
-      "be1566509330_html": "Discover our Best Deals and enjoy unbeatable savings on top-quality electronics!",
-      "be649020154_html": "Add to cart",
-      "be1538394658_html": "Sold out",
-      "be719299147_html": "Choose options",
-      "be65290051_html": "Color",
-      "be978022322_html": "From {{ price_min }}",
-      "be1950827197_html": "{{ price_normal }}",
-      "be849688199_html": "Save {sale}%",
-      "be641729472_html": "In stock ({quantity} units)",
-      "be361065167_html": "Low stock ({quantity} units)",
-      "be782190693_html": "Very low stock ({quantity} units)",
-      "be28375103_html": "Out of stock",
-      "be912676988_html": "Pre-order",
-      "be1494994701_html": "Back in stock {next_incoming_date}",
-      "be1182278043_html": "Added to cart",
-      "be1427617666_html": "Added to cart successfully",
-      "be1955366525_html": "UNBEATABLE LIMITED-TIME DEALS!",
-      "be1809506673_html": "Purchase a bundle and save up to 70%!",
-      "be2090838752_html": "Frequently asked questions",
-      "be713998918_html": "Find quick answers to common questions about our products and services.",
-      "be682008240_html": "What is your return policy?",
-      "be82747389_html": "Do you offer warranties on your products?",
-      "be720855901_html": "Can I order online and pick up in-store?",
-      "be1711672165_html": "What payment methods do you accept?",
-      "be1338061174_html": "Do you have a loyalty program?",
-      "be78073169_html": "We offer a 30-day return policy on most items. Products must be in their original condition and packaging. Please keep your receipt for a hassle-free return.",
-      "be698927466_html": "Yes, we provide manufacturer warranties on all our products. Additionally, we offer extended warranty plans for extra protection.",
-      "be439571162_html": "Absolutely! You can place an order online and choose the “Pick Up In-Store” option at checkout. We’ll notify you when your order is ready for pickup.",
-      "be364338077_html": "We accept all major credit cards, debit cards, and cash. We also offer financing options for larger purchases.",
-      "be1433921718_html": "Yes, we have a loyalty program that rewards you with points for every purchase. Points can be redeemed for discounts on future purchases. Sign up in-store or online!",
-      "be79236683_html": "2118 Thornridge Cir, Connecticut 35624",
-      "be2118135394_html": "contact@beae.com or support@beae.com",
-      "be300739138_html": "129 Powderhorn Way, Argyle, NY 12809",
-      "be1401033812_html": "+1 2875 8712567",
-      "be1140749680_html": "© 2024 Beae Shopify page buider. All rights reserved."
     }
   },
   "blogs": {
@@ -315,9 +249,9 @@
       "subtotal": "Subtotal",
       "cart_error": "There was an error while updating your cart. Please try again.",
       "cart_quantity_error_html": "You can only add {{ quantity }} of this item to your cart.",
-      "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping</a> calculated at checkout",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxes and <a href=\"{{ link }}\">shipping<\/a> calculated at checkout",
       "taxes_included_but_shipping_at_checkout": "Tax included and shipping calculated at checkout",
-      "taxes_included_and_shipping_policy_html": "Tax included. <a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
+      "taxes_included_and_shipping_policy_html": "Tax included. <a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
       "taxes_and_shipping_at_checkout": "Taxes included and shipping calculated at checkout.",
       "update": "Update cart",
       "checkout": "Check out",
@@ -357,7 +291,7 @@
     },
     "filtering": {
       "filter_and_operator_subtitle": "Match all",
-      "filter_show_button": "Filters",
+      "filter_show_button": "Show filters",
       "filter_hide_button": "Hide filters",
       "filter_by_label": "Filters",
       "filter_and_sort": "Filter and sort",
@@ -374,10 +308,10 @@
     }
   },
   "localization": {
-    "country_label": "Country/region",
+    "country_label": "Country\/region",
     "language_label": "Language",
     "update_language": "Update language",
-    "update_country": "Update country/region"
+    "update_country": "Update country\/region"
   },
   "contact": {
     "form": {
@@ -416,9 +350,9 @@
       "address1": "Address 1",
       "address2": "Address 2",
       "city": "City",
-      "country": "Country/region",
+      "country": "Country\/region",
       "province": "Province",
-      "zip": "Postal/ZIP code",
+      "zip": "Postal\/ZIP code",
       "phone": "Phone",
       "set_default": "Set as default address",
       "add": "Add address",
@@ -511,7 +445,6 @@
   },
   "products": {
     "general": {
-      "select": "Select ",
       "color_swatch_trigger": "Color",
       "size_trigger": "Size",
       "size_chart": "Size chart",
@@ -523,22 +456,21 @@
       "product_variants": "Product variants",
       "sold_out": "Sold Out",
       "unavailable": "Unavailable",
-      "add_to_cart": "Add to Cart",
-      "choose_options": "Shop Now",
+      "add_to_cart": "Add to cart",
+      "choose_options": "Choose options",
       "choose_product_options": "Choose options for {{ product_name }}",
-      "view_product": "Shop Now",
+      "view_product": "View product",
       "pre_order": "Pre-order",
       "add_to_bundle": "Add to bundle",
-      "shop_the_look": "Shop the Look",
       "vendor": "Vendor",
       "include_taxes": "Tax included.",
-      "shipping_policy_html": "<a href='{{ link }}'>Shipping</a> calculated at checkout.",
+      "shipping_policy_html": "<a href='{{ link }}'>Shipping<\/a> calculated at checkout.",
       "will_not_ship_until": "Ready to ship {{ date }}",
       "will_be_in_stock_after": "Back in stock {{ date }}",
       "waiting_for_stock": "Inventory on the way",
       "xr_button": "View in your space",
       "xr_button_label": "View in your space, loads item in augmented reality window",
-      "read_more": "View full details",
+      "read_more": "Shop Now",
       "quick_add": "Add",
       "quick_view": "View"
     },
@@ -546,7 +478,7 @@
       "regular_price": "Regular price",
       "sale_price": "Sale price",
       "unit_price": "Unit price",
-      "from_price_html": "<small>From</small> {{ price }}"
+      "from_price_html": "<small>From<\/small> {{ price }}"
     },
     "media": {
       "open_media": "Open media {{ index }} in modal",
@@ -571,7 +503,7 @@
       "title": "Volume Pricing",
       "note": "Volume pricing available",
       "minimum": "{{ quantity }}+",
-      "price_at_each": "at {{ price }}/ea",
+      "price_at_each": "at {{ price }}\/ea",
       "price_range": "{{ minimum }} - {{ maximum }}"
     },
     "inventory": {
@@ -593,9 +525,9 @@
       "view_store_info": "View store information",
       "check_other_stores": "Check availability at other stores",
       "pick_up_available": "Pickup available",
-      "pick_up_available_at_html": "Pickup available at {{ location_name }}",
+      "pick_up_available_at_html": "Pickup available at <span class=\"color-foreground\">{{ location_name }}<\/span>",
       "pick_up_unavailable": "Pickup currently unavailable",
-      "pick_up_unavailable_at_html": "Pickup currently unavailable at {{ location_name }}",
+      "pick_up_unavailable_at_html": "Pickup currently unavailable at <span class=\"color-foreground\">{{ location_name }}<\/span>",
       "unavailable": "Couldn't load pickup availability",
       "refresh": "Refresh"
     },

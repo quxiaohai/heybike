@@ -1,13 +1,3 @@
-{% comment %}
-  Adjusted by CLEARgo
-{% endcomment %}
-
-{% style %}
-  .section-{{ section.id }} { 
-    aspect-ratio: 1920 / 500; 
-  }
-{% endstyle %}
-
 {%- liquid
   if section.settings.show_image
     assign desktop_image = section.settings.image | default: collection.image
@@ -38,7 +28,7 @@
   {% endif -%}
 </style>
 
-<div class="section-{{ section.id }} section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} relative{% endif %}"{% if section.settings.transparent_header and desktop_image != blank %} allow-transparent-header{% endif %}>
+<div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}"{% if section.settings.transparent_header and desktop_image != blank %} allow-transparent-header{% endif %}>
   <div class="{% unless section.settings.full_width %}page-width {% endunless %}relative">
     <div class="banner relative{% if desktop_image != blank %} media--{{ section.settings.image_height }} mobile:media--{{ section.settings.image_height_mobile }}{% endif %}">
       {%- if desktop_image != blank -%}
@@ -102,9 +92,6 @@
                         </ul>
                       </nav>
                     </animate-element>
-
-                  {% when 'subheading' %}
-                      <p class="banner__subheading">{{ block.settings.subheading_text }}</p>
 
                   {%- when 'title' -%}
                     <h1 class="banner__title heading leading-none {{ block.settings.title_size }}{% if block.settings.title_size == 'title-xl' %} tracking-heading{% endif %}{% unless desktop_image %} relative{% endunless %}" {{ block.shopify_attributes }}>
@@ -474,18 +461,6 @@
     }
   ],
   "blocks": [
-    { 
-      "type": "subheading", 
-      "name": "Subheading", 
-      "limit": 1, 
-      "settings": [
-        { 
-          "type": "text", 
-          "id": "subheading_text", 
-          "label": "Subheading text"
-        }
-      ]
-    }, 
     {
       "type": "title",
       "name": "t:sections.main-collection-banner.blocks.title.name",

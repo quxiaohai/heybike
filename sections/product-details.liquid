@@ -1,145 +1,9 @@
-{% comment %}
-  Adjected by CLEARgo
-{% endcomment %}
-
 <style>
   #shopify-section-{{ section.id }} {
     --section-padding-top: {{ section.settings.padding_top }}px;
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
     {%- render 'section-variables', section: section -%}
     --section-grid-gap: {{ section.settings.grid_horizontal }}px;
-  }
-
-  #shopify-section-{{ section.id }} > div { 
-    padding: var(--section-padding-top) 0 var(--section-padding-bottom) 0; 
-  }
-
-  .section-{{ section.id }} .details { 
-    border-block-end: unset; 
-  }
-
-  .section-{{ section.id }} .accordion .details .details__summary { 
-    {% if section.settings.border_color != blank %}
-      border-block-end: 1px solid {{ section.settings.border_color }}; 
-    {% endif %}
-  }
-
-  .section-{{ section.id }} .details__summary .heading, 
-  .section-{{ section.id }} .child-accordion .child-heading { 
-    width: 100%; 
-    display: flex; 
-    justify-content: space-between; 
-  }
-
-  .section-{{ section.id }} details[aria-expanded='false'] .details__summary .accordion-minus { 
-    display: none; 
-  }
-
-  .section-{{ section.id }} details[aria-expanded='true'] .details__summary .accordion-plus { 
-    display: none; 
-  }
-
-  .section-{{ section.id }} details[aria-expanded='true'] .details__summary .accordion-minus { 
-    display: block; 
-  }
-
-  .section-{{ section.id }} .details__summary .heading {
-    font-size: 2.125rem !important; 
-    font-weight: 700; 
-  }
-
-  .section-{{ section.id }} .accordion .details .details__content {
-    margin-block-start: unset; 
-  }
-
-  .section-{{ section.id }} .child-accordion-list { 
-    display: flex; 
-    flex-wrap: wrap; 
-    column-gap: calc(58vw / 19.2); 
-    margin: 0; 
-    padding: 0; 
-    list-style: none; 
-  }
-
-  .section-{{ section.id }} .child-accordion { 
-    width: calc((100% - (58vw / 19.2)) / 2); 
-    border-bottom: 1px solid {{ section.settings.border_color }}; 
-    margin: 0; 
-    padding: 0; 
-  }
-
-  .section-{{ section.id }} .child-accordion .child-heading { 
-    font-size: 2rem; 
-    cursor: pointer; 
-  }
-
-  .section-{{ section.id }} .child-accordion .child-heading .accordion-minus { 
-    display: none; 
-  }
-
-  .section-{{ section.id }} .child-accordion .child-content {
-    display: none; 
-  }
-
-  /* Responsive */
-  /* Mobile */
-  @media (max-width: 767px) { 
-    .section-{{ section.id }} .accordion .details .details__summary {
-      padding: 12px 0; 
-    }
-    
-    .section-{{ section.id }} .child-accordion-list {
-      column-gap: 0; 
-    }
-    
-    .section-{{ section.id }} .child-accordion {
-      width: 100%; 
-    }
-
-    .section-{{ section.id }} .details__summary .heading {
-      margin: 12px 0; 
-      font-size: 16px !important; 
-    }
-
-    .section-{{ section.id }} .accordion .details .details__content {
-      font-size: 12px; 
-    }
-
-    .section-{{ section.id }} .child-accordion .child-heading { 
-      font-size: 14px; 
-    }
-
-    .section-{{ section.id }} .child-accordion .child-content {
-      font-size: 10px; 
-    }
-
-    .section-{{ section.id }} .accordion-icon, 
-    .section-{{ section.id }} .accordion-icon svg {
-      width: 24px; 
-      height: 24px; 
-    }
-  }
-
-  /* Tablet */
-  @media (min-width: 768px) and (max-width: 1366px) {
-    .section-{{ section.id }} .child-accordion-list {
-      column-gap: calc(58vw / 13.66); 
-    }
-
-    .section-{{ section.id }} .child-accordion { 
-      width: calc((100% - (58vw / 13.66)) / 2); 
-    }
-  }
-
-  /* Desktop */
-  @media (min-width: 1920px) {
-    .section-{{ section.id }} .child-accordion-list {
-      column-gap: 58px; 
-    }
-
-    .section-{{ section.id }} .child-accordion { 
-      width: calc((100% - 58px) / 2); 
-    }
   }
 </style>
 
@@ -154,7 +18,7 @@
   endif
 -%}
 
-<div class="section-{{ section.id }} section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}{% if enable_split_mode == false %} specifications-section{% endif %}">
+<div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}{% if enable_split_mode == false %} specifications-section{% endif %}">
   <div class="page-width{% if section.settings.full_width %} page-width--full{% endif %} relative">
     {%- render 'section-heading', section: section -%}
 
@@ -203,7 +67,7 @@
                             {%- endif -%}
                             {{- block.settings.heading | escape -}}
                           </span>
-                          {%- render 'icon', icon: 'plus-2', size: 'xs', class: 'shrink-0' -%}
+                          {%- render 'icon', icon: 'plus-2', size: 'xs', class: 'flex-auto' -%}
                         </summary>
                         <div class="details__content text-base rte">
                           <div class="specification">
@@ -290,6 +154,7 @@
                   {%- endif -%}
                 {%- endcapture -%}
   
+                {%- if collapsible_content != blank -%}
                   {%- if block.settings.heading != blank -%}
                     <div class="accordion">
                       <details class="details" is="accordion-details"{% if section.settings.open_first_row and first_row %} open{% endif %} {{ block.shopify_attributes }}>
@@ -306,191 +171,12 @@
                             {%- endif -%}
                             {{- block.settings.heading | escape -}}
                           </span>
-                          {% comment %}
-                            {%- render 'icon', icon: 'plus-2', size: 'xs', class: 'shrink-0' -%}
-                          {% endcomment %}
-
-                          <div class="accordion-icon">
-                            {%- render 'icon', icon: 'cg_accordion-plus' -%}
-                            {%- render 'icon', icon: 'cg_accordion-minus' -%}
-                          </div>
+                          {%- render 'icon', icon: 'plus-2', size: 'xs', class: 'flex-auto' -%}
                         </summary>
                         <div class="details__content text-base rte">
                           <div class="specification grid grid-cols-12 gap-6 md:gap-10">
                             {{- collapsible_content -}}
                           </div>
-                          <ul class="child-accordion-list">
-                            {% if block.settings.child_heading1 != blank or block.settings.child_content1 != blank %}
-                              <li class="child-accordion child-accordion-1">
-                                {% if block.settings.child_heading1 != blank %}
-                                  <h3 class="child-heading child-heading-1">
-                                    {{ block.settings.child_heading1 }}
-
-                                    <div class="accordion-icon">
-                                      {%- render 'icon', icon: 'cg_accordion-plus' -%}
-                                      {%- render 'icon', icon: 'cg_accordion-minus' -%}
-                                    </div>
-                                  </h3>
-                                {% endif %}
-                                {% if block.settings.child_content1 != blank %}
-                                  <div class="child-content child-content-1">{{ block.settings.child_content1 }}</div>
-                                {% endif %}
-                              </li>
-                            {% endif %}
-                            {% if block.settings.child_heading2 != blank or block.settings.child_content2 != blank %}
-                              <li class="child-accordion child-accordion-2">
-                                {% if block.settings.child_heading2 != blank %}
-                                  <h3 class="child-heading child-heading-2">
-                                    {{ block.settings.child_heading2 }}
-                                    
-                                    <div class="accordion-icon">
-                                      {%- render 'icon', icon: 'cg_accordion-plus' -%}
-                                      {%- render 'icon', icon: 'cg_accordion-minus' -%}
-                                    </div>
-                                  </h3>
-                                {% endif %}
-                                {% if block.settings.child_content2 != blank %}
-                                  <div class="child-content child-content-2">{{ block.settings.child_content2 }}</div>
-                                {% endif %}
-                              </li>
-                            {% endif %}
-                            {% if block.settings.child_heading3 != blank or block.settings.child_content3 != blank %}
-                              <li class="child-accordion child-accordion-3">
-                                {% if block.settings.child_heading3 != blank %}
-                                  <h3 class="child-heading child-heading-3">
-                                    {{ block.settings.child_heading3 }}
-                                    
-                                    <div class="accordion-icon">
-                                      {%- render 'icon', icon: 'cg_accordion-plus' -%}
-                                      {%- render 'icon', icon: 'cg_accordion-minus' -%}
-                                    </div>
-                                  </h3>
-                                {% endif %}
-                                {% if block.settings.child_content3 != blank %}
-                                  <div class="child-content child-content-3">{{ block.settings.child_content3 }}</div>
-                                {% endif %}
-                              </li>
-                            {% endif %}
-                            {% if block.settings.child_heading4 != blank or block.settings.child_content4 != blank %}
-                              <li class="child-accordion child-accordion-4">
-                                {% if block.settings.child_heading4 != blank %}
-                                  <h3 class="child-heading child-heading-4">
-                                    {{ block.settings.child_heading4 }}
-                                    
-                                    <div class="accordion-icon">
-                                      {%- render 'icon', icon: 'cg_accordion-plus' -%}
-                                      {%- render 'icon', icon: 'cg_accordion-minus' -%}
-                                    </div>
-                                  </h3>
-                                {% endif %}
-                                {% if block.settings.child_content4 != blank %}
-                                  <div class="child-content child-content-4">{{ block.settings.child_content4 }}</div>
-                                {% endif %}
-                              </li>
-                            {% endif %}
-                            {% if block.settings.child_heading5 != blank or block.settings.child_content5 != blank %}
-                              <li class="child-accordion child-accordion-5">
-                                {% if block.settings.child_heading5 != blank %}
-                                  <h3 class="child-heading child-heading-5">
-                                    {{ block.settings.child_heading5 }}
-                                  
-                                    <div class="accordion-icon">
-                                      {%- render 'icon', icon: 'cg_accordion-plus' -%}
-                                      {%- render 'icon', icon: 'cg_accordion-minus' -%}
-                                    </div>
-                                  </h3>
-                                {% endif %}
-                                {% if block.settings.child_content5 != blank %}
-                                  <div class="child-content child-content-5">{{ block.settings.child_content5 }}</div>
-                                {% endif %}
-                              </li>
-                            {% endif %}
-                            {% if block.settings.child_heading6 != blank or block.settings.child_content6 != blank %}
-                              <li class="child-accordion child-accordion-6">
-                                {% if block.settings.child_heading6 != blank %}
-                                  <h3 class="child-heading child-heading-6">
-                                    {{ block.settings.child_heading6 }}
-                                  
-                                    <div class="accordion-icon">
-                                      {%- render 'icon', icon: 'cg_accordion-plus' -%}
-                                      {%- render 'icon', icon: 'cg_accordion-minus' -%}
-                                    </div>
-                                  </h3>
-                                {% endif %}
-                                {% if block.settings.child_content6 != blank %}
-                                  <div class="child-content child-content-6">{{ block.settings.child_content6 }}</div>
-                                {% endif %}
-                              </li>
-                            {% endif %}
-                            {% if block.settings.child_heading7 != blank or block.settings.child_content7 != blank %}
-                              <li class="child-accordion child-accordion-7">
-                                {% if block.settings.child_heading7 != blank %}
-                                  <h3 class="child-heading child-heading-7">
-                                    {{ block.settings.child_heading7 }}
-                                  
-                                    <div class="accordion-icon">
-                                      {%- render 'icon', icon: 'cg_accordion-plus' -%}
-                                      {%- render 'icon', icon: 'cg_accordion-minus' -%}
-                                    </div>
-                                  </h3>
-                                {% endif %}
-                                {% if block.settings.child_content7 != blank %}
-                                  <div class="child-content child-content-7">{{ block.settings.child_content7 }}</div>
-                                {% endif %}
-                              </li>
-                            {% endif %}
-                            {% if block.settings.child_heading8 != blank or block.settings.child_content8 != blank %}
-                              <li class="child-accordion child-accordion-8">
-                                {% if block.settings.child_heading8 != blank %}
-                                  <h3 class="child-heading child-heading-8">
-                                    {{ block.settings.child_heading8 }}
-                                  
-                                    <div class="accordion-icon">
-                                      {%- render 'icon', icon: 'cg_accordion-plus' -%}
-                                      {%- render 'icon', icon: 'cg_accordion-minus' -%}
-                                    </div>
-                                  </h3>
-                                {% endif %}
-                                {% if block.settings.child_content8 != blank %}
-                                  <div class="child-content child-content-8">{{ block.settings.child_content8 }}</div>
-                                {% endif %}
-                              </li>
-                            {% endif %}
-                            {% if block.settings.child_heading9 != blank or block.settings.child_content9 != blank %}
-                              <li class="child-accordion child-accordion-9">
-                                {% if block.settings.child_heading9 != blank %}
-                                  <h3 class="child-heading child-heading-9">
-                                    {{ block.settings.child_heading9 }}
-                                  
-                                    <div class="accordion-icon">
-                                      {%- render 'icon', icon: 'cg_accordion-plus' -%}
-                                      {%- render 'icon', icon: 'cg_accordion-minus' -%}
-                                    </div>
-                                  </h3>
-                                {% endif %}
-                                {% if block.settings.child_content9 != blank %}
-                                  <div class="child-content child-content-9">{{ block.settings.child_content9 }}</div>
-                                {% endif %}
-                              </li>
-                            {% endif %}
-                            {% if block.settings.child_heading10 != blank or block.settings.child_content10 != blank %}
-                              <li class="child-accordion child-accordion-10">
-                                {% if block.settings.child_heading10 != blank %}
-                                  <h3 class="child-heading child-heading-10">
-                                    {{ block.settings.child_heading10 }}
-                                  
-                                    <div class="accordion-icon">
-                                      {%- render 'icon', icon: 'cg_accordion-plus' -%}
-                                      {%- render 'icon', icon: 'cg_accordion-minus' -%}
-                                    </div>
-                                  </h3>
-                                {% endif %}
-                                {% if block.settings.child_content10 != blank %}
-                                  <div class="child-content child-content-10">{{ block.settings.child_content10 }}</div>
-                                {% endif %}
-                              </li>
-                            {% endif %}
-                          </ul>
                         </div>
                       </details>
                     </div>
@@ -502,6 +188,7 @@
                     </div>
                   {%- endif -%}
                   {%- assign first_row = false -%}
+                {%- endif -%}
             {%- endcase -%}
           {%- endfor -%}
         </accordions-details>
@@ -518,7 +205,7 @@
             <ul class="flex flex-wrap items-start justify-center gap-6 md:gap-10">
               {%- for block in specifications -%}
                 {%- if block.settings.icon != blank or block.settings.heading != blank -%}
-                  <li class="shrink-0 grid gap-2d5">
+                  <li class="flex-auto grid gap-2d5">
                     {%- if block.settings.icon != blank -%}
                       <div class="media relative flex items-center justify-center rounded-full">
                         {{- block.settings.icon | image_url: width: block.settings.icon.width | image_tag: loading: 'lazy', widths: '80,96,160,192', is: 'lazy-image' -}}
@@ -539,17 +226,6 @@
   </div>
 </div>
 
-<script>
-  $(document).ready(function() {
-    console.log("ready!");
-
-    $('.child-heading').click(function() { 
-      $(this).find('.accordion-icon svg').toggle(); 
-      $(this).parent().find('.child-content').slideToggle(); 
-    }); 
-  });
-</script>
-                
 {% schema %}
 {
   "name": "t:sections.product-details.name",
@@ -870,12 +546,6 @@
       "id": "rounded",
       "default": false,
       "label": "t:sections.global.settings.rounded.label"
-    }, 
-    {
-      "type": "color", 
-      "id": "border_color", 
-      "label": "Border bottom color", 
-      "default": "#CCCCCC"
     }
   ],
   "blocks": [
@@ -1130,7 +800,7 @@
           "id": "icon_width",
           "label": "t:sections.global.settings.icon_width.label",
           "default": 24,
-          "min": 10,
+          "min": 20,
           "max": 120,
           "step": 2,
           "unit": "px"
@@ -1400,7 +1070,7 @@
           "id": "icon_width",
           "label": "t:sections.global.settings.icon_width.label",
           "default": 24,
-          "min": 10,
+          "min": 20,
           "max": 120,
           "step": 2,
           "unit": "px"
@@ -1424,120 +1094,6 @@
           "label": "t:sections.product-details.blocks.collapsible_tab.settings.metafields.label",
           "info": "t:sections.product-details.blocks.collapsible_tab.settings.metafields.info",
           "placeholder": "custom.key_1\ncustom.key_2\ncustom.key_3"
-        }, 
-        {
-          "type": "header", 
-          "content": "Child accordion"
-        }, 
-        {
-          "type": "text", 
-          "id": "child_heading1", 
-          "label": "Child heading 1", 
-          "default": "Frameset"
-        }, 
-        {
-          "type": "richtext", 
-          "id": "child_content1", 
-          "label": "Child content 1"
-        }, 
-        {
-          "type": "text", 
-          "id": "child_heading2", 
-          "label": "Child heading 2", 
-          "default": "Frameset"
-        }, 
-        {
-          "type": "richtext", 
-          "id": "child_content2", 
-          "label": "Child content 2"
-        }, 
-        {
-          "type": "text", 
-          "id": "child_heading3", 
-          "label": "Child heading 3", 
-          "default": "Frameset"
-        }, 
-        {
-          "type": "richtext", 
-          "id": "child_content3", 
-          "label": "Child content 3"
-        }, 
-        {
-          "type": "text", 
-          "id": "child_heading4", 
-          "label": "Child heading 4", 
-          "default": "Frameset"
-        }, 
-        {
-          "type": "richtext", 
-          "id": "child_content4", 
-          "label": "Child content 4"
-        }, 
-        {
-          "type": "text", 
-          "id": "child_heading5", 
-          "label": "Child heading 5", 
-          "default": "Frameset"
-        }, 
-        {
-          "type": "richtext", 
-          "id": "child_content5", 
-          "label": "Child content 5"
-        }, 
-        {
-          "type": "text", 
-          "id": "child_heading6", 
-          "label": "Child heading 6", 
-          "default": "Frameset"
-        }, 
-        {
-          "type": "richtext", 
-          "id": "child_content6", 
-          "label": "Child content 6"
-        }, 
-        {
-          "type": "text", 
-          "id": "child_heading7", 
-          "label": "Child heading 7", 
-          "default": "Frameset"
-        }, 
-        {
-          "type": "richtext", 
-          "id": "child_content7", 
-          "label": "Child content 7"
-        }, 
-        {
-          "type": "text", 
-          "id": "child_heading8", 
-          "label": "Child heading 8", 
-          "default": "Frameset"
-        }, 
-        {
-          "type": "richtext", 
-          "id": "child_content8", 
-          "label": "Child content 8"
-        }, 
-        {
-          "type": "text", 
-          "id": "child_heading9", 
-          "label": "Child heading 9", 
-          "default": "Frameset"
-        }, 
-        {
-          "type": "richtext", 
-          "id": "child_content9", 
-          "label": "Child content 9"
-        }, 
-        {
-          "type": "text", 
-          "id": "child_heading10", 
-          "label": "Child heading 10", 
-          "default": "Frameset"
-        }, 
-        {
-          "type": "richtext", 
-          "id": "child_content10", 
-          "label": "Child content 10"
         }
       ]
     },

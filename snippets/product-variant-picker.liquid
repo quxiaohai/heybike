@@ -13,87 +13,10 @@
   
   Usage:
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
-
-  Adjusted by CLEARgo
 {%- endcomment -%}
 
-{% style %}
-  variant-selects { 
-    margin: 32px 0; 
-    /* border-bottom: 1px solid var(--color-grey); */
-  }
-
-  .product-form__input .form__label { 
-    margin-bottom: 0; 
-  }
-
-  #shopify-section-{{ section.id }} .product-form__input .form__label .mobile { 
-    display: none; 
-  }
-
-  .variant-picker fieldset { 
-    display: flex; 
-    /* padding: calc(27vw / 19.2) 0; */
-    padding: 27px 0; 
-    border-bottom: 1px solid var(--color-grey);
-  }
-
-  .variant-picker .swatches { 
-    display: flex; 
-    flex-direction: row; 
-    gap: calc(12vw / 19.2); 
-    align-items: center; 
-  }
-
-  /* Responsive */
-  /* Mobile */
-  @media (max-width: 767px) { 
-    .variant-picker { 
-      gap: 0 !important; 
-    }
-    
-    .variant-picker fieldset { 
-      padding: 16px 0 !important; 
-    }
-
-    .variant-picker .swatches { 
-      gap: 12px; 
-    }
-
-    #shopify-section-{{ section.id }} .product-form__input .form__label .desktop { 
-      display: none; 
-    }
-
-    #shopify-section-{{ section.id }} .product-form__input .form__label .mobile { 
-      display: block; 
-    }
-  }
-
-  /* Tablet */
-  @media (min-width: 768px) and (max-width: 1366px) { 
-    .variant-picker fieldset { 
-      /* padding: calc(27vw / 13.66) 0; */
-    }
-
-    .variant-picker .swatches { 
-      gap: calc(12vw / 13.66); 
-    }
-  }
-
-  /* Desktop */
-  @media (min-width: 1920px) { 
-    .variant-picker fieldset { 
-      padding: 27px 0; 
-    }
-
-    .variant-picker .swatches { 
-      gap: 12px; 
-    }
-  }
-{% endstyle %}
-
 {%- unless product.has_only_default_variant -%}
-  <variant-selects id="VariantPicker-{{ section_id }}-{{ product_id }}" class="variant-picker grid {% comment %}gap-5{% endcomment %} no-js-hidden" {{ block.shopify_attributes }}>
+  <variant-selects id="VariantPicker-{{ section_id }}-{{ product_id }}" class="variant-picker grid gap-8 no-js-hidden" {{ block.shopify_attributes }}>
     {%- for option in product.options_with_values -%}
       {%- if block.settings.picker_type == 'button' -%}
         {%- liquid
@@ -131,23 +54,12 @@
           data-option-index="option{{ forloop.index }}"
           data-option-slug="{{ option.name | handleize }}"
         >
-          {% comment %}
-            <legend class="sr-only">{{ option.name }}</legend>
-          {% endcomment %}
-
-					<div class="form__label flex items-center justify-between gap-2 w-full">
+          <legend class="sr-only">{{ option.name }}</legend>
+					<div class="form__label flex items-center justify-between gap-2 w-full text-sm-lg -md:tw-text-base">
 						{%- if block.settings.show_variant_labels -%}
-							<div class="flex gap-2 desktop">
-                {{- 'products.general.select' | t -}}{{ option.name | downcase }}
-
-                {% comment %}
-								  <span class="font-medium" id="{{ section_id }}-{{ product_id }}-option{{ option.position }}">{{ option.selected_value }}</span>
-                {% endcomment %}
-							</div>
-						{%- endif -%}
-            {%- if block.settings.show_variant_labels -%}
-							<div class="flex gap-2 mobile">
-                {{ option.name }}
+							<div class="flex gap-2">
+                <span class="font-bold">{{- option.name -}}:</span>
+								<span id="{{ section_id }}-{{ product_id }}-option{{ option.position }}">{{ option.selected_value }}</span>
 							</div>
 						{%- endif -%}
 						{%- if is_size -%}
@@ -183,7 +95,7 @@
 							</div>
 						{%- endif -%}
 					</div>
-					<ul class="swatches swatches--{{ settings.rounded_swatch }}{% if block.settings.color_swatch_type == 'variant' %} swatches--variant{% endif %} {% comment %}flex items-start flex-wrap gap-4{% endcomment %}">
+					<ul class="swatches swatches--{{ settings.rounded_swatch }}{% if block.settings.color_swatch_type == 'variant' %} swatches--variant{% endif %} flex items-start flex-wrap gap-4">
 						{%- for value in option.values -%}
 							<li>
 								<magnet-element class="block">
@@ -257,16 +169,16 @@
 										-%}
 										<label
 											for="{{ section_id }}-{{ product_id }}-{{ option.name | handle }}-{{ forloop.index0 }}"
-											class="color-swatch{% if swatch_fallback_override == false and swatch_image != blank %} with-image{% endif %} inline-block cursor-pointer relative{% if block.settings.color_swatch_type == 'variant' and swatch_fallback_override == false and swatch_image != blank %} aspect-{{ image_ratio }} mobile:aspect-{{ image_ratio_mobile }}{% unless image_fill %} aspect-contain{% endunless %}{% endif %}"
+											class="color-swatch{% if swatch_image != blank %} with-image{% endif %} inline-block cursor-pointer relative{% if block.settings.color_swatch_type == 'variant' and swatch_image != blank %} aspect-{{ image_ratio }} mobile:aspect-{{ image_ratio_mobile }}{% unless image_fill %} aspect-contain{% endunless %}{% endif %}"
 											title="{{ value | escape }}"
-											style="--swatch-background: {{ swatch_fallback }};{% if swatch_fallback_override == false and swatch_image != blank %} --swatch-background-image: url({{ swatch_image }});{% endif %}"
+											style="--swatch-background: {{ swatch_fallback }};{% if swatch_fallback_override == false and swatch_image != blank %} background-image: url({{ swatch_image }});{% endif %}"
 										>
 											<span class="tooltip opacity-0 pointer-events-none text-xs rounded-full z-10">{{ value | escape }}</span>
 										</label>
 									{%- else -%}
                     <label
                       for="{{ section_id }}-{{ product_id }}-{{ option.name | handle }}-{{ forloop.index0 }}"
-                      class="label-swatch inline-block text-sm font-medium leading-none cursor-pointer relative"
+                      class="label-swatch inline-block text-sm font-medium leading-none cursor-pointer relative tw-rounded-full"
                       title="{{ value | escape }}"
                     >
                       {{- value -}}
@@ -292,7 +204,7 @@
           data-option-index="option{{ forloop.index }}"
           data-option-slug="{{ option.name | handleize }}"
         >
-          <div class="form__label flex items-center justify-between gap-2 w-full">
+          <div class="form__label flex items-center justify-between gap-2 w-full text-sm-lg -md:tw-text-base" >
             {%- if block.settings.show_variant_labels -%}
               <label class="flex gap-2" for="Option-{{ section_id }}-{{ product_id }}-{{ forloop.index0 }}">
                 {{- option.name -}}

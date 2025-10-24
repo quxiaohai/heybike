@@ -4,48 +4,11 @@
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
     {%- render 'section-variables', section: section -%}
   }
-
-  #shopify-section-{{ section.id }} .title-wrapper { 
-    {% if section.settings.title_margin_bottom != blank %}
-      margin-bottom: {{ section.settings.title_margin_bottom }}px; 
-    {% endif %}
-  }
-
-  #shopify-section-{{ section.id }} .faq { 
-    {% if section.settings.panel_background != blank %}
-      background-color: {{ section.settings.panel_background }}; 
-    {% endif %}
-    {% if section.settings.border_color != blank %}
-      border-color: {{ section.settings.panel_border }}; 
-    {% else %}
-      border-color: transparent; 
-    {% endif %}
-  }
-
-  #shopify-section-{{ section.id }} .accordion .details .details__summary { 
-    {% if section.settings.summary_padding != blank %}
-      padding-block: {{ section.settings.summary_padding }}px; 
-    {% endif %}
-  }
-
-  #shopify-section-{{ section.id }} .accordion .details .details__summary .summary-icon { 
-    border-radius: 50%; 
-    padding: 4px; 
-    transition: all .3s; 
-
-    {% if section.settings.summary_icon_bg != blank %}
-      background-color: {{ section.settings.summary_icon_bg }}; 
-    {% endif %}
-  }
-
-  #shopify-section-{{ section.id }} .accordion .details[aria-expanded="true"] .details__summary .summary-icon { 
-    transform: rotate(-45deg); 
-  }
 </style>
 
 <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}{% if section.settings.style == 'with-background' %} section--plain{% endif %}">
   <div class="page-width{% if section.settings.narrow %} page-width--narrow{% endif %} relative">
-    {%- if section.settings.style == 'with-border' -%}
+    {%- if section.settings.style == 'with-border' or section.settings.style == 'tw-default-faq' -%}
       {%- render 'section-heading', section: section -%}
     {%- endif -%}
 
@@ -122,14 +85,12 @@
                   <div class="accordion">
                     <details class="details" is="accordion-details" {{ block.shopify_attributes }}>
                       <summary class="details__summary flex items-center justify-between gap-2 cursor-pointer">
-                        <span class="text-base lg:text-lg xl:text-xl font-medium leading-tight">
+                        <span class="text-base lg:text-lg font-medium leading-tight">
                           {%- render 'highlighted-text', content: block.settings.title, style: block.settings.highlighted_text, scribble: block.settings.highlighted_scribble, gradient: with_gradient -%}
                         </span>
-                        <span class="summary-icon">
-                          {%- render 'icon', icon: 'plus-2', size: 'xs', class: 'shrink-0' -%}
-                        </span>
+                        {%- render 'icon', icon: 'plus-2', size: 'xs', class: 'flex-auto' -%}
                       </summary>
-                      <div class="details__content text-base rte">
+                      <div class="details__content text-base rte -md:tw-text-xs -md:tw-px-3">
                         {{- block.settings.text -}}
                       </div>
                     </details>
@@ -285,6 +246,10 @@
       "id": "style",
       "label": "t:sections.faq.settings.style.label",
       "options": [
+        {
+          "value": "tw-default-faq",
+          "label": "Default"
+        },
         {
           "value": "with-border",
           "label": "t:sections.faq.settings.style.options__1.label"
@@ -516,18 +481,7 @@
       "type": "color_background",
       "id": "gradient_background",
       "label": "t:sections.global.settings.gradient_background.label"
-    }, 
-    { 
-      "type": "color", 
-      "id": "panel_background", 
-      "label": "Panel background", 
-    }, 
-    {
-      "type": "color", 
-      "id": "panel_border", 
-      "label": "Panel border", 
-      "default": "#E3E3E3"
-    }, 
+    },
     {
       "type": "color",
       "id": "color_highlight",
@@ -610,35 +564,6 @@
       "id": "rounded",
       "default": false,
       "label": "t:sections.global.settings.rounded.label"
-    }, 
-    {
-      "type": "range", 
-      "id": "title_margin_bottom", 
-      "label": "Title margin bottom", 
-      "min": 0, 
-      "max": 120, 
-      "step": 4, 
-      "unit": "px", 
-      "default": 68
-    }, 
-    {
-      "type": "header", 
-      "content": "Summary"
-    }, 
-    { 
-      "type": "range", 
-      "id": "summary_padding", 
-      "label": "Padding", 
-      "min": 0, 
-      "max": 120, 
-      "step": 4, 
-      "unit": "px", 
-      "default": 32
-    }, 
-    {
-      "type": "color", 
-      "id": "summary_icon_bg", 
-      "label": "Icon background"
     }
   ],
   "blocks": [

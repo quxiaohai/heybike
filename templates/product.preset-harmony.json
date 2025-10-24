@@ -93,42 +93,6 @@
             "show_price": true
           }
         },
-        "text-1": {
-          "type": "text",
-          "settings": {
-            "icon": "truck",
-            "icon_width": 20,
-            "text": "In stock! Ships within 1-2 business days.",
-            "text_size": "text-sm"
-          }
-        },
-        "text-2": {
-          "type": "text",
-          "settings": {
-            "icon": "headphone",
-            "icon_width": 20,
-            "text": "90-day risk-free trial",
-            "text_size": "text-sm"
-          }
-        },
-        "text-3": {
-          "type": "text",
-          "settings": {
-            "icon": "award",
-            "icon_width": 20,
-            "text": "2-Year Warranty",
-            "text_size": "text-sm"
-          }
-        },
-        "text-4": {
-          "type": "text",
-          "settings": {
-            "icon": "box",
-            "icon_width": 20,
-            "text": "Complimentary shipping & returns",
-            "text_size": "text-sm"
-          }
-        },
         "sticky_buy_button": {
           "type": "sticky_buy_button",
           "settings": {}
@@ -145,10 +109,6 @@
         "pickup_availability",
         "share",
         "complementary",
-        "text-1",
-        "text-2",
-        "text-3",
-        "text-4",
         "sticky_buy_button"
       ],
       "settings": {
@@ -459,7 +419,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text",
+            "heading": "<p>Image with text</p>",
             "heading_size": "title-md",
             "heading_tag": "h2",
             "highlighted_text": "none",
@@ -557,7 +517,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text",
+            "heading": "<p>Image with text</p>",
             "heading_size": "title-md",
             "heading_tag": "h2",
             "highlighted_text": "none",

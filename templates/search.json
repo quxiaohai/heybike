@@ -13,9 +13,8 @@
       "type": "main-search",
       "settings": {
         "products_per_page": 12,
-        "columns": 3,
-        "columns_mobile": "1",
-        "pagination": "paginated",
+        "columns": 4,
+        "columns_mobile": "2",
         "enable_filtering": true,
         "filter_collapsed": false,
         "filter_type": "drawer",
@@ -35,12 +34,11 @@
         "rounded": true
       }
     },
-    "cg_recently_viewed_LydRgk": {
-      "type": "cg_recently-viewed",
-      "name": "CG Recently Viewed",
+    "recently-viewed": {
+      "type": "recently-viewed",
       "settings": {
         "product_limit": 6,
-        "columns": 3,
+        "columns": 4,
         "carousel_on_desktop": true,
         "columns_mobile": "1",
         "swipe_on_mobile": true,
@@ -61,7 +59,7 @@
         "color_button_background": "",
         "color_button_gradient": "",
         "padding_top": 72,
-        "padding_bottom": 72,
+        "padding_bottom": 80,
         "divider": false,
         "full_width": false,
         "rounded": false
@@ -70,6 +68,6 @@
   },
   "order": [
     "main",
-    "cg_recently_viewed_LydRgk"
+    "recently-viewed"
   ]
 }

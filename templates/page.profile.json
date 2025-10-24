@@ -30,7 +30,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Add a tagline</p>",
+            "text": "<p>Add a tagline<\/p>",
             "text_size": "subtext-md",
             "text_max_size": 32,
             "text_font": "body",
@@ -42,7 +42,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Tel your story",
+            "heading": "<p>Tel your story</p>",
             "heading_size": "title-xl tracking-heading",
             "heading_tag": "h2",
             "highlighted_text": "none",
@@ -69,7 +69,7 @@
         "color_text": "",
         "color_background": "",
         "gradient_background": "",
-        "color_background_2": "",
+        "color_background_2": "rgba(0,0,0,0)",
         "gradient_background_2": "",
         "color_highlight": "",
         "gradient_highlight": "",
@@ -97,7 +97,7 @@
             "image_ratio": "adapt",
             "heading": "",
             "heading_size": "text-lg-2xl",
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p><p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p><p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
             "button_label": "",
             "button_link": "",
             "button_icon": true,
@@ -114,7 +114,7 @@
             "image_ratio": "adapt",
             "heading": "",
             "heading_size": "text-lg-2xl",
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p><p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p><p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
             "button_label": "",
             "button_link": "",
             "button_icon": true,
@@ -185,7 +185,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p><em>— Add a tagline</em></p>",
+            "text": "<p><em>— Add a tagline<\/em><\/p>",
             "text_size": "subtext-md",
             "text_max_size": 32,
             "text_font": "body",
@@ -228,8 +228,7 @@
       "type": "featured-collection",
       "settings": {
         "collection": "",
-        "products": [
-        ],
+        "products": [],
         "product_limit": 4,
         "columns": 4,
         "carousel_on_desktop": true,

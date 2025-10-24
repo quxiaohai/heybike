@@ -9,249 +9,88 @@
  */
 {
   "sections": {
-    "cg_hero_slideshow_fyfjmX": {
-      "type": "cg_hero-slideshow",
+    "slideshow_hb_WLJBe8": {
+      "type": "slideshow-hb",
       "blocks": {
-        "slide_a7gpPL": {
-          "type": "slide",
+        "image_cYcyz7": {
+          "type": "image",
           "settings": {
-            "tab_name": "Halloween eBike Sale",
-            "banner_img": "shopify://shop_images/Heybike_Halloween_eBike_Sale_Best_Electric_Bike_for_Sale_Mars_2_-_pc_8edc1349-b32f-46fc-be6e-f9edd679cfc4.jpg",
-            "banner_img_mobile": "shopify://shop_images/Heybike_Halloween_eBike_Sale_Best_Electric_Bike_for_Sale-app.jpg",
-            "text_alignment": "left",
-            "subheading": "Halloween Special",
-            "subheading_font_size": 24,
-            "subheading_font_mobile": 18,
-            "subheading_color": "#ffffff",
-            "heading": "New In! Save Up to $600 on These Spooky-good eBike deals",
-            "heading_font_size": 46,
-            "heading_font_mobile": 25,
-            "heading_color": "#ffffff",
-            "cta_url": "shopify://collections/electric-bike",
-            "cta_caption": "Shop Deals"
+            "image": "shopify://shop_images/1Hunter_Pro_d8cb980f-7810-43aa-829d-f6ca7ce1ab03.jpg",
+            "image_mobile": "shopify://shop_images/1Hunter_Pro_M_7350ef3e-e12d-472d-bb3e-640403cf4ec0.jpg",
+            "heading": "",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "subheading": "",
+            "subh_before": true,
+            "text_size": "subtext-md",
+            "button_label": "",
+            "button_link": "shopify://products/hunter-pro-combo",
+            "button_style": "primary",
+            "button_external": false,
+            "button_icon": false
           }
         },
-        "slide_zygXDC": {
-          "type": "slide",
+        "image_UxKiWT": {
+          "type": "image",
           "settings": {
-            "tab_name": "Season's Top Pick",
-            "banner_img": "shopify://shop_images/End_Summer_eBike_Sale_hero_banner_pc.jpg",
-            "banner_img_mobile": "shopify://shop_images/End_of_Summer_Sale_Best_Electric_Bike_Sale_of_the_Season-app.jpg",
-            "text_alignment": "left",
-            "subheading": "Season's Top Pick",
-            "subheading_font_size": 24,
-            "subheading_font_mobile": 18,
-            "subheading_color": "#f5f2f2",
-            "heading": "Limited Offer: Ranger S Now Only $1099 + Mystery Bonus Gift!",
-            "heading_font_size": 46,
-            "heading_font_mobile": 25,
-            "heading_color": "#ffffff",
-            "cta_url": "shopify://products/ranger-s",
-            "cta_caption": "Shop Ranger S"
+            "image": "shopify://shop_images/2X_Hunter_6962ecbc-fd98-434d-9650-2e3eed6bd861.jpg",
+            "image_mobile": "shopify://shop_images/2X_Hunter_M_a6fb5956-f9d1-4519-a0d0-4e6484936e99.jpg",
+            "heading": "",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "subheading": "",
+            "subh_before": true,
+            "text_size": "subtext-md",
+            "button_label": "",
+            "button_link": "shopify://products/jasion®-combo-sale-x-hunter-2",
+            "button_style": "primary",
+            "button_external": false,
+            "button_icon": false
           }
         },
-        "slide_yW8d8X": {
-          "type": "slide",
-          "disabled": true,
+        "image_F7kDtH": {
+          "type": "image",
           "settings": {
-            "tab_name": "Ranger S Deal",
-            "banner_img": "shopify://shop_images/Heybike_Ranger_S_Golden_Fall_eBike_Sale_pc.jpg",
-            "banner_img_mobile": "shopify://shop_images/Golden_Fall_eBike_Sale_Best_Electric_Bike_For_Sale_Ranger_S_app.jpg",
-            "text_alignment": "left",
-            "subheading": "Fold, Ride & Relax!",
-            "subheading_font_size": 24,
-            "subheading_font_mobile": 18,
-            "subheading_color": "#f5f2f2",
-            "heading": "Ranger S: $400 Off the Season's Top Pick",
-            "heading_font_size": 46,
-            "heading_font_mobile": 25,
-            "heading_color": "#ffffff",
-            "cta_url": "shopify://products/ranger-s",
-            "cta_caption": "Shop Ranger S"
-          }
-        },
-        "slide_cLJjKt": {
-          "type": "slide",
-          "settings": {
-            "tab_name": "Mars 2.0 Deal",
-            "banner_img": "shopify://shop_images/Golden_Fall_eBike_Sale_Best_Electric_Bike_For_Sale_Mars_2.0_pc.jpg",
-            "banner_img_mobile": "shopify://shop_images/Golden_Fall_eBike_Sale_Best_Electric_Bike_For_Sale_Mars_2.0_app.jpg",
-            "text_alignment": "left",
-            "subheading": "Small Fold, Big Power",
-            "subheading_font_size": 24,
-            "subheading_font_mobile": 18,
-            "subheading_color": "#f5f2f2",
-            "heading": "$500 Off Mars 2.0 + $79 Free Gifts – Limited Time Only!",
-            "heading_font_size": 46,
-            "heading_font_mobile": 25,
-            "heading_color": "#ffffff",
-            "cta_url": "shopify://products/mars-2-0",
-            "cta_caption": "Shop Mars 2.0"
-          }
-        },
-        "slide_idmcRg": {
-          "type": "slide",
-          "settings": {
-            "tab_name": "Helio F",
-            "banner_img": "shopify://shop_images/Helio_F_New_In_eBike.jpg",
-            "banner_img_mobile": "shopify://shop_images/Heybike_Helio_F_Vintage_eBike-app.png",
-            "text_alignment": "left",
-            "subheading": "The Smart Classic eBike",
-            "subheading_font_size": 24,
-            "subheading_font_mobile": 14,
-            "subheading_color": "#000000",
-            "heading": "New In: Helio F Vintage Edition",
-            "heading_font_size": 46,
-            "heading_font_mobile": 22,
-            "heading_color": "#000000",
-            "cta_url": "shopify://products/helio-f",
-            "cta_caption": "Shop Helio F"
+            "image": "shopify://shop_images/3RetroVolt_Pro_53b66051-9137-4068-bfd2-cba47133523e.jpg",
+            "image_mobile": "shopify://shop_images/3RetroVolt_Pro_M.jpg",
+            "heading": "",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "subheading": "",
+            "subh_before": true,
+            "text_size": "subtext-md",
+            "button_label": "",
+            "button_link": "shopify://products/retrovolt-pro",
+            "button_style": "primary",
+            "button_external": false,
+            "button_icon": false
           }
         }
       },
       "block_order": [
-        "slide_a7gpPL",
-        "slide_zygXDC",
-        "slide_yW8d8X",
-        "slide_cLJjKt",
-        "slide_idmcRg"
+        "image_cYcyz7",
+        "image_UxKiWT",
+        "image_F7kDtH"
       ],
-      "name": "CG Hero Slideshow",
       "settings": {
-        "autoplay": true,
-        "autoplay_ms": "4000"
-      }
-    },
-    "cg_slideshow_Lcxiqi": {
-      "type": "cg_slideshow",
-      "blocks": {
-        "video_YgUpQj": {
-          "type": "video",
-          "settings": {
-            "subheading": "New Launch!",
-            "video": "shopify://files/videos/X-series Hero Banner-10s.mp4",
-            "video_url": "",
-            "description": "",
-            "video_mobile": "shopify://files/videos/X-series Hero Banner-10s-app x_1.mp4",
-            "video_url_mobile": "",
-            "heading": "X Series: The Pinnacle of Folding Fat-Tire Ebikes",
-            "heading_size": "title-sm",
-            "heading_tag": "h2",
-            "button_label": "Shop Now",
-            "button_link": "shopify://pages/x-series",
-            "button_style": "primary",
-            "button_external": false,
-            "button_icon": false,
-            "dot_title": "New Launch!"
-          }
-        },
-        "image_p4Xi7C": {
-          "type": "image",
-          "settings": {
-            "subheading": "Special Launch Offer",
-            "subheading_font_size": 15,
-            "subheading_font_size_mobile": 20,
-            "image": "shopify://shop_images/KV_06.jpg",
-            "image_mobile": "shopify://shop_images/M-KV_06_7526b19c-c6a0-40f9-95e5-4301bb5d68a9.jpg",
-            "heading": "Mars 3.0: The Ultimate Powerful Folding Fat-tire Ebike",
-            "heading_size": "title-sm",
-            "heading_tag": "h2",
-            "button_label": "Shop Mars 3.0",
-            "button_link": "shopify://products/mars-3-0",
-            "button_style": "primary",
-            "button_external": false,
-            "button_icon": false,
-            "dot_title": "Mars 3.0"
-          }
-        },
-        "image_YcDY3C": {
-          "type": "image",
-          "settings": {
-            "subheading": "Special Launch Offer",
-            "subheading_font_size": 15,
-            "subheading_font_size_mobile": 20,
-            "image": "shopify://shop_images/KV_07.jpg",
-            "image_mobile": "shopify://shop_images/M-KV_07.jpg",
-            "heading": "Ranger 3.0 Pro: The Flagship Comfort Folding Fat-tire Ebike",
-            "heading_size": "title-sm",
-            "heading_tag": "h2",
-            "button_label": "Shop Ranger 3.0 Pro",
-            "button_link": "shopify://products/ranger-3-0-pro",
-            "button_style": "primary",
-            "button_external": false,
-            "button_icon": false,
-            "dot_title": "Ranger 3.0 Pro"
-          }
-        },
-        "image_9Wcdbt": {
-          "type": "image",
-          "settings": {
-            "subheading": "New Deals Just Dropped",
-            "subheading_font_size": 15,
-            "subheading_font_size_mobile": 20,
-            "image": "shopify://shop_images/KV_01_fec2efaa-dcbf-4a1e-9864-437e76e8a6bf.jpg",
-            "image_mobile": "shopify://shop_images/M-KV_01_f50adeb9-94f5-4a74-a957-f99e2e19b572.jpg",
-            "heading": "Up to $500 Off! Early Access Back to School Deals!",
-            "heading_size": "title-sm",
-            "heading_tag": "h2",
-            "button_label": "Shop Sale",
-            "button_link": "shopify://collections/electric-bike",
-            "button_style": "primary",
-            "button_external": false,
-            "button_icon": false,
-            "dot_title": "Back to School Sale"
-          }
-        },
-        "image_FFAFcm": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "subheading": "New Release!",
-            "subheading_font_size": 15,
-            "subheading_font_size_mobile": 20,
-            "image": "shopify://shop_images/KV_05.jpg",
-            "image_mobile": "shopify://shop_images/M-KV_05.jpg",
-            "heading": "X-Series: The Pinnacle of Folding Fat-Tire Ebikes",
-            "heading_size": "title-sm",
-            "heading_tag": "h2",
-            "button_label": "Explore Now",
-            "button_link": "shopify://pages/x-series",
-            "button_style": "primary",
-            "button_external": true,
-            "button_icon": false,
-            "dot_title": "X-Series Launch"
-          }
-        }
-      },
-      "block_order": [
-        "video_YgUpQj",
-        "image_p4Xi7C",
-        "image_YcDY3C",
-        "image_9Wcdbt",
-        "image_FFAFcm"
-      ],
-      "disabled": true,
-      "name": "CG Slideshow",
-      "settings": {
-        "autoplay": true,
-        "autoplay_speed": 4,
+        "autoplay": false,
+        "autoplay_speed": 5,
         "show_navigation": true,
-        "current_dot_color": "#ffffff",
-        "bar_color": "#333333",
-        "show_arrow": false,
-        "image_height": "650px",
-        "content_width": "large",
-        "image_height_mobile": "auto",
+        "image_height": "adapt",
+        "content_pw": false,
+        "content_position": "center",
+        "content_width": "small",
+        "image_height_mobile": "adapt",
         "color_text": "#ffffff",
-        "color_background": "#ffffff",
+        "color_background": "rgba(0,0,0,0)",
         "gradient_background": "",
         "color_button_text": "#171717",
-        "color_button_background": "#ffffff",
+        "color_button_background": "#ff981d",
         "color_button_gradient": "",
         "color_overlay": "#171717",
-        "overlay_opacity": 10,
+        "overlay_opacity": 0,
         "padding_top": 0,
-        "padding_bottom": 0,
+        "padding_bottom": 60,
         "divider": false,
         "full_width": true,
         "rounded": false,
@@ -259,260 +98,60 @@
         "parallax_direction": "vertical"
       }
     },
-    "cg_product_series_kKQBUz": {
-      "type": "cg_product-series",
+    "collection_list_CbXJf3": {
+      "type": "collection-list",
       "blocks": {
-        "slide_with_tab_dY7ngE": {
-          "type": "slide_with_tab",
+        "collection_7UxVht": {
+          "type": "collection",
           "settings": {
-            "tab_text": "Hot Sellers",
-            "bg_img": "shopify://shop_images/BestSeller_ce419acf-15ae-4801-af89-6358f53c2480.jpg",
-            "mask_color": "#000000",
-            "mask_opacity": 0.3,
-            "bg_img_mobile": "shopify://shop_images/BestSeller_App_18984c8b-00e3-4b91-a194-2b5225853c32.jpg",
-            "slide_title": "Hot Sellers",
-            "title_color": "#ffffff",
-            "slide_desc": "New Deals Just Dropped! Score big savings and exclusive gifts today.",
-            "btn_text": "Shop Deals",
-            "btn_link": "shopify://collections/electric-bike",
-            "placement": "left",
-            "font_color": "#ffffff",
-            "series_product_list": []
+            "collection": "folding-ebike",
+            "image": "shopify://shop_images/Folding_E-bikes_460x550_16fc278e-abd4-403c-addd-f0ea62552985.jpg",
+            "title": "Folding Ebike",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 0
           }
         },
-        "slide_with_tab_fqECfq": {
-          "type": "slide_with_tab",
+        "collection_cJqfhF": {
+          "type": "collection",
           "settings": {
-            "tab_text": "X-Series",
-            "bg_img": "shopify://shop_images/Heybike_All_New_X_Series_-_Best_Folding_Fat_Tire_eBikes_pc.jpg",
-            "mask_color": "#000000",
-            "mask_opacity": 0.2,
-            "bg_img_mobile": "shopify://shop_images/mid-banner_app_cee2f441-7b2c-4613-be2c-0af843eb9eaa.jpg",
-            "slide_title": "X-Series",
-            "title_color": "#ffffff",
-            "slide_desc": "Introducing Heybike Mars 3.0 and Ranger 3.0 Pro — the next evolution in folding fat-tire eBikes. Meet the boldest rides yet.",
-            "btn_text": "Explore Now",
-            "btn_link": "shopify://pages/x-series",
-            "placement": "left",
-            "font_color": "#ffffff",
-            "series_product_list": []
+            "collection": "fat-tire-ebike",
+            "image": "shopify://shop_images/Off_Roading_460x550_7360ac53-d3a5-4008-80cc-0c91451e9256.jpg",
+            "title": "Fat Tire Ebike",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 0
           }
         },
-        "slide_with_tab_EWrREz": {
-          "type": "slide_with_tab",
+        "collection_gwpjnX": {
+          "type": "collection",
           "settings": {
-            "tab_text": "ALPHA",
-            "bg_img": "shopify://shop_images/ALPHA_b9a6924a-b5f6-49ab-b3a5-f8564c03274c.jpg",
-            "mask_color": "#000000",
-            "mask_opacity": 0.1,
-            "bg_img_mobile": "shopify://shop_images/M-_ALPHA.jpg",
-            "slide_title": "ALPHA",
-            "title_color": "#ffffff",
-            "slide_desc": "The World's 1st Competitively Priced 26-inch Mid-drive, Fat Tire Ebike designed to provide the joy of an exciting bike ride for all",
-            "btn_text": "Explore Now",
-            "btn_link": "shopify://products/alpha",
-            "placement": "left",
-            "font_color": "#ffffff",
-            "series_product_list": []
+            "collection": "cruiser-ebike",
+            "image": "shopify://shop_images/1City_E-bikes_460x550_58b695eb-d87b-4210-8cb5-4d6f91811101.jpg",
+            "title": "Cruiser Ebike",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 0
           }
         }
       },
       "block_order": [
-        "slide_with_tab_dY7ngE",
-        "slide_with_tab_fqECfq",
-        "slide_with_tab_EWrREz"
-      ],
-      "name": "CG Product Series",
-      "settings": {
-        "heading": "Product Series",
-        "tab_color": "#cccccc",
-        "tab_color_active": "#000000",
-        "border_radius": 20,
-        "font_size": 20,
-        "font_size_mobile": 16,
-        "hide_review_counter": true,
-        "hide_spec": true,
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
-    "cg_collection-list": {
-      "type": "cg_collection-list",
-      "blocks": {
-        "collection-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "fat-tire-bikes",
-            "image": "shopify://shop_images/Fat_Tire_Bikes_27bdbcb4-6f2e-46c5-b006-7c7e1b2510f8.jpg",
-            "title": "Fat Tire Ebikes",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 40
-          }
-        },
-        "collection_Atx4wR": {
-          "type": "collection",
-          "settings": {
-            "collection": "folding-electric-bikes",
-            "image": "shopify://shop_images/Folding_Bikes_53173d60-7dfa-46cd-abc0-a85fbc1a081b.jpg",
-            "title": "Folding Ebikes",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 40
-          }
-        },
-        "collection_RHD8JV": {
-          "type": "collection",
-          "settings": {
-            "collection": "off-road-electric-bikes",
-            "image": "shopify://shop_images/off-road_7da85011-c5cd-499e-9cdc-2c2dfad0f95a.jpg",
-            "title": "Off-Road Ebikes",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 40
-          }
-        },
-        "collection_yKyiYp": {
-          "type": "collection",
-          "settings": {
-            "collection": "bundle-sale",
-            "image": "shopify://shop_images/bundle_sale_4f493b83-1b9a-45a4-8de1-0b7fc97030bc.jpg",
-            "title": "Bundle Sale",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 40
-          }
-        },
-        "collection_gnpq9P": {
-          "type": "collection",
-          "disabled": true,
-          "settings": {
-            "collection": "electric-bike",
-            "title": "Off-Road Ebikes",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 40
-          }
-        },
-        "collection_n8RaWh": {
-          "type": "collection",
-          "disabled": true,
-          "settings": {
-            "collection": "electric-bike",
-            "image": "shopify://shop_images/off-road-ebikes01.jpg",
-            "title": "Off-Road Ebikes",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 40
-          }
-        }
-      },
-      "block_order": [
-        "collection-2",
-        "collection_Atx4wR",
-        "collection_RHD8JV",
-        "collection_yKyiYp",
-        "collection_gnpq9P",
-        "collection_n8RaWh"
+        "collection_7UxVht",
+        "collection_cJqfhF",
+        "collection_gwpjnX"
       ],
       "settings": {
-        "columns": 4,
+        "columns": 3,
         "carousel_on_desktop": true,
         "image_type": "collection",
-        "image_ratio": "portrait",
+        "image_ratio": "adapt",
         "show_products_count": false,
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "heading": "Explore Our Ebikes",
-        "heading_size": "title-sm",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 0,
-        "padding_bottom": 100,
-        "divider": false,
-        "full_width": false,
-        "rounded": false,
-        "content_border_radius": 10,
-        "content_font_size": 28,
-        "show_backdrop_filter": true,
-        "show_darker": true
-      }
-    },
-    "cg_featured_collection": {
-      "type": "cg_featured-collection",
-      "name": "t:sections.featured-collection.presets.name",
-      "settings": {
-        "collection": "electric-bike",
-        "products": [],
-        "product_limit": 6,
-        "columns": 3,
-        "carousel_on_desktop": false,
-        "show_view_all": true,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "heading": "Hot Picks",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "divider": false,
-        "full_width": false,
-        "rounded": false,
-        "direction": "vertical",
-        "border_color": "#999999",
-        "hide_review_counter": false,
-        "hide_spec": false,
-        "shop_now_button": "text"
-      }
-    },
-    "cg_featured_collection_xKUGqx": {
-      "type": "cg_featured-collection",
-      "disabled": true,
-      "name": "t:sections.featured-collection.presets.name",
-      "settings": {
-        "collection": "deals-bikes",
-        "products": [],
-        "product_limit": 6,
-        "columns": 3,
-        "carousel_on_desktop": false,
         "show_view_all": false,
         "columns_mobile": "1",
         "swipe_on_mobile": true,
@@ -532,333 +171,162 @@
         "color_button_text": "",
         "color_button_background": "",
         "color_button_gradient": "",
-        "padding_top": 72,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "collage_grid_mx4BAF": {
+      "type": "collage-grid",
+      "blocks": {
+        "image_Jw9FPE": {
+          "type": "image",
+          "settings": {
+            "column_size": 4,
+            "row_size": 2,
+            "subheading": "",
+            "heading": "Commuter &City",
+            "link": "shopify://products/jasion-ebike®combo-sale-eb5-roamer-eb5-roamer-st",
+            "invert_subheading_heading": false,
+            "image": "shopify://shop_images/1City_E-bikes_460x550_91a94133-0d30-404c-aabf-6b1633fdb20b.jpg",
+            "content_position": "md:items-center md:justify-center",
+            "text_alignment": "center",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "center",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#ffffff",
+            "color_highlight": "",
+            "gradient_highlight": "",
+            "color_overlay": "#171717",
+            "overlay_opacity": 10,
+            "image_hover": "shopify://shop_images/City_E-bikes_460x550_87a0e41b-1e08-426a-9281-7737af875976.jpg",
+            "color_text_hover": "",
+            "color_highlight_hover": "",
+            "gradient_highlight_hover": "",
+            "color_overlay_hover": "",
+            "overlay_opacity_hover": 0
+          }
+        },
+        "image_rMAfjr": {
+          "type": "image",
+          "settings": {
+            "column_size": 4,
+            "row_size": 2,
+            "subheading": "",
+            "heading": "Folding",
+            "link": "shopify://products/combo-sale-eb7-eb7st",
+            "invert_subheading_heading": false,
+            "image": "shopify://shop_images/Folding_E-bikes_460x550_77ee7812-bd2f-4e84-a5df-8912932326ac.jpg",
+            "content_position": "md:items-center md:justify-center",
+            "text_alignment": "center",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "center",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#ffffff",
+            "color_highlight": "",
+            "gradient_highlight": "",
+            "color_overlay": "#171717",
+            "overlay_opacity": 10,
+            "image_hover": "shopify://shop_images/Folding_E-bikes_460x550_af10b5ce-2798-4e5f-ac64-118fc56dbe4d.jpg",
+            "color_text_hover": "",
+            "color_highlight_hover": "",
+            "gradient_highlight_hover": "",
+            "color_overlay_hover": "#171717",
+            "overlay_opacity_hover": 10
+          }
+        },
+        "image_MhipnY": {
+          "type": "image",
+          "settings": {
+            "column_size": 4,
+            "row_size": 2,
+            "subheading": "",
+            "heading": "Off Roading",
+            "link": "shopify://products/jasion®-combo-sale-x-hunter-2",
+            "invert_subheading_heading": false,
+            "image": "shopify://shop_images/Off_Roading_460x550_c760394d-3f50-48bc-8499-56f5ad914e68.jpg",
+            "content_position": "md:items-center md:justify-center",
+            "text_alignment": "center",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "center",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#ffffff",
+            "color_highlight": "",
+            "gradient_highlight": "",
+            "color_overlay": "#171717",
+            "overlay_opacity": 10,
+            "image_hover": "shopify://shop_images/Off_Roading_460x550_838a3ef0-88e3-4f0f-bb7c-30f77e780e51.jpg",
+            "color_text_hover": "",
+            "color_highlight_hover": "",
+            "gradient_highlight_hover": "",
+            "color_overlay_hover": "",
+            "overlay_opacity_hover": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_Jw9FPE",
+        "image_rMAfjr",
+        "image_MhipnY"
+      ],
+      "disabled": true,
+      "settings": {
+        "row_height": 270,
+        "row_height_mobile": 170,
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 28,
         "padding_bottom": 72,
         "divider": false,
         "full_width": false,
         "rounded": false,
-        "direction": "horizontal",
-        "border_color": "rgba(0,0,0,0)",
-        "hide_review_counter": true,
-        "hide_spec": true,
-        "shop_now_button": "icon"
+        "enable_parallax": true
       }
     },
-    "video-with-text-overlay": {
-      "type": "video-with-text-overlay",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Video with text overlay",
-            "heading_size": "title-md",
-            "heading_tag": "h2",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Give customers details about the banner image(s) or content on the template.</p>",
-            "text_size": "subtext-md",
-            "text_max_size": 32,
-            "text_font": "body",
-            "secondary_color": true,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop Now",
-            "button_link": "",
-            "button_style": "primary",
-            "button_size": "md",
-            "button_external": false,
-            "button_icon": true
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
-      "disabled": true,
+    "featured_collection_hb_3aApkj": {
+      "type": "featured-collection-hb",
       "settings": {
-        "transparent_header": false,
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "enable_video_autoplay": true,
-        "enable_video_looping": true,
-        "image_height": "750px",
-        "content_width": "medium",
-        "content_position": "md:items-center md:justify-center",
-        "text_alignment": "center",
-        "video_url_mobile": "",
-        "image_height_mobile": "auto",
-        "content_position_mobile": "items-center justify-center",
-        "text_alignment_mobile": "center",
-        "color_text": "#ffffff",
-        "color_highlight": "#e0a580",
-        "gradient_highlight": "",
-        "color_button_text": "#171717",
-        "color_button_background": "#ffffff",
-        "color_button_gradient": "",
-        "color_overlay": "#000000",
-        "overlay_opacity": 50,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "divider": false,
-        "full_width": true,
-        "rounded": true
-      }
-    },
-    "countdown_timer_aceRqD": {
-      "type": "countdown-timer",
-      "blocks": {
-        "subheading_CFkW4f": {
-          "type": "subheading",
-          "disabled": true,
-          "settings": {
-            "subheading": "Limited-Time",
-            "subheading_size": "subtitle-sm",
-            "secondary_color": false
-          }
-        },
-        "heading_6eQqhK": {
-          "type": "heading",
-          "settings": {
-            "heading": "Today's Big Deals",
-            "heading_size": "title-md",
-            "heading_tag": "h2",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "text_iiA7GD": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Spooktacular eBike savings! Up to $600 off plus free Halloween gifts—treat yourself before these offers disappear!</p>",
-            "text_size": "subtext-md",
-            "text_max_size": 32,
-            "text_font": "body",
-            "secondary_color": false,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "timer_ctegdE": {
-          "type": "timer",
-          "settings": {
-            "year": "2025",
-            "month": "10",
-            "day": "21",
-            "hour": "00",
-            "minute": "00",
-            "text_font": "body",
-            "text_size": "title-xl tracking-heading",
-            "message": ""
-          }
-        },
-        "button_YXmiJW": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop Deals",
-            "button_link": "shopify://collections/electric-bike",
-            "button_style": "primary",
-            "button_size": "md",
-            "button_external": true,
-            "button_icon": true
-          }
-        }
-      },
-      "block_order": [
-        "subheading_CFkW4f",
-        "heading_6eQqhK",
-        "text_iiA7GD",
-        "timer_ctegdE",
-        "button_YXmiJW"
-      ],
-      "name": "t:sections.countdown-timer.presets.name",
-      "settings": {
-        "transparent_header": false,
-        "image": "shopify://shop_images/mic-pc.png",
-        "image_height": "500px",
-        "content_width": "small",
-        "content_position": "md:items-center md:justify-start",
-        "text_alignment": "left",
-        "image_mobile": "shopify://shop_images/mic.png",
-        "image_height_mobile": "400px",
-        "content_position_mobile": "items-center justify-center",
-        "text_alignment_mobile": "left",
-        "color_text": "#ffffff",
-        "color_highlight": "#e0a580",
-        "gradient_highlight": "",
-        "color_button_text": "#171717",
-        "color_button_background": "#ffffff",
-        "color_button_gradient": "",
-        "color_overlay": "#171717",
-        "overlay_opacity": 40,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "divider": false,
-        "full_width": true,
-        "rounded": false,
-        "enable_parallax": false,
-        "parallax_direction": "vertical"
-      }
-    },
-    "cg_testimonials_banners_TUV84K": {
-      "type": "cg_testimonials-banners",
-      "blocks": {
-        "banner_APEBcG": {
-          "type": "banner",
-          "settings": {
-            "dot_title": "",
-            "banner_subheading": "Limited to 200 Units!",
-            "subheading_font_color": "#ffffff",
-            "banner_heading": "Limited Miami Sunset Edition",
-            "heading_font_color": "#ffffff",
-            "heading_font_size": 48,
-            "heading_font_size_mobile": 20,
-            "banner_desc": "",
-            "desc_font_size": 35,
-            "desc_font_color": "#ffffff",
-            "desc_font_size_mobile": 20,
-            "btn_url": "shopify://products/ranger-3-0-pro-limited-miami-sunset-edition",
-            "btn_caption": "Shop Limited Edition"
-          }
-        }
-      },
-      "block_order": [
-        "banner_APEBcG"
-      ],
-      "disabled": true,
-      "name": "CG Testimonials Banners",
-      "settings": {
-        "bg_img": "shopify://shop_images/mic-pc.png",
-        "bg_img_mobile": "shopify://shop_images/M_APP750X900.jpg"
-      }
-    },
-    "cg_testimonials_with_logos_Cr8kU9": {
-      "type": "cg_testimonials-with-logos",
-      "blocks": {
-        "slide_hppdPj": {
-          "type": "slide",
-          "settings": {
-            "testimonial": "Even at the fifth and highest level of pedal assist, the Alpha is smooth and easy to control, making you feel like you’re pedaling a traditional push bike. There’s nothing jerky about the acceleration.",
-            "logo": "shopify://shop_images/tech.jpg"
-          }
-        },
-        "slide_dinYTx": {
-          "type": "slide",
-          "settings": {
-            "testimonial": "So while you can go mountain biking with the Hero, you’ll be best served keeping the pace reasonable.",
-            "logo": "shopify://shop_images/Forbes.jpg"
-          }
-        },
-        "slide_dtwA7d": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "testimonial": "I really enjoyed the time I spent with the Heybike Brawn. The 750-watt hub motor seemed to punch above its weight and always felt like it had more to give.",
-            "logo": "shopify://shop_images/cnet.jpg"
-          }
-        },
-        "slide_fAWymA": {
-          "type": "slide",
-          "settings": {
-            "testimonial": "With real power, actual suspension, and smart features that make it more refined and useful, this is a folding e-bike that doesn’t ride like a compromise.",
-            "logo": "shopify://shop_images/electrek.jpg"
-          }
-        },
-        "slide_EPQcp9": {
-          "type": "slide",
-          "settings": {
-            "testimonial": "The new Mars 3.0 features a fully reworked frame with an internally housed battery and a Horst-link suspension system—something you almost never see on a folding e-bike.",
-            "logo": "shopify://shop_images/Electric.jpg"
-          }
-        },
-        "slide_YqpajK": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "testimonial": "Heybike Ranger S is a killer city cruiser with one unfortunate quirk. Heybike continues produce quality e-bikes",
-            "logo": "shopify://shop_images/tnw-logo.png"
-          }
-        },
-        "slide_Nj6eEh": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "testimonial": "Heybike Ranger S is a killer city cruiser with one unfortunate quirk. Heybike continues produce quality e-bikes",
-            "logo": "shopify://shop_images/expertreviews-logo.png"
-          }
-        },
-        "slide_6piVKh": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "testimonial": "Heybike Ranger S is a killer city cruiser with one unfortunate quirk. Heybike continues produce quality e-bikes",
-            "logo": "shopify://shop_images/electrek-logo.png"
-          }
-        },
-        "slide_9DWgC9": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "testimonial": "Heybike Ranger S is a killer city cruiser with one unfortunate quirk. Heybike continues produce quality e-bikes",
-            "logo": "shopify://shop_images/business-insider-logo.png"
-          }
-        },
-        "slide_XcTUNN": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "testimonial": "Heybike Ranger S is a killer city cruiser with one unfortunate quirk. Heybike continues produce quality e-bikes",
-            "logo": "shopify://shop_images/electric-bike-report-logo.png"
-          }
-        }
-      },
-      "block_order": [
-        "slide_hppdPj",
-        "slide_dinYTx",
-        "slide_dtwA7d",
-        "slide_fAWymA",
-        "slide_EPQcp9",
-        "slide_YqpajK",
-        "slide_Nj6eEh",
-        "slide_6piVKh",
-        "slide_9DWgC9",
-        "slide_XcTUNN"
-      ],
-      "name": "Testimonials with Logos",
-      "settings": {
-        "progress_bar_bg": "#e9e8e8"
-      }
-    },
-    "blog_posts_ADrcEQ": {
-      "type": "blog-posts",
-      "name": "t:sections.blog-posts.presets.name",
-      "settings": {
-        "blog": "heybike-blog",
-        "post_limit": 8,
-        "columns": 4,
+        "pw-overflow-hidden": true,
+        "collection": "",
+        "products": [
+          "hunter-pro",
+          "jasion-x-hunter",
+          "retrovolt-pro",
+          "hunter-pro-combo"
+        ],
+        "product_limit": 8,
+        "columns": 3,
         "carousel_on_desktop": true,
-        "show_view_all": true,
+        "show_view_all": false,
         "columns_mobile": "1",
         "swipe_on_mobile": true,
-        "image_ratio": "landscape",
-        "show_tags": true,
-        "show_date": true,
-        "show_comments": true,
-        "show_author": false,
-        "show_excerpt": true,
-        "heading": "You Might Be Interested In",
-        "heading_size": "title-md",
+        "enable_specs": true,
+        "specs_limit": "4",
+        "heading": "Shop Ebikes",
+        "heading_size": "title-sm",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
         "subheading": "",
@@ -880,19 +348,501 @@
         "rounded": false
       }
     },
-    "cg_blog-posts-collage": {
-      "type": "cg_blog-posts-collage",
+    "image_with_text_overlay_yYMYWm": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_GDapWQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Innovating a Greener \nFuture with E-Bikes",
+            "heading_size": "title-xs",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_GpVDjA": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At Jasion, we’re a team of bike enthusiasts and innovators committed to creating a greener, more sustainable world through e-bikes.</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 52,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_jtXN7J": {
+          "type": "button",
+          "settings": {
+            "button_label": "Explore more",
+            "button_link": "shopify://pages/about-us",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_GDapWQ",
+        "text_GpVDjA",
+        "button_jtXN7J"
+      ],
       "settings": {
-        "blog": "customer-stories",
-        "post_limit": 3,
-        "show_view_all": true,
-        "image_ratio": "adapt",
-        "show_tags": true,
-        "show_date": true,
-        "show_comments": false,
-        "show_author": true,
-        "show_excerpt": true,
-        "heading": "Heybike Stories from Rider's Life",
+        "transparent_header": false,
+        "image": "shopify://shop_images/1440x500-1.jpg",
+        "image_height": "adapt",
+        "content_width": "small",
+        "content_position": "md:items-center md:justify-start",
+        "text_alignment": "left",
+        "image_mobile": "shopify://shop_images/3_350x520_0db66925-0ff7-48f0-9ffd-631314b45508.jpg",
+        "image_height_mobile": "adapt",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 0,
+        "padding_top": 60,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": true,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "video-with-text-overlay": {
+      "type": "video-with-text-overlay",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "transparent_header": false,
+        "video": "shopify://files/videos/新首页视频混剪.mp4",
+        "video_url": "",
+        "description": "",
+        "enable_video_autoplay": true,
+        "enable_video_looping": true,
+        "image_height": "750px",
+        "content_width": "medium",
+        "content_position": "md:items-center md:justify-center",
+        "text_alignment": "center",
+        "video_url_mobile": "",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-center justify-center",
+        "text_alignment_mobile": "center",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#000000",
+        "overlay_opacity": 0,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": true,
+        "rounded": false
+      }
+    },
+    "multicolumn_slide_hb_9xwaqy": {
+      "type": "multicolumn-slide-hb",
+      "blocks": {
+        "video_jC9Wz8": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=QoEAwFFhoPw",
+            "description": "",
+            "enable_video_autoplay": false,
+            "enable_video_looping": false,
+            "image_height": "adapt",
+            "video_url_mobile": "https://www.youtube.com/watch?v=QoEAwFFhoPw",
+            "image_height_mobile": "auto",
+            "date": "",
+            "title": "Like A Super73.. But a THIRD of The Price?! | Jasion Retrovolt Pro Review",
+            "title_sz": "h5",
+            "content": "",
+            "avatar": "shopify://shop_images/channels4_profile_31.jpg",
+            "author": "Raspy Rides"
+          }
+        },
+        "video_cG883Q": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=ZR8N-TV_4AA",
+            "description": "",
+            "enable_video_autoplay": false,
+            "enable_video_looping": false,
+            "image_height": "adapt",
+            "video_url_mobile": "https://www.youtube.com/watch?v=ZR8N-TV_4AA",
+            "image_height_mobile": "auto",
+            "date": "",
+            "title": "1,194 people have given this bike a 4.5 star rating",
+            "title_sz": "h5",
+            "content": "",
+            "avatar": "shopify://shop_images/channels4_profile_19_4822d1f8-0ef3-4412-be58-74adb7c5dc82.jpg",
+            "author": "Electric Revolution"
+          }
+        },
+        "video_DMmQWM": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=tUCTZ6lS1n0",
+            "description": "",
+            "enable_video_autoplay": false,
+            "enable_video_looping": false,
+            "image_height": "adapt",
+            "video_url_mobile": "https://www.youtube.com/watch?v=tUCTZ6lS1n0",
+            "image_height_mobile": "auto",
+            "date": "",
+            "title": "The JasionBike Thunder…1,500 Watts and 30 MPH for UNDER $1,000! Get out and Live Electric Life!",
+            "title_sz": "h5",
+            "content": "",
+            "avatar": "shopify://shop_images/channels4_profile_30_3f2af141-68db-493a-9e33-58455ff17cf2.jpg",
+            "author": "IMBruceECLECTIC"
+          }
+        },
+        "video_VMWpRU": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=Sa0JeRX-YfY&list=PLPWkwjbN02QTPLOb6gUXJTrA9EIdglrqA&index=5",
+            "description": "",
+            "enable_video_autoplay": false,
+            "enable_video_looping": false,
+            "image_height": "adapt",
+            "video_url_mobile": "",
+            "image_height_mobile": "auto",
+            "date": "",
+            "title": "JASION X-Hunter Ebike Review - NEWEST UPGRADED VERSION",
+            "title_sz": "h5",
+            "content": "",
+            "avatar": "shopify://shop_images/483484232_122189012252250183_2874798791765895331_n.jpg",
+            "author": "Papa`s Product Reviews"
+          }
+        },
+        "video_MU3xzG": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=FTCK4ppjSOE",
+            "description": "",
+            "enable_video_autoplay": false,
+            "enable_video_looping": false,
+            "image_height": "adapt",
+            "video_url_mobile": "",
+            "image_height_mobile": "auto",
+            "date": "",
+            "title": "BEST CHEAP BUDGET FOLDING EBike WIth Full Suspension?",
+            "title_sz": "h5",
+            "content": "",
+            "avatar": "shopify://shop_images/channels4_profile.jpg",
+            "author": "HeroesNStuff"
+          }
+        },
+        "video_tPEBaE": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=lQj5bcSygpU",
+            "description": "",
+            "enable_video_autoplay": false,
+            "enable_video_looping": false,
+            "image_height": "adapt",
+            "video_url_mobile": "",
+            "image_height_mobile": "auto",
+            "date": "",
+            "title": "Super Commuter Deal for $839! 28MPH Class 3 Speed Throttle",
+            "title_sz": "h5",
+            "content": "",
+            "avatar": "shopify://shop_images/unnamed.jpg",
+            "author": "EbikeProducts"
+          }
+        },
+        "video_QzEdDj": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=MSzZbfAp5lA&list=PLPWkwjbN02QTPLOb6gUXJTrA9EIdglrqA&index=6",
+            "description": "",
+            "enable_video_autoplay": false,
+            "enable_video_looping": false,
+            "image_height": "adapt",
+            "video_url_mobile": "",
+            "image_height_mobile": "auto",
+            "date": "",
+            "title": "My Honest Review | Jasion X-Hunter Full Suspension eBike Review",
+            "title_sz": "h5",
+            "content": "",
+            "avatar": "shopify://shop_images/channels4_profile_2.jpg",
+            "author": "Eric Hernandez"
+          }
+        },
+        "video_6FAaH4": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=MP_q93MD_eo&list=PLPWkwjbN02QSgNwl0IlKEUEs-24bipLtY&index=18",
+            "description": "",
+            "enable_video_autoplay": false,
+            "enable_video_looping": false,
+            "image_height": "adapt",
+            "video_url_mobile": "",
+            "image_height_mobile": "auto",
+            "date": "",
+            "title": "EBIKE REVIEW - Jasion EB7 Foldable E-Bike - Under $900",
+            "title_sz": "h5",
+            "content": "",
+            "avatar": "shopify://shop_images/channels4_profile_3.jpg",
+            "author": "Our Everyday Getaway"
+          }
+        },
+        "video_DXmRVj": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=_yhKgb4bdTg&list=PLPWkwjbN02QTPLOb6gUXJTrA9EIdglrqA&index=9",
+            "description": "",
+            "enable_video_autoplay": false,
+            "enable_video_looping": false,
+            "image_height": "adapt",
+            "video_url_mobile": "",
+            "image_height_mobile": "auto",
+            "date": "",
+            "title": "I MADE IT GO FAST! | Assembly & Test Ride",
+            "title_sz": "h5",
+            "content": "",
+            "avatar": "shopify://shop_images/unnamed_1.jpg",
+            "author": "Zophie Reviews"
+          }
+        }
+      },
+      "block_order": [
+        "video_jC9Wz8",
+        "video_cG883Q",
+        "video_DMmQWM",
+        "video_VMWpRU",
+        "video_MU3xzG",
+        "video_tPEBaE",
+        "video_QzEdDj",
+        "video_6FAaH4",
+        "video_DXmRVj"
+      ],
+      "settings": {
+        "pw-overflow-hidden": true,
+        "columns": 3,
+        "carousel_on_desktop": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Rider Reviews",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "press_hb_qgne4Q": {
+      "type": "press-hb",
+      "blocks": {
+        "item_iiKQVr": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/logo-6.png",
+            "content": "“ Experience a new level of commuting and cargo-carrying with Jasion's e-bike. It's the ideal blend of power, style, and efficiency, making every ride an adventure. ”"
+          }
+        },
+        "item_LfPWcA": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/logo-5.png",
+            "content": "\"Redefines urban mobility with EB7 2.0 Plus sleek design and impressive performance, it's the perfect choice for commuters and adventure seekers alike.\""
+          }
+        },
+        "item_NiRBRK": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/logo-2.png",
+            "content": "\"Jasion's X-Hunter Plus is a game-changer for your daily rides. Whether you're commuting or exploring, it offers a smooth and electrifying journey.\""
+          }
+        },
+        "item_xa9PwH": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/logo-3.png",
+            "content": "\"Elevate your riding experience with Jasion's e-bike. Its innovative design, robust features, and eco-friendly nature make it the top choice for eco-conscious riders.\""
+          }
+        },
+        "item_GBkqFm": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/logo_c411ac3c-fe8d-4939-bc4c-383c081f3b17.png",
+            "content": "\"They sets a new standard for city and trail riding. It's a harmonious blend of power and elegance, revolutionizes your commute!\""
+          }
+        },
+        "item_M8XeUt": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/logo-7.png",
+            "content": "\"Jasion's e-bike is your ticket to a greener, faster, and more exhilarating commute. Get ready to explore the city and beyond with this innovative ride.\""
+          }
+        },
+        "item_YnQjEk": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/logo-4.png",
+            "content": "\"Transforms your commute with electric. Discover the perfect blend of power, style, and efficiency for an exciting journey.\""
+          }
+        },
+        "item_3N6WVr": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/logo-1.png",
+            "content": "\"Best ebike ever! Use Jasion's ebike to experience a harmonious mix of power, style, and efficiency that turns every ride into an adventure.\""
+          }
+        },
+        "item_Fr7adz": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/17_d18b8a80-b117-4310-88f2-6b100da98f66.jpg",
+            "content": "If you're more concerned about safety than commute distance, you'll enjoy the front fork suspension, front and rear mechanical disc brakes, and more."
+          }
+        },
+        "item_d9mbPE": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/13_a0d80e66-f94d-4abf-b27c-c916227ce211.jpg",
+            "content": "The Jasion Roamer is a great option for those seeking a dependable, budget-friendly e-bike for urban travel. It stands out for its balanced performance, comfortable ride… and stylish exterior with a sleek design, a glossy finish, and a premium feel. The bike stands out for its balanced performance, super, super-stylish design, and comfortable ride. The sleek frame, complemented by the semi-integrated battery and glossy finish, provides a modern look."
+          }
+        },
+        "item_e38mdg": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/11_373d8ad8-a427-498b-a573-d5f3c6177e4f.jpg",
+            "content": "For riders seeking the freedom to go further, faster, and with complete confidence, the Thunder offers a balance of innovation and reliability that makes it more than just an eBike—it’s a new way of experiencing the road, the trail, and everything in between.By addressing common concerns such as range anxiety, braking precision, and ergonomic comfort, Jasion creates a product that feels purpose-built for modern riders."
+          }
+        },
+        "item_RjwgEk": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/1_d8d5b432-a2cf-4618-ab82-cd7bdc2d5081.jpg",
+            "content": "Users enjoy the long battery life and smooth ride. They also like the compact design, which works well for city commuting. The user-friendly controls make day-to-day operations simple and efficient."
+          }
+        },
+        "item_3DXRPX": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/10_6aae2d06-af81-4b21-8523-ef881b99b552.jpg",
+            "content": "Don't worry about riding at night as this bike has bright LED headlights, rear reflectors and reflective strips on the tires so you'll be seen even in the dark."
+          }
+        },
+        "item_A8XaWU": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/8_e24dda30-bc1f-4523-b239-87baf5e5f0ef.jpg",
+            "content": "In terms of performance, the EB5 performs admirably on both paved roads and easy trails. It offers a smooth ride and handles well on various terrains. The battery life is impressive, especially when used in the lower assist levels. I found that the battery could last for multiple trips, making it a practical and efficient tool for daily commuting."
+          }
+        },
+        "item_CKWEnN": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/9_e2a6b433-24e6-4fb5-abe6-8ae7c0948eec.jpg",
+            "content": "This fat tire bike has everything you need to take on your next adventure: integrated lights, shock-absorption fat tires, and a lightning-quick twist throttle for a boost."
+          }
+        },
+        "item_wCHnWC": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/7_14314d07-a41a-4125-ba28-ba9d5bc15afc.jpg",
+            "content": "The powerful 750W high-speed motor provides this electric bike with a max speed of up to 22 mph. Ride on a variety of terrains and switch from pure electric mode to pedal-assist mode and classic bike mode."
+          }
+        }
+      },
+      "block_order": [
+        "item_iiKQVr",
+        "item_LfPWcA",
+        "item_NiRBRK",
+        "item_xa9PwH",
+        "item_GBkqFm",
+        "item_M8XeUt",
+        "item_YnQjEk",
+        "item_3N6WVr",
+        "item_Fr7adz",
+        "item_d9mbPE",
+        "item_e38mdg",
+        "item_RjwgEk",
+        "item_3DXRPX",
+        "item_A8XaWU",
+        "item_CKWEnN",
+        "item_wCHnWC"
+      ],
+      "settings": {
+        "heading": "",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
@@ -908,124 +858,63 @@
         "color_button_text": "",
         "color_button_background": "",
         "color_button_gradient": "",
-        "padding_top": 100,
-        "padding_bottom": 100,
+        "padding_top": 72,
+        "padding_bottom": 120,
         "divider": false,
         "full_width": false,
-        "rounded": false,
-        "gap": 30,
-        "gap_mobile": 8,
-        "card_bg": "#faf9f4",
-        "card_radius": 20,
-        "card_padding": 100,
-        "image_radius": 10
+        "rounded": false
       }
     },
-    "cg_dynamic_blocks_kTjKHg": {
-      "type": "cg_dynamic-blocks",
-      "blocks": {
-        "dynamic_block_QexXKd": {
-          "type": "dynamic_block",
-          "settings": {
-            "block_title": "Find A Dealer",
-            "block_desc": "",
-            "bg_img": "shopify://shop_images/dealer.jpg",
-            "block_link": "shopify://pages/dealer-locator"
-          }
-        },
-        "dynamic_block_WXVYUL": {
-          "type": "dynamic_block",
-          "settings": {
-            "block_title": "Become A Dealer",
-            "block_desc": "",
-            "bg_img": "shopify://shop_images/dealer-2.jpg",
-            "block_link": "shopify://pages/become-a-dealer"
-          }
-        }
-      },
-      "block_order": [
-        "dynamic_block_QexXKd",
-        "dynamic_block_WXVYUL"
-      ],
-      "name": "CG Dynamic Blocks",
+    "blog_posts_KtUgBt": {
+      "type": "blog-posts",
+      "name": "t:sections.blog-posts.presets.name",
       "settings": {
-        "section_heading": "Find a Dealer",
-        "section_desc": "",
-        "btn_text": "Learn More",
-        "btn_url": "shopify://pages/dealer-locator"
-      }
-    },
-    "cg_multicolumn_with_icons_83eQfk": {
-      "type": "cg_multicolumn-with-icons",
-      "blocks": {
-        "column_hKMUYj": {
-          "type": "column",
-          "settings": {
-            "column_icon": "shopify://shop_images/cg_shipping-icon.svg",
-            "column_title": "Free, Fast Shipping",
-            "title_color": "#000000",
-            "column_desc": "Ship Within 2 business days",
-            "desc_color": "#808080"
-          }
-        },
-        "column_3Gmz7t": {
-          "type": "column",
-          "settings": {
-            "column_icon": "shopify://shop_images/TUV_B.svg",
-            "column_title": "TUV Certified",
-            "title_color": "#000000",
-            "column_desc": "In accordance with UL 2849",
-            "desc_color": "#808080"
-          }
-        },
-        "column_Q3Haq9": {
-          "type": "column",
-          "settings": {
-            "column_icon": "shopify://shop_images/cg_trial-icon.svg",
-            "column_title": "14-Day Free Trial",
-            "title_color": "#000000",
-            "column_desc": "Buy with confidence",
-            "desc_color": "#808080"
-          }
-        },
-        "column_4Ffr9a": {
-          "type": "column",
-          "settings": {
-            "column_icon": "shopify://shop_images/cg_warranty-icon.svg",
-            "column_title": "2-Year Warranty",
-            "title_color": "#000000",
-            "column_desc": "Peace of Mind for Every Ride",
-            "desc_color": "#808080"
-          }
-        }
-      },
-      "block_order": [
-        "column_hKMUYj",
-        "column_3Gmz7t",
-        "column_Q3Haq9",
-        "column_4Ffr9a"
-      ],
-      "name": "CG Multicolumn with Icons",
-      "settings": {
-        "padding_top": 100,
-        "padding_bottom": 100
+        "blog": "blogs",
+        "post_limit": 3,
+        "columns": 3,
+        "carousel_on_desktop": false,
+        "show_view_all": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "image_ratio": "landscape",
+        "show_tags": false,
+        "show_date": true,
+        "show_comments": false,
+        "show_author": false,
+        "show_excerpt": true,
+        "heading": "Blogs",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
       }
     }
   },
   "order": [
-    "cg_hero_slideshow_fyfjmX",
-    "cg_slideshow_Lcxiqi",
-    "cg_product_series_kKQBUz",
-    "cg_collection-list",
-    "cg_featured_collection",
-    "cg_featured_collection_xKUGqx",
+    "slideshow_hb_WLJBe8",
+    "collection_list_CbXJf3",
+    "collage_grid_mx4BAF",
+    "featured_collection_hb_3aApkj",
+    "image_with_text_overlay_yYMYWm",
     "video-with-text-overlay",
-    "countdown_timer_aceRqD",
-    "cg_testimonials_banners_TUV84K",
-    "cg_testimonials_with_logos_Cr8kU9",
-    "blog_posts_ADrcEQ",
-    "cg_blog-posts-collage",
-    "cg_dynamic_blocks_kTjKHg",
-    "cg_multicolumn_with_icons_83eQfk"
+    "multicolumn_slide_hb_9xwaqy",
+    "press_hb_qgne4Q",
+    "blog_posts_KtUgBt"
   ]
 }

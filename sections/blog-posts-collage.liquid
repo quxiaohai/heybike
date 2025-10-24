@@ -4,14 +4,6 @@
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
     {%- render 'section-variables', section: section -%}
   }
-
-  #shopify-section-{{ section.id }} .icon-with-text:hover svg { 
-    filter: brightness(100); 
-  }
-
-  #shopify-section-{{ section.id }} .icon-with-text:hover svg path { 
-    stroke: #FFFFFF; 
-  }
 </style>
 
 {%- if section.index > 2 -%}
@@ -58,7 +50,6 @@
             {%- endif -%}
             {%- render 'article-card',
               article: article,
-              blog: blog,
               sizes: sizes,
               image_ratio: section.settings.image_ratio,
               show_tags: section.settings.show_tags,

@@ -18,10 +18,12 @@
 
   assign article_alt = article_image.alt | default: article.title
 
+  # theme-check-disable UndefinedObject
   assign number_of_comments = article.comments_count
   if comment.status == 'pending'
     assign number_of_comments = article.comments_count | plus: 1
   endif
+  # theme-check-enable UndefinedObject
 -%}
 
 <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
@@ -133,7 +135,7 @@
               <ul class="grid md:grid-cols-2 gap-5" {{ block.shopify_attributes }}>
                 {%- if blog.previous_article -%}
                   <li class="article-card flex gap-5">
-                    {%- render 'icon', icon: 'arrow-left', class: 'transform shrink-0' -%}
+                    {%- render 'icon', icon: 'arrow-left', class: 'transform flex-auto' -%}
                     <div class="flex flex-col gap-3 grow">
                       {%- if block.settings.show_date or block.settings.show_comments or block.settings.show_author -%}
                         <ul class="article-card__top flex flex-wrap gap-4">
@@ -205,7 +207,7 @@
                         </a>
                       </p>
                     </div>
-                    {%- render 'icon', icon: 'arrow-right', class: 'transform shrink-0' -%}
+                    {%- render 'icon', icon: 'arrow-right', class: 'transform flex-auto' -%}
                   </li>
                 {%- endif -%}
               </ul>
@@ -222,11 +224,13 @@
                       </h3>
 
                       <ul class="grid gap-5">
+                        {% # theme-check-disable UndefinedObject %}
                         {%- if comment.status == 'pending' -%}
                           <li id="Comment-{{ comment.id }}" class="comment-card">
                             {%- render 'article-comment', comment: comment, show_gravatar: block.settings.show_gravatar -%}
                           </li>
                         {%- endif -%}
+                        {% # theme-check-enable UndefinedObject %}
           
                         {%- for comment in article.comments -%}
                           <li id="Comment-{{ comment.id }}" class="comment-card">

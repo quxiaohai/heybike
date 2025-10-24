@@ -79,6 +79,17 @@
       {%- endif -%}
     </slider-element>
 
+    <div class="slideshow-dots tw-mobile--dots md:tw-hidden tw-flex tw-items-center tw-justify-center tw-border-none">
+      <slider-dots class="flickity-page-dots w-auto pointer-events-auto" aria-controls="Slider-{{ section.id }}">
+        {%- for i in (1..section.blocks.size) -%}
+        {% comment %} {%- for i in (0..5) -%} {% endcomment %}
+          <button type="button" class="flickity-page-dot" data-index="{{ i }}" aria-current="{% if forloop.first %}true{% else %}false{% endif %}">
+            <span class="sr-only">{{ 'general.pagination.page' | t: number: forloop.index }}</span>
+          </button>
+        {%- endfor -%}
+      </slider-dots>
+    </div> 
+
     {%- if section.settings.carousel_on_desktop -%}
       <p class="hidden lg:block">{{ view_all }}</p>
     {%- endif -%}

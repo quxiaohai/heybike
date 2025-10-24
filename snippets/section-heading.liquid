@@ -1,9 +1,8 @@
 {%- if section.settings.heading != blank or section.settings.subheading != blank or section.settings.description != blank or section.settings.button_label != blank -%}
   <div class="{% if section_full_width %}page-width {% endif %}title-wrapper{% if section.settings.heading_size == 'title-xl' %} title-wrapper-lg{% endif %} leading-none gap-4 lg:gap-8 flex flex-col {{ section.settings.heading_alignment }} md:justify-between relative z-1">
     {%- if section.settings.heading != blank or section.settings.subheading != blank or section.settings.description != blank -%}
-      <div class="grid gap-4">
+      <div class="grid {% if section.settings.heading_size == 'title-sm' %}gap-2 {% else %}gap-4 {% endif %}">
         {%- if section.settings.subheading != blank -%}
-          {% comment %}
           {%- liquid
             if section.settings.heading_size == 'title-sm'
               assign subtext_size = 'subtext-md'
@@ -11,15 +10,13 @@
               assign subtext_size = 'subtext-lg'
             endif
           -%}
-          {% endcomment %}
-
           <p class="heading normal-case font-medium {{ subtext_size }} leading-none tracking-none">
             {{- section.settings.subheading | escape -}}
           </p>
         {%- endif -%}
 
         {%- if section.settings.heading != blank -%}
-          <{{ section.settings.heading_tag }} class="heading {% comment %}{{ section.settings.heading_size }}{% endcomment %}">
+          <{{ section.settings.heading_tag }} class="heading {{ section.settings.heading_size }}">
             {%- if section.settings.highlighted_text == 'none' -%}
               <split-words class="split-words block" data-animate="fade-up-large">{{ section.settings.heading }}</split-words>
             {%- else -%}

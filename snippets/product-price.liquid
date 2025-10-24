@@ -3,7 +3,6 @@
 
   Accepts:
   - product: {Object} Product Liquid object (optional)
-  - variant: {Object} Variant Liquid object (optional)
   - placeholder: {Boolean} Renders a placeholder price (optional)
   - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
   - show_badges: {Boolean} Renders 'Sale' and 'Sold Out' tags if the product matches the condition (optional)
@@ -16,7 +15,7 @@
 {%- endcomment -%}
 {%- liquid
   if use_variant
-    assign target = variant | default: product.selected_or_first_available_variant
+    assign target = product.selected_or_first_available_variant
   elsif placeholder
     assign target = null
   else
@@ -40,7 +39,7 @@
     <span class="sr-only">{{ 'products.price.sale_price' | t }}</span>
   {%- endif -%}
 
-  <p class="price__regular whitespace-nowrap">
+  <span class="price__regular whitespace-nowrap">
     {%- liquid
       if product.quantity_price_breaks_configured? != true or skip_to_price
         if target == product and product.price_varies
@@ -49,12 +48,7 @@
           else
             assign price_min = product.price_min | money
           endif
-
-          echo price_min
-          
-          comment
-            echo 'products.price.from_price_html' | t: price: price_min
-          endcomment
+          echo 'products.price.from_price_html' | t: price: price_min
         else
           if settings.currency_code_enabled
             echo price | money_with_currency
@@ -71,11 +65,11 @@
         echo 'products.price.from_price_html' | t: price: price_min
       endif
     -%}
-  </p>
+  </span>
 
   {%- if on_sale -%}
-    <p class="sr-only">{{ 'products.price.regular_price' | t }}</p>
-    <p class="price__sale inline-flex items-center h-auto relative">
+    <span class="sr-only">{{ 'products.price.regular_price' | t }}</span>
+    <span class="price__sale inline-flex items-center h-auto relative">
       {%- liquid
         if settings.currency_code_enabled
           echo compare_at_price | money_with_currency
@@ -83,14 +77,14 @@
           echo compare_at_price | money
         endif
       -%}
-    </p>
+    </span>
   {%- endif -%}
 
   {%- unless hide_unit_price -%}
     {%- assign product_variant = product.selected_or_first_available_variant -%}
     {%- if product_variant.unit_price_measurement -%}
-      <p class="sr-only">{{ 'products.price.unit_price' | t }}</p>
-      <p class="unit-price flex items-center">
+      <span class="sr-only">{{ 'products.price.unit_price' | t }}</span>
+      <span class="unit-price flex items-center">
         {%- liquid
           capture unit_price_base_unit
             if product_variant.unit_price_measurement
@@ -102,10 +96,10 @@
           endcapture
         -%}
         ({{ product_variant.unit_price | money }}
-        <p aria-hidden="true">/</p>
-        <p class="sr-only">&nbsp;{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</p>
+        <span aria-hidden="true">/</span>
+        <span class="sr-only">&nbsp;{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
         {{ unit_price_base_unit }})
-        </p>
+        </span>
     {%- endif -%}
   {%- endunless -%}
 </div>

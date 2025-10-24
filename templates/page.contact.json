@@ -14,6 +14,7 @@
       "disabled": true,
       "settings": {
         "heading_size": "title-xl",
+        "heading_alignment": "text-left",
         "heading_tag": "h1",
         "text_size": "text-lg md:text-2xl",
         "padding_top": 72,
@@ -29,8 +30,8 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Contact Us",
-            "heading_size": "title-sm",
+            "heading": "Get in Touch",
+            "heading_size": "title-xl tracking-heading",
             "heading_tag": "h2",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -39,8 +40,8 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "",
-            "text_size": "subtext-sm",
+            "text": "<p><br/>Thank you for choosing <strong>Jasion!</strong><br/><br/>We’re excited to have you here and hope you find everything you need for your perfect ride.<br/><br/>If something isn’t clear or you can’t find what you’re looking for, please fill out the form below and let us know how we can help.<br/><br/>Please leave us an email.</p>",
+            "text_size": "subtext-lg",
             "text_max_size": 32,
             "text_font": "body",
             "secondary_color": false,
@@ -59,11 +60,14 @@
         "heading": "",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
         "heading_tag": "h2",
         "subheading": "",
         "description": "",
         "button_label": "",
         "button_link": "",
+        "button_external": false,
+        "button_icon": true,
         "highlighted_text": "none",
         "highlighted_scribble": "circle",
         "color_text": "",
@@ -95,23 +99,24 @@
       "blocks": {
         "contact-1": {
           "type": "contact",
+          "disabled": true,
           "settings": {
             "heading": "Address",
-            "text": "<p>3110 E GUASTI RD STE 320, ONTARIO, CA 91761, United States</p>"
+            "text": "<p><a href=\"#\" title=\"mailto:support@jasionbike.com\">support@jasionbike.com</a></p><p>Hours: 10:00 am-7:00 pm, Mon-Fri. EST</p>"
           }
         },
         "contact-2": {
           "type": "contact",
           "settings": {
             "heading": "Email",
-            "text": "<p>Pre-sale/After-sale: support@heybike.com<br/>Marketing: marketing@heybike.com<br/>Affiliate: affiliate@heybike.com<br/>Social Partner: partner@heybike.com<br/>Wholesale/Dealer: ari.olivo@heybike.com<br/><br/>Thank you for reaching out. We will respond within 24 hours on weekdays.</p>"
+            "text": "<p><a href=\"#\" title=\"mailto:support@jasionbike.com\">support@jasionbike.com</a><br/>Hours: 10:00 am-7:00 pm, Mon-Fri. EST</p>"
           }
         },
         "contact-3": {
           "type": "contact",
           "settings": {
             "heading": "Phone",
-            "text": "<p>Customer Service<br/>+1 888-301-6908<a href=\"#\" title=\"tel:+33 (0) 31-305-210\"><br/></a>+1 888-859-1518<br/>(Mon.-Fri. 7:00-16:00 PST)<br/><br/>Business Inquiry<br/>+1(888) 528-2668<br/>(Mon.-Fri. 7:00-16:00 PST)</p>"
+            "text": "<p><a href=\"#\" title=\"tel:1 (888) 825 6366\">1 (888) 825 6366</a><br/>Hours: 10:00 am-7:00 pm, Mon-Fri. EST</p>"
           }
         },
         "media": {
@@ -143,20 +148,7 @@
             "checked_value": "Yes",
             "unchecked_value": "No",
             "radio_options": "",
-            "select_options": "Product, Order, Press, Other"
-          }
-        },
-        "custom_field_f7g3QJ": {
-          "type": "custom_field",
-          "settings": {
-            "type": "select",
-            "title": "Purchase Channel",
-            "required": true,
-            "full_width": false,
-            "checked_value": "Yes",
-            "unchecked_value": "No",
-            "radio_options": "",
-            "select_options": "Official Website, Amazon, Offline Store, Before Purchase"
+            "select_options": "Product, Order, Shipping, Product Advice(Pre-Sale), Product Support(Post Sale), Affiliate, Marketing, Other"
           }
         }
       },
@@ -166,8 +158,7 @@
         "contact-3",
         "media",
         "custom_field-1",
-        "custom_field-2",
-        "custom_field_f7g3QJ"
+        "custom_field-2"
       ],
       "settings": {
         "heading": "",
@@ -178,6 +169,8 @@
         "description": "",
         "button_label": "",
         "button_link": "",
+        "button_external": false,
+        "button_icon": true,
         "highlighted_text": "none",
         "highlighted_scribble": "circle",
         "color_text": "",

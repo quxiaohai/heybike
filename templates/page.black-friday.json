@@ -1,0 +1,1359 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_slideshow_AGiW8F": {
+      "type": "custom-slideshow",
+      "blocks": {
+        "image_6C3QRP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Heybike_Christmas_Sale_Best_Ebike_Deals_of_The_Year.jpg",
+            "image_height": "650px",
+            "content_width": "small",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_mobile": "shopify://shop_images/Heybike_Christmas_Sale_Best_Ebike_Deals_of_The_Year_app.jpg",
+            "image_height_mobile": "500px",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "color_text": "rgba(0,0,0,0)",
+            "color_highlight": "rgba(0,0,0,0)",
+            "gradient_highlight": "",
+            "color_button_text": "rgba(0,0,0,0)",
+            "color_button_background": "rgba(0,0,0,0)",
+            "color_button_gradient": "",
+            "block_color_overlay": "rgba(0,0,0,0)",
+            "overlay_opacity": 0,
+            "subheading": "",
+            "subheading_size": "subtitle-md",
+            "secondary_color": false,
+            "heading": "",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "text": "",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color_text": false,
+            "highlighted_text_text": "none",
+            "highlighted_scribble_text": "circle",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "md",
+            "button_secondary_style": false,
+            "label": "",
+            "link": "",
+            "liquid": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_6C3QRP"
+      ],
+      "settings": {
+        "transparent_header": false,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "rich_text_FHMagt": {
+      "type": "rich-text",
+      "blocks": {
+        "text_pbXcgE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Try Your Luck!</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "heading_6kxdHq": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Mega Christmas Giveaway!</em>",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "half_text",
+            "highlighted_scribble": "sketch-underline"
+          }
+        },
+        "button_gGaVPD": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "md"
+          }
+        }
+      },
+      "block_order": [
+        "text_pbXcgE",
+        "heading_6kxdHq",
+        "button_gGaVPD"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 24,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "portfolio_6tpMcU": {
+      "type": "portfolio",
+      "blocks": {
+        "profile_NDQGTq": {
+          "type": "profile",
+          "settings": {
+            "image": "shopify://shop_images/lQLPJw8dv4_FQ93NBUbNBDiw2eQwou1oTrcHL4X0-kwBAA_1080_1350.png",
+            "image_mobile": "shopify://shop_images/lQLPJw8dv4_FQ93NBUbNBDiw2eQwou1oTrcHL4X0-kwBAA_1080_1350.png",
+            "heading": "Mega Christmas Giveaway!",
+            "text": "<p>We’re kicking off the holiday season with our Mega Christmas Giveaway! 🎁 From December 3rd to 23rd, we’ll be hosting a Gift Guessing Giveaway every two days where a lucky winner will be chosen throughout each giveaway event! ✨</p>",
+            "color_text": "#ffdb00",
+            "color_background": "rgba(0,0,0,0)"
+          }
+        },
+        "profile_8P46XP": {
+          "type": "profile",
+          "settings": {
+            "image": "shopify://shop_images/2_cc1047ba-d98a-4305-894f-f683a4fa05fc.png",
+            "image_mobile": "shopify://shop_images/2_cc1047ba-d98a-4305-894f-f683a4fa05fc.png",
+            "heading": "How to enter",
+            "text": "<p>1. Follow us on Instagram<br/>2. Correctly guess the gift featured in the first post and comment your guess below! (Hint: gifts are bike related)<br/>3. Tag 2 friends in the comments or share this post to enter! 🎉</p>",
+            "color_text": "#ffdb00",
+            "color_background": "rgba(0,0,0,0)"
+          }
+        },
+        "profile_hDXn8q": {
+          "type": "profile",
+          "settings": {
+            "image": "shopify://shop_images/3_07aa39e5-3853-40c7-9705-a18f0b777558.png",
+            "image_mobile": "shopify://shop_images/3_07aa39e5-3853-40c7-9705-a18f0b777558.png",
+            "heading": "Grand Prize",
+            "text": "<p>On Dec. 23rd, one lucky winner will win a Mars 2.0 750W e-bike worth $1499! 🚴‍♂️<br/><br/><strong>Event Period:</strong> December 3rd - 23rd<br/><strong>Winner Announcement:</strong> Every two days, one lucky winner will be announced, with a total of 10 winners throughout the event! 🎉</p>",
+            "color_text": "#ffdb00",
+            "color_background": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "profile_NDQGTq",
+        "profile_8P46XP",
+        "profile_hDXn8q"
+      ],
+      "settings": {
+        "columns": 3,
+        "layout": "default",
+        "image_ratio": "wide",
+        "image_ratio_mobile": "adapt",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center justify-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "rgba(0,0,0,0)",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "rgba(0,0,0,0)",
+        "color_button_background": "#f5f5f5",
+        "color_button_gradient": "",
+        "padding_top": 20,
+        "padding_bottom": 48,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "rich_text_tUVwUx": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_G8tYXY": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Rich text",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_9KRaAd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Gift joy and adventure this season</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_c4y7YM": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "md"
+          }
+        }
+      },
+      "block_order": [
+        "heading_G8tYXY",
+        "text_9KRaAd",
+        "button_c4y7YM"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 44,
+        "padding_bottom": 12,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich_text_T4pQHw": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Yyz4dk": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Santa’s Top Picks</em>",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "half_text",
+            "highlighted_scribble": "sketch-underline"
+          }
+        },
+        "profy_banner_countdown_timer_app_block_QwkCfH": {
+          "type": "shopify://apps/profy-banner-countdown-timer/blocks/app_block/243a639f-ca73-4afe-b6aa-3a23277fb424",
+          "disabled": true,
+          "settings": {
+            "banner_id": "c258eba6-9109-11ef-999f-8a4bae29c3df"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Yyz4dk",
+        "profy_banner_countdown_timer_app_block_QwkCfH"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 12,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "173347382515c77cee": {
+      "type": "apps",
+      "blocks": {
+        "profy_banner_countdown_timer_app_block_DDR4Nf": {
+          "type": "shopify://apps/profy-banner-countdown-timer/blocks/app_block/243a639f-ca73-4afe-b6aa-3a23277fb424",
+          "settings": {
+            "banner_id": "c258eba6-9109-11ef-999f-8a4bae29c3df"
+          }
+        }
+      },
+      "block_order": [
+        "profy_banner_countdown_timer_app_block_DDR4Nf"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "featured_collection_bRPMpz": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "electric-bike",
+        "products": [
+          "mars-2-0",
+          "ranger-s",
+          "horizon"
+        ],
+        "product_limit": 3,
+        "columns": 3,
+        "carousel_on_desktop": true,
+        "show_view_all": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 12,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "custom_slideshow_cLWXRK": {
+      "type": "custom-slideshow",
+      "blocks": {
+        "image_bDe6Cc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Mid_banner_landing_page.jpg",
+            "image_height": "400px",
+            "content_width": "small",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_mobile": "shopify://shop_images/banner_App_76028a70-308f-478d-bda8-756fcf6422a4.jpg",
+            "image_height_mobile": "adapt",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "color_text": "#ffffff",
+            "color_highlight": "#e0a580",
+            "gradient_highlight": "",
+            "color_button_text": "#171717",
+            "color_button_background": "#ffffff",
+            "color_button_gradient": "",
+            "block_color_overlay": "#171717",
+            "overlay_opacity": 0,
+            "subheading": "",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true,
+            "heading": "",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "text": "",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color_text": false,
+            "highlighted_text_text": "none",
+            "highlighted_scribble_text": "circle",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "md",
+            "button_secondary_style": false,
+            "label": "",
+            "link": "",
+            "liquid": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_bDe6Cc"
+      ],
+      "settings": {
+        "transparent_header": false,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_navigation": false,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "rich_text_aqNiTj": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_kD9XhL": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Rich text",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_DYfqRt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Buy Two Ebikes Get Extra $100 OFF</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_rUd4Ak": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "md"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kD9XhL",
+        "text_DYfqRt",
+        "button_rUd4Ak"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 28,
+        "padding_bottom": 12,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich_text_MfMEyb": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_P4dDe4": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Combo Deals, Merry Savings</em>",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "half_text",
+            "highlighted_scribble": "sketch-underline"
+          }
+        }
+      },
+      "block_order": [
+        "heading_P4dDe4"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 12,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "featured_collection_beMXwn": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "bundle-sale",
+        "products": [
+          "ranger-s-combo",
+          "mars-2-0-combo",
+          "horizon-combo"
+        ],
+        "product_limit": 5,
+        "columns": 3,
+        "carousel_on_desktop": true,
+        "show_view_all": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 12,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "rich_text_nXeNt6": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_M8wB9p": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Rich text",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_RmPgUP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your Ride, Your Way!</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_mMrFxL": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "md"
+          }
+        }
+      },
+      "block_order": [
+        "heading_M8wB9p",
+        "text_RmPgUP",
+        "button_mMrFxL"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 28,
+        "padding_bottom": 12,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich_text_D8UQ7m": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_JHeDiy": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Find Your Ideal Bike</em>",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "half_text",
+            "highlighted_scribble": "sketch-underline"
+          }
+        }
+      },
+      "block_order": [
+        "heading_JHeDiy"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 12,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "featured_collection_3FTWKt": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "electric-bike",
+        "products": [
+          "heybike-cityrun-electric-bike",
+          "heybike-brawn-electric-bike",
+          "tyson"
+        ],
+        "product_limit": 3,
+        "columns": 3,
+        "carousel_on_desktop": true,
+        "show_view_all": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 12,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "featured_collections_gVdmHm": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_XrJ44J": {
+          "type": "collection",
+          "settings": {
+            "collection": "fat-tire-bikes",
+            "products": [
+              "horizon",
+              "heybike-brawn-electric-bike",
+              "hero"
+            ],
+            "title": ""
+          }
+        },
+        "collection_dXMKCA": {
+          "type": "collection",
+          "settings": {
+            "collection": "folding-electric-bikes",
+            "products": [],
+            "title": ""
+          }
+        },
+        "collection_gqKaUq": {
+          "type": "collection",
+          "settings": {
+            "collection": "electric-bike",
+            "products": [],
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_XrJ44J",
+        "collection_dXMKCA",
+        "collection_gqKaUq"
+      ],
+      "disabled": true,
+      "settings": {
+        "product_limit": 6,
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "show_view_all": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 4,
+        "padding_bottom": 44,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "rich_text_mcmkTw": {
+      "type": "rich-text",
+      "blocks": {
+        "text_hdVnzy": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Try Your Luck!</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "heading_QnCJJH": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Mega Christmas Giveaway!</em>",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "half_text",
+            "highlighted_scribble": "sketch-underline"
+          }
+        },
+        "button_8dTyN6": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "md"
+          }
+        }
+      },
+      "block_order": [
+        "text_hdVnzy",
+        "heading_QnCJJH",
+        "button_8dTyN6"
+      ],
+      "disabled": true,
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": true,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "custom_slideshow_Ywdtwd": {
+      "type": "custom-slideshow",
+      "blocks": {
+        "image_zqTKJd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Mid_Banner_App.jpg",
+            "image_height": "400px",
+            "content_width": "small",
+            "content_position": "md:items-center md:justify-start",
+            "text_alignment": "center",
+            "image_mobile": "shopify://shop_images/Mid_Banner_App.jpg",
+            "image_height_mobile": "300px",
+            "content_position_mobile": "items-center justify-center",
+            "text_alignment_mobile": "center",
+            "color_text": "#ffffff",
+            "color_highlight": "#e0a580",
+            "gradient_highlight": "",
+            "color_button_text": "#171717",
+            "color_button_background": "#ffffff",
+            "color_button_gradient": "",
+            "block_color_overlay": "#171717",
+            "overlay_opacity": 15,
+            "subheading": "",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true,
+            "heading": "",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "text": "",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color_text": false,
+            "highlighted_text_text": "none",
+            "highlighted_scribble_text": "circle",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "md",
+            "button_secondary_style": false,
+            "label": "",
+            "link": "",
+            "liquid": "<div class=\"klaviyo-form-UJkWfc\"></div>"
+          }
+        }
+      },
+      "block_order": [
+        "image_zqTKJd"
+      ],
+      "disabled": true,
+      "settings": {
+        "transparent_header": false,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "rich_text_XhKNak": {
+      "type": "rich-text",
+      "blocks": {
+        "text_gRpeEB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>More Than a Bike, It's an Experience</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "heading_yBjdKV": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Premium Bundles, Maximum Savings</em>",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "half_text",
+            "highlighted_scribble": "basic-underline"
+          }
+        },
+        "button_iKMJfn": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "md"
+          }
+        }
+      },
+      "block_order": [
+        "text_gRpeEB",
+        "heading_yBjdKV",
+        "button_iKMJfn"
+      ],
+      "disabled": true,
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 48,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-md",
+        "heading_tag": "h1",
+        "text_size": "text-base",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "faq_ABgirD": {
+      "type": "faq",
+      "blocks": {
+        "question_Pgt9da": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>What is the 30-Day Price Match Guarantee?</strong>",
+            "text": "<p>We guarantee price protection for orders placed between November 1st and December 2nd. If you find a lower price on the exact same product within 30 days of your purchase on Heybike official website, simply reach out to our customer service team with proof of the lower price. Our team will verify the information, and issue a refund for the price difference depending on the specific situation.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_GQULta": {
+          "type": "question",
+          "disabled": true,
+          "settings": {
+            "title": "<strong>What are the early bird specials?</strong>",
+            "text": "<p>All orders from Nov. 1st to Dec. 2nd enjoy the following benefits:</p><ol><li><strong>Exclusive Black Friday Gift Pack:</strong> Limited quantities,  available while supply last.</li><li><strong>Early Access to Black Friday Price Reduction:</strong> Lowest price of the year, best time to save.</li><li><strong>Shop in Advance with Confidence:</strong> 30-Day Price Protection Policy -- We guarantee price protection for orders placed between November 1st and December 2nd. If you find a lower price on the exact same product within 30 days of your purchase, we will issue a refund for the price difference depending on the specific situation.</li></ol>",
+            "highlighted_text": "half_text",
+            "highlighted_scribble": "basic-underline"
+          }
+        },
+        "question_LX4AFz": {
+          "type": "question",
+          "disabled": true,
+          "settings": {
+            "title": "<strong>When does the Black Friday sale begin?</strong>",
+            "text": "<p>Starting Nov. 1st, we will have three Black Friday Flash Deals on different ebike models, you'll be getting them at the year's lowest price guaranteed.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_8n69Jr": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>When can I expect my Black Friday and Cyber Monday order to ship?</strong>",
+            "text": "<p>Generally each order will be shipped within 1-2 businss days. During the Black Friday sale, there will be a large number of orders. We will ship them according to the time of order placement. Hurry up to buy your dream bike and enjoy riding as soon as possible!</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_yBRdCG": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>How do I redeem my gift pack and when is the shipment?</strong>",
+            "text": "<p>It will automatically be added to your cart when you add an ebike. So, no action is needed to redeem your Black Friday gift pack. The gift pack will be shipped separately within 1-2 business days after your purchase.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "question_Pgt9da",
+        "question_GQULta",
+        "question_LX4AFz",
+        "question_8n69Jr",
+        "question_yBRdCG"
+      ],
+      "settings": {
+        "style": "with-border",
+        "heading": "<em>FAQs</em>",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "half_text",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "testimonials_Pmhrwc": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_DHDjRt": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "icon": "quote",
+            "text": "<p>Heybike Ranger S is a killer city cruiser with one unfortunate quirk. Heybike continues to produce quality e-bikes, and this one really packs a punch.</p>",
+            "author": "CNET",
+            "image": "shopify://shop_images/CNET.png",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "testimonial_iDaad6": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "text": "<p>Heybike Horizon comes fully loaded with front and rear suspension, wide 4.0” tires, and the ability to collapse down during storage or transport.</p>",
+            "author": "Mounatin Weekly News",
+            "image": "shopify://shop_images/Mounatin_Weekly_News.png",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "testimonial_mFDTLR": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "text": "<p>Mars 2.0: Solidly built and fun to ride. It’s indeed a capable commuter for city dwellers and van lifers.</p>",
+            "author": "Tom's Guide",
+            "image": "shopify://shop_images/Tom_s_Guide.png",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "testimonial_RR9iem": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "text": "<p>Mars 2.0 is an affordable multi-purpose folding bike with a smooth ride and fast speed!  </p>",
+            "author": "Electricbike Report",
+            "image": "shopify://shop_images/Electricbike_report.png",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "testimonial_jNwAUB": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "text": "<p>Horizon is more than just a pretty paint job. It is a versatile ebike with beautiful red, orange, and yellow colors. It stands out among all the ebikes on the market.</p>",
+            "author": "Eletreck",
+            "image": "shopify://shop_images/Eletreck.png",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_DHDjRt",
+        "testimonial_iDaad6",
+        "testimonial_mFDTLR",
+        "testimonial_RR9iem",
+        "testimonial_jNwAUB"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "half_text",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "rounded": false
+      }
+    },
+    "custom_newsletter_8iHXea": {
+      "type": "custom-newsletter",
+      "blocks": {
+        "newsletter_N6JQnM": {
+          "type": "newsletter",
+          "settings": {
+            "image": "shopify://shop_images/mdi_email-open.png",
+            "image_width": "custom",
+            "image_max_width": 50,
+            "image_max_width_mobile": 50,
+            "heading": "Sign up and save",
+            "heading_size": "headingtext-custom",
+            "text_max_size_heading": 30,
+            "heading_tag": "h3",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "text": "<p>Be the first to know Heybike News.</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text_text": "none",
+            "highlighted_scribble_text": "circle",
+            "newsletter_form": true,
+            "button_label": "",
+            "button_link": "",
+            "button_size": "md",
+            "button_secondary_style": false,
+            "label": "",
+            "link": "",
+            "liquid": "",
+            "social_media": false
+          }
+        },
+        "newsletter_mFUfXX": {
+          "type": "newsletter",
+          "settings": {
+            "image": "shopify://shop_images/ant-design_customer-service-filled.png",
+            "image_width": "custom",
+            "image_max_width": 50,
+            "image_max_width_mobile": 50,
+            "heading": "Read On and Discover",
+            "heading_size": "headingtext-custom",
+            "text_max_size_heading": 30,
+            "heading_tag": "h3",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "text": "<p>Your guide to all things ebike.</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text_text": "none",
+            "highlighted_scribble_text": "circle",
+            "newsletter_form": false,
+            "button_label": "Explore Heybike Blogs",
+            "button_link": "shopify://blogs/heybike-blog",
+            "button_size": "md",
+            "button_secondary_style": false,
+            "label": "",
+            "link": "",
+            "liquid": "",
+            "social_media": false
+          }
+        }
+      },
+      "block_order": [
+        "newsletter_N6JQnM",
+        "newsletter_mFUfXX"
+      ],
+      "settings": {
+        "content_width": "medium",
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "color_text": "#ffffff",
+        "color_background": "#000000",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "#000000",
+        "color_button_background": "#f6be00",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "custom_slideshow_AGiW8F",
+    "rich_text_FHMagt",
+    "portfolio_6tpMcU",
+    "rich_text_tUVwUx",
+    "rich_text_T4pQHw",
+    "173347382515c77cee",
+    "featured_collection_bRPMpz",
+    "custom_slideshow_cLWXRK",
+    "rich_text_aqNiTj",
+    "rich_text_MfMEyb",
+    "featured_collection_beMXwn",
+    "rich_text_nXeNt6",
+    "rich_text_D8UQ7m",
+    "featured_collection_3FTWKt",
+    "featured_collections_gVdmHm",
+    "rich_text_mcmkTw",
+    "custom_slideshow_Ywdtwd",
+    "rich_text_XhKNak",
+    "main-page",
+    "faq_ABgirD",
+    "testimonials_Pmhrwc",
+    "custom_newsletter_8iHXea"
+  ]
+}

@@ -1,0 +1,114 @@
+{% comment %}
+    Created by CLEARgo
+{% endcomment %}
+
+<!-- View -->
+<menu class="video-with-text-slider-container">
+    {% for block in section.blocks %}
+        <li></li>
+    {% endfor %}
+</menu>
+
+{% schema %}
+    {
+        "name": "CG Video with Text Slider", 
+        "tag": "section", 
+        "class": "cg-video-with-text-slider", 
+        "settings": [], 
+        "blocks": [ 
+            { 
+                "type": "slide", 
+                "name": "Slide", 
+                "settings": [ 
+                    {
+                        "type": "header", 
+                        "content": "Logo"
+                    }, 
+                    { 
+                        "type": "image_picker", 
+                        "id": "logo", 
+                        "label": "Logo"
+                    }, 
+                    { 
+                        "type": "range", 
+                        "id": "max_width", 
+                        "label": "Max width (desktop)", 
+                        "min": 0, 
+                        "max": 1000, 
+                        "step": 10, 
+                        "unit": "px", 
+                        "default": 130
+                    }, 
+                    { 
+                        "type": "range", 
+                        "id": "max_width_mobile", 
+                        "label": "Max width (mobile)", 
+                        "min": 0, 
+                        "max": 1000, 
+                        "step": 10, 
+                        "unit": "px", 
+                        "default": 70
+                    }, 
+                    { 
+                        "type": "header", 
+                        "content": "Heading", 
+                    }, 
+                    { 
+                        "type": "richtext", 
+                        "id": "heading", 
+                        "label": "Heading"
+                    }, 
+                    { 
+                        "type": "range", 
+                        "id": "heading_font_size", 
+                        "label": "Font size (p)", 
+                        "min": 12, 
+                        "max": 128, 
+                        "step": 2, 
+                        "unit": "px", 
+                        "default": 32
+                    }, 
+                    { 
+                        "type": "text", 
+                        "id": "content", 
+                        "label": "Content"
+                    }, 
+                    { 
+                        "type": "range", 
+                        "id": "content_font_size", 
+                        "label": "Font size (p)", 
+                        "min": 12, 
+                        "max": 128, 
+                        "step": 2, 
+                        "unit": "px", 
+                        "default": 32
+                    }, 
+                    { 
+                        "type": "header", 
+                        "content": "Video"
+                    }, 
+                    { 
+                        "type": "video", 
+                        "id": "video", 
+                        "label": "Video"
+                    }, 
+                    { 
+                        "type": "header", 
+                        "content": "Embed Video"
+                    }, 
+                    { 
+                        "type": "url", 
+                        "id": "embed_url", 
+                        "label": "Youtube URL", 
+                    }
+                ]
+            }
+        ], 
+        "presets": [ 
+            { 
+               "name": "CG Video with Text Slider", 
+               "blocks": [] 
+            }
+        ]
+    }
+{% endschema %}

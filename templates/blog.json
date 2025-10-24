@@ -1,0 +1,193 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_overlay_qzLVBi": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_Bayytr": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Add a tagline",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true
+          }
+        },
+        "heading_BzdbN9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Heybike Blog",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_jrPBbT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your hub for riding tips, stories, news, and everything eBike. From expert advice to inspiring journeys, discover insights that help you ride smarter and choose the perfect electric bike.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_Bayytr",
+        "heading_BzdbN9",
+        "text_jrPBbT"
+      ],
+      "name": "t:sections.image-with-text-overlay.presets.name",
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/End_Summer_eBike_Sale_hero_banner_pc.jpg",
+        "image_height": "adapt",
+        "content_width": "small",
+        "content_position": "md:items-end md:justify-start",
+        "text_alignment": "left",
+        "image_mobile": "shopify://shop_images/Ranger_S_CJ_02.jpg",
+        "image_height_mobile": "adapt",
+        "content_position_mobile": "items-center justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 30,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "countdown_timer_4t7qn6": {
+      "type": "countdown-timer",
+      "blocks": {
+        "heading_m39yPg": {
+          "type": "heading",
+          "settings": {
+            "heading": "Heybike Blog",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_fCnHXP": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Your hub for riding tips, stories, news, and everything eBike. From expert advice to inspiring journeys, discover insights that help you ride smarter and choose the perfect electric bike.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_bhJ46d": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        },
+        "subheading_yMiq7D": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "",
+            "subheading_size": "subtitle-md",
+            "secondary_color": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_m39yPg",
+        "text_fCnHXP",
+        "button_bhJ46d",
+        "subheading_yMiq7D"
+      ],
+      "disabled": true,
+      "name": "t:sections.countdown-timer.presets.name",
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/End_of_Summer_Sale_Best_Electric_Bike_Sale_of_the_Season-pc.jpg",
+        "image_height": "adapt",
+        "content_width": "small",
+        "content_position": "md:items-center md:justify-start",
+        "text_alignment": "center",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-center justify-center",
+        "text_alignment_mobile": "center",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 30,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "main-blog": {
+      "type": "main-blog",
+      "settings": {
+        "heading_size": "title-lg tracking-heading",
+        "heading_alignment": "text-center justify-center",
+        "heading_tag": "h1",
+        "subheading": "",
+        "description": "",
+        "show_tag_filter": true,
+        "per_page": 9,
+        "layout": "collage",
+        "image_ratio": "landscape",
+        "show_tags": true,
+        "show_date": true,
+        "show_comments": true,
+        "show_author": false,
+        "show_excerpt": true,
+        "padding_top": 0,
+        "padding_bottom": 120,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "image_with_text_overlay_qzLVBi",
+    "countdown_timer_4t7qn6",
+    "main-blog"
+  ]
+}

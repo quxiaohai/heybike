@@ -1,0 +1,590 @@
+<link rel="stylesheet" type="text/css" href="{{ 'compare.css' | asset_url }}">
+<div class="cd-products-comparison-table">
+  <div id="products-comparison" class="products-comparison-table products-comparison-{{ section.id }}">
+    <div class="page-width">
+      <header class="section-header">
+        <h1 class="section-header__title compare">Compare Models</h1>
+        {% if section.settings.sub_title != blank %}
+        <div class="Detailed_introduction">{{ section.settings.sub_title }}</div>
+        {% endif %}
+        <div class="actions">
+          <a href="#0" class="reset js-no-transition">Reset</a>
+          <a href="#0" class="filter js-no-transition">Compare</a>
+        </div>
+      </header>
+    </div>
+    <div class="products-table">
+      <div class="features">
+        <div class="top-info" style=""></div>
+        <ul class="cd-features-list text-center">
+          <!-- <li><span>Model</span></li> -->
+          <li><b>Battery</b></li>
+          <li class="range"><b>Charger</b></li>
+          <li><b>Charging Time</b></li>
+          <li><b>Range</b></li>
+          <li><b>Hub Motor</b></li>
+          <li><b>Top Speed</b></li>
+          <li><b>Brake</b></li>
+          <li><b>Display</b></li>
+          <li><b>Foldable</b></li>
+          <li><b>App Sync</b></li>
+          <li><b>Total Payload Capacity</b></li>
+          <li><b>Weight</b></li>
+          <li><b>Recommended Rider Hights</b></li>
+          <li><b>Pedal Assist Intelligent</b></li>
+          <li><b>Tires</b></li>
+          <li class="mode"><b>Suspension</b></li>
+          <li><b>Front Light</b></li>
+          <li><b>Rear Light</b></li>
+          <li><b>Freewheel</b></li>
+          <li><b>Bike Frame</b></li>
+          <li class="rider"><b>Full fenders & Rear rack</b></li>
+          <li><b>Wheels</b></li>
+          <li><b>Wheel Diameter</b></li>
+          <li><b>Total Length</b></li>
+          <li><b>Handlebar Height</b></li>
+          <li><b>Seat Height</b></li>
+          <!-- <li><b>Maximum Seat Height</b></li> -->
+        </ul>
+      </div>
+      <div class="cd-products-wrapper">
+        <ul class="cd-products-columns">
+          {% for block in section.blocks %}
+            {%- assign product = block.settings.featured_product -%}
+            <li class="product">
+              <div class="top-info" style="top: 0px; transform: translateX(0px);">
+                <div class="check"></div>
+                <img
+                  class="lazyloaded"
+                  data-widths="[360, 540, 750, 900, 1080, 1600]"
+                  data-aspectratio="auto"
+                  data-sizes="auto"
+                  alt="{{ product.title }}"
+                  src="{{ block.settings.image | img_url : ' ' }}"
+                >
+                <noscript>
+                  <img
+                    class="lazyloaded"
+                    src="{{ block.settings.image | img_url : ' ' }}"
+                    alt="{{ product.title }}"
+                  >
+                </noscript>
+                <h4>{{ product.title }}</h4>
+              </div>
+              <!-- .top-info -->
+              <ul class="cd-features-list">
+                <li>{{ block.settings.Battery }}</li>
+                <li>{{ block.settings.Charger }}</li>
+                <li>{{ block.settings.Charing_Time }}</li>
+                <li>{{ block.settings.Range }}</li>
+                <li>{{ block.settings.Hub_Motor }}</li>
+                <li>{{ block.settings.Top_Speed }}</li>
+                <li>{{ block.settings.Brake }}</li>
+                <li>{{ block.settings.Display }}</li>
+                <li>{{ block.settings.Foldable }}</li>
+                <li>{{ block.settings.App_Sync }}</li>
+                <li>{{ block.settings.Total_Payload_Capacity }}</li>
+                <li>{{ block.settings.Weight }}</li>
+                <li>{{ block.settings.Recommended_Rider_Hights }}</li>
+                <li>{{ block.settings.Pedal_Assist_Intelligent }}</li>
+                <li>{{ block.settings.Tires }}</li>
+                <li>{{ block.settings.Suspension }}</li>
+                <li>{{ block.settings.Front_Light }}</li>
+                <li>{{ block.settings.Rear_Light }}</li>
+                <li>{{ block.settings.Freewheel }}</li>
+                <li>{{ block.settings.Bike_Frame }}</li>
+                <li>{{ block.settings.Full_fenders }}</li>
+                <li>{{ block.settings.Wheels }}</li>
+                <li>{{ block.settings.Wheel_Diameter }}</li>
+                <li>{{ block.settings.Total_Length }}</li>
+                <li>{{ block.settings.Handlebar_Height }}</li>
+                <li>{{ block.settings.Seat_Height }}</li>
+                <!-- <li>{{ block.settings.Maximum_Seat }}</li> -->
+              </ul>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+  
+      <ul class="cd-table-navigation">
+        <li><a href="#0" class="prev inactive js-no-transition" style="">Prev</a></li>
+        <li><a href="#0" class="next js-no-transition" style="">Next</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+ {
+   "name": "Compare Template New",
+   "settings": [
+    {
+      "type": "textarea",
+      "id": "sub_title",
+      "label": "Sub Title",
+      "default": "content"
+    }
+   ],
+   "blocks":[
+      {
+        "type":"text_block",
+    	"name":"Column",
+    	"settings":[
+    		{
+              "type": "product",
+              "id": "featured_product",
+              "label": "Product"
+            },
+            {
+              "type":"text",
+              "id":"title",
+              "label":"Product Title"
+    		},
+            {
+              "type":"image_picker",
+              "id":"image",
+              "label":"Image"
+    		},
+            {
+              "type":"text",
+              "id":"Battery",
+              "label":"Battery"
+            },
+            {
+              "type":"text",
+              "id":"Charger",
+              "label":"Charger"
+            },
+            {
+              "type":"text",
+              "id":"Charing_Time",
+              "label":"Charing Time"
+            },
+            {
+              "type":"text",
+              "id":"Range",
+              "label":"Range"
+            },
+            {
+              "type":"text",
+              "id":"Hub_Motor",
+              "label":"Hub Motor"
+            },
+            {
+              "type":"text",
+              "id":"Top_Speed",
+              "label":"Top Speed"
+            },
+            {
+              "type":"text",
+              "id":"Brake",
+              "label":"Brake"
+            },
+            {
+              "type":"text",
+              "id":"Display",
+              "label":"Display"
+            },
+            {
+              "type":"text",
+              "id":"Foldable",
+              "label":"Foldable"
+            },
+            {
+              "type":"text",
+              "id":"App_Sync",
+              "label":"App Sync"
+            },
+            {
+              "type":"text",
+              "id":"Total_Payload_Capacity",
+              "label":"Total Payload Capacity"
+            },
+            {
+              "type":"text",
+              "id":"Weight",
+              "label":"Weight"
+            },
+            {
+              "type":"text",
+              "id":"Recommended_Rider_Hights",
+              "label":"Recommended Rider Hights"
+            },
+            {
+              "type":"text",
+              "id":"Pedal_Assist_Intelligent",
+              "label":"Pedal Assist Intelligent"
+            },
+            {
+              "type":"text",
+              "id":"Tires",
+              "label":"Tires"
+            },
+            {
+              "type":"text",
+              "id":"Suspension",
+              "label":"Suspension"
+            },
+            {
+              "type":"text",
+              "id":"Front_Light",
+              "label":"Front Light"
+            },
+            {
+              "type":"text",
+              "id":"Rear_Light",
+              "label":"Rear Light"
+            },
+            {
+              "type":"text",
+              "id":"Freewheel",
+              "label":"Freewheel"
+            },
+            {
+              "type":"text",
+              "id":"Bike_Frame",
+              "label":"Bike Frame"
+            },
+            {
+              "type":"text",
+              "id":"Full_fenders",
+              "label":"Full fenders & Rear rack"
+            },
+            {
+              "type":"text",
+              "id":"Wheels",
+              "label":"Wheels"
+            },
+            {
+              "type":"text",
+              "id":"Wheel_Diameter",
+              "label":"Wheel Diameter"
+            },
+            {
+              "type":"text",
+              "id":"Total_Length",
+              "label":"Total Length"
+            },
+            {
+              "type":"text",
+              "id":"Handlebar_Height",
+              "label":"Handlebar Height"
+            },
+            {
+              "type":"text",
+              "id":"Seat_Height",
+              "label":"Seat Height"
+            },
+            {
+              "type":"text",
+              "id":"Maximum_Seat",
+              "label":"Maximum Seat Height"
+            }
+    	 ]
+       }
+  ],
+  "presets": [
+    {
+      "name": "Compare Template New"
+    }
+  ]
+ }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+{% javascript %}
+  function setTranformX(element, value) { 
+      element.css({
+          '-moz-transform': 'translateX(' + value + 'px)',
+          '-webkit-transform': 'translateX(' + value + 'px)',
+          '-ms-transform': 'translateX(' + value + 'px)',
+          '-o-transform': 'translateX(' + value + 'px)',
+          'transform': 'translateX(' + value + 'px)'
+      });
+  }
+   function updateProperties() {
+         var productsNumber = $(".cd-products-columns .product").length;
+         var productWidth = $(".cd-products-columns .product").eq(0).width();
+
+        // this.tableHeight = this.table.height();
+        // this.productWidth = this.products.eq(0).width();
+        // this.topInfoHeight = this.featuresTopInfo.innerHeight() + 30;
+         $(".cd-products-columns").css('width', productWidth * productsNumber + 'px');
+    }
+  var windowResize = false;
+  function checkResize() {
+     console.log(121212333)
+     updateProperties();
+     windowResize = false;
+  }
+
+  $(document).ready(function(){ 
+
+    var filtering = false;
+    var selectedproductsNumber = 0;
+    var productsNumber = $(".cd-products-columns .product").length;
+    var productWidth = $(".cd-products-columns .product").eq(0).width();
+    var leftScrolling = false;
+
+    //判断pc端或者手机端的函数方法
+    var os = function() {
+        var ua = navigator.userAgent,
+            isWindowsPhone = /(?:Windows Phone)/.test(ua),
+            isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+            isAndroid = /(?:Android)/.test(ua),
+            isFireFox = /(?:Firefox)/.test(ua),
+            isChrome = /(?:Chrome|CriOS)/.test(ua),
+            isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
+            isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+            isPc = !isPhone && !isAndroid && !isSymbian;
+        return {
+            isTablet: isTablet,
+            isPhone: isPhone,
+            isAndroid : isAndroid,
+            isPc : isPc
+        };
+    }();
+
+
+     console.log(windowResize)
+     if (!windowResize) {
+        windowResize = true;
+        (!window.requestAnimationFrame) ? setTimeout(checkResize, 250): window.requestAnimationFrame(checkResize);
+    }
+
+    //detect window resize - reset .cd-products-comparison-table properties
+    $(window).on('resize', function () {
+        if (!windowResize) {
+            windowResize = true;
+            (!window.requestAnimationFrame) ? setTimeout(checkResize, 250): window.requestAnimationFrame(checkResize);
+        }
+    });
+    const upadteFilterBtn = function () {
+        //show/hide filter btn
+        if (selectedproductsNumber >= 2) {
+            filterActive = true;
+            $("#products-comparison .filter").addClass('active');
+        } else {
+            filterActive = false;
+            $("#products-comparison .filter").removeClass('active');
+        }
+    }
+
+    const resetProductsVisibility =  function () {
+        var self = this,
+            containerOffsetLeft = $(".cd-products-columns").offset().left,
+            selectedProducts = $(".cd-products-columns .product").filter('.selected'),
+            numberProducts = selectedProducts.length,
+            scrollLeft = $(".cd-products-wrapper").scrollLeft(),
+            n = 0;
+
+        $("#products-comparison").addClass('no-product-transition').removeClass('filtered');
+
+        $(".cd-products-columns .product").each(function (index) {
+            var product = $(this);
+            if (product.hasClass('selected')) {
+                n = n + 1;
+                var leftTranslate = (-index + n - 1) * productWidth;
+                setTranformX(product, leftTranslate);
+            }
+        });
+
+        setTimeout(function () {
+            $("#products-comparison").removeClass('no-product-transition filtering');
+            setTranformX(selectedProducts, '0');
+            selectedProducts.removeClass('selected').attr('style', '');
+        }, 50);
+    }
+
+    const resetSelection = function () {
+      $(".cd-products-columns").css('width', productWidth * productsNumber + 'px');
+      $("#products-comparison").removeClass('no-product-transition');
+      resetProductsVisibility();
+    }
+
+    const filterProducts = function () {
+      var containerOffsetLeft = $(".cd-products-columns").offset().left,
+          scrollLeft = $(".cd-products-wrapper").scrollLeft(),
+          selectedProducts = $(".cd-products-columns .product").filter('.selected'),
+          numberProducts = selectedProducts.length;
+          productWidth = selectedProducts.eq(0).width();
+
+      selectedProducts.each(function (index) {
+           var product = $(this),
+               leftTranslate = containerOffsetLeft + index * productWidth + scrollLeft - product.offset().left;
+               setTranformX(product, leftTranslate);
+
+           if (index == numberProducts - 1) {
+                product.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
+                    setTimeout(function () {
+                        $("#products-comparison").addClass('no-product-transition');
+                    }, 50);
+                    setTimeout(function () {
+                        $("#products-comparison").addClass('filtered');
+                        $(".cd-products-wrapper").scrollLeft(0);
+                         $(".cd-products-columns").css('width', productWidth * numberProducts + 'px');
+                        selectedProducts.attr('style', '');
+                        product.off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
+                        // self.updateNavigationVisibility(0);
+                    }, 100);
+                });
+            }
+      })
+    }
+
+    const showSelection = function () {
+        $("#products-comparison").addClass('filtering');
+        filterProducts();
+    }
+
+    const updateSlider = function (bool) {
+        var scrollLeft = $(".cd-products-wrapper").scrollLeft();
+        scrollLeft = (bool) ? scrollLeft + productWidth : scrollLeft - productWidth;
+
+        if (scrollLeft < 0) scrollLeft = 0;
+        if (scrollLeft > $(".cd-products-columns").outerWidth(true) - $(".cd-products-wrapper").width()) scrollLeft = $(".cd-products-columns").outerWidth(true) - $(".cd-products-wrapper").width();
+
+        $(".cd-products-wrapper").animate({
+            scrollLeft: scrollLeft
+        }, 200);
+    }
+
+     $(".cd-products-wrapper").on('scroll', function () {
+        if (!leftScrolling) {
+            leftScrolling = true;
+            (!window.requestAnimationFrame) ? setTimeout(function () {
+                updateLeftScrolling();
+            }, 250): window.requestAnimationFrame(function () {
+                updateLeftScrolling();
+            });
+        }
+    });
+
+    const updateLeftScrolling = function () {
+
+        var totalTableWidth = parseInt($(".cd-products-columns").eq(0).outerWidth(true)),
+            tableViewport = parseInt($("#products-comparison").width()),
+            scrollLeft = $(".cd-products-wrapper").scrollLeft();
+
+        (scrollLeft > 0) ? $(".products-table").addClass('scrolling'): $(".products-table").removeClass('scrolling');
+
+        if ($(".products-table").hasClass('top-fixed') && os.isPc ) {
+            setTranformX($(".top-info"), '-' + scrollLeft);
+            setTranformX($(".features .top-info"), '0');
+        }
+
+        leftScrolling = false;
+
+        updateNavigationVisibility(scrollLeft);
+    }
+
+    const updateNavigationVisibility = function (scrollLeft) {
+        (scrollLeft > 0) ? $(".cd-table-navigation").find('.prev').removeClass('inactive'): $(".cd-table-navigation").find('.prev').addClass('inactive');
+        (scrollLeft < $(".cd-products-columns").outerWidth(true) - $(".cd-products-wrapper").width() && $(".cd-products-columns").outerWidth(true) > $(".cd-products-wrapper").width()) ? $(".cd-table-navigation").find('.next').removeClass('inactive'): $(".cd-table-navigation").find('.next').addClass('inactive');
+    }
+
+
+
+    class StickyNavigation {
+
+    constructor() {
+      this.currentId = null;
+      this.currentTab = null;
+      this.tabContainerHeight = 200;
+      this.lockScroll = 0;
+      let self = this;
+      $(window).scroll(() => { this.onScroll(); });
+    }
+
+    onScroll(){
+      this.checkProductTablesPosition();
+    }
+    checkProductTablesPosition(){
+      // let offsetTop = $(".products-table").offset().top - 40;
+      // console.log(offsetTop)
+      // if($(window).scrollTop() > offsetTop) {
+      //   $('.products-table').addClass('top-fixed');
+      // }
+      // else {
+      //    $('.products-table').removeClass('top-fixed');
+      // }
+
+      var tableHeight = $(".products-table").height();
+      var topInfoHeight = $(".products-table").children('.features').children('.top-info').innerHeight() + 30;
+      var scrollTop = $(window).scrollTop();
+      var offsetTop = $(".products-table").offset().top - 40,
+            tableScrollLeft = $(".cd-products-wrapper").scrollLeft();
+
+        if (offsetTop <= scrollTop && offsetTop + tableHeight - topInfoHeight >= scrollTop) {
+            //fix products top-info && arrows navigation
+            if (!$(".products-table").hasClass('top-fixed') ) {
+                $(".products-table").addClass('top-fixed').removeClass('top-scrolling');
+                if (os.isPc) {
+                    $(".products-table").find('.top-info').css('top', '0');
+                    // this.navigation.find('a').css('top', '80px');
+                }
+            }
+
+        } else if (offsetTop <= scrollTop) {
+            //product top-info && arrows navigation -  scroll with table
+            $(".products-table").removeClass('top-fixed').addClass('top-scrolling');
+            if (os.isPc) {
+                $(".products-table").find('.top-info').css('top', (tableHeight - topInfoHeight) + 'px');
+                // this.navigation.find('a').css('top', (tableHeight - topInfoHeight) + 'px');
+            }
+        } else {
+            //product top-info && arrows navigation -  reset style
+            $(".products-table").removeClass('top-fixed top-scrolling');
+            $(".products-table").find('.top-info').attr('style', '');
+            // this.navigation.find('a').attr('style', '');
+        }
+
+       updateLeftScrolling();
+    }
+  }
+
+     new StickyNavigation();
+
+    $(".cd-products-wrapper li.product .top-info").click(function(){
+       var product = $(this).parents('.product');
+        if (!filtering && product.hasClass('selected')) {
+            product.removeClass('selected');
+            selectedproductsNumber = selectedproductsNumber - 1;
+            upadteFilterBtn();
+        } else if (!self.filtering && !product.hasClass('selected')) {
+            product.addClass('selected');
+            selectedproductsNumber = selectedproductsNumber + 1;
+            upadteFilterBtn();
+        }
+    })
+
+    $(".reset").on('click', function (event) {
+        event.preventDefault();
+        if (filtering) {
+            filtering = false;
+            resetSelection();
+        } else {
+            $(".cd-products-wrapper li.product").removeClass('selected');
+        }
+        selectedproductsNumber = 0;
+        upadteFilterBtn();
+    });
+
+     //filter products
+    $(".filter").on('click', function (event) {
+          event.preventDefault();
+          if (filterActive) {
+              filtering = true;
+              showSelection();
+              filterActive = false;
+              $(".filter").removeClass('active');
+          }
+      });
+
+    $(".cd-table-navigation").on('click','a',function (event) {
+          event.preventDefault();
+          updateSlider($(event.target).hasClass('next'));
+      });
+  })
+{% endjavascript %}

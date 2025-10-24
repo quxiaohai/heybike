@@ -1,0 +1,1581 @@
+{% doc %}
+  @prompt
+    Create a horizontal scrollable navigation bar with swipeable tabs for products: Ranger 3.0 Pro, Mars 3.0, Ranger S, Mars 2.0, Horizon, Cityrun. When tabs exceed screen width, enable horizontal swiping with scroll indicators. ALL product sections should be permanently visible on the page at the same time - clicking tabs should only scroll smoothly to the target section, not hide/show sections. Each product section has a customizable title (like "Ranger 3.0 Pro Videos") with a "View Product" button positioned to the right of the title with hover effects. Below display 6 YouTube video blocks in a 3x2 grid layout. Each video block contains: YouTube video at top, customizable content title below the video, and a short description section below the title for YouTube creator's name. Videos open in popup/modal overlay when clicked. Include smooth scrolling between sections and active tab highlighting based on scroll position. Make section titles and video content fully editable. Ensure all sections remain visible simultaneously., proper spacing/margin for the right and left of this section
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-product-nav-container-{{ ai_gen_id }} {
+    width: 100%;
+    margin: 60px auto;
+    max-width: {{ settings.page_width }}px;
+    padding: 0 20px;}
+
+  .ai-product-nav-tabs-{{ ai_gen_id }} {
+    position: sticky;
+    top: 0;
+    background: {{ block.settings.nav_background_color }};
+    z-index: 10;
+    padding: 20px 0;
+    margin-bottom: 40px;
+    border-bottom: 1px solid {{ block.settings.nav_border_color }};
+  }
+
+  .ai-product-nav-tabs-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-product-nav-tabs-scroll-{{ ai_gen_id }} {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0 40px;
+  }
+
+  .ai-product-nav-tabs-scroll-{{ ai_gen_id }}::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ai-product-nav-tab-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    padding: 12px 24px;
+    background: {{ block.settings.tab_background_color }};
+    color: {{ block.settings.tab_text_color }};
+    border: 1px solid {{ block.settings.tab_border_color }};
+    border-radius: {{ block.settings.tab_border_radius }}px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .ai-product-nav-tab-{{ ai_gen_id }}:hover {
+    background: {{ block.settings.tab_hover_background_color }};
+    color: {{ block.settings.tab_hover_text_color }};
+  }
+
+  .ai-product-nav-tab-{{ ai_gen_id }}.active {
+    background: {{ block.settings.tab_active_background_color }};
+    color: {{ block.settings.tab_active_text_color }};
+    border-color: {{ block.settings.tab_active_border_color }};
+  }
+
+  .ai-product-nav-scroll-btn-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: {{ block.settings.scroll_button_color }};
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-product-nav-scroll-btn-{{ ai_gen_id }}:hover {
+    background: {{ block.settings.scroll_button_hover_color }};
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .ai-product-nav-scroll-btn-{{ ai_gen_id }}.left {
+    left: 0;
+  }
+
+  .ai-product-nav-scroll-btn-{{ ai_gen_id }}.right {
+    right: 0;
+  }
+
+  .ai-product-nav-scroll-btn-{{ ai_gen_id }} svg {
+    width: 20px;
+    height: 20px;
+    fill: {{ block.settings.scroll_button_icon_color }};
+  }
+
+  .ai-product-section-{{ ai_gen_id }} {
+    margin-bottom: 80px;
+    scroll-margin-top: 120px;
+  }
+
+  .ai-product-section-header-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 20px;
+  }
+
+  .ai-product-section-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.section_title_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.section_title_color }};
+    margin: 0;
+  }
+
+  .ai-product-view-btn-{{ ai_gen_id }} {
+    padding: 12px 24px;
+    background: {{ block.settings.view_button_color }};
+    color: {{ block.settings.view_button_text_color }};
+    border: none;
+    border-radius: {{ block.settings.view_button_border_radius }}px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .ai-product-view-btn-{{ ai_gen_id }}:hover {
+    background: {{ block.settings.view_button_hover_color }};color: {{ block.settings.view_button_hover_text_color }};
+    transform: translateY(-2px);box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-product-videos-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .ai-product-video-item-{{ ai_gen_id }} {
+    background: {{ block.settings.video_card_background }};
+    border-radius: {{ block.settings.video_card_border_radius }}px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .ai-product-video-item-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .ai-product-video-thumbnail-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+
+  .ai-product-video-thumbnail-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-product-video-play-btn-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .ai-product-video-play-btn-{{ ai_gen_id }}:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  .ai-product-video-play-btn-{{ ai_gen_id }} svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+    margin-left: 2px;
+  }
+
+  .ai-product-video-content-{{ ai_gen_id }} {
+    padding: 20px;
+  }
+
+  .ai-product-video-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.video_title_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.video_title_color }};
+    margin: 0 0 8px;
+    line-height: 1.4;
+  }
+
+  .ai-product-video-creator-{{ ai_gen_id }} {
+    font-size: {{ block.settings.video_creator_size }}px;
+    color: {{ block.settings.video_creator_color }};
+    margin: 0;
+  }
+
+  .ai-product-video-modal-{{ ai_gen_id }} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .ai-product-video-modal-{{ ai_gen_id }}.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .ai-product-video-modal-content-{{ ai_gen_id }} {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    aspect-ratio: 16/9;
+    background: black;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .ai-product-video-modal-close-{{ ai_gen_id }} {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+  }
+
+  .ai-product-video-modal-iframe-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-product-nav-container-{{ ai_gen_id }} {
+      padding: 0 15px;
+      margin: 40px auto;
+    }
+
+    .ai-product-videos-grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .ai-product-section-header-{{ ai_gen_id }} {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .ai-product-section-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.section_title_size | times: 0.8 }}px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .ai-product-videos-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-product-nav-tabs-scroll-{{ ai_gen_id }} {
+      padding: 0 20px;
+    }
+  }
+{% endstyle %}
+
+<product-navigation-{{ ai_gen_id }}
+  class="ai-product-nav-container-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-product-nav-tabs-{{ ai_gen_id }}">
+    <div class="ai-product-nav-tabs-wrapper-{{ ai_gen_id }}">
+      <button class="ai-product-nav-scroll-btn-{{ ai_gen_id }} left" data-direction="left">
+        <svg viewBox="0 0 24 24">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+      <div class="ai-product-nav-tabs-scroll-{{ ai_gen_id }}">
+        <button class="ai-product-nav-tab-{{ ai_gen_id }}" data-target="ranger-pro">Ranger 3.0 Pro</button>
+        <button class="ai-product-nav-tab-{{ ai_gen_id }}" data-target="mars-3">Mars 3.0</button>
+        <button class="ai-product-nav-tab-{{ ai_gen_id }}" data-target="ranger-s">Ranger S</button>
+        <button class="ai-product-nav-tab-{{ ai_gen_id }}" data-target="mars-2">Mars 2.0</button>
+        <button class="ai-product-nav-tab-{{ ai_gen_id }}" data-target="horizon">Horizon</button>
+        <button class="ai-product-nav-tab-{{ ai_gen_id }}" data-target="cityrun">Cityrun</button>
+      </div>
+
+      <button class="ai-product-nav-scroll-btn-{{ ai_gen_id }} right" data-direction="right">
+        <svg viewBox="0 0 24 24">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="ai-product-sections-{{ ai_gen_id }}">
+    <section class="ai-product-section-{{ ai_gen_id }}" id="ranger-pro-{{ ai_gen_id }}">
+      <div class="ai-product-section-header-{{ ai_gen_id }}">
+        <h2 class="ai-product-section-title-{{ ai_gen_id }}">{{ block.settings.ranger_pro_title }}</h2>
+        {% if block.settings.ranger_pro_link != blank %}
+          <a href="{{ block.settings.ranger_pro_link }}" class="ai-product-view-btn-{{ ai_gen_id }}">View Product</a>
+        {% endif %}
+      </div>
+      <div class="ai-product-videos-grid-{{ ai_gen_id }}">
+        {% for i in (1..6) %}
+          {% assign video_id_key = 'ranger_pro_video_' | append: i | append: '_id' %}
+          {% assign video_title_key = 'ranger_pro_video_' | append: i | append: '_title' %}
+          {% assign video_creator_key = 'ranger_pro_video_' | append: i | append: '_creator' %}
+          {% assign video_id = block.settings[video_id_key] %}
+          {% assign video_title = block.settings[video_title_key] %}
+          {% assign video_creator = block.settings[video_creator_key] %}
+          
+          <div class="ai-product-video-item-{{ ai_gen_id }}" data-video-id="{{ video_id }}">
+            <div class="ai-product-video-thumbnail-{{ ai_gen_id }}">
+              {% if video_id != blank %}
+                <img src="https://img.youtube.com/vi/{{ video_id }}/maxresdefault.jpg" alt="{{ video_title }}" loading="lazy">
+                <button class="ai-product-video-play-btn-{{ ai_gen_id }}">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+              {% else %}
+                <div style="background: #f4f4f4; height: 100%; display: flex; align-items: center; justify-content: center; color: #999;">
+                  Add YouTube Video ID
+                </div>
+              {% endif %}
+            </div><div class="ai-product-video-content-{{ ai_gen_id }}">
+              <h3 class="ai-product-video-title-{{ ai_gen_id }}">
+                {% if video_title != blank %}{{ video_title }}{% else %}Video Title{% endif %}
+              </h3>
+              <p class="ai-product-video-creator-{{ ai_gen_id }}">
+                {% if video_creator != blank %}{{ video_creator }}{% else %}Creator Name{% endif %}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="ai-product-section-{{ ai_gen_id }}" id="mars-3-{{ ai_gen_id }}">
+      <div class="ai-product-section-header-{{ ai_gen_id }}">
+        <h2 class="ai-product-section-title-{{ ai_gen_id }}">{{ block.settings.mars_3_title }}</h2>
+        {% if block.settings.mars_3_link != blank %}
+          <a href="{{ block.settings.mars_3_link }}" class="ai-product-view-btn-{{ ai_gen_id }}">View Product</a>
+        {% endif %}
+      </div>
+      <div class="ai-product-videos-grid-{{ ai_gen_id }}">
+        {% for i in (1..6) %}
+          {% assign video_id_key = 'mars_3_video_' | append: i | append: '_id' %}
+          {% assign video_title_key = 'mars_3_video_' | append: i | append: '_title' %}
+          {% assign video_creator_key = 'mars_3_video_' | append: i | append: '_creator' %}
+          {% assign video_id = block.settings[video_id_key] %}
+          {% assign video_title = block.settings[video_title_key] %}
+          {% assign video_creator = block.settings[video_creator_key] %}
+          
+          <div class="ai-product-video-item-{{ ai_gen_id }}" data-video-id="{{ video_id }}">
+            <div class="ai-product-video-thumbnail-{{ ai_gen_id }}">
+              {% if video_id != blank %}
+                <img src="https://img.youtube.com/vi/{{ video_id }}/maxresdefault.jpg" alt="{{ video_title }}" loading="lazy">
+                <button class="ai-product-video-play-btn-{{ ai_gen_id }}">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+              {% else %}
+                <div style="background: #f4f4f4; height: 100%; display: flex; align-items: center; justify-content: center; color: #999;">
+                  Add YouTube Video ID
+                </div>
+              {% endif %}
+            </div>
+            <div class="ai-product-video-content-{{ ai_gen_id }}">
+              <h3 class="ai-product-video-title-{{ ai_gen_id }}">
+                {% if video_title != blank %}{{ video_title }}{% else %}Video Title{% endif %}
+              </h3>
+              <p class="ai-product-video-creator-{{ ai_gen_id }}">
+                {% if video_creator != blank %}{{ video_creator }}{% else %}Creator Name{% endif %}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="ai-product-section-{{ ai_gen_id }}" id="ranger-s-{{ ai_gen_id }}">
+      <div class="ai-product-section-header-{{ ai_gen_id }}">
+        <h2 class="ai-product-section-title-{{ ai_gen_id }}">{{ block.settings.ranger_s_title }}</h2>
+        {% if block.settings.ranger_s_link != blank %}
+          <a href="{{ block.settings.ranger_s_link }}" class="ai-product-view-btn-{{ ai_gen_id }}">View Product</a>
+        {% endif %}
+      </div>
+      <div class="ai-product-videos-grid-{{ ai_gen_id }}">
+        {% for i in (1..6) %}
+          {% assign video_id_key = 'ranger_s_video_' | append: i | append: '_id' %}
+          {% assign video_title_key = 'ranger_s_video_' | append: i | append: '_title' %}
+          {% assign video_creator_key = 'ranger_s_video_' | append: i | append: '_creator' %}
+          {% assign video_id = block.settings[video_id_key] %}
+          {% assign video_title = block.settings[video_title_key] %}
+          {% assign video_creator = block.settings[video_creator_key] %}
+          
+          <div class="ai-product-video-item-{{ ai_gen_id }}" data-video-id="{{ video_id }}">
+            <div class="ai-product-video-thumbnail-{{ ai_gen_id }}">
+              {% if video_id != blank %}
+                <img src="https://img.youtube.com/vi/{{ video_id }}/maxresdefault.jpg" alt="{{ video_title }}" loading="lazy">
+                <button class="ai-product-video-play-btn-{{ ai_gen_id }}">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+              {% else %}
+                <div style="background: #f4f4f4; height: 100%; display: flex; align-items: center; justify-content: center; color: #999;">
+                  Add YouTube Video ID
+                </div>
+              {% endif %}
+            </div>
+            <div class="ai-product-video-content-{{ ai_gen_id }}">
+              <h3 class="ai-product-video-title-{{ ai_gen_id }}">
+                {% if video_title != blank %}{{ video_title }}{% else %}Video Title{% endif %}
+              </h3>
+              <p class="ai-product-video-creator-{{ ai_gen_id }}">
+                {% if video_creator != blank %}{{ video_creator }}{% else %}Creator Name{% endif %}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="ai-product-section-{{ ai_gen_id }}" id="mars-2-{{ ai_gen_id }}">
+      <div class="ai-product-section-header-{{ ai_gen_id }}">
+        <h2 class="ai-product-section-title-{{ ai_gen_id }}">{{ block.settings.mars_2_title }}</h2>
+        {% if block.settings.mars_2_link != blank %}
+          <a href="{{ block.settings.mars_2_link }}" class="ai-product-view-btn-{{ ai_gen_id }}">View Product</a>
+        {% endif %}
+      </div>
+      <div class="ai-product-videos-grid-{{ ai_gen_id }}">
+        {% for i in (1..6) %}
+          {% assign video_id_key = 'mars_2_video_' | append: i | append: '_id' %}
+          {% assign video_title_key = 'mars_2_video_' | append: i | append: '_title' %}
+          {% assign video_creator_key = 'mars_2_video_' | append: i | append: '_creator' %}
+          {% assign video_id = block.settings[video_id_key] %}
+          {% assign video_title = block.settings[video_title_key] %}
+          {% assign video_creator = block.settings[video_creator_key] %}
+          
+          <div class="ai-product-video-item-{{ ai_gen_id }}" data-video-id="{{ video_id }}">
+            <div class="ai-product-video-thumbnail-{{ ai_gen_id }}">
+              {% if video_id != blank %}
+                <img src="https://img.youtube.com/vi/{{ video_id }}/maxresdefault.jpg" alt="{{ video_title }}" loading="lazy">
+                <button class="ai-product-video-play-btn-{{ ai_gen_id }}">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+              {% else %}
+                <div style="background: #f4f4f4; height: 100%; display: flex; align-items: center; justify-content: center; color: #999;">
+                  Add YouTube Video ID
+                </div>
+              {% endif %}
+            </div>
+            <div class="ai-product-video-content-{{ ai_gen_id }}">
+              <h3 class="ai-product-video-title-{{ ai_gen_id }}">
+                {% if video_title != blank %}{{ video_title }}{% else %}Video Title{% endif %}
+              </h3>
+              <p class="ai-product-video-creator-{{ ai_gen_id }}">
+                {% if video_creator != blank %}{{ video_creator }}{% else %}Creator Name{% endif %}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="ai-product-section-{{ ai_gen_id }}" id="horizon-{{ ai_gen_id }}">
+      <div class="ai-product-section-header-{{ ai_gen_id }}">
+        <h2 class="ai-product-section-title-{{ ai_gen_id }}">{{ block.settings.horizon_title }}</h2>
+        {% if block.settings.horizon_link != blank %}
+          <a href="{{ block.settings.horizon_link }}" class="ai-product-view-btn-{{ ai_gen_id }}">View Product</a>
+        {% endif %}
+      </div>
+      <div class="ai-product-videos-grid-{{ ai_gen_id }}">
+        {% for i in (1..6) %}
+          {% assign video_id_key = 'horizon_video_' | append: i | append: '_id' %}
+          {% assign video_title_key = 'horizon_video_' | append: i | append: '_title' %}
+          {% assign video_creator_key = 'horizon_video_' | append: i | append: '_creator' %}
+          {% assign video_id = block.settings[video_id_key] %}
+          {% assign video_title = block.settings[video_title_key] %}
+          {% assign video_creator = block.settings[video_creator_key] %}
+          
+          <div class="ai-product-video-item-{{ ai_gen_id }}" data-video-id="{{ video_id }}">
+            <div class="ai-product-video-thumbnail-{{ ai_gen_id }}">
+              {% if video_id != blank %}
+                <img src="https://img.youtube.com/vi/{{ video_id }}/maxresdefault.jpg" alt="{{ video_title }}" loading="lazy">
+                <button class="ai-product-video-play-btn-{{ ai_gen_id }}">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+              {% else %}
+                <div style="background: #f4f4f4; height: 100%; display: flex; align-items: center; justify-content: center; color: #999;">
+                  Add YouTube Video ID
+                </div>
+              {% endif %}
+            </div>
+            <div class="ai-product-video-content-{{ ai_gen_id }}">
+              <h3 class="ai-product-video-title-{{ ai_gen_id }}">
+                {% if video_title != blank %}{{ video_title }}{% else %}Video Title{% endif %}
+              </h3>
+              <p class="ai-product-video-creator-{{ ai_gen_id }}">
+                {% if video_creator != blank %}{{ video_creator }}{% else %}Creator Name{% endif %}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="ai-product-section-{{ ai_gen_id }}" id="cityrun-{{ ai_gen_id }}">
+      <div class="ai-product-section-header-{{ ai_gen_id }}">
+        <h2 class="ai-product-section-title-{{ ai_gen_id }}">{{ block.settings.cityrun_title }}</h2>
+        {% if block.settings.cityrun_link != blank %}
+          <a href="{{ block.settings.cityrun_link }}" class="ai-product-view-btn-{{ ai_gen_id }}">View Product</a>
+        {% endif %}
+      </div>
+      <div class="ai-product-videos-grid-{{ ai_gen_id }}">
+        {% for i in (1..6) %}
+          {% assign video_id_key = 'cityrun_video_' | append: i | append: '_id' %}
+          {% assign video_title_key = 'cityrun_video_' | append: i | append: '_title' %}
+          {% assign video_creator_key = 'cityrun_video_' | append: i | append: '_creator' %}
+          {% assign video_id = block.settings[video_id_key] %}
+          {% assign video_title = block.settings[video_title_key] %}
+          {% assign video_creator = block.settings[video_creator_key] %}
+          
+          <div class="ai-product-video-item-{{ ai_gen_id }}" data-video-id="{{ video_id }}">
+            <div class="ai-product-video-thumbnail-{{ ai_gen_id }}">
+              {% if video_id != blank %}
+                <img src="https://img.youtube.com/vi/{{ video_id }}/maxresdefault.jpg" alt="{{ video_title }}" loading="lazy">
+                <button class="ai-product-video-play-btn-{{ ai_gen_id }}">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+              {% else %}
+                <div style="background: #f4f4f4; height: 100%; display: flex; align-items: center; justify-content: center; color: #999;">
+                  Add YouTube Video ID
+                </div>
+              {% endif %}
+            </div>
+            <div class="ai-product-video-content-{{ ai_gen_id }}">
+              <h3 class="ai-product-video-title-{{ ai_gen_id }}">
+                {% if video_title != blank %}{{ video_title }}{% else %}Video Title{% endif %}
+              </h3>
+              <p class="ai-product-video-creator-{{ ai_gen_id }}">
+                {% if video_creator != blank %}{{ video_creator }}{% else %}Creator Name{% endif %}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+
+  <div class="ai-product-video-modal-{{ ai_gen_id }}">
+    <div class="ai-product-video-modal-content-{{ ai_gen_id }}">
+      <button class="ai-product-video-modal-close-{{ ai_gen_id }}">&times;</button>
+      <iframe class="ai-product-video-modal-iframe-{{ ai_gen_id }}" src="" allowfullscreen></iframe>
+    </div>
+  </div>
+</product-navigation-{{ ai_gen_id }}>
+
+<script>
+(function() {
+  class ProductNavigation{{ ai_gen_id }} extends HTMLElement {
+    constructor() {
+      super();
+      this.tabs = this.querySelectorAll('.ai-product-nav-tab-{{ ai_gen_id }}');
+      this.sections = this.querySelectorAll('.ai-product-section-{{ ai_gen_id }}');
+      this.scrollContainer = this.querySelector('.ai-product-nav-tabs-scroll-{{ ai_gen_id }}');
+      this.scrollButtons = this.querySelectorAll('.ai-product-nav-scroll-btn-{{ ai_gen_id }}');
+      this.videoItems = this.querySelectorAll('.ai-product-video-item-{{ ai_gen_id }}');
+      this.modal = this.querySelector('.ai-product-video-modal-{{ ai_gen_id }}');
+      this.modalIframe = this.querySelector('.ai-product-video-modal-iframe-{{ ai_gen_id }}');
+      this.modalClose = this.querySelector('.ai-product-video-modal-close-{{ ai_gen_id }}');
+    }
+
+    connectedCallback() {
+      this.setupTabNavigation();
+      this.setupScrollButtons();
+      this.setupScrollSpy();
+      this.setupVideoModal();
+      this.updateScrollButtons();
+    }
+
+    setupTabNavigation() {
+      this.tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const target = tab.getAttribute('data-target');
+          const section = this.querySelector(`#${target}-{{ ai_gen_id }}`);
+          
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    }
+
+    setupScrollButtons() {
+      this.scrollButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const direction = button.getAttribute('data-direction');
+          const scrollAmount = 200;
+          
+          if (direction === 'left') {
+            this.scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+          } else {
+            this.scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+          }
+        });
+      });
+
+      this.scrollContainer.addEventListener('scroll', () => {
+        this.updateScrollButtons();
+      });
+    }
+
+    updateScrollButtons() {
+      const { scrollLeft, scrollWidth, clientWidth } = this.scrollContainer;
+      const leftButton = this.querySelector('.ai-product-nav-scroll-btn-{{ ai_gen_id }}.left');
+      const rightButton = this.querySelector('.ai-product-nav-scroll-btn-{{ ai_gen_id }}.right');
+
+      leftButton.style.opacity = scrollLeft > 0 ? '1' : '0.3';
+      rightButton.style.opacity = scrollLeft < scrollWidth - clientWidth - 1 ? '1' : '0.3';
+    }
+
+    setupScrollSpy() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+            const sectionId = entry.target.id.replace('-{{ ai_gen_id }}', '');
+            this.updateActiveTab(sectionId);
+          }
+        });
+      }, {
+        threshold: 0.5,
+        rootMargin: '-120px 0px -50% 0px'
+      });
+
+      this.sections.forEach(section => {
+        observer.observe(section);
+      });
+    }
+
+    updateActiveTab(sectionId) {
+      this.tabs.forEach(tab => {
+        tab.classList.remove('active');
+        if (tab.getAttribute('data-target') === sectionId) {
+          tab.classList.add('active');
+        }
+      });
+    }
+
+    setupVideoModal() {
+      this.videoItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const videoId = item.getAttribute('data-video-id');
+          if (videoId) {
+            this.openVideoModal(videoId);
+          }
+        });
+      });
+
+      this.modalClose.addEventListener('click', () => {
+        this.closeVideoModal();
+      });
+
+      this.modal.addEventListener('click', (e) => {
+        if (e.target === this.modal) {
+          this.closeVideoModal();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && this.modal.classList.contains('active')) {
+          this.closeVideoModal();
+        }
+      });
+    }
+
+    openVideoModal(videoId) {
+      this.modalIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      this.modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    closeVideoModal() {
+      this.modal.classList.remove('active');
+      this.modalIframe.src = '';
+      document.body.style.overflow = '';
+    }
+  }
+
+  customElements.define('product-navigation-{{ ai_gen_id }}', ProductNavigation{{ ai_gen_id }});
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Product video navigation",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Navigation style"
+    },
+    {
+      "type": "color",
+      "id": "nav_background_color",
+      "label": "Navigation background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "nav_border_color",
+      "label": "Navigation border",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "color",
+      "id": "tab_background_color",
+      "label": "Tab background",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "tab_text_color",
+      "label": "Tab text",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "tab_border_color",
+      "label": "Tab border",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "color",
+      "id": "tab_hover_background_color",
+      "label": "Tab hover background",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "color",
+      "id": "tab_hover_text_color",
+      "label": "Tab hover text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_background_color",
+      "label": "Active tab background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_text_color",
+      "label": "Active tab text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_border_color",
+      "label": "Active tab border",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "tab_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Tab border radius",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "scroll_button_color",
+      "label": "Scroll button background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "scroll_button_hover_color",
+      "label": "Scroll button hover",
+      "default": "#f0f0f0"
+    },
+    {
+      "type": "color",
+      "id": "scroll_button_icon_color",
+      "label": "Scroll button icon",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Section style"
+    },
+    {
+      "type": "color",
+      "id": "section_title_color",
+      "label": "Section title color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "section_title_size",
+      "min": 20,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Section title size",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "view_button_color",
+      "label": "View button background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "view_button_text_color",
+      "label": "View button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "view_button_hover_color",
+      "label": "View button hover",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "view_button_hover_text_color",
+      "label": "View button hover text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "view_button_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "View button border radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Video card style"
+    },
+    {
+      "type": "color",
+      "id": "video_card_background",
+      "label": "Video card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "video_card_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Video card border radius",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "video_title_color",
+      "label": "Video title color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "video_title_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Video title size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "video_creator_color",
+      "label": "Creator name color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "video_creator_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Creator name size",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Ranger 3.0 Pro section"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_title",
+      "label": "Section title",
+      "default": "Ranger 3.0 Pro Videos"
+    },
+    {
+      "type": "url",
+      "id": "ranger_pro_link",
+      "label": "Product link"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_1_id",
+      "label": "Video 1 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_1_creator",
+      "label": "Video 1 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_2_id",
+      "label": "Video 2 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_2_creator",
+      "label": "Video 2 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_3_id",
+      "label": "Video 3 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_3_title",
+      "label": "Video 3 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_3_creator",
+      "label": "Video 3 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_4_id",
+      "label": "Video 4 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_4_title",
+      "label": "Video 4 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_4_creator",
+      "label": "Video 4 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_5_id",
+      "label": "Video 5 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_5_title",
+      "label": "Video 5 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_5_creator",
+      "label": "Video 5 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_6_id",
+      "label": "Video 6 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_6_title",
+      "label": "Video 6 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger_pro_video_6_creator",
+      "label": "Video 6 creator"
+    },
+    {
+      "type": "header",
+      "content": "Mars 3.0 section"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_title",
+      "label": "Section title",
+      "default": "Mars 3.0 Videos"
+    },
+    {
+      "type": "url",
+      "id": "mars_3_link",
+      "label": "Product link"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_1_id",
+      "label": "Video 1 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_1_creator",
+      "label": "Video 1 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_2_id",
+      "label": "Video 2 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_2_creator",
+      "label": "Video 2 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_3_id",
+      "label": "Video 3 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_3_title",
+      "label": "Video 3 title"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_3_creator",
+      "label": "Video 3 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_4_id",
+      "label": "Video 4 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_4_title",
+      "label": "Video 4 title"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_4_creator",
+      "label": "Video 4 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_5_id",
+      "label": "Video 5 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_5_title",
+      "label": "Video 5 title"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_5_creator",
+      "label": "Video 5 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_6_id",
+      "label": "Video 6 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_6_title",
+      "label": "Video 6 title"
+    },
+    {
+      "type": "text",
+      "id": "mars_3_video_6_creator",
+      "label": "Video 6 creator"
+    },
+    {
+      "type": "header",
+      "content": "Ranger S section"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_title",
+      "label": "Section title",
+      "default": "Ranger S Videos"
+    },
+    {
+      "type": "url",
+      "id": "ranger_s_link",
+      "label": "Product link"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_1_id",
+      "label": "Video 1 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_1_creator",
+      "label": "Video 1 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_2_id",
+      "label": "Video 2 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_2_creator",
+      "label": "Video 2 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_3_id",
+      "label": "Video 3 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_3_title",
+      "label": "Video 3 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_3_creator",
+      "label": "Video 3 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_4_id",
+      "label": "Video 4 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_4_title",
+      "label": "Video 4 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_4_creator",
+      "label": "Video 4 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_5_id",
+      "label": "Video 5 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_5_title",
+      "label": "Video 5 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_5_creator",
+      "label": "Video 5 creator"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_6_id",
+      "label": "Video 6 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_6_title",
+      "label": "Video 6 title"
+    },
+    {
+      "type": "text",
+      "id": "ranger_s_video_6_creator",
+      "label": "Video 6 creator"
+    },
+    {
+      "type": "header",
+      "content": "Mars 2.0 section"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_title",
+      "label": "Section title",
+      "default": "Mars 2.0 Videos"
+    },
+    {
+      "type": "url",
+      "id": "mars_2_link",
+      "label": "Product link"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_1_id",
+      "label": "Video 1 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_1_creator",
+      "label": "Video 1 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_2_id",
+      "label": "Video 2 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_2_creator",
+      "label": "Video 2 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_3_id",
+      "label": "Video 3 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_3_title",
+      "label": "Video 3 title"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_3_creator",
+      "label": "Video 3 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_4_id",
+      "label": "Video 4 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_4_title",
+      "label": "Video 4 title"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_4_creator",
+      "label": "Video 4 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_5_id",
+      "label": "Video 5 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_5_title",
+      "label": "Video 5 title"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_5_creator",
+      "label": "Video 5 creator"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_6_id",
+      "label": "Video 6 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_6_title",
+      "label": "Video 6 title"
+    },
+    {
+      "type": "text",
+      "id": "mars_2_video_6_creator",
+      "label": "Video 6 creator"
+    },
+    {
+      "type": "header",
+      "content": "Horizon section"
+    },
+    {
+      "type": "text",
+      "id": "horizon_title",
+      "label": "Section title",
+      "default": "Horizon Videos"
+    },
+    {
+      "type": "url",
+      "id": "horizon_link",
+      "label": "Product link"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_1_id",
+      "label": "Video 1 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_1_creator",
+      "label": "Video 1 creator"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_2_id",
+      "label": "Video 2 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_2_creator",
+      "label": "Video 2 creator"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_3_id",
+      "label": "Video 3 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_3_title",
+      "label": "Video 3 title"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_3_creator",
+      "label": "Video 3 creator"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_4_id",
+      "label": "Video 4 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_4_title",
+      "label": "Video 4 title"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_4_creator",
+      "label": "Video 4 creator"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_5_id",
+      "label": "Video 5 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_5_title",
+      "label": "Video 5 title"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_5_creator",
+      "label": "Video 5 creator"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_6_id",
+      "label": "Video 6 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_6_title",
+      "label": "Video 6 title"
+    },
+    {
+      "type": "text",
+      "id": "horizon_video_6_creator",
+      "label": "Video 6 creator"
+    },
+    {
+      "type": "header",
+      "content": "Cityrun section"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_title",
+      "label": "Section title",
+      "default": "Cityrun Videos"
+    },
+    {
+      "type": "url",
+      "id": "cityrun_link",
+      "label": "Product link"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_1_id",
+      "label": "Video 1 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_1_creator",
+      "label": "Video 1 creator"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_2_id",
+      "label": "Video 2 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_2_creator",
+      "label": "Video 2 creator"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_3_id",
+      "label": "Video 3 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_3_title",
+      "label": "Video 3 title"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_3_creator",
+      "label": "Video 3 creator"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_4_id",
+      "label": "Video 4 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_4_title",
+      "label": "Video 4 title"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_4_creator",
+      "label": "Video 4 creator"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_5_id",
+      "label": "Video 5 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_5_title",
+      "label": "Video 5 title"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_5_creator",
+      "label": "Video 5 creator"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_6_id",
+      "label": "Video 6 YouTube ID"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_6_title",
+      "label": "Video 6 title"
+    },
+    {
+      "type": "text",
+      "id": "cityrun_video_6_creator",
+      "label": "Video 6 creator"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product video navigation"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,848 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left",
+        "heading_tag": "h1",
+        "text_size": "text-sm",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "image_with_text_overlay_xUWBwB": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_mRnN3j": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Add a tagline",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true
+          }
+        },
+        "heading_UKabim": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>PARTNER WITH HEYBIKE!</strong>",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "basic-underline"
+          }
+        },
+        "text_3cbBje": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Are you a website owner, blogger, or social media influencer with a passion for healthy living and eco-conscious transportation? Do you have an audience that would love the freedom and convenience of Heybike e-bikes?  Then join the Heybike Affiliate Program and turn your passion into profit! </p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_mRnN3j",
+        "heading_UKabim",
+        "text_3cbBje"
+      ],
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/04_hero.jpg",
+        "image_height": "650px",
+        "content_width": "small",
+        "content_position": "md:items-center md:justify-start",
+        "text_alignment": "left",
+        "image_mobile": "shopify://shop_images/hero_banner_Mobile.jpg",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-start justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#ffdb00",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 36,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "image_with_text_overlay_Njr6qE": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_JtCbYr": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Profit from our experience",
+            "subheading_size": "subtitle-sm",
+            "secondary_color": false
+          }
+        },
+        "heading_iEUeWf": {
+          "type": "heading",
+          "settings": {
+            "heading": "PARTNER WITH <em>Heybike</em>!",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline"
+          }
+        },
+        "text_Bkp8Hg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>for every successful referral</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_z3NbBh": {
+          "type": "button",
+          "settings": {
+            "button_label": "Earn Money",
+            "button_link": "#",
+            "button_style": "primary",
+            "button_size": "sm",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "subheading_JtCbYr",
+        "heading_iEUeWf",
+        "text_Bkp8Hg",
+        "button_z3NbBh"
+      ],
+      "disabled": true,
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/hero_banner2.png",
+        "image_height": "500px",
+        "content_width": "small",
+        "content_position": "md:items-center md:justify-start",
+        "text_alignment": "left",
+        "image_mobile": "shopify://shop_images/hero_banner2.png",
+        "image_height_mobile": "200px",
+        "content_position_mobile": "items-center justify-center",
+        "text_alignment_mobile": "center",
+        "color_text": "#000000",
+        "color_highlight": "#f6be00",
+        "gradient_highlight": "",
+        "color_button_text": "#ffffff",
+        "color_button_background": "#000000",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "multicolumn_with_icons_VycaiG": {
+      "type": "multicolumn-with-icons",
+      "blocks": {
+        "column_qpTnzE": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Example title",
+            "text": "<p>Search Heybike ID# 132695</p><h4><a href=\"http://www.shareasale.com/join/132695\" target=\"_blank\" title=\"http://www.shareasale.com/join/132695\">Sign Up Now</a></h4>",
+            "highlighted_text": "half_text",
+            "highlighted_scribble": "squiggle-underline-2"
+          }
+        },
+        "column_9Xkmzm": {
+          "type": "column",
+          "settings": {
+            "icon": "devices",
+            "custom_icon": "",
+            "heading": "Example title",
+            "text": "<p>Heybike Merchant ID 32141</p><h4><a href=\"https://www.avantlink.com/signup/publisher-united-states/?merchant=32141\" target=\"_blank\" title=\"https://www.avantlink.com/signup/publisher-united-states/?merchant=32141\"><strong>Sign Up Now</strong></a></h4>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_qpTnzE",
+        "column_9Xkmzm"
+      ],
+      "disabled": true,
+      "settings": {
+        "style": "with-border",
+        "columns": 2,
+        "text_alignment": "center",
+        "heading": "<strong>JOIN HEYBIKE AFFILIATE PROGRAM</strong>",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "rgba(0,0,0,0)",
+        "gradient_background": "",
+        "color_highlight": "#f6be00",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 96,
+        "padding_bottom": 48,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "multicolumn_zehwXq": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_AgK6VW": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "image": "shopify://shop_images/imp.png",
+            "image_ratio": "adapt",
+            "heading": "",
+            "heading_size": "text-base-xl",
+            "text": "<p>Heybike US: 28155<br/>Heybike CA: 33549</p>",
+            "button_label": "Sign Up Now",
+            "button_link": "https://app.impact.com/campaign-promo-signup/Heybike.brand?execution=e29s1&#/?viewkey=signUpPreStart",
+            "button_style": "secondary",
+            "button_external": true,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_DzrQNV": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "image": "shopify://shop_images/Avantlink-2.png",
+            "image_ratio": "adapt",
+            "heading": "",
+            "heading_size": "text-base-xl",
+            "text": "<p>Heybike Merchant ID: 32141</p><p><br/></p>",
+            "button_label": "Sign Up Now",
+            "button_link": "https://www.avantlink.com/signup/publisher-united-states/?merchant=32141",
+            "button_style": "secondary",
+            "button_external": true,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_kL3fjX": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "image": "shopify://shop_images/Awin.png",
+            "image_ratio": "adapt",
+            "heading": "",
+            "heading_size": "text-base-xl",
+            "text": "<p>Search Heybike ID: 36464</p><p><br/> </p>",
+            "button_label": "Sign Up Now",
+            "button_link": "http://www.shareasale.com/join/132695",
+            "button_style": "secondary",
+            "button_external": true,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_fy8jng": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "image": "shopify://shop_images/0910_38c2a73c-aa34-4272-a2c5-3ac8f861ab86.jpg",
+            "image_ratio": "adapt",
+            "heading": "",
+            "heading_size": "text-base-xl",
+            "text": "<p>Search Heybike ID: 128818</p><p><br/> </p>",
+            "button_label": "Sign Up Now",
+            "button_link": "https://partners.heybike.com/create-account",
+            "button_style": "secondary",
+            "button_external": true,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_AgK6VW",
+        "column_DzrQNV",
+        "column_kL3fjX",
+        "column_fy8jng"
+      ],
+      "settings": {
+        "gap": "large",
+        "columns": 2,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "<strong>JOIN HEYBIKE AFFILIATE PROGRAM</strong>",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "<p>The terms for the Heybike affiliate program are the same across all of these networks, so just pick the one you prefer and apply. You don't need to apply to more than one.<br/><br/>Have Question? Don't hesitate to contact us at: <a href=\"mailto:affiliate@heybike.com\" target=\"_blank\" title=\"mailto:affiliate@heybike.com\">affiliate@heybike.com</a></p>",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "multicolumn_with_icons_GBjWtC": {
+      "type": "multicolumn-with-icons",
+      "blocks": {
+        "column_wfDd6L": {
+          "type": "column",
+          "settings": {
+            "icon": "sale",
+            "custom_icon": "",
+            "heading": "Example title",
+            "text": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_PNz3nP": {
+          "type": "column",
+          "settings": {
+            "icon": "time",
+            "custom_icon": "",
+            "heading": "Example title",
+            "text": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_4c8cbQ": {
+          "type": "column",
+          "settings": {
+            "icon": "award",
+            "custom_icon": "",
+            "heading": "Example title",
+            "text": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_LD6jRB": {
+          "type": "column",
+          "settings": {
+            "icon": "trophy",
+            "custom_icon": "",
+            "heading": "Example title",
+            "text": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_3w7G3G": {
+          "type": "column",
+          "settings": {
+            "icon": "email",
+            "custom_icon": "",
+            "heading": "Example title",
+            "text": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_6jLcCd": {
+          "type": "column",
+          "settings": {
+            "icon": "users",
+            "custom_icon": "",
+            "heading": "Example title",
+            "text": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_wfDd6L",
+        "column_PNz3nP",
+        "column_4c8cbQ",
+        "column_LD6jRB",
+        "column_3w7G3G",
+        "column_6jLcCd"
+      ],
+      "disabled": true,
+      "settings": {
+        "style": "with-border",
+        "columns": 3,
+        "text_alignment": "center",
+        "heading": "Why Choose Heybike",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "multicolumn_with_icons_P9JFdt": {
+      "type": "multicolumn-with-icons",
+      "blocks": {
+        "column_GhwQDD": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Example title",
+            "text": "<p>Apply to Avantlink/Shareasale, Heybike's affiliate network partner</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_QTwVM7": {
+          "type": "column",
+          "settings": {
+            "icon": "box",
+            "custom_icon": "",
+            "heading": "Example title",
+            "text": "<p>Create your own affiliate links for potential customers</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_rjPhGp": {
+          "type": "column",
+          "settings": {
+            "icon": "shield",
+            "custom_icon": "",
+            "heading": "Example title",
+            "text": "<p>Customer orders at Heybike from your link</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_AVEa3t": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "custom_icon": "",
+            "heading": "Example title",
+            "text": "<p>Receive Commission through Avantlink/Shareasale</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_GhwQDD",
+        "column_QTwVM7",
+        "column_rjPhGp",
+        "column_AVEa3t"
+      ],
+      "disabled": true,
+      "settings": {
+        "style": "with-border",
+        "columns": 4,
+        "text_alignment": "left",
+        "heading": "How it works?",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "rich_text_4Ny6ji": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_bGRmAd": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "How it works?",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_xFHctD": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em><strong>Step 1</strong></em>: Apply to Avantlink/Shareasale, Heybike's affiliate network partner<br/><em><strong>Step 2</strong></em>: Create your own affiliate links for potential customers<br/><em><strong>Step 3</strong></em>: Customer orders at Heybike from your link<br/><em><strong>Step 4</strong></em>: Receive Commission through Avantlink/Shareasale</p>",
+            "text_size": "subtext-lg",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_YWkLwr": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_bGRmAd",
+        "text_xFHctD",
+        "button_YWkLwr"
+      ],
+      "disabled": true,
+      "settings": {
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "heading": "How it works?",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "image_with_text_ptPHYK": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_PnQEbR": {
+          "type": "heading",
+          "settings": {
+            "heading": "How it works?",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_4tambc": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em><strong>Step 1</strong></em>: Apply to Impact/Avantlink/Awin, Heybike's affiliate network partner<br/></p><p><em><strong>Step 2</strong></em>: Create your own affiliate links for potential customers<br/></p><p><em><strong>Step 3</strong></em>: Customer orders at Heybike from your link<br/></p><p><em><strong>Step 4</strong></em>: Receive Commission through Avantlink/Shareasale</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "full_text",
+            "highlighted_scribble": "basic-underline"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PnQEbR",
+        "text_4tambc"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/17FF34C2-B087-44a1-93A7-E82344C072B3.png",
+        "image_height": "650px",
+        "image_width": "medium",
+        "layout": "image_first",
+        "text_alignment": "left",
+        "content_position": "align-self-center",
+        "image_mobile": "shopify://shop_images/17FF34C2-B087-44a1-93A7-E82344C072B3.png",
+        "image_height_mobile": "auto",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_background_2": "",
+        "gradient_background_2": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 88,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "countdown_timer_gbAbXa": {
+      "type": "countdown-timer",
+      "blocks": {
+        "heading_ek3TJP": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em><strong>Ride With Us Now!</strong></em>",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "text",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_BegUEw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Don't miss out on this exciting opportunity to champion a sustainable lifestyle while earning commissions!</p><p></p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_37bpKV": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ek3TJP",
+        "text_BegUEw",
+        "text_37bpKV"
+      ],
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/1920X650.jpg",
+        "image_height": "400px",
+        "content_width": "medium",
+        "content_position": "md:items-center md:justify-center",
+        "text_alignment": "center",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-center justify-center",
+        "text_alignment_mobile": "center",
+        "color_text": "#ffffff",
+        "color_highlight": "#f6be00",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 56,
+        "padding_top": 88,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "zoom"
+      }
+    },
+    "faq_LNEJzp": {
+      "type": "faq",
+      "blocks": {
+        "question_CVBJYB": {
+          "type": "question",
+          "settings": {
+            "title": "Reports",
+            "text": "<p><strong>Reports</strong></p><p>Get detailed reports on your earnings and understand what is working best for your site.<br/><br/>Track your commissions 24x7 with our online daily reports. Our reports help you understand what motivates your customers to buy and what types of products they like. We provide you with easy-to-read reports for your traffic, revenue, earnings, conversion rates and link types to help you monetize your website.<br/><br/><strong>Report Types</strong></p><ul><li>Earnings</li><li>Orders</li><li>Link-Type</li><li>Daily Trends</li><li>Tracking ID Summary</li><li>Payment History<br/></li></ul>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_nybmB3": {
+          "type": "question",
+          "settings": {
+            "title": "Tools",
+            "text": "<p><strong>Affiliate Toolbar</strong></p><p>Use our Affiliate Toolbar to easily add links and for a quick view of your earnings.<br/><br/><strong>Link to any Page</strong></p><p>Navigate to any of our product details page and capture the links directly from page you are viewing. You can even build shortlinks from the sitestripe toolbar.<br/><br/><strong>Share on Twitter and Facebook</strong></p><p>Post a quick update to Facebook or Twitter with a link to the product page you are viewing.<br/><br/><strong>Product Links</strong></p><p>Link to a specific product on our page and show information about that product. Build customized text links, text and image links, and image only links to our products.<br/><br/>Enhance your product links with product previews or use Easy Links, high-converting promotional and announcement banners that we serve directly to your site.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_fJYnd3": {
+          "type": "question",
+          "settings": {
+            "title": "Commission Details",
+            "text": "<p><strong>Affiliate Program Commissions Schedule</strong></p><p>This Associates Program Advertising Fee Schedule (“Schedule”) is part of the Operating Agreement that governs your participation in the Associates Program. This Schedule describes the advertising fee rates you may earn as a participant in the Program. It also describes the limitations that apply to earning advertising fees on certain Products.<br/><br/>From time to time, we may modify this Schedule in accordance with the Operating Agreement. All capitalized terms used below that are not defined on this page have the meanings given to them in the Operating Agreement.<br/><br/>During each calendar month, you may earn advertising fees for Qualifying Purchases. Most advertising fees are calculated as a percentage of Qualifying Revenues based on the tables below and are subject to the limitations described in the “Limitations on Advertising Fee Rates for Certain Products” section below. We also may offer advertising fees in the form of bounties or other special offers as described in the “Special Offers and Promotions” section below. “Qualifying Revenues” mean amounts we receive from customers’ Qualifying Purchases, excluding shipping, handling, and gift-wrapping fees, taxes, and service charges, and less any rebates, credit card processing fees, returns, and bad debt.<br/><br/>The Program’s standard advertising fee structure is described in Table 1. The advertising fee rates you may earn will vary depending on the category of Products that are shipped, streamed, or downloaded (as applicable) in a given calendar month that constitute Qualifying Purchases. We will determine the classification of Products in each category set forth in Table 1 below or otherwise described on this page.<br/><br/><strong>Standard Commission Structure</strong></p><p>A standard commission of up to <strong>5%</strong> is given on all products, excluding the ones listed below your dashboard.<br/><br/><strong>Commission Calculation</strong></p><ol><li>Exclude shipping and taxes. Commission will be calculated after deducting shipping and taxes from the order.</li><li>Exclude store discounts. Commission will be calculated after deducting total discount from the order.<br/></li></ol><p><strong>Commission Payout</strong></p><ol><li>We only support Paypal payout, please add your paypal to your account.</li><li>Your commission will be hold 7 days. After this time, your commission becomes payabl</li><li>Heybike will pay the commission once a month, the commission will be paid to your paypal account, and the affiliates need to bear the related transaction fees.</li></ol><p><strong>Special Offers and Promotions</strong></p><p>No special offers are running at the moment<br/><br/><strong>Important Note</strong></p><p>From time to time, we may make changes to the advertising fee rates including but not limited to 1.) Exclude certain products or categories of products from earning advertising fees and/or 2.) Reduce or Increase the advertising fee for specific products or categories of products. We may also run special or limited time offers or promotions under which you may earn advertising fees on Products or categories of Products that were previously excluded from earning advertising fees, or you may earn increased advertising fee rates from those set forth above.<br/><br/>We may notify you about these exclusions, rate changes, special offers or promotions by updating this page or through emails, blog posts, or other means.<br/><br/>Disable commission for Self Referral<br/><br/>Disable commission if customer is also an affiliate<br/><br/>Should you have further questions about our Affiliate Program, please feel free to contact <a href=\"mailto:marketing@heybike.com\" target=\"_blank\" title=\"mailto:marketing@heybike.com\">marketing@heybike.com</a></p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "question_CVBJYB",
+        "question_nybmB3",
+        "question_fJYnd3"
+      ],
+      "disabled": true,
+      "settings": {
+        "style": "with-background",
+        "heading": "Affiliate detail",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "#",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "#fafafa",
+        "gradient_background": "",
+        "panel_background": "",
+        "panel_border": "#e3e3e3",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "rgba(0,0,0,0)",
+        "color_button_gradient": "",
+        "color_overlay": "#ffffff",
+        "overlay_opacity": 4,
+        "padding_top": 0,
+        "padding_bottom": 48,
+        "divider": false,
+        "narrow": false,
+        "rounded": false,
+        "title_margin_bottom": 68,
+        "summary_padding": 32,
+        "summary_icon_bg": ""
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "image_with_text_overlay_xUWBwB",
+    "image_with_text_overlay_Njr6qE",
+    "multicolumn_with_icons_VycaiG",
+    "multicolumn_zehwXq",
+    "multicolumn_with_icons_GBjWtC",
+    "multicolumn_with_icons_P9JFdt",
+    "rich_text_4Ny6ji",
+    "image_with_text_ptPHYK",
+    "countdown_timer_gbAbXa",
+    "faq_LNEJzp"
+  ]
+}

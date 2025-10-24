@@ -1,0 +1,131 @@
+{% comment %}
+  Adjusted by CLEARgo
+{% endcomment %}
+
+<style>
+  #shopify-section-{{ section.id }} #SearchDrawer .drawer__title {
+    font-weight: 700; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .drawer__header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--color-grey-1);
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .drawer__scrollable {
+    padding: 1.5rem; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .search__field {
+    width: 100%; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .search__field .input, 
+  #shopify-section-{{ section.id }} #SearchDrawer .search__form [type=submit] {
+    height: 60px; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .horizontal-product__details .vendor {
+    display: block; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .price {
+    flex-direction: row; 
+    align-items: center; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .price__regular {
+    color: var(--color-red); 
+    font-size: 1rem; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .drawer__sticky [type=submit] {
+    width: 100%; 
+    background-color: var(--color-lemon-yellow); 
+    border: 2px solid var(--color-lemon-yellow); 
+    color: var(--color-black); 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .drawer__sticky [type=submit]:hover .btn-text {
+    color: var(--color-lemon-yellow); 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .drawer__sticky [type=submit] svg.icon-arrow-right {
+    filter: brightness(0); 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .drawer__sticky [type=submit]:hover svg.icon-arrow-right {
+    filter: unset; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .reversed-link { 
+    position: relative; 
+    color: var(--color-black); 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .reversed-link:after { 
+    content: ''; 
+    position: absolute; 
+    bottom: 0; 
+    right: 0; 
+    width: 0; 
+    height: 2px; 
+    background-color: var(--color-black); 
+    transition: all .3s; 
+  }
+
+  #shopify-section-{{ section.id }} #SearchDrawer .reversed-link:hover:after {
+    width: 100%; 
+    left: 0; 
+    right: unset; 
+  }
+</style>
+
+{%- if settings.enable_search -%}
+  {%- if request.page_type != 'search' -%}
+    <script src="{{ 'search.js' | asset_url }}" defer></script>
+  {%- endif -%}
+  
+  <search-drawer id="SearchDrawer" class="search-drawer drawer drawer--end z-35 fixed bottom-0 left-0 h-full w-full pointer-events-none"
+    role="dialog"
+    aria-modal="true"
+    aria-label="{{ 'general.search.title' | t | escape }}"
+    shopify-design-mode
+    hidden
+  >
+    <overlay-element class="overlay fixed-modal invisible opacity-0 fixed bottom-0 left-0 w-full h-screen pointer-events-none" aria-controls="SearchDrawer" aria-expanded="false"></overlay-element>
+    <div class="drawer__inner z-10 absolute top-0 flex flex-col w-full h-full overflow-hidden">
+      <gesture-element class="drawer__header flex justify-between opacity-0 invisible relative">
+        <span class="drawer__title heading lg:text-3xl text-2xl leading-none tracking-tight">{{ 'general.search.title' | t | escape }}</span>
+        <button class="button button--secondary button--close drawer__close hidden sm:flex items-center justify-center" type="button" is="hover-button" aria-controls="SearchDrawer" aria-expanded="false" aria-label="{{ 'general.accessibility.close' | t | escape }}">
+          <span class="btn-fill" data-fill></span>
+          <span class="btn-text">
+            {%- render 'icon', icon: 'close', size: 'sm' -%}
+          </span>
+        </button>
+      </gesture-element>
+      <div class="drawer__content opacity-0 invisible flex flex-col h-full grow shrink">
+        <div class="drawer__scrollable relative flex flex-col grow shrink">
+          {%- render 'predictive-search', section_id: section.id, context: 'drawer' -%}
+        </div>
+      </div>
+    </div>
+  </search-drawer>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.search-drawer.name",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.search-drawer.settings.paragraph.content"
+    }
+  ],
+  "enabled_on": {
+    "groups": [
+      "custom.overlay"
+    ]
+  }
+}
+{% endschema %}

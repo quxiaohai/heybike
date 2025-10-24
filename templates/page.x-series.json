@@ -1,0 +1,900 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "cg_x_series_banner_r3ap6c": {
+      "type": "cg_x-series-banner",
+      "blocks": {
+        "button_7K6apA": {
+          "type": "button",
+          "settings": {
+            "cta_url": "shopify://products/mars-3-0",
+            "cta_caption": "Shop Mars 3.0"
+          }
+        },
+        "button_F8rPCA": {
+          "type": "button",
+          "settings": {
+            "cta_url": "shopify://products/ranger-3-0-pro",
+            "cta_caption": "Shop Ranger 3.0 Pro"
+          }
+        },
+        "bike_iCetUA": {
+          "type": "bike",
+          "settings": {
+            "image": "shopify://shop_images/r3p.png"
+          }
+        },
+        "bike_C3M8VT": {
+          "type": "bike",
+          "settings": {
+            "image": "shopify://shop_images/m3.png"
+          }
+        }
+      },
+      "block_order": [
+        "button_7K6apA",
+        "button_F8rPCA",
+        "bike_iCetUA",
+        "bike_C3M8VT"
+      ],
+      "name": "CG X-Series Banner",
+      "settings": {
+        "page_title": "X-Series",
+        "cta_bar_bg": "#000000",
+        "banner_background": "shopify://shop_images/sky.jpg",
+        "banner_midground": "shopify://shop_images/x-ani.gif",
+        "banner_frontground": "shopify://shop_images/mount.png",
+        "main_char": "shopify://shop_images/astro.png",
+        "heading_logo": "shopify://shop_images/heybike-x-series-logo.png",
+        "banner_subheading": "The Pinnacle of Folding Fat-tire Ebikes",
+        "subheading_color": "#ffffff",
+        "heading_size": "title-xl tracking-heading",
+        "heading_tag": "h1",
+        "text_size": "text-base",
+        "padding_top": 72,
+        "padding_bottom": 100,
+        "divider": false,
+        "narrow": true,
+        "rounded": false,
+        "scroll_btn_url": "#shopify-section-template--19935401115867__cg_sticky_video_RHNU8J",
+        "scroll_btn_text": "Scroll to Discover",
+        "show_form": false,
+        "show_btn": true
+      }
+    },
+    "cg_sticky_video_RHNU8J": {
+      "type": "cg_sticky-video",
+      "name": "CG Sticky Video",
+      "settings": {
+        "section_bg": "#000000",
+        "section_heading": "Elevate your ride with the X Series",
+        "section_video": "shopify://files/videos/X-Intro 4k pc.mp4",
+        "section_video_mobile": "shopify://files/videos/X intro app.mp4"
+      }
+    },
+    "cg_media_grids_JrqyF7": {
+      "type": "cg_media-grids",
+      "blocks": {
+        "media_grid_QMQDBM": {
+          "type": "media-grid",
+          "settings": {
+            "bg_color": "#ffffff",
+            "bg_image": "shopify://shop_images/720x917_20_4_folding_pc.jpg",
+            "bg_image_mobile": "shopify://shop_images/640x255_folding_app.jpg",
+            "grid_heading": "20x4-inch Folding",
+            "grid_heading_color": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))",
+            "grid_heading_font_size": 30,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "Fat-tire Ebike",
+            "grid_subheading_color": "#ffffff",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "space_between",
+            "text_align": "center",
+            "padding": 36,
+            "grid_column_start": 1,
+            "grid_column_end": 3,
+            "grid_row_start": 1,
+            "grid_row_end": 3,
+            "grid_column_start_mobile": 2,
+            "grid_column_end_mobile": 3,
+            "grid_row_start_mobile": 1,
+            "grid_row_end_mobile": 3
+          }
+        },
+        "media_grid_HB3MCk": {
+          "type": "media-grid",
+          "settings": {
+            "bg_color": "#ffffff",
+            "bg_image": "shopify://shop_images/X-Series_Motor-preheat-pc.jpg",
+            "bg_image_mobile": "shopify://shop_images/480X398_motor.jpg",
+            "grid_heading": "750W",
+            "grid_heading_color": "linear-gradient(300deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 83.59%)",
+            "grid_heading_font_size": 30,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "Galaxy eDrive System",
+            "grid_subheading_color": "#ffffff",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "bottom",
+            "text_align": "left",
+            "padding": 36,
+            "grid_column_start": 1,
+            "grid_column_end": 3,
+            "grid_row_start": 3,
+            "grid_row_end": 5,
+            "grid_column_start_mobile": 4,
+            "grid_column_end_mobile": 5,
+            "grid_row_start_mobile": 1,
+            "grid_row_end_mobile": 2
+          }
+        },
+        "media_grid_H7waB9": {
+          "type": "media-grid",
+          "settings": {
+            "bg_color": "#ffffff",
+            "bg_image": "shopify://shop_images/1024x390_h_battery_pc.jpg",
+            "bg_image_mobile": "shopify://shop_images/480X398_battery_app.jpg",
+            "grid_heading": "720Wh",
+            "grid_heading_color": "linear-gradient(300deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 83.59%)",
+            "grid_heading_font_size": 30,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "Battery Capacity",
+            "grid_subheading_color": "#ffffff",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "bottom",
+            "text_align": "left",
+            "padding": 36,
+            "grid_column_start": 3,
+            "grid_column_end": 6,
+            "grid_row_start": 1,
+            "grid_row_end": 2,
+            "grid_column_start_mobile": 3,
+            "grid_column_end_mobile": 4,
+            "grid_row_start_mobile": 1,
+            "grid_row_end_mobile": 2
+          }
+        },
+        "media_grid_9P336x": {
+          "type": "media-grid",
+          "settings": {
+            "bg_color": "#ffffff",
+            "bg_image": "shopify://shop_images/X-Series_disc_brake-preheat-pc.jpg",
+            "bg_image_mobile": "shopify://shop_images/480X398_2_disc_brake.jpg",
+            "grid_heading": "2.3mm",
+            "grid_heading_color": "linear-gradient(300deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 83.59%)",
+            "grid_heading_font_size": 30,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "Thickened Disc Brake",
+            "grid_subheading_color": "#ffffff",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "bottom",
+            "text_align": "left",
+            "padding": 36,
+            "grid_column_start": 6,
+            "grid_column_end": 9,
+            "grid_row_start": 1,
+            "grid_row_end": 2,
+            "grid_column_start_mobile": 3,
+            "grid_column_end_mobile": 4,
+            "grid_row_start_mobile": 2,
+            "grid_row_end_mobile": 3
+          }
+        },
+        "media_grid_UjncQz": {
+          "type": "media-grid",
+          "settings": {
+            "bg_color": "#ffffff",
+            "bg_image": "shopify://shop_images/1440X875_suspension.jpg",
+            "bg_image_mobile": "shopify://shop_images/640X255_suspension_app.jpg",
+            "grid_heading": "Horst-link Full Suspension",
+            "grid_heading_color": "linear-gradient(300deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 83.59%)",
+            "grid_heading_font_size": 30,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "",
+            "grid_subheading_color": "#ffffff",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "top",
+            "text_align": "left",
+            "padding": 36,
+            "grid_column_start": 3,
+            "grid_column_end": 7,
+            "grid_row_start": 2,
+            "grid_row_end": 4,
+            "grid_column_start_mobile": 1,
+            "grid_column_end_mobile": 2,
+            "grid_row_start_mobile": 1,
+            "grid_row_end_mobile": 3
+          }
+        },
+        "media_grid_cJymN3": {
+          "type": "media-grid",
+          "settings": {
+            "bg_color": "#ffffff",
+            "bg_image": "shopify://shop_images/X-Series_torque_sensor-preheat-pc.jpg",
+            "bg_image_mobile": "shopify://shop_images/480X398_torque_d9e19b59-f8d4-4b31-bf6d-cd83896a5993.jpg",
+            "grid_heading": "Torque Sensor",
+            "grid_heading_color": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 83.59%)",
+            "grid_heading_font_size": 30,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "",
+            "grid_subheading_color": "#ffffff",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "bottom",
+            "text_align": "left",
+            "padding": 36,
+            "grid_column_start": 7,
+            "grid_column_end": 9,
+            "grid_row_start": 2,
+            "grid_row_end": 4,
+            "grid_column_start_mobile": 4,
+            "grid_column_end_mobile": 5,
+            "grid_row_start_mobile": 2,
+            "grid_row_end_mobile": 3
+          }
+        },
+        "media_grid_39T4pC": {
+          "type": "media-grid",
+          "settings": {
+            "bg_color": "#ffffff",
+            "bg_image": "shopify://shop_images/1024x390_3_x_series_range.jpg",
+            "bg_image_mobile": "shopify://shop_images/480X398_2_x_series_App.jpg",
+            "grid_heading": "",
+            "grid_heading_color": "linear-gradient(300deg, rgba(36, 54, 101, 1), rgba(200, 82, 70, 1) 83.59%)",
+            "grid_heading_font_size": 30,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "90 Miles Range",
+            "grid_subheading_color": "#ffffff",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "bottom",
+            "text_align": "center",
+            "padding": 36,
+            "grid_column_start": 3,
+            "grid_column_end": 6,
+            "grid_row_start": 4,
+            "grid_row_end": 5,
+            "grid_column_start_mobile": 5,
+            "grid_column_end_mobile": 6,
+            "grid_row_start_mobile": 1,
+            "grid_row_end_mobile": 2
+          }
+        },
+        "media_grid_bnJYqJ": {
+          "type": "media-grid",
+          "settings": {
+            "bg_color": "#ffffff",
+            "bg_image": "shopify://shop_images/1024x390_3_IP65_water_x_series.jpg",
+            "bg_image_mobile": "shopify://shop_images/480X398_2_IP65_x_series_App.jpg",
+            "grid_heading": "",
+            "grid_heading_color": "linear-gradient(300deg, rgba(36, 54, 101, 1), rgba(200, 82, 70, 1) 83.59%)",
+            "grid_heading_font_size": 30,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "Water-Resistance Rating",
+            "grid_subheading_color": "#ffffff",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "bottom",
+            "text_align": "center",
+            "padding": 36,
+            "grid_column_start": 6,
+            "grid_column_end": 9,
+            "grid_row_start": 4,
+            "grid_row_end": 5,
+            "grid_column_start_mobile": 5,
+            "grid_column_end_mobile": 6,
+            "grid_row_start_mobile": 2,
+            "grid_row_end_mobile": 3
+          }
+        }
+      },
+      "block_order": [
+        "media_grid_QMQDBM",
+        "media_grid_HB3MCk",
+        "media_grid_H7waB9",
+        "media_grid_9P336x",
+        "media_grid_UjncQz",
+        "media_grid_cJymN3",
+        "media_grid_39T4pC",
+        "media_grid_bnJYqJ"
+      ],
+      "name": "CG Media Grids",
+      "settings": {
+        "section_bg": "rgba(0,0,0,0)",
+        "section_padding_mobile": 72,
+        "section_heading": "",
+        "heading_color": "#ffdb00",
+        "row_num": 4,
+        "grids_height": 900
+      }
+    },
+    "cg_parallax_pinning_card_VFWjTx": {
+      "type": "cg_parallax-pinning-card",
+      "blocks": {
+        "card_content_wA6XTL": {
+          "type": "card_content",
+          "settings": {
+            "desc": "<p>Each X Series bike is foldable and possess fat tires, a full suspension system, and an advanced torque sensor. The full suspension system features a front hydraulic fork with 100mm of travel and a rear Horst-Link suspension, which work together to absorb bumps from all types of surfaces. </p>",
+            "hide_video": true,
+            "hide_image": false
+          }
+        },
+        "card_content_3bej9Y": {
+          "type": "card_content",
+          "settings": {
+            "desc": "<p>The advanced torque sensor detects pedaling force, delivering precisely tailored electric assist and ensuring a natural and seamless riding experience. Experience the future of cycling with the X Series.</p>",
+            "video": "shopify://files/videos/X-Series Suspension Video.mp4",
+            "hide_video": false,
+            "hide_image": true
+          }
+        }
+      },
+      "block_order": [
+        "card_content_wA6XTL",
+        "card_content_3bej9Y"
+      ],
+      "name": "CG Parallax Pinning Card",
+      "settings": {
+        "bg_color": "#f7f7f7",
+        "bg_img": "shopify://shop_images/X-bg.svg",
+        "card_heading": "Masters of All Terrains",
+        "heading_gradiant": "linear-gradient(300deg, rgba(36, 54, 101, 1), rgba(200, 82, 70, 1) 83.59%)",
+        "card_img": "shopify://shop_images/X-series_full_suspension.jpg",
+        "desktop_tune": "(window.innerHeight / 2 * 3) * i",
+        "tablet_tune": "(window.innerHeight / 2) * i",
+        "mobile_tune": "window.innerHeight * i * 2 + window.innerHeight / 3"
+      }
+    },
+    "cg_push_up_card_WdzcfE": {
+      "type": "cg_push-up-card",
+      "name": "CG Push Up Card",
+      "settings": {
+        "section_bg": "#f7f7f7",
+        "bg_img": "shopify://shop_images/X-bg.svg",
+        "card_bg": "#0f0f0e",
+        "font_color": "#ffffff",
+        "tag": "Redifine Sleekness",
+        "card_heading": "X Series ebikes are designed to offer an unrivaled user experience, spotlighted by their upgraded folding system",
+        "card_desc": "<p>Sporting redesigned hinges, optimized pivot points and an ergonomic design, folding an X Series bike has become easier than ever, with the process taking around 10 seconds. With more seamless transitions between riding and storage, the X Series bikes are more closely synonymous with hassle-free mobility.</p>",
+        "card_video": "shopify://files/videos/R3P Folding.mp4",
+        "card_video_mobile": "shopify://files/videos/R3P Folding.mp4"
+      }
+    },
+    "cg_info_with_counters_w4dkeh": {
+      "type": "cg_info-with-counters",
+      "blocks": {
+        "counter_grFy8T": {
+          "type": "counter",
+          "settings": {
+            "prefix": "Up to",
+            "counter_value": "1400",
+            "unit": "W",
+            "suffix": "Mars 3.0 Peak Power with a torque output of 95 N·m"
+          }
+        },
+        "counter_QH9jpd": {
+          "type": "counter",
+          "settings": {
+            "prefix": "Up to",
+            "counter_value": "1200",
+            "unit": "W",
+            "suffix": "Ranger 3.0 Pro Peak Power with a torque output of 80 N·m"
+          }
+        }
+      },
+      "block_order": [
+        "counter_grFy8T",
+        "counter_QH9jpd"
+      ],
+      "name": "CG Info with Counters",
+      "settings": {
+        "section_bg": "#f7f7f7",
+        "section_subheading": "Galaxy-sized Performance",
+        "section_heading": "Ushering in a new era of electric bike performance",
+        "section_desc": "<p>X Series bikes comes equipped with the proprietary Galaxy Perform eDrive System; ushering in a new era of electric bike performance.</p><p>The Ranger 3.0 Pro possesses a 750W motor that produces 80N·m of torque and reaches a power peak of up to 1200W. The Mars 3.0 also has a 750W motor but with a torque output of 95N·m and a peak power of 1400W.</p>",
+        "section_banner": "shopify://shop_images/1920X800_mid_motor.jpg",
+        "section_banner_mobile": "shopify://shop_images/1280x960_mid_motor.jpg",
+        "value_gradient": "linear-gradient(300deg, rgba(36, 54, 101, 1), rgba(200, 82, 70, 1) 83.59%)",
+        "counter_font_color": "#777776"
+      }
+    },
+    "cg_carousel_slider_KnEQy4": {
+      "type": "cg_carousel-slider",
+      "blocks": {
+        "slide_7gNiJU": {
+          "type": "slide",
+          "settings": {
+            "slide_img": "shopify://shop_images/01_9cacceab-d5a0-4a64-bd1e-a77c8f3e7ef0.jpg"
+          }
+        },
+        "slide_tXNETC": {
+          "type": "slide",
+          "settings": {
+            "slide_img": "shopify://shop_images/02_81dc3bfb-50ff-4d1b-963f-c7219dd38f96.jpg"
+          }
+        },
+        "slide_Y7M7kg": {
+          "type": "slide",
+          "settings": {
+            "slide_img": "shopify://shop_images/03_f575fb81-f2df-4866-b6a7-1666810ee035.jpg"
+          }
+        },
+        "slide_CQEDwB": {
+          "type": "slide",
+          "settings": {
+            "slide_img": "shopify://shop_images/04_5da9c473-1b62-41b8-8026-72b66e8f62ef.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "slide_7gNiJU",
+        "slide_tXNETC",
+        "slide_Y7M7kg",
+        "slide_CQEDwB"
+      ],
+      "name": "CG Carousel Slider",
+      "settings": {
+        "section_bg": "#ffffff",
+        "section_heading": "Ultimate consistent, reliable riding companion",
+        "section_desc": "<p>No matter if you're riding through city streets, conquering challenging off-road trails, or exploring terrains in-between, the Galaxy Perform eDrive, System provides all the power riders need for a seamless experience, serving as the ultimate consistent, reliable riding companion.</p>",
+        "dot_color": "#0f0f0e"
+      }
+    },
+    "cg_features_with_video_qHCWVq": {
+      "type": "cg_features-with-video",
+      "blocks": {
+        "feature_YaAGeP": {
+          "type": "feature",
+          "settings": {
+            "feature_name": "NFC card-enabled startup",
+            "name_font_color": "#0f0f0e",
+            "underline_color": "#777776",
+            "feature_desc": "<p>With a simple tap, the NFC-enabled device instantly starts the bike, eliminating the need for traditional keys.</p>",
+            "desc_font_color": "#777776"
+          }
+        },
+        "feature_dPiy7V": {
+          "type": "feature",
+          "settings": {
+            "feature_name": "Multiple ways to secure and access",
+            "name_font_color": "#0f0f0e",
+            "underline_color": "#777776",
+            "feature_desc": "<p>The bike locksdown quickly when not in use, providing safeguarding from unauthorized use. Additionally, riders can enter a PIN on the display or unlocking their bike via the Heybike App.</p>",
+            "desc_font_color": "#777776"
+          }
+        }
+      },
+      "block_order": [
+        "feature_YaAGeP",
+        "feature_dPiy7V"
+      ],
+      "name": "CG Features with Video",
+      "settings": {
+        "bg_color": "#ffffff",
+        "section_heading": "Smartly Secured",
+        "section_desc": "<p>The X Series ebikes are in a class of their own with a revolutionary NFC card-enabled startup feature; combining modern convenience with robust security</p>",
+        "section_video": "shopify://files/videos/Xseries NFC PC.mp4",
+        "section_video_mobile": "shopify://files/videos/X Series NFC app.mp4"
+      }
+    },
+    "cg_media_grids_yiKcXg": {
+      "type": "cg_media-grids",
+      "blocks": {
+        "media_grid_WWyakP": {
+          "type": "media-grid",
+          "settings": {
+            "bg_color": "#6d2841",
+            "bg_image": "shopify://shop_images/800X1272_l_pc.jpg",
+            "bg_image_mobile": "shopify://shop_images/App_up_left.jpg",
+            "grid_heading": "",
+            "grid_heading_color": "linear-gradient(300deg, rgba(36, 54, 101, 1), rgba(200, 82, 70, 1) 83.59%)",
+            "grid_heading_font_size": 30,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "",
+            "grid_subheading_color": "#777776",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "space_between",
+            "text_align": "center",
+            "padding": 36,
+            "grid_column_start": 1,
+            "grid_column_end": 3,
+            "grid_row_start": 1,
+            "grid_row_end": 4,
+            "grid_column_start_mobile": 1,
+            "grid_column_end_mobile": 3,
+            "grid_row_start_mobile": 1,
+            "grid_row_end_mobile": 2
+          }
+        },
+        "media_grid_fqrzrM": {
+          "type": "media-grid",
+          "settings": {
+            "bg_color": "#6d2841",
+            "bg_image": "shopify://shop_images/1600X794_mid_pc_c47a5464-0e4f-4eea-bb48-dac1655908a6.jpg",
+            "bg_image_mobile": "shopify://shop_images/App_mid.jpg",
+            "grid_heading": "",
+            "grid_heading_color": "linear-gradient(300deg, rgba(36, 54, 101, 1), rgba(200, 82, 70, 1) 83.59%)",
+            "grid_heading_font_size": 30,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "",
+            "grid_subheading_color": "#777776",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "bottom",
+            "text_align": "left",
+            "padding": 36,
+            "grid_column_start": 3,
+            "grid_column_end": 7,
+            "grid_row_start": 1,
+            "grid_row_end": 3,
+            "grid_column_start_mobile": 3,
+            "grid_column_end_mobile": 4,
+            "grid_row_start_mobile": 1,
+            "grid_row_end_mobile": 3
+          }
+        },
+        "media_grid_BLCP7P": {
+          "type": "media-grid",
+          "settings": {
+            "bg_color": "#6d2841",
+            "bg_image": "shopify://shop_images/800X380_ls_pc.jpg",
+            "bg_image_mobile": "shopify://shop_images/App_midmid.jpg",
+            "grid_heading": "",
+            "grid_heading_color": "linear-gradient(300deg, rgba(36, 54, 101, 1), rgba(200, 82, 70, 1) 83.59%)",
+            "grid_heading_font_size": 30,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "",
+            "grid_subheading_color": "#777776",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "bottom",
+            "text_align": "left",
+            "padding": 36,
+            "grid_column_start": 3,
+            "grid_column_end": 5,
+            "grid_row_start": 3,
+            "grid_row_end": 4,
+            "grid_column_start_mobile": 4,
+            "grid_column_end_mobile": 5,
+            "grid_row_start_mobile": 1,
+            "grid_row_end_mobile": 3
+          }
+        },
+        "media_grid_hPPQ4B": {
+          "type": "media-grid",
+          "settings": {
+            "bg_color": "#6d2841",
+            "bg_image": "shopify://shop_images/800X380_pc_2008b561-a447-4bad-8945-709f4940b58a.jpg",
+            "bg_image_mobile": "shopify://shop_images/App_up_right.jpg",
+            "grid_heading": "",
+            "grid_heading_color": "linear-gradient(300deg, rgba(36, 54, 101, 1), rgba(200, 82, 70, 1) 83.59%)",
+            "grid_heading_font_size": 30,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "",
+            "grid_subheading_color": "#777776",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "bottom",
+            "text_align": "left",
+            "padding": 36,
+            "grid_column_start": 5,
+            "grid_column_end": 7,
+            "grid_row_start": 3,
+            "grid_row_end": 4,
+            "grid_column_start_mobile": 1,
+            "grid_column_end_mobile": 3,
+            "grid_row_start_mobile": 2,
+            "grid_row_end_mobile": 3
+          }
+        },
+        "media_grid_pbbRkF": {
+          "type": "media-grid",
+          "settings": {
+            "bg_color": "#6d2841",
+            "bg_image": "shopify://shop_images/800X_1272_right_pc_ef79f002-cafe-4ef8-b119-d7a9ac7e8f35.jpg",
+            "bg_image_mobile": "shopify://shop_images/App_mid_under.jpg",
+            "grid_heading": "",
+            "grid_heading_color": "linear-gradient(300deg, rgba(36, 54, 101, 1), rgba(200, 82, 70, 1) 83.59%)",
+            "grid_heading_font_size": 30,
+            "grid_heading_font_size_mobile": 24,
+            "grid_subheading": "",
+            "grid_subheading_color": "#777776",
+            "grid_subheading_font_size": 20,
+            "grid_subheading_font_size_mobile": 12,
+            "vertical_alignment": "top",
+            "text_align": "left",
+            "padding": 36,
+            "grid_column_start": 7,
+            "grid_column_end": 9,
+            "grid_row_start": 1,
+            "grid_row_end": 4,
+            "grid_column_start_mobile": 5,
+            "grid_column_end_mobile": 6,
+            "grid_row_start_mobile": 1,
+            "grid_row_end_mobile": 3
+          }
+        }
+      },
+      "block_order": [
+        "media_grid_WWyakP",
+        "media_grid_fqrzrM",
+        "media_grid_BLCP7P",
+        "media_grid_hPPQ4B",
+        "media_grid_pbbRkF"
+      ],
+      "name": "CG Media Grids",
+      "settings": {
+        "section_bg": "#ffffff",
+        "section_padding_mobile": 36,
+        "section_heading": "Limited Miami Sunset Edition",
+        "heading_color": "#000000",
+        "row_num": 3,
+        "grids_height": 600
+      }
+    },
+    "cg_products_compare_form_7cDFyk": {
+      "type": "cg_products-compare-form",
+      "blocks": {
+        "product_column_DkcAkH": {
+          "type": "product_column",
+          "settings": {
+            "product_order": 0,
+            "product_img": "shopify://shop_images/M3_93cf03b6-2b29-4ea7-abd5-949e4dd17dea.png",
+            "product_name": "Mars 3.0",
+            "product_desc": "<p>The ultimate powerful folding fat-tire bike</p>",
+            "product_price": "",
+            "product_url": "shopify://products/mars-3-0",
+            "btn_caption": "Shop Mars3.0",
+            "motor": "28Mph (Unlock 30+Mph via display)",
+            "torque": "95 N·m",
+            "suspension": "Hydraulic Fork + Horst-Link",
+            "frame": "Aluminum Alloy Frame",
+            "brake_thickness": "2.0mm",
+            "battery_capacity": "624Wh",
+            "custom1": "65 Miles",
+            "custom2": "440 lbs",
+            "custom3": "Shimano Altus 8-Speed",
+            "custom4": "4",
+            "custom5": "5"
+          }
+        },
+        "product_column_RNfLnG": {
+          "type": "product_column",
+          "settings": {
+            "product_order": 2,
+            "product_img": "shopify://shop_images/R3P_98e9f3b9-f5a8-4ebf-92da-c8ff2782f5eb.png",
+            "product_name": "Ranger 3.0 Pro",
+            "product_desc": "<p>The flagship comfort folding fat-tire bike</p>",
+            "product_price": "",
+            "product_url": "shopify://products/ranger-3-0-pro",
+            "btn_caption": "Shop Ranger 3.0 Pro",
+            "motor": "28Mph",
+            "torque": "80 N·m",
+            "suspension": "Hydraulic Fork + Adjustable Air Shock",
+            "frame": "Hydroformed Aluminum Alloy Frame",
+            "brake_thickness": "2.3 mm",
+            "battery_capacity": "720Wh",
+            "custom1": "90 Miles",
+            "custom2": "440 lbs",
+            "custom3": "Shimano Altus 8-Speed",
+            "custom4": "D",
+            "custom5": "E"
+          }
+        }
+      },
+      "block_order": [
+        "product_column_DkcAkH",
+        "product_column_RNfLnG"
+      ],
+      "name": "CG Products Compare Form",
+      "settings": {
+        "bg_color": "#ffffff",
+        "section_heading": "Compare Both",
+        "section_desc": "",
+        "motor_heading": "Speed",
+        "torque_heading": "Torque",
+        "suspension_heading": "Suspension",
+        "frame_heading": "Frame",
+        "brake_thickness_heading": "Brake Thickness",
+        "battery_capacity_heading": "Battery Capacity",
+        "custom1_heading": "Range",
+        "custom2_heading": "Max Load",
+        "custom3_heading": "Speed Gear",
+        "custom4_heading": "",
+        "custom5_heading": ""
+      }
+    },
+    "countdown_timer_ppAUwr": {
+      "type": "countdown-timer",
+      "disabled": true,
+      "name": "t:sections.countdown-timer.presets.name",
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/New_Live_pc.jpg",
+        "image_height": "adapt",
+        "content_width": "small",
+        "content_position": "md:items-center md:justify-center",
+        "text_alignment": "center",
+        "image_mobile": "shopify://shop_images/New_live_app_7a21aed5-3fa3-465a-92df-bcb4c546d552.jpg",
+        "image_height_mobile": "adapt",
+        "content_position_mobile": "items-center justify-center",
+        "text_alignment_mobile": "center",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "rgba(0,0,0,0)",
+        "overlay_opacity": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "faq_fzWAkk": {
+      "type": "faq",
+      "blocks": {
+        "question_JVERwC": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>Does the X Series ebike come with fenders and a rear rack?</strong>",
+            "text": "<p>Yes. Both Mars 3.0 and Ranger 3.0 Pro come equipped with fenders and a rear rack as standard, providing added convenience and protection during your rides. </p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_6xUXfk": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>What is the max load capacity of X Series</strong>",
+            "text": "<p>Both the Mars 3.0 and Ranger 3.0 Pro can support up to 440 lbs, including the rider and cargo.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_jn9bgc": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>Can I ride X Series ebikes in the rain?</strong>",
+            "text": "<p>X Series ebikes are IPX5 water-resistant, making them safe to ride in light rain. However, riding in heavy downpours or submerging the bike in water is not recommended.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_yacmtH": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>What is the max range of X Series ebikes?</strong>",
+            "text": "<p>On a single charge, the Ranger 3.0 Pro can reach up to 90 miles, while the Mars 3.0 can reach up to 65 miles. Actual range may vary based on load, tire pressure, terrain, and weather. For maximum range, use a lower PAS level and minimal throttle.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_NP8gfD": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>What is a full-suspension ebike?</strong>",
+            "text": "<p>A full-suspension ebike has both a front suspension fork and a rear suspension system (horst-link suspension), whereas hardtail ebikes only have front suspension. Full-suspension ebikes are better suited for rough, technical, and steep terrains by improving comfort, traction, and control for a more enjoyable ride.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_yEHGtJ": {
+          "type": "question",
+          "settings": {
+            "title": "<strong>What is the warranty for X Series ebikes?</strong>",
+            "text": "<p>Each X Series ebike comes with a 2-year warranty covering the bike frame, battery, and components, excluding wear-and-tear items such as brake pads and tires. Learn more about our warranty policy here.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "question_JVERwC",
+        "question_6xUXfk",
+        "question_jn9bgc",
+        "question_yacmtH",
+        "question_NP8gfD",
+        "question_yEHGtJ"
+      ],
+      "name": "t:sections.faq.presets.name",
+      "settings": {
+        "style": "with-border",
+        "heading": "FAQ",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": false,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "rgba(0,0,0,0)",
+        "gradient_background": "",
+        "panel_background": "#f7f7f7",
+        "panel_border": "#e3e3e3",
+        "color_highlight": "rgba(0,0,0,0)",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "rgba(0,0,0,0)",
+        "color_button_gradient": "",
+        "color_overlay": "rgba(0,0,0,0)",
+        "overlay_opacity": 4,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": false,
+        "rounded": false,
+        "title_margin_bottom": 32,
+        "summary_padding": 20,
+        "summary_icon_bg": "#e3e3e3"
+      }
+    },
+    "171014248221776063": {
+      "type": "apps",
+      "blocks": {
+        "s_store_locator_storeify_storelocator_phEtqx": {
+          "type": "shopify://apps/s-store-locator/blocks/storeify-storelocator/e7003487-cc51-4321-9488-2c47c07a5b17",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "s_store_locator_storeify_storelocator_phEtqx"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "cg_x_series_banner_r3ap6c",
+    "cg_sticky_video_RHNU8J",
+    "cg_media_grids_JrqyF7",
+    "cg_parallax_pinning_card_VFWjTx",
+    "cg_push_up_card_WdzcfE",
+    "cg_info_with_counters_w4dkeh",
+    "cg_carousel_slider_KnEQy4",
+    "cg_features_with_video_qHCWVq",
+    "cg_media_grids_yiKcXg",
+    "cg_products_compare_form_7cDFyk",
+    "countdown_timer_ppAUwr",
+    "faq_fzWAkk",
+    "171014248221776063"
+  ]
+}

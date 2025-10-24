@@ -1,0 +1,568 @@
+{% doc %}
+  @prompt
+    Create a hero banner section with image and text overlay with these specifications:
+    - Separate image uploads for desktop and mobile versions
+    - Desktop height options: adapt to image (natural height), or custom pixel height with number input field (e.g. 400px, 600px, 800px)
+    - Mobile height options: adapt to image (natural height), or custom pixel height with number input field (e.g. 300px, 400px, 500px)
+    - Height mode toggle: choose between "adapt to image" or "custom height"
+    - Content alignment settings: left, center, or right positioning with proper spacing/padding from banner edges
+    - Adjustable overlay opacity slider (0-100%) with dark semi-transparent overlay over the image
+    - Content structure from top to bottom: subheading text (small text above main heading), main heading (large bold text), countdown timer (displays days, hours, minutes, seconds), description text (paragraph below timer)
+    - All text colors are adjustable: separate color pickers for subheading, main heading, countdown timer, and description
+    - Countdown timer should be prominent and styled to match the hero banner aesthetic
+    - Timer setting to set target date and time for countdown
+    - When custom height is selected, image should cover the container using object-fit cover
+    - When adapt to image is selected, show full image at natural aspect ratio
+    - Proper padding around all content so text never touches banner edges
+    - Responsive design that works beautifully on all devices
+    - Clean, modern styling with good typography hierarchy
+    - All text fields are editable in theme customizer
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hero-banner-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .ai-hero-banner-container-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    {% if block.settings.desktop_height_mode == 'custom' %}
+      height: {{ block.settings.desktop_custom_height }}px;
+    {% endif %}
+  }
+
+  .ai-hero-banner-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    display: block;
+    {% if block.settings.desktop_height_mode == 'custom' %}
+      object-fit: cover;
+      object-position: center;
+    {% else %}
+      object-fit: contain;
+    {% endif %}
+  }
+
+  .ai-hero-banner-image-desktop-{{ ai_gen_id }} {
+    display: block;
+  }
+
+  .ai-hero-banner-image-mobile-{{ ai_gen_id }} {
+    display: none;
+  }
+
+  .ai-hero-banner-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, {{ block.settings.overlay_opacity | divided_by: 100.0 }});
+    pointer-events: none;
+  }
+
+  .ai-hero-banner-content-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    z-index: 2;
+    {% if block.settings.content_alignment == 'left' %}
+      justify-content: flex-start;
+    {% elsif block.settings.content_alignment == 'center' %}
+      justify-content: center;
+    {% else %}
+      justify-content: flex-end;
+    {% endif %}
+  }
+
+  .ai-hero-banner-content-wrapper-{{ ai_gen_id }} {
+    max-width: 600px;
+    text-align: {{ block.settings.content_alignment }};
+  }
+
+  .ai-hero-banner-subheading-{{ ai_gen_id }} {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+    color: {{ block.settings.subheading_color }};
+  }
+
+  .ai-hero-banner-heading-{{ ai_gen_id }} {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 24px;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-hero-banner-countdown-{{ ai_gen_id }} {
+    display: flex;
+    gap: 16px;
+    margin: 0 0 24px;
+    {% if block.settings.content_alignment == 'left' %}
+      justify-content: flex-start;
+    {% elsif block.settings.content_alignment == 'center' %}
+      justify-content: center;
+    {% else %}
+      justify-content: flex-end;
+    {% endif %}
+  }
+
+  .ai-hero-banner-countdown-item-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+  }
+
+  .ai-hero-banner-countdown-number-{{ ai_gen_id }} {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    color: {{ block.settings.countdown_color }};
+  }
+
+  .ai-hero-banner-countdown-label-{{ ai_gen_id }} {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+    color: {{ block.settings.countdown_color }};
+    opacity: 0.8;
+  }
+
+  .ai-hero-banner-description-{{ ai_gen_id }} {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    color: {{ block.settings.description_color }};
+  }
+
+  .ai-hero-banner-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    {% if block.settings.desktop_height_mode == 'custom' %}
+      height: {{ block.settings.desktop_custom_height }}px;
+    {% else %}
+      height: 600px;
+    {% endif %}
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-hero-banner-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-container-{{ ai_gen_id }} {
+      {% if block.settings.mobile_height_mode == 'custom' %}
+        height: {{ block.settings.mobile_custom_height }}px;
+      {% endif %}
+    }
+
+    .ai-hero-banner-image-{{ ai_gen_id }} {
+      {% if block.settings.mobile_height_mode == 'custom' %}
+        object-fit: cover;
+      {% else %}
+        object-fit: contain;
+      {% endif %}
+    }
+
+    .ai-hero-banner-image-desktop-{{ ai_gen_id }} {
+      {% if block.settings.mobile_image %}
+        display: none;
+      {% endif %}
+    }
+
+    .ai-hero-banner-image-mobile-{{ ai_gen_id }} {
+      display: block;
+    }
+
+    .ai-hero-banner-content-{{ ai_gen_id }} {
+      padding: 24px;
+    }
+
+    .ai-hero-banner-heading-{{ ai_gen_id }} {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .ai-hero-banner-subheading-{{ ai_gen_id }} {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .ai-hero-banner-countdown-{{ ai_gen_id }} {
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .ai-hero-banner-countdown-item-{{ ai_gen_id }} {
+      min-width: 60px;
+    }
+
+    .ai-hero-banner-countdown-number-{{ ai_gen_id }} {
+      font-size: 28px;
+    }
+
+    .ai-hero-banner-countdown-label-{{ ai_gen_id }} {
+      font-size: 10px;
+    }
+
+    .ai-hero-banner-description-{{ ai_gen_id }} {
+      font-size: 14px;
+    }
+
+    .ai-hero-banner-placeholder-{{ ai_gen_id }} {
+      {% if block.settings.mobile_height_mode == 'custom' %}
+        height: {{ block.settings.mobile_custom_height }}px;
+      {% else %}
+        height: 400px;
+      {% endif %}
+    }
+  }
+{% endstyle %}
+
+<hero-banner-{{ ai_gen_id }} class="ai-hero-banner-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-hero-banner-container-{{ ai_gen_id }}">
+    {% if block.settings.desktop_image %}
+      <img
+        src="{{ block.settings.desktop_image | image_url: width: 2000 }}"
+        alt="{{ block.settings.desktop_image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.desktop_image.width }}"
+        height="{{ block.settings.desktop_image.height }}"
+        class="ai-hero-banner-image-{{ ai_gen_id }} ai-hero-banner-image-desktop-{{ ai_gen_id }}"
+      >
+    {% else %}
+      <div class="ai-hero-banner-placeholder-{{ ai_gen_id }}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.mobile_image %}
+      <img
+        src="{{ block.settings.mobile_image | image_url: width: 1000 }}"
+        alt="{{ block.settings.mobile_image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.mobile_image.width }}"
+        height="{{ block.settings.mobile_image.height }}"
+        class="ai-hero-banner-image-{{ ai_gen_id }} ai-hero-banner-image-mobile-{{ ai_gen_id }}"
+      >
+    {% endif %}
+
+    <div class="ai-hero-banner-overlay-{{ ai_gen_id }}"></div>
+
+    <div class="ai-hero-banner-content-{{ ai_gen_id }}">
+      <div class="ai-hero-banner-content-wrapper-{{ ai_gen_id }}">
+        {% if block.settings.subheading != blank %}
+          <div class="ai-hero-banner-subheading-{{ ai_gen_id }}">
+            {{ block.settings.subheading }}
+          </div>
+        {% endif %}
+
+        {% if block.settings.heading != blank %}
+          <h1 class="ai-hero-banner-heading-{{ ai_gen_id }}">
+            {{ block.settings.heading }}
+          </h1>
+        {% endif %}
+
+        {% if block.settings.countdown_date != blank and block.settings.countdown_time != blank %}
+          <div class="ai-hero-banner-countdown-{{ ai_gen_id }}" data-countdown-target="{{ block.settings.countdown_date }}T{{ block.settings.countdown_time }}">
+            <div class="ai-hero-banner-countdown-item-{{ ai_gen_id }}">
+              <div class="ai-hero-banner-countdown-number-{{ ai_gen_id }}" data-days>00</div>
+              <div class="ai-hero-banner-countdown-label-{{ ai_gen_id }}">Days</div>
+            </div>
+            <div class="ai-hero-banner-countdown-item-{{ ai_gen_id }}">
+              <div class="ai-hero-banner-countdown-number-{{ ai_gen_id }}" data-hours>00</div>
+              <div class="ai-hero-banner-countdown-label-{{ ai_gen_id }}">Hours</div>
+            </div>
+            <div class="ai-hero-banner-countdown-item-{{ ai_gen_id }}">
+              <div class="ai-hero-banner-countdown-number-{{ ai_gen_id }}" data-minutes>00</div>
+              <div class="ai-hero-banner-countdown-label-{{ ai_gen_id }}">Minutes</div>
+            </div>
+            <div class="ai-hero-banner-countdown-item-{{ ai_gen_id }}">
+              <div class="ai-hero-banner-countdown-number-{{ ai_gen_id }}" data-seconds>00</div>
+              <div class="ai-hero-banner-countdown-label-{{ ai_gen_id }}">Seconds</div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if block.settings.description != blank %}
+          <div class="ai-hero-banner-description-{{ ai_gen_id }}">
+            {{ block.settings.description }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</hero-banner-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class HeroBanner{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.countdownElement = this.querySelector('.ai-hero-banner-countdown-{{ ai_gen_id }}');
+        this.interval = null;
+      }
+
+      connectedCallback() {
+        if (this.countdownElement) {
+          this.startCountdown();
+        }
+      }
+
+      disconnectedCallback() {
+        if (this.interval) {
+          clearInterval(this.interval);
+        }
+      }
+
+      startCountdown() {
+        const targetDate = this.countdownElement.getAttribute('data-countdown-target');
+        if (!targetDate) return;
+
+        const target = new Date(targetDate).getTime();
+
+        const updateCountdown = () => {
+          const now = new Date().getTime();
+          const distance = target - now;
+
+          if (distance < 0) {
+            if (this.interval) {
+              clearInterval(this.interval);
+            }
+            this.setCountdownValues(0, 0, 0, 0);
+            return;
+          }
+
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          this.setCountdownValues(days, hours, minutes, seconds);
+        };
+
+        updateCountdown();
+        this.interval = setInterval(updateCountdown, 1000);
+      }
+
+      setCountdownValues(days, hours, minutes, seconds) {
+        const daysEl = this.countdownElement.querySelector('[data-days]');
+        const hoursEl = this.countdownElement.querySelector('[data-hours]');
+        const minutesEl = this.countdownElement.querySelector('[data-minutes]');
+        const secondsEl = this.countdownElement.querySelector('[data-seconds]');
+
+        if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+        if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+        if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+        if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+      }
+    }
+
+    customElements.define('hero-banner-{{ ai_gen_id }}', HeroBanner{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Hero banner",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop image"
+    },
+    {
+      "type": "select",
+      "id": "desktop_height_mode",
+      "label": "Desktop height mode",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "custom",
+          "label": "Custom height"
+        }
+      ],
+      "default": "custom"
+    },
+    {
+      "type": "range",
+      "id": "desktop_custom_height",
+      "min": 300,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "label": "Desktop custom height",
+      "default": 600
+    },
+    {
+      "type": "header",
+      "content": "Mobile image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image"
+    },
+    {
+      "type": "select",
+      "id": "mobile_height_mode",
+      "label": "Mobile height mode",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "custom",
+          "label": "Custom height"
+        }
+      ],
+      "default": "custom"
+    },
+    {
+      "type": "range",
+      "id": "mobile_custom_height",
+      "min": 200,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "label": "Mobile custom height",
+      "default": 400
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Limited Time Offer"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Summer Sale"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Countdown timer"
+    },
+    {
+      "type": "text",
+      "id": "countdown_date",
+      "label": "Target date",
+      "info": "Format: YYYY-MM-DD (e.g., 2025-12-31)"
+    },
+    {
+      "type": "text",
+      "id": "countdown_time",
+      "label": "Target time",
+      "info": "Format: HH:MM (24-hour format, e.g., 23:59)"
+    },
+    {
+      "type": "color",
+      "id": "countdown_color",
+      "label": "Countdown color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Don't miss out on our biggest sale of the year. Shop now and save up to 50% on selected items."
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero banner"
+    }
+  ]
+}
+{% endschema %}

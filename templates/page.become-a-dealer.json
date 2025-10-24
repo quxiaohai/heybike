@@ -1,0 +1,316 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-sm",
+        "heading_tag": "h1",
+        "text_size": "text-sm",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "images_with_text_BAxLxU": {
+      "type": "images-with-text",
+      "blocks": {
+        "heading_c8hRPi": {
+          "type": "heading",
+          "settings": {
+            "heading": "Become a dealer",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "image_dXmYg7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_114_39029f68-374e-4cfe-adc4-7bf94a27487d.png",
+            "image_width": "custom",
+            "image_max_width": 150,
+            "image_max_width_mobile": 150
+          }
+        },
+        "text_dQRdfk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our partners are passionate, spirited, and inventive individuals. Thus, we are actively seeking dealers of all scales who shares the same passion, enthusiasm, and intellect to join our continual expanding family</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_XYn3mc": {
+          "type": "button",
+          "settings": {
+            "button_label": "Let's Partner Up",
+            "button_link": "https://form.jotform.com/232272003257143",
+            "button_size": "sm"
+          }
+        }
+      },
+      "block_order": [
+        "heading_c8hRPi",
+        "image_dXmYg7",
+        "text_dQRdfk",
+        "button_XYn3mc"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/01_956c1c81-89bb-414e-8d38-8fd3ea31f247.webp",
+        "image_ratio": "landscape",
+        "image_width": "medium",
+        "layout": "image_first",
+        "text_alignment": "left",
+        "text_alignment_mobile": "center",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 48,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": false
+      }
+    },
+    "multicolumn_with_icons_pnFPpk": {
+      "type": "multicolumn-with-icons",
+      "blocks": {
+        "column_3LJdxD": {
+          "type": "column",
+          "settings": {
+            "icon": "support",
+            "text": "<p>EMAIL: max@heybike.com/ari.olivo@heybike.com</p><p>PHONE：(Mon.-Sat. 7:00-16:00 PST)<br/>+1 888-301-6908<br/>+1 888-859-1518</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_Ummw83": {
+          "type": "column",
+          "settings": {
+            "icon": "wallet",
+            "text": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_FQbGtg": {
+          "type": "column",
+          "settings": {
+            "icon": "star",
+            "text": "<p>Our select models are certified by TUV to the <a href=\"https://www.certipedia.com/certificates/72301757?locale=en\" target=\"_blank\" title=\"https://www.certipedia.com/certificates/72301757?locale=en\"><strong>UL standard</strong></a></p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_3LJdxD",
+        "column_Ummw83",
+        "column_FQbGtg"
+      ],
+      "settings": {
+        "columns": 3,
+        "text_alignment": "left",
+        "heading": "",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "slideshow_VEfygL": {
+      "type": "slideshow",
+      "blocks": {
+        "image_hLMwBz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Horzion_banner_pc.jpg",
+            "heading": "Test ride service",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/dealer-locator"
+          }
+        }
+      },
+      "block_order": [
+        "image_hLMwBz"
+      ],
+      "settings": {
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_navigation": false,
+        "image_height": "400px",
+        "content_width": "small",
+        "image_height_mobile": "200px",
+        "color_text": "#ffffff",
+        "color_background": "#ffffff",
+        "gradient_background": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "padding_top": 48,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "image_with_text_overlay_wbyiVY": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_LH8xUH": {
+          "type": "heading",
+          "settings": {
+            "heading": "Text ride service",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_LH8xUH"
+      ],
+      "disabled": true,
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/Horzion_banner_pc.jpg",
+        "image_height": "400px",
+        "content_width": "small",
+        "content_position": "md:items-center md:justify-center",
+        "text_alignment": "center",
+        "image_height_mobile": "200px",
+        "content_position_mobile": "items-center justify-center",
+        "text_alignment_mobile": "center",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 70,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": true,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "rich_text_hDeHmQ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_pJiVPy": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Test ride service",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_hmFmpJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>As a Heybike dealer, we wish you could offer a test ride service to customers and directly make the deal if they are satisfied, and enjoy competitive margins. Of course, a repair service is also desirable. We can’t wait to team up!<br/><br/>Demonstrate your vitality, align with our progress, and together, we can bring about a meaningful impact.</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pJiVPy",
+        "text_hmFmpJ"
+      ],
+      "settings": {
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "rgba(0,0,0,0)",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 48,
+        "padding_bottom": 96,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "images_with_text_BAxLxU",
+    "multicolumn_with_icons_pnFPpk",
+    "slideshow_VEfygL",
+    "image_with_text_overlay_wbyiVY",
+    "rich_text_hDeHmQ"
+  ]
+}

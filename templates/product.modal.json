@@ -1,0 +1,138 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-product": {
+      "type": "main-product-modal",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "text": "{{ product.vendor }}",
+            "text_size": "text-base"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "product-title-md",
+            "title_size_mobile": "product-title-md",
+            "show_price": true,
+            "show_rating": false
+          }
+        },
+        "description_GzEf4W": {
+          "type": "description",
+          "settings": {
+            "text_size": "text-base"
+          }
+        },
+        "price_cqy7tJ": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "settings": {
+            "heading": "Sale Ends In:",
+            "subheading": "",
+            "color_text": "#e11d48",
+            "color_background": "#fff1f2",
+            "gradient_background": ""
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "show_variant_labels": true,
+            "picker_type": "button",
+            "enable_color_swatches": true,
+            "color_swatch_type": "color",
+            "size_chart": ""
+          }
+        },
+        "bundle_collapse_YrCQW8": {
+          "type": "bundle_collapse",
+          "settings": {
+            "show_recommendations": false,
+            "recommendations_title": "<p>Popular Upgrades</p>",
+            "recommendations_limit": 10,
+            "recommendations_expand": true,
+            "recommendations_metafield": "{{ product.metafields.custom.pdp_bundle_collapse_1.value }}",
+            "recommendations_checked_metafield": [],
+            "show_complementary": false,
+            "complementary_title": "<p>More Accessories</p>",
+            "complementary_limit": 10,
+            "complementary_expand": false,
+            "complementary_metafield": "{{ product.metafields.custom.pdp_bundle_collapse_2.value }}",
+            "warranty_product": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_price": false,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "enable_back_in_stock": false,
+            "show_back_in_stock_name": false,
+            "show_back_in_stock_phone": false
+          }
+        },
+        "pickup_availability": {
+          "type": "pickup_availability",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share",
+            "show_help_desk": true,
+            "help_label": "Need help?",
+            "help_page": ""
+          }
+        },
+        "read_more": {
+          "type": "read_more",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "description_GzEf4W",
+        "price_cqy7tJ",
+        "countdown",
+        "variant_picker",
+        "bundle_collapse_YrCQW8",
+        "buy_buttons",
+        "pickup_availability",
+        "share",
+        "read_more"
+      ],
+      "settings": {
+        "image_zoom": "lightbox",
+        "image_fill": false,
+        "hide_variants": false,
+        "enable_video_autoplay": true,
+        "enable_video_looping": true,
+        "mobile_layout": "full_width"
+      }
+    }
+  },
+  "order": [
+    "main-product"
+  ]
+}

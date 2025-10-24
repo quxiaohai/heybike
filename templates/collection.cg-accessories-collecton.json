@@ -1,0 +1,137 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-collection-banner": {
+      "type": "main-collection-banner",
+      "blocks": {
+        "breadcrumb": {
+          "type": "breadcrumb",
+          "disabled": true,
+          "settings": {
+            "show_collections_link": true
+          }
+        },
+        "subheading_GqBhF9": {
+          "type": "subheading",
+          "settings": {
+            "subheading_text": ""
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "title-xl"
+          }
+        },
+        "description_CgBXAf": {
+          "type": "description",
+          "settings": {
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumb",
+        "subheading_GqBhF9",
+        "title",
+        "description_CgBXAf"
+      ],
+      "settings": {
+        "transparent_header": true,
+        "show_image": true,
+        "image": "shopify://shop_images/accessories_collection_banner-pc.png",
+        "image_height": "adapt",
+        "content_position": "md:items-center md:justify-start",
+        "text_alignment": "left",
+        "image_mobile": "shopify://shop_images/accessories_collection-banner_app.png",
+        "image_height_mobile": "adapt",
+        "content_position_mobile": "items-center justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_overlay": "#000000",
+        "overlay_opacity": 20,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "subcollections": {
+          "type": "subcollections",
+          "settings": {
+            "menu": "",
+            "per_row": 5,
+            "show_count": false
+          }
+        },
+        "promotion": {
+          "type": "promotion",
+          "disabled": true,
+          "settings": {
+            "position": 4,
+            "column_size": "1",
+            "image": "shopify://shop_images/heybike-hero-banner.jpg",
+            "heading": "Heybike Hero",
+            "content": "<p>your chance to \"Better\" your All-Terrain Adventure! </p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": true,
+            "content_position": "md:items-center",
+            "text_alignment": "center",
+            "content_position_mobile": "items-center",
+            "text_alignment_mobile": "center",
+            "color_text": "#ffffff",
+            "color_button_text": "#4d5940",
+            "color_button_background": "#ffffff",
+            "color_button_gradient": "",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "subcollections",
+        "promotion"
+      ],
+      "settings": {
+        "products_per_page": 16,
+        "columns": 3,
+        "columns_mobile": "1",
+        "pagination": "paginated",
+        "enable_filtering": true,
+        "filter_collapsed": false,
+        "filter_type": "sidebar",
+        "filter_color_swatches": true,
+        "enable_sorting": false,
+        "padding_top": 40,
+        "padding_bottom": 100,
+        "divider": false,
+        "full_width": false,
+        "rounded": true
+      }
+    }
+  },
+  "order": [
+    "main-collection-banner",
+    "main-collection"
+  ]
+}

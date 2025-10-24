@@ -1,0 +1,242 @@
+{% style %}
+  main:has(#shopify-section-{{ section.id }}) { 
+    {% if section.settings.section_bg != blank %}
+      background-color: {{ section.settings.section_bg }}; 
+    {% endif %}
+  }
+
+  #shopify-section-{{ section.id }} {
+    height: 150vh; 
+  }
+
+  #shopify-section-{{ section.id }} .sticky-video-trail { 
+    position: relative; 
+    width: 100%; 
+    /* height: 400vh; */
+    pointer-events: none; 
+  }
+  
+  #shopify-section-{{ section.id }} .sticky-video-container { 
+    top: 0; 
+    width: calc(1440vw / 19.2); 
+    max-width: 100%; 
+    position: sticky; 
+    margin: 0 auto; 
+    padding: calc(72vw / 19.2) 20px; 
+    z-index: 18; 
+  }
+
+  #shopify-section-{{ section.id }} .sticky-video-container.active { 
+    left: 50%; 
+    position: fixed; 
+    transform: translateX(-50%); 
+  }
+  
+  #shopify-section-{{ section.id }} .section-heading { 
+    max-width: 480px; 
+    margin: 0 auto calc(48vw / 19.2) auto; 
+    line-height: normal; 
+    text-align: center; 
+    font-size: calc(48vw / 19.2); 
+    color: #FFFFFF; 
+  }
+
+  #shopify-section-{{ section.id }} .section-content { 
+    width: 100%; 
+  }
+
+  #shopify-section-{{ section.id }} .media {
+    max-height: 680px; 
+    border-radius: 16px; 
+    overflow: hidden; 
+    margin: 0 auto; 
+  }
+
+  #shopify-section-{{ section.id }} .media.mobile {
+    display: none; 
+  }
+
+  /* Responsive */
+  /* Mobile */
+  @media (max-width: 767px) { 
+    #shopify-section-{{ section.id }} .sticky-video-container { 
+      width: 100%; 
+      padding: 64px 0 0; 
+    }
+
+    #shopify-section-{{ section.id }} .section-heading { 
+      margin-bottom: 48px; 
+      padding: 0 20px; 
+      font-size: 32px; 
+    }
+
+    #shopify-section-{{ section.id }} .media { 
+      aspect-ratio: 375 / 512; 
+      border-radius: unset; 
+      object-fit: cover; 
+    }
+
+    #shopify-section-{{ section.id }} .media.desktop {
+      display: none; 
+    }
+
+    #shopify-section-{{ section.id }} .media.mobile {
+      display: block; 
+    }
+  }
+
+  /* Tablet */
+  @media (min-width: 768px) and (max-width: 1366px) {
+    #shopify-section-{{ section.id }} .sticky-video-container {
+      width: calc(1440vw / 13.66); 
+      padding: calc(72vw / 13.66) 20px; 
+    }
+
+    #shopify-section-{{ section.id }} .section-heading {
+      margin: 0 auto calc(48vw / 13.66) auto; 
+      font-size: calc(48vw / 13.66); 
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 1920px) { 
+    #shopify-section-{{ section.id }} .sticky-video-container {
+      width: 1440px; 
+      padding: 72px 20px; 
+    }
+    
+    #shopify-section-{{ section.id }} .section-heading {
+      margin: 0 auto 48px auto; 
+      font-size: 48px; 
+    }
+  }
+{% endstyle %}
+
+<!-- View -->
+<div class="sticky-video-trail">
+  <div class="sticky-video-container">
+    {% if section.settings.section_heading != blank %}
+      <h2 class="section-heading">{{ section.settings.section_heading }}</h2>
+    {% endif %}
+    <div class="section-content">
+      {% if section.settings.section_video != blank %}
+        {{ section.settings.section_video | video_tag: autoplay: true, loop: true, muted: true, controls: false, outline: false, controlList: nofullscreen, class: 'media desktop' }}
+      {% endif %}
+      {% if section.settings.section_video_mobile != blank %}
+        {{ section.settings.section_video_mobile | video_tag: autoplay: true, loop: true, muted: true, controls: false, outline: false, controlList: nofullscreen, class: 'media mobile' }}
+      {% elsif section.settings.section_video != blank %}
+        {{ section.settings.section_video | video_tag: autoplay: true, loop: true, muted: true, controls: false, outline: false, controlList: nofullscreen, class: 'media mobile' }}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+  addEventListener("DOMContentLoaded", (event) => { 
+    /* console.log("Passed through sticky video section."); */
+    
+    function getOffsetTop(element) {
+      var rect = element.getBoundingClientRect();
+      var offsetTop = rect.top + window.scrollY;
+      return offsetTop;
+    }
+    
+    var section{{ section.id | remove: '-' }} = document.querySelector("#shopify-section-{{ section.id }}"); 
+    var container{{ section.id | remove: '-' }} = document.querySelector("#shopify-section-{{ section.id }} .sticky-video-container"); 
+    var offset{{ section.id | remove: '-' }} = getOffsetTop(section{{ section.id | remove: '-' }}); 
+
+    addEventListener("scroll", (event) => { 
+      /* console.log("window.pageYOffset: " + window.pageYOffset); */
+      /* console.log("offset{{ section.id | remove: '-' }}: " + offset{{ section.id | remove: '-' }}); */
+      
+      if(window.pageYOffset >= (offset{{ section.id | remove: '-' }} - 77)) { 
+        container{{ section.id | remove: '-' }}.classList.add("active"); 
+        container{{ section.id | remove: '-' }}.style.top = `${(0 - (window.pageYOffset - (offset{{ section.id | remove: '-' }} - 77)) / 1000)}px`; 
+        container{{ section.id | remove: '-' }}.style.opacity = `${1 - ((window.pageYOffset - (offset{{ section.id | remove: '-' }} - 77)) / 1200)}`; 
+        container{{ section.id | remove: '-' }}.style.transform = `translateX(-50%) scale(${1 - ((window.pageYOffset - (offset{{ section.id | remove: '-' }} - 77)) / 9000)})`; 
+      } else {
+        container{{ section.id | remove: '-' }}.classList.remove("active"); 
+        container{{ section.id | remove: '-' }}.style.opacity = "1"; 
+        container{{ section.id | remove: '-' }}.style.transform = "scale(1)"; 
+      }
+    }); 
+  }); 
+</script>
+
+{% comment %}
+<script>
+  addEventListener("DOMContentLoaded", (event) => { 
+    function getOffsetTop(element) {
+      const rect = element.getBoundingClientRect();
+      const offsetTop = rect.top + window.scrollY;
+      return offsetTop;
+    }
+    
+    const section{{ section.id | remove: '-' }} = document.querySelector("#shopify-section-{{ section.id }}"); 
+    const offset{{ section.id | remove: '-' }} = getOffsetTop(section{{ section.id | remove: '-' }}); 
+
+    section{{ section.id | remove: '-' }}style.border = "1px solid blue"; 
+
+    addEventListener("scroll", (event) => {
+      console.log("offset{{ section.id | remove: '-' }}: " + offset{{ section.id | remove: '-' }}); 
+      
+      if(window.pageYOffset >= offset{{ section.id | remove: '-' }}) { 
+        section{{ section.id | remove: '-' }} = "1px solid red"; 
+      }
+      
+      if(window.pageYOffset >= (offset{{ section.id | remove: '-' }} + window.innerHeight)) { 
+        if((1 - ((window.pageYOffset - (offset{{ section.id | remove: '-' }} + window.innerHeight)) / 500)) > 0) {
+          section{{ section.id | remove: '-' }}.style.opacity = `${1 - ((window.pageYOffset - (offset{{ section.id | remove: '-' }} + window.innerHeight)) / 300)}`; 
+        } else {
+          section{{ section.id | remove: '-' }}.style.opacity = "0"; 
+        }
+        
+        if((1 - ((window.pageYOffset - (offset{{ section.id | remove: '-' }} + window.innerHeight)) / 1500) > 0)) { 
+          section{{ section.id | remove: '-' }}.style.transform = `scale(${1 - ((window.pageYOffset - (offset{{ section.id | remove: '-' }} + window.innerHeight)) / 1500)})`; 
+        } else {
+          section{{ section.id | remove: '-' }}.style.transform = "scale(0)"; 
+        }
+      }
+    }); 
+  }); 
+</script>
+{% endcomment %}
+
+{% schema %}
+  {
+    "name": "CG Sticky Video", 
+    "class": "cg-sticky-video", 
+    "tag": "section", 
+    "settings": [ 
+      {
+        "type": "color", 
+        "id": "section_bg", 
+        "label": "Section background", 
+        "default": "#000000"
+      }, 
+      {
+        "type": "text", 
+        "id": "section_heading", 
+        "label": "Heading", 
+        "default": "Elevate your ride with the X Series"
+      }, 
+      {
+        "type": "video", 
+        "id": "section_video", 
+        "label": "Video (Desktop)"
+      }, 
+      {
+        "type": "video", 
+        "id": "section_video_mobile", 
+        "label": "Video (Mobile)"
+      }
+    ], 
+    "blocks": [], 
+    "presets": [
+      {
+        "name": "CG Sticky Video", 
+        "blocks": []
+      }
+    ]
+  }
+{% endschema %}

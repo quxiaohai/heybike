@@ -1,0 +1,1955 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_overlay_bkYKYC": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_Nepixm": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Add a tagline",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true
+          }
+        },
+        "heading_QGbKnb": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em><strong>Let your joy out!</strong></em>",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline"
+          }
+        },
+        "text_n3FJqE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>In our lives, there are few experiences that so quickly and easily provide the feelings of joy and freedom. That daunting feeling when you’re face to face with a large hill. </p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_Nepixm",
+        "heading_QGbKnb",
+        "text_n3FJqE"
+      ],
+      "disabled": true,
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/AE7DEBA5-24BB-461a-A3EC-C35FCED8CDD8.png",
+        "image_height": "650px",
+        "content_width": "medium",
+        "content_position": "md:items-center md:justify-center",
+        "text_alignment": "center",
+        "image_height_mobile": "600px",
+        "content_position_mobile": "items-center justify-center",
+        "text_alignment_mobile": "center",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "video_with_text_overlay_fqDmxQ": {
+      "type": "video-with-text-overlay",
+      "blocks": {
+        "subheading_hXw8hp": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Add a tagline",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true
+          }
+        },
+        "heading_xPtQJF": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em><strong>Let your joy out!</strong></em>",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline"
+          }
+        },
+        "text_BfRDNR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>In our lives, there are few experiences that so quickly and easily provide the feelings of joy and freedom.</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_hXw8hp",
+        "heading_xPtQJF",
+        "text_BfRDNR"
+      ],
+      "settings": {
+        "transparent_header": false,
+        "video": "shopify://files/videos/pc v2.mp4",
+        "video_url": "",
+        "description": "",
+        "enable_video_autoplay": true,
+        "enable_video_looping": true,
+        "image_height": "adapt",
+        "content_width": "medium",
+        "content_position": "md:items-center md:justify-center",
+        "text_alignment": "center",
+        "video_mobile": "shopify://files/videos/手机端 v2.mp4",
+        "video_url_mobile": "",
+        "image_height_mobile": "adapt",
+        "content_position_mobile": "items-center justify-center",
+        "text_alignment_mobile": "center",
+        "color_text": "#ffffff",
+        "color_highlight": "#f6be00",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 20,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false
+      }
+    },
+    "rich_text_FHMagt": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6kxdHq": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Rich text",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_pbXcgE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>That daunting feeling when you’re face to face with a large hill.<br/>The feeling of accomplishment and happiness as you overcome and speed downhill.<br/>Moments of togetherness you experience riding with a partner, friend, or loved one.<br/>No schedules, no business calls, no interruptions.<br/>Just you, your bike, and the open road.<br/>This is living, pure and simple.</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_gGaVPD": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "md"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6kxdHq",
+        "text_pbXcgE",
+        "button_gGaVPD"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 44,
+        "padding_bottom": 16,
+        "divider": true,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-md",
+        "heading_tag": "h1",
+        "text_size": "text-base",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "image_with_text_htfcbg": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_jhxYJU": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em><strong>Our Mission</strong></em>",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline"
+          }
+        },
+        "text_8xzLri": {
+          "type": "text",
+          "settings": {
+            "text": "<p>To inspire everyone towards joy by breaking life's routine with advanced electric bikes and innovative technologies.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "heading_XafQEt": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em><strong>Our Vision</strong></em>",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline"
+          }
+        },
+        "text_89x7qE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>To become a world-leading organization, empowering every user with reliable eco-friendly transportation solutions.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_pqaJdW": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "md"
+          }
+        }
+      },
+      "block_order": [
+        "heading_jhxYJU",
+        "text_8xzLri",
+        "heading_XafQEt",
+        "text_89x7qE",
+        "button_pqaJdW"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/2E10531C-97D8-41B1-A91E-14F394DD3BEF.png",
+        "image_height": "500px",
+        "image_width": "medium",
+        "layout": "image_first",
+        "text_alignment": "left",
+        "image_mobile": "shopify://shop_images/17FF34C2-B087-44a1-93A7-E82344C072B3.png",
+        "image_height_mobile": "300px",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_background_2": "",
+        "gradient_background_2": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 40,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": true,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "images_with_text_T6XnY3": {
+      "type": "images-with-text",
+      "blocks": {
+        "spacing_bKFQYx": {
+          "type": "spacing",
+          "settings": {
+            "height": 120,
+            "height_mobile": 0
+          }
+        },
+        "spacing_GyMChM": {
+          "type": "spacing",
+          "settings": {
+            "height": 120,
+            "height_mobile": 0
+          }
+        },
+        "spacing_6yg9p4": {
+          "type": "spacing",
+          "settings": {
+            "height": 120,
+            "height_mobile": 0
+          }
+        },
+        "heading_rE9Fbg": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_DVfK6T": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em><strong>Our Concept</strong></em></p>",
+            "text_size": "subtext-xl",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "sketch-underline"
+          }
+        },
+        "heading_bfrfxm": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>eBike &</strong>",
+            "heading_size": "title-xl tracking-heading",
+            "heading_tag": "h1",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_8ciUrr": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_47zy7V": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "md"
+          }
+        }
+      },
+      "block_order": [
+        "spacing_bKFQYx",
+        "spacing_GyMChM",
+        "spacing_6yg9p4",
+        "heading_rE9Fbg",
+        "text_DVfK6T",
+        "heading_bfrfxm",
+        "text_8ciUrr",
+        "button_47zy7V"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/circle.png",
+        "image_ratio": "rounded",
+        "image_width": "medium",
+        "layout": "text_first",
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "color_text": "#000000",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "#f6be00",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 40,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": true
+      }
+    },
+    "rich_text_pggDrR": {
+      "type": "rich-text",
+      "blocks": {
+        "text_iygb3w": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Riding an eBike means reconnection to us at Heybike. Reconnection between a rider, community, life, and joy. <br/><br/>Reconnecting to those happy moments riding a bike provides memorable experiences with family and friends, a break from monotonous routines, and an ode to simpler times.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "text_iygb3w"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "p",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "image_with_text_overlay_aKJkjJ": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_eTewKK": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Our Concept",
+            "subheading_size": "subtitle-lg",
+            "secondary_color": true
+          }
+        },
+        "heading_wkqFkj": {
+          "type": "heading",
+          "settings": {
+            "heading": "eBikes&",
+            "heading_size": "title-xl tracking-heading",
+            "heading_tag": "h1",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_YtmWK9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Riding an eBike means reconnection to us at Heybike. Reconnection between a rider, community, life, and joy. <br/><br/>Reconnecting to those happy moments riding a bike provides memorable experiences with family and friends, a break from monotonous routines, and an ode to simpler times.</p>",
+            "text_size": "subtext-lg",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_eTewKK",
+        "heading_wkqFkj",
+        "text_YtmWK9"
+      ],
+      "disabled": true,
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/AFE26858-1035-42E9-8824-1013F1365C1B.png",
+        "image_height": "adapt",
+        "content_width": "medium",
+        "content_position": "md:items-end md:justify-start",
+        "text_alignment": "left",
+        "image_height_mobile": "600px",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#f6be00",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 40,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "rich_text_hmxPBN": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_gfAAki": {
+          "type": "heading",
+          "settings": {
+            "heading": "Brand Value",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_wWcDwz": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_dUgpnd": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "md"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gfAAki",
+        "text_wWcDwz",
+        "button_dUgpnd"
+      ],
+      "disabled": true,
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "left",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 28,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "custom_slideshow_cBqQ97": {
+      "type": "custom-slideshow",
+      "blocks": {
+        "image_8tzfRw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/lQLPJxNE8p2Ta6PNBTzNCJSwyOqRex8woS0Gycmin2ORAQ_2196_1340_be8756db-2997-4ad1-b3fd-6c00feb8b6a6.png",
+            "image_height": "750px",
+            "content_width": "medium",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_height_mobile": "auto",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "color_text": "#ffffff",
+            "color_highlight": "#e0a580",
+            "gradient_highlight": "",
+            "color_button_text": "#171717",
+            "color_button_background": "#ffffff",
+            "color_button_gradient": "",
+            "block_color_overlay": "#171717",
+            "overlay_opacity": 15,
+            "subheading": "Subtle Insights",
+            "subheading_size": "subtitle-lg",
+            "secondary_color": true,
+            "heading": "<em><strong>Subtle Insights</strong></em>",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline",
+            "text": "<p>Based on the needs of each user, we provide feasible and appropriate solutions for users of different ages, with different levels of purchasing power and in different scenarios</p>",
+            "text_size": "subtext-lg",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color_text": false,
+            "highlighted_text_text": "none",
+            "highlighted_scribble_text": "circle",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "md",
+            "button_secondary_style": false,
+            "label": "",
+            "link": "",
+            "liquid": ""
+          }
+        },
+        "image_cAEi9F": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/lQLPJxj23h0wuqPNBTzNCJSwS_G_bCCiXSEGycmin2ORAg_2196_1340.png",
+            "image_height": "750px",
+            "content_width": "medium",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_height_mobile": "auto",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "color_text": "#ffffff",
+            "color_highlight": "#e0a580",
+            "gradient_highlight": "",
+            "color_button_text": "#171717",
+            "color_button_background": "#ffffff",
+            "color_button_gradient": "",
+            "block_color_overlay": "#171717",
+            "overlay_opacity": 20,
+            "subheading": "",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true,
+            "heading": "<em><strong>Valuable Products</strong></em>",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline",
+            "text": "<p>Not only provide different solutions for different users in different scenarios, but also strive to make each product worth the price and be the first choice for the different needs of users</p>",
+            "text_size": "subtext-lg",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color_text": false,
+            "highlighted_text_text": "none",
+            "highlighted_scribble_text": "circle",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "md",
+            "button_secondary_style": false,
+            "label": "",
+            "link": "",
+            "liquid": ""
+          }
+        },
+        "image_kzrjBp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/lQLPJyBRhYXqOaPNBTzNCJSwsSpItxVC_pQGycmin5i8AA_2196_1340.png",
+            "image_height": "750px",
+            "content_width": "medium",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_height_mobile": "auto",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "color_text": "#ffffff",
+            "color_highlight": "#e0a580",
+            "gradient_highlight": "",
+            "color_button_text": "#171717",
+            "color_button_background": "#ffffff",
+            "color_button_gradient": "",
+            "block_color_overlay": "#171717",
+            "overlay_opacity": 20,
+            "subheading": "",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true,
+            "heading": "<em><strong>Flexible R&D</strong></em>",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline",
+            "text": "<p>Focus on the development of technologies that provide real value for users, so our technologies are not only innovative, but also effectively empower different scenarios and needs.</p>",
+            "text_size": "subtext-lg",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color_text": false,
+            "highlighted_text_text": "none",
+            "highlighted_scribble_text": "circle",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "md",
+            "button_secondary_style": false,
+            "label": "",
+            "link": "",
+            "liquid": ""
+          }
+        },
+        "image_MT7UAg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/lQLPKHaTg0-F7KPNBTzNCJSwlfrG_O2ZQRgGycmin2ORAA_2196_1340.png",
+            "image_height": "750px",
+            "content_width": "medium",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_height_mobile": "auto",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "color_text": "#ffffff",
+            "color_highlight": "#e0a580",
+            "gradient_highlight": "",
+            "color_button_text": "#171717",
+            "color_button_background": "#ffffff",
+            "color_button_gradient": "",
+            "block_color_overlay": "#171717",
+            "overlay_opacity": 20,
+            "subheading": "",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true,
+            "heading": "<em><strong>Joyful Resonance</strong></em>",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline",
+            "text": "<p>Evoking moments of happiness within riders cycling through work & life, with family & friends, and within themselves, providing pleasure and freedom with each riding experience.</p>",
+            "text_size": "subtext-lg",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color_text": false,
+            "highlighted_text_text": "none",
+            "highlighted_scribble_text": "circle",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "md",
+            "button_secondary_style": false,
+            "label": "",
+            "link": "",
+            "liquid": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_8tzfRw",
+        "image_cAEi9F",
+        "image_kzrjBp",
+        "image_MT7UAg"
+      ],
+      "disabled": true,
+      "settings": {
+        "transparent_header": false,
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": true,
+        "enable_parallax": false,
+        "parallax_direction": "zoom"
+      }
+    },
+    "image_with_text_LRbpCY": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_m8qnMb": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_ctJBt9": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_HV76UH": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "md"
+          }
+        }
+      },
+      "block_order": [
+        "heading_m8qnMb",
+        "text_ctJBt9",
+        "button_HV76UH"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_height": "650px",
+        "image_width": "medium",
+        "layout": "image_first",
+        "text_alignment": "left",
+        "image_height_mobile": "auto",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_background_2": "",
+        "gradient_background_2": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "testimonials_banner_fUEfPd": {
+      "type": "testimonials-banner",
+      "blocks": {
+        "testimonial_FnCtMx": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "1-star",
+            "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "image": "shopify://shop_images/lQLPJxNE8p2Ta6PNBTzNCJSwyOqRex8woS0Gycmin2ORAQ_2196_1340_be8756db-2997-4ad1-b3fd-6c00feb8b6a6.png",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "testimonial_Yjxbkb": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "testimonial_pGRfBm": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "testimonial_qnVkgw": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_FnCtMx",
+        "testimonial_Yjxbkb",
+        "testimonial_pGRfBm",
+        "testimonial_qnVkgw"
+      ],
+      "disabled": true,
+      "settings": {
+        "transparent_header": false,
+        "image_height": "650px",
+        "content_position": "md:items-center md:justify-center",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-center justify-center",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 70,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "timeline_MhkfmP": {
+      "type": "timeline",
+      "blocks": {
+        "content_wx4ThH": {
+          "type": "content",
+          "settings": {
+            "subheading": "Text",
+            "heading": "Heading",
+            "heading_tag": "h2",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "content_3HX7At": {
+          "type": "content",
+          "settings": {
+            "subheading": "Text",
+            "heading": "Heading",
+            "heading_tag": "h2",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "content_bCPLDh": {
+          "type": "content",
+          "settings": {
+            "subheading": "Text",
+            "heading": "Heading",
+            "heading_tag": "h2",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "content_DPP4NB": {
+          "type": "content",
+          "settings": {
+            "subheading": "Text",
+            "heading": "Heading",
+            "heading_tag": "h2",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "content_DG4gMX": {
+          "type": "content",
+          "settings": {
+            "subheading": "Text",
+            "heading": "Heading",
+            "heading_tag": "h2",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "content_wx4ThH",
+        "content_3HX7At",
+        "content_bCPLDh",
+        "content_DPP4NB",
+        "content_DG4gMX"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_ratio": "wide",
+        "image_ratio_mobile": "adapt",
+        "heading": "Timeline",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "video_with_text_overlay_Haf9L7": {
+      "type": "video-with-text-overlay",
+      "blocks": {
+        "subheading_UCDCft": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Add a tagline",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true
+          }
+        },
+        "heading_d7f7hP": {
+          "type": "heading",
+          "settings": {
+            "heading": "Video with text overlay",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_zGPzXh": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_UCDCft",
+        "heading_d7f7hP",
+        "text_zGPzXh"
+      ],
+      "disabled": true,
+      "settings": {
+        "transparent_header": false,
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "enable_video_autoplay": true,
+        "enable_video_looping": false,
+        "image_height": "650px",
+        "content_width": "small",
+        "content_position": "md:items-center md:justify-center",
+        "text_alignment": "center",
+        "video_url_mobile": "",
+        "cover_image_mobile": "shopify://shop_images/lQLPJxNE8p2Ta6PNBTzNCJSwyOqRex8woS0Gycmin2ORAQ_2196_1340_be8756db-2997-4ad1-b3fd-6c00feb8b6a6.png",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-center justify-center",
+        "text_alignment_mobile": "center",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 70,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false
+      }
+    },
+    "portfolio_kpeTdP": {
+      "type": "portfolio",
+      "blocks": {
+        "profile_qRc7Mb": {
+          "type": "profile",
+          "settings": {
+            "image": "shopify://shop_images/lQLPJxNE8p2Ta6PNBTzNCJSwyOqRex8woS0Gycmin2ORAQ_2196_1340.png",
+            "heading": "Heading",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "color_background": "#171717"
+          }
+        },
+        "profile_xU7qrU": {
+          "type": "profile",
+          "settings": {
+            "heading": "Heading",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "color_background": "#171717"
+          }
+        },
+        "profile_xQRPmk": {
+          "type": "profile",
+          "settings": {
+            "heading": "Heading",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "color_background": "#171717"
+          }
+        },
+        "profile_RXBfwR": {
+          "type": "profile",
+          "settings": {
+            "heading": "Heading",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "color_background": "#171717"
+          }
+        }
+      },
+      "block_order": [
+        "profile_qRc7Mb",
+        "profile_xU7qrU",
+        "profile_xQRPmk",
+        "profile_RXBfwR"
+      ],
+      "disabled": true,
+      "settings": {
+        "columns": 2,
+        "layout": "default",
+        "image_ratio": "wide",
+        "image_ratio_mobile": "portrait",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Portfolio",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center justify-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "<p>gfd</p>",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#ffffff",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "multicolumn_pnicda": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_e7ARxK": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/Heybike_Ranger_S.jpg",
+            "image_ratio": "adapt",
+            "heading": "<em><strong>Subtle Insights</strong></em>",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Based on the needs of each user, we provide feasible and appropriate solutions for users of different ages, with different levels of purchasing power and in different scenarios</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline"
+          }
+        },
+        "column_C8GjTk": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/Heybike_Ebikes.jpg",
+            "image_ratio": "adapt",
+            "heading": "<em><strong>Valuable Products</strong></em>",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Not only provide different solutions for different users in different scenarios, but also strive to make each product worth the price and be the first choice for the different needs of users.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline"
+          }
+        },
+        "column_e6pcxn": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/Motor_4893f147-7602-4980-84c8-c2c4e7708e7e.jpg",
+            "image_ratio": "adapt",
+            "heading": "<em><strong>Flexible R&D</strong></em>",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Focus on the development of technologies that provide real value for users, so our technologies are not only innovative, but also effectively empower different scenarios and needs.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline"
+          }
+        },
+        "column_k8XLiM": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/All_Season_Riding.jpg",
+            "image_ratio": "adapt",
+            "heading": "<em><strong>Joyful Resonance</strong></em>",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Evoking moments of happiness within riders cycling through work & life, with family & friends, and within themselves, providing pleasure and freedom with each riding experience.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline"
+          }
+        }
+      },
+      "block_order": [
+        "column_e7ARxK",
+        "column_C8GjTk",
+        "column_e6pcxn",
+        "column_k8XLiM"
+      ],
+      "settings": {
+        "columns": 2,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Brand Value",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "timeline_6zttTK": {
+      "type": "timeline",
+      "blocks": {
+        "content_wCmHLb": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/Heybike-Brawn-off-road-e-bike_bf8c738f-a346-45fa-9a2f-916502ac9c2e.jpg",
+            "image_mobile": "shopify://shop_images/Heybike-Brawn-off-road-e-bike_bf8c738f-a346-45fa-9a2f-916502ac9c2e.jpg",
+            "subheading": "2021",
+            "heading": "Jason's commuting epiphany",
+            "heading_tag": "h2",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "content_kdqrAT": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/The-Perfect-Valentine-Day-Gift-as-ebikes_512e0eb7-5415-4e21-9221-0b88df6cf564.jpg",
+            "image_mobile": "shopify://shop_images/The-Perfect-Valentine-Day-Gift-as-ebikes_512e0eb7-5415-4e21-9221-0b88df6cf564.jpg",
+            "subheading": "2022",
+            "heading": "Jason and William's meeting",
+            "heading_tag": "h2",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "content_79z8aD": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2024-02-01_at_4.21.51_PM.webp",
+            "image_mobile": "shopify://shop_images/Screenshot_2024-02-01_at_4.21.51_PM.webp",
+            "subheading": "2023",
+            "heading": "The creation of the Cityscape Electric Cruiser Bike",
+            "heading_tag": "h2",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "content_MhQCUa": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/Horizon-full-suspension-electric-fat-tire-bike-600.webp",
+            "image_mobile": "shopify://shop_images/Horizon-full-suspension-electric-fat-tire-bike-600.webp",
+            "subheading": "2024",
+            "heading": "Expansion & innovation",
+            "heading_tag": "h2",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "content_Lbx9hN": {
+          "type": "content",
+          "settings": {
+            "subheading": "Text",
+            "heading": "Heading",
+            "heading_tag": "h2",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "content_wCmHLb",
+        "content_kdqrAT",
+        "content_79z8aD",
+        "content_MhQCUa",
+        "content_Lbx9hN"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_ratio": "landscape",
+        "image_ratio_mobile": "landscape",
+        "heading": "Our Story",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "rgba(0,0,0,0)",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 56,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "rich_text_Hx7gbX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_dwmC9Q": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Milestone",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_dwmC9Q"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 8,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "image_with_text_overlay_4VNhkz": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_pX4B3N": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Add a tagline",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true
+          }
+        },
+        "heading_bQwWKf": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image with text overlay",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_dtVEPW": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_pX4B3N",
+        "heading_bQwWKf",
+        "text_dtVEPW"
+      ],
+      "disabled": true,
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/020202.jpg",
+        "image_height": "adapt",
+        "content_width": "small",
+        "content_position": "md:items-end md:justify-start",
+        "text_alignment": "left",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": true,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "image_with_text_overlay_rUDqLe": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_YDxD7K": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Add a tagline",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true
+          }
+        },
+        "heading_yMkMBx": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image with text overlay",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_Vn6caL": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_YDxD7K",
+        "heading_yMkMBx",
+        "text_Vn6caL"
+      ],
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/010101.jpg",
+        "image_height": "adapt",
+        "content_width": "small",
+        "content_position": "md:items-end md:justify-start",
+        "text_alignment": "left",
+        "image_mobile": "shopify://shop_images/Heybike_Mile_Stone.png",
+        "image_height_mobile": "adapt",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 0,
+        "padding_top": 8,
+        "padding_bottom": 80,
+        "divider": false,
+        "full_width": false,
+        "rounded": true,
+        "enable_parallax": false,
+        "parallax_direction": "zoom"
+      }
+    },
+    "custom_slideshow_CfPUmW": {
+      "type": "custom-slideshow",
+      "blocks": {
+        "image_KWKyNm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/010101_97a0db33-afe9-4089-a101-199cad0e9d6d.jpg",
+            "image_height": "700px",
+            "content_width": "small",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_mobile": "shopify://shop_images/lQLPKHpZZT2oF1PNBc_NAu6wVRIkLNNU-NgGzEe9EgGtAA_750_1487_e165a20f-c7e3-44c3-bb74-e39173c7c752.png",
+            "image_height_mobile": "adapt",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "color_text": "#ffffff",
+            "color_highlight": "#e0a580",
+            "gradient_highlight": "",
+            "color_button_text": "#171717",
+            "color_button_background": "#ffffff",
+            "color_button_gradient": "",
+            "block_color_overlay": "#171717",
+            "overlay_opacity": 0,
+            "subheading": "",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true,
+            "heading": "",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "text": "",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color_text": false,
+            "highlighted_text_text": "none",
+            "highlighted_scribble_text": "circle",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "md",
+            "button_secondary_style": false,
+            "label": "",
+            "link": "",
+            "liquid": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_KWKyNm"
+      ],
+      "disabled": true,
+      "settings": {
+        "transparent_header": false,
+        "autoplay": false,
+        "autoplay_speed": 3,
+        "show_navigation": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "image_with_text_xnNkFa": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_DGV4e6": {
+          "type": "heading",
+          "settings": {
+            "heading": "GO GREEN WITH HEYBIKE",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "spacing_PP3CJ6": {
+          "type": "spacing",
+          "settings": {
+            "height": 24,
+            "height_mobile": 0
+          }
+        },
+        "heading_JPUVWr": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<em><strong>Image with text</strong></em>",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "half_text",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_LrePwM": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_dDW9iW": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "md"
+          }
+        },
+        "text_HqLTnz": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em><strong>100,000,000 miles</strong></em><br/>Total Distance Ridden</p>",
+            "text_size": "subtext-xl",
+            "text_max_size": 128,
+            "text_font": "heading",
+            "secondary_color": false,
+            "highlighted_text": "half_text",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_MVkqip": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em><strong>200,000+</strong></em><strong><br/>Active Riders</strong></p>",
+            "text_size": "subtext-xl",
+            "text_max_size": 128,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "half_text",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_fJYTAp": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em><strong>38,000,000 kg</strong></em><strong><br/>Total CO2 Emissions Reduced</strong></p>",
+            "text_size": "subtext-xl",
+            "text_max_size": 128,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "half_text",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_78grFe": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em><strong>2,680,000 pcs</strong></em><strong><br/>Equivalent Trees Planted</strong></p>",
+            "text_size": "subtext-xl",
+            "text_max_size": 128,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "half_text",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_DGV4e6",
+        "spacing_PP3CJ6",
+        "heading_JPUVWr",
+        "text_LrePwM",
+        "button_dDW9iW",
+        "text_HqLTnz",
+        "text_MVkqip",
+        "text_fJYTAp",
+        "text_78grFe"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/340AFF88.png",
+        "image_height": "650px",
+        "image_width": "medium",
+        "layout": "image_first",
+        "text_alignment": "left",
+        "image_mobile": "shopify://shop_images/screenshot-20240912-162036.png",
+        "image_height_mobile": "auto",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_background_2": "",
+        "gradient_background_2": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": true,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "multicolumn_EgUeQm": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_pYqWAV": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image_ratio": "adapt",
+            "heading": "2021",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_whU3Pi": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image_ratio": "adapt",
+            "heading": "2022",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_zgJeX9": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image_ratio": "adapt",
+            "heading": "2023",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_mpHeWM": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image_ratio": "adapt",
+            "heading": "2024",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_pYqWAV",
+        "column_whU3Pi",
+        "column_zgJeX9",
+        "column_mpHeWM"
+      ],
+      "disabled": true,
+      "settings": {
+        "columns": 4,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "heading": "Multicolumn",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "image_with_text_overlay_bkYKYC",
+    "video_with_text_overlay_fqDmxQ",
+    "rich_text_FHMagt",
+    "main-page",
+    "image_with_text_htfcbg",
+    "images_with_text_T6XnY3",
+    "rich_text_pggDrR",
+    "image_with_text_overlay_aKJkjJ",
+    "rich_text_hmxPBN",
+    "custom_slideshow_cBqQ97",
+    "image_with_text_LRbpCY",
+    "testimonials_banner_fUEfPd",
+    "timeline_MhkfmP",
+    "video_with_text_overlay_Haf9L7",
+    "portfolio_kpeTdP",
+    "multicolumn_pnicda",
+    "timeline_6zttTK",
+    "rich_text_Hx7gbX",
+    "image_with_text_overlay_4VNhkz",
+    "image_with_text_overlay_rUDqLe",
+    "custom_slideshow_CfPUmW",
+    "image_with_text_xnNkFa",
+    "multicolumn_EgUeQm"
+  ]
+}

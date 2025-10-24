@@ -1,0 +1,768 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_overlay_JRFpTF": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_xUPpEk": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Capture Your Ride, Win Big!",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true
+          }
+        },
+        "heading_iGgN8E": {
+          "type": "heading",
+          "settings": {
+            "heading": "Heybike Photo Contest",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_wE97GC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Submit your best Heybike moments and get a chance to win amazing rewards every month. Join the community, share your journey, and ride into the spotlight!</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_PBmRwM": {
+          "type": "button",
+          "settings": {
+            "button_label": "Submit Photo Now!",
+            "button_link": "",
+            "button_size": "md"
+          }
+        },
+        "button_8wCYAC": {
+          "type": "button",
+          "settings": {
+            "button_label": "Join Heybike Community",
+            "button_link": "",
+            "button_size": "md"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_xUPpEk",
+        "heading_iGgN8E",
+        "text_wE97GC",
+        "button_PBmRwM",
+        "button_8wCYAC"
+      ],
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/Heybike_Mars_2.0_Ebike_Flash_Sale_cd2218a0-f86a-4e96-96c4-8bdb5d3b579d.jpg",
+        "image_height": "adapt",
+        "content_width": "small",
+        "content_position": "md:items-end md:justify-start",
+        "text_alignment": "left",
+        "image_mobile": "shopify://shop_images/Heybike_Mars_2.0_Ebike_Flash_Sale-ap.jpg",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 15,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "rich_text_FHMagt": {
+      "type": "rich-text",
+      "blocks": {
+        "text_pbXcgE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Heybike Photo Contest</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "heading_6kxdHq": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Show Off Your Heybike Adventure!</em>",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "half_text",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_xmqgpy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Whether you're cruising the city streets, exploring rugged trails, or taking your Heybike on an unforgettable trip, we want to see it! Submit your best photo or video each month and compete for exclusive rewards. Winning entries will be featured on our website and social media!</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_gGaVPD": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "md"
+          }
+        }
+      },
+      "block_order": [
+        "text_pbXcgE",
+        "heading_6kxdHq",
+        "text_xmqgpy",
+        "button_gGaVPD"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#000000",
+        "color_background": "rgba(0,0,0,0)",
+        "gradient_background": "",
+        "color_highlight": "#ffdb00",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 44,
+        "padding_bottom": 16,
+        "divider": true,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "logo_list_qF9Acg": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_ma7DKt": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/heybike-ALPHA-8-speed-speed.jpg",
+            "height": 200,
+            "link": ""
+          }
+        },
+        "logo_BQj8wp": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Heybike-Mulit-Speed-Electric-bike.jpg",
+            "height": 200,
+            "link": ""
+          }
+        },
+        "logo_mGmN7Y": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Heybike-ALPHA-Mid-drive-All-terrain-Ebike_3.jpg",
+            "height": 200,
+            "link": ""
+          }
+        },
+        "logo_JPfkhH": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Heybike_Hauler_Review_Electrek.jpg",
+            "height": 200,
+            "link": ""
+          }
+        },
+        "logo_kyDxem": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/ALPHA_Speed_PC.jpg",
+            "height": 200,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_ma7DKt",
+        "logo_BQj8wp",
+        "logo_mGmN7Y",
+        "logo_JPfkhH",
+        "logo_kyDxem"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "marquee",
+        "grid_horizontal": 70,
+        "direction": "right",
+        "speed": 5,
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": true,
+        "rounded": false
+      }
+    },
+    "multicolumn_DxKQdd": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_ED3e6r": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/ALPHA_New_ALL_Terrain.jpg",
+            "image_ratio": "adapt",
+            "heading": "Example title",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_FRAKwJ": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/ALPHA_New_ALL_Terrain.jpg",
+            "image_ratio": "adapt",
+            "heading": "Example title",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_PbdxWR": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/ALPHA_New_ALL_Terrain.jpg",
+            "image_ratio": "adapt",
+            "heading": "Example title",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_ED3e6r",
+        "column_FRAKwJ",
+        "column_PbdxWR"
+      ],
+      "settings": {
+        "columns": 3,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "<em>Exciting Rewards Await!</em>",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "half_text",
+        "highlighted_scribble": "basic-underline",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "multicolumn_NkFYCz": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_g6YnaE": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/ALPHA_New_ALL_Terrain.jpg",
+            "image_ratio": "adapt",
+            "heading": "Example title",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_ikGKCE": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/ALPHA_New_ALL_Terrain.jpg",
+            "image_ratio": "adapt",
+            "heading": "Example title",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_iCREeB": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/ALPHA_New_ALL_Terrain.jpg",
+            "image_ratio": "adapt",
+            "heading": "Example title",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_g6YnaE",
+        "column_ikGKCE",
+        "column_iCREeB"
+      ],
+      "settings": {
+        "columns": 3,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "<em>Join in 3 Easy Steps!</em>",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "half_text",
+        "highlighted_scribble": "basic-underline",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 100,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "custom_liquid_tt4ata": {
+      "type": "custom-liquid",
+      "settings": {
+        "liquid": "<script type=\"text/javascript\" src=\"https://form.jotform.com/jsform/250548364423154\"></script>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "portfolio_Ndj4yQ": {
+      "type": "portfolio",
+      "blocks": {
+        "profile_AJYg3G": {
+          "type": "profile",
+          "settings": {
+            "heading": "Heading",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "color_background": "#171717"
+          }
+        },
+        "profile_dWPh7f": {
+          "type": "profile",
+          "settings": {
+            "heading": "Heading",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "color_background": "#171717"
+          }
+        },
+        "profile_bKchpR": {
+          "type": "profile",
+          "settings": {
+            "heading": "Heading",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "color_background": "#171717"
+          }
+        }
+      },
+      "block_order": [
+        "profile_AJYg3G",
+        "profile_dWPh7f",
+        "profile_bKchpR"
+      ],
+      "disabled": true,
+      "settings": {
+        "columns": 3,
+        "layout": "default",
+        "image_ratio": "portrait",
+        "image_ratio_mobile": "portrait",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "<em>Join in 3 Easy Steps!</em>",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center justify-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "custom_slideshow_B47ptR": {
+      "type": "custom-slideshow",
+      "blocks": {
+        "image_cGRnTg": {
+          "type": "image",
+          "settings": {
+            "image_height": "400px",
+            "content_width": "small",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_height_mobile": "200px",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "color_text": "#ffffff",
+            "color_highlight": "#e0a580",
+            "gradient_highlight": "",
+            "color_button_text": "#171717",
+            "color_button_background": "#ffffff",
+            "color_button_gradient": "",
+            "block_color_overlay": "#171717",
+            "overlay_opacity": 70,
+            "subheading": "",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true,
+            "heading": "",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "text": "",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color_text": false,
+            "highlighted_text_text": "none",
+            "highlighted_scribble_text": "circle",
+            "button_label": "",
+            "button_link": "",
+            "button_size": "md",
+            "button_secondary_style": false,
+            "label": "",
+            "link": "",
+            "liquid": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_cGRnTg"
+      ],
+      "disabled": true,
+      "settings": {
+        "transparent_header": false,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-md",
+        "heading_tag": "h1",
+        "text_size": "text-base",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "faq_ABgirD": {
+      "type": "faq",
+      "blocks": {
+        "question_GQULta": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_LX4AFz": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_8n69Jr": {
+          "type": "question",
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "question_GQULta",
+        "question_LX4AFz",
+        "question_8n69Jr"
+      ],
+      "disabled": true,
+      "settings": {
+        "style": "with-border",
+        "heading": "Terms & Conditions",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "custom_newsletter_B4RqUD": {
+      "type": "custom-newsletter",
+      "blocks": {
+        "newsletter_akLBcg": {
+          "type": "newsletter",
+          "settings": {
+            "image": "shopify://shop_images/mdi_email-open.png",
+            "image_width": "custom",
+            "image_max_width": 50,
+            "image_max_width_mobile": 50,
+            "heading": "Sign up and save",
+            "heading_size": "headingtext-custom",
+            "text_max_size_heading": 30,
+            "heading_tag": "h3",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline",
+            "text": "<p>Be the first to know Heybike News</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text_text": "none",
+            "highlighted_scribble_text": "circle",
+            "newsletter_form": true,
+            "button_label": "",
+            "button_link": "",
+            "button_size": "md",
+            "button_secondary_style": false,
+            "label": "",
+            "link": "",
+            "liquid": "",
+            "social_media": false
+          }
+        },
+        "newsletter_hARL48": {
+          "type": "newsletter",
+          "settings": {
+            "image": "shopify://shop_images/ant-design_customer-service-filled_f4a09893-0b32-4ec5-8ec1-cee2acbaa279.png",
+            "image_width": "custom",
+            "image_max_width": 50,
+            "image_max_width_mobile": 50,
+            "heading": "We Are Here To <em>Help</em>",
+            "heading_size": "headingtext-custom",
+            "text_max_size_heading": 30,
+            "heading_tag": "h3",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline",
+            "text": "<p>Please contact us if you have any question</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text_text": "none",
+            "highlighted_scribble_text": "circle",
+            "newsletter_form": false,
+            "button_label": "Contact Us",
+            "button_link": "shopify://pages/contact-us",
+            "button_size": "sm",
+            "button_secondary_style": false,
+            "label": "",
+            "link": "",
+            "liquid": "",
+            "social_media": false
+          }
+        }
+      },
+      "block_order": [
+        "newsletter_akLBcg",
+        "newsletter_hARL48"
+      ],
+      "disabled": true,
+      "settings": {
+        "content_width": "medium",
+        "text_alignment": "center",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_background": "#000000",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "#000000",
+        "color_button_background": "#f6be00",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "image_with_text_overlay_JRFpTF",
+    "rich_text_FHMagt",
+    "logo_list_qF9Acg",
+    "multicolumn_DxKQdd",
+    "multicolumn_NkFYCz",
+    "custom_liquid_tt4ata",
+    "portfolio_Ndj4yQ",
+    "custom_slideshow_B47ptR",
+    "main-page",
+    "faq_ABgirD",
+    "custom_newsletter_B4RqUD"
+  ]
+}

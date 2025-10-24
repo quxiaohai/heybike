@@ -1,0 +1,1281 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-sm",
+        "heading_tag": "h1",
+        "text_size": "text-sm",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "image_with_text_overlay_tXVAPH": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_WWakX8": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Co-branding Summer Campaign",
+            "subheading_size": "subtitle-sm",
+            "secondary_color": false
+          }
+        },
+        "heading_gmhpPy": {
+          "type": "heading",
+          "settings": {
+            "heading": "Heybike×Jackery:  Unlocking Your Adventures",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_DayRdX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Heybike partners with Jackery to fulfill your summer dreams. Stay charged. Stay mobile. Let’s power up your summer and enjoy a cool outdoor adventure!</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 28,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "image_kCBEcU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1000x600_40fe9afc-0b77-481b-a960-4e363e525740.jpg",
+            "image_width": "custom",
+            "image_max_width": 240,
+            "image_max_width_mobile": 160
+          }
+        }
+      },
+      "block_order": [
+        "subheading_WWakX8",
+        "heading_gmhpPy",
+        "text_DayRdX",
+        "image_kCBEcU"
+      ],
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/1920X650-pc-banner_2b39fa87-59a0-40c6-bb93-3e9eda666929.jpg",
+        "image_height": "650px",
+        "content_width": "small",
+        "content_position": "md:items-center md:justify-start",
+        "text_alignment": "left",
+        "image_mobile": "shopify://shop_images/390x600_app_banner_44ba7ad0-d391-4044-b807-f3e319d04865.jpg",
+        "image_height_mobile": "600px",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 10,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "multicolumn_a6zy3A": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_CwbGct": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "center",
+            "image": "shopify://shop_images/4746x1874_H.jpg",
+            "image_ratio": "wide",
+            "heading": "About HeyBike",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>As a leading brand in the industry of green transportation, Heybike offers all types of electric bikes to upgrade everyone's riding. We are committed to bringing innovations to the marketplace and expanding our product lines to meet the needs of our customers, fostering a lifestyle that brings people together and makes travel easy.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_fzMtnk": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "center",
+            "image": "shopify://shop_images/4746x1874_J.jpg",
+            "image_ratio": "wide",
+            "heading": "About Jackery",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Founded in 2012 in California, USA, Jackery was born with a vision to bring green energy to all. In 2016, Jackery launched its first outdoor portable power stations and, two years later, developed its first portable solar panels. Having introduced solar generators to the great outdoors, Jackery fulfills the power needs of every nature-lover, inspiring them to explore further and seek more extraordinary experiences than before. We encourage our global adventurers to enjoy the outdoors sustainably, working together to protect our planet.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_CwbGct",
+        "column_fzMtnk"
+      ],
+      "settings": {
+        "columns": 2,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "HeyBike × Jackery",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "image_comparison_w6PbMB": {
+      "type": "image-comparison",
+      "blocks": {
+        "image_zMTRCV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/4746x1874_H_b4393db7-5f7b-4fa7-af0a-515ab9e174c9.jpg",
+            "subheading": "",
+            "heading": "",
+            "content_position": "end",
+            "color_text": "#ffffff"
+          }
+        },
+        "image_9GxFGh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/4746x1874_J_8d98bea4-4683-4b58-8157-d76e3f806ed9.jpg",
+            "subheading": "",
+            "heading": "",
+            "content_position": "end",
+            "color_text": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "image_zMTRCV",
+        "image_9GxFGh"
+      ],
+      "settings": {
+        "layout": "horizontal",
+        "image_height": "adapt",
+        "image_height_mobile": "adapt",
+        "heading": "Heybike × Jackery",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "timeline_KRTJrd": {
+      "type": "timeline",
+      "blocks": {
+        "content_yJtJaL": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/700x605_5020a5d5-89ef-47fe-9525-b038dba6d814.jpg",
+            "subheading": "",
+            "heading": "Fishing",
+            "heading_tag": "h2",
+            "text": "<p>With Heybike ebikes, you can ride to remote fishing spots in a smooth and eco-friendly way. Power your gear like fish finders and lamps using a Jackery portable power station and solar panel. You will enjoy fishing all day without worries.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "content_Eybwk3": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/700x605_def47848-69c0-49f2-bc68-c159bb7095a6.jpg",
+            "subheading": "",
+            "heading": "Camping",
+            "heading_tag": "h2",
+            "text": "<p>Heybike ebikes and Jackery power stations are perfect for camping trips. Load up your Heybike with camping equipment and ride to the campsite. Use a portable power station to charge your devices, lights, and even cook with electric appliances. Enhance your camping experiences with such convenience.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "content_hdE97W": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/700x605_25e3de27-1902-4ab0-a10c-58b8b2f24efe.jpg",
+            "subheading": "",
+            "heading": "Standby Battery",
+            "heading_tag": "h2",
+            "text": "<p>Emergencies may occur during outdoor activities. Rely on a Jackery portable power station as a backup battery to keep your ebike charged and ready for on-demand transportation. You can also charge other essential devices with peace of mind during power outages or unexpected situations.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "content_Cc8MyQ": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/700x605.jpg",
+            "subheading": "",
+            "heading": "Off-grid Living",
+            "heading_tag": "h2",
+            "text": "<p>Ebikes and power stations can be paired to support an off-grid lifestyle by providing a sustainable and self-sufficient system for transportation and electricity in remote areas. Enjoy your off-grid living with no worry.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "content_yJtJaL",
+        "content_Eybwk3",
+        "content_hdE97W",
+        "content_Cc8MyQ"
+      ],
+      "settings": {
+        "image_ratio": "portrait",
+        "image_ratio_mobile": "wide",
+        "heading": "Unlock Your Summer Adventure",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "featured_collection_gfXeq6": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "heybike-jackery-bundle",
+        "products": [
+          "mars-2-0-jackery-1000-plus",
+          "ranger-s-jackery-1000-plus",
+          "mars-2-0-jackery-600-plus"
+        ],
+        "product_limit": 3,
+        "columns": 2,
+        "carousel_on_desktop": true,
+        "show_view_all": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Choose Your Bundle",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "slideshow_GerUrx": {
+      "type": "slideshow",
+      "blocks": {
+        "image_Xd8qXf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bundle_1__mars_2.0_600.jpg",
+            "heading": "Cost-effective Bundle: Best selling foldable ebike and lightweight portable 600 plus power station",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "image_CCTbCV": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bundle_2__mars_2.0_1000.jpg",
+            "heading": "Powerful Package:<>best-selling foldable ebike and safe high-capacity 1000 pluspower station",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "image_3Kqrge": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bundle_3__ranger_s_1000.jpg",
+            "heading": "Long-distance Combo: long-range foldable ebike and safe high-capacity 1000 plus power station",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_Xd8qXf",
+        "image_CCTbCV",
+        "image_3Kqrge"
+      ],
+      "disabled": true,
+      "settings": {
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "image_height": "adapt",
+        "content_width": "small",
+        "image_height_mobile": "auto",
+        "color_text": "#ffffff",
+        "color_background": "#ffffff",
+        "gradient_background": "",
+        "color_button_text": "#171717",
+        "color_button_background": "rgba(0,0,0,0)",
+        "color_button_gradient": "",
+        "color_overlay": "rgba(0,0,0,0)",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": true,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "collage_EPJ9Nh": {
+      "type": "collage",
+      "blocks": {
+        "image_KaXdkQ": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "link": "",
+            "invert_subheading_heading": false,
+            "image": "shopify://shop_images/700x605.jpg",
+            "image_ratio": "portrait",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_ratio_mobile": "portrait",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#ffffff",
+            "color_highlight": "",
+            "gradient_highlight": "",
+            "color_overlay": "#171717",
+            "overlay_opacity": 10
+          }
+        },
+        "image_9mWBBX": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "link": "",
+            "invert_subheading_heading": false,
+            "image": "shopify://shop_images/700x605_65ca25f4-007f-45bc-a0d4-d517deed65a7.jpg",
+            "image_ratio": "portrait",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_ratio_mobile": "portrait",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#ffffff",
+            "color_highlight": "",
+            "gradient_highlight": "",
+            "color_overlay": "#171717",
+            "overlay_opacity": 10
+          }
+        },
+        "image_chGyJQ": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "link": "",
+            "invert_subheading_heading": false,
+            "image": "shopify://shop_images/700x605_e977f0ba-04e8-4cfd-8ac5-a22557859acf.jpg",
+            "image_ratio": "portrait",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_ratio_mobile": "portrait",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#ffffff",
+            "color_highlight": "",
+            "gradient_highlight": "",
+            "color_overlay": "#171717",
+            "overlay_opacity": 10
+          }
+        },
+        "image_4GgJiK": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "link": "",
+            "invert_subheading_heading": false,
+            "image": "shopify://shop_images/700x605_8f35707c-2f91-4556-8714-381898565eb1.jpg",
+            "image_ratio": "portrait",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_ratio_mobile": "portrait",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#ffffff",
+            "color_highlight": "",
+            "gradient_highlight": "",
+            "color_overlay": "#171717",
+            "overlay_opacity": 10
+          }
+        }
+      },
+      "block_order": [
+        "image_KaXdkQ",
+        "image_9mWBBX",
+        "image_chGyJQ",
+        "image_4GgJiK"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Multimedia collage",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": true
+      }
+    },
+    "faq_tAH9wn": {
+      "type": "faq",
+      "blocks": {
+        "question_JMzq7B": {
+          "type": "question",
+          "settings": {
+            "title": "(1) Why does Heybike partner with Jackery?",
+            "text": "<p>Summer is the peak outdoor season. We encourage everyone to spend more time outdoors with family and friends. The combination of ebikes and power stations offers more fun and convenience for outdoor adventures. Together, we share a mission of building an eco-friendly and sustainable society.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_LiBjkx": {
+          "type": "question",
+          "disabled": true,
+          "settings": {
+            "title": "(2) How long will this summer campaign last?",
+            "text": "<p>The summer campaign is running for a limited time. It will last until the end of July, 2024. We encourage you to take advantage of the deals before they expire.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_QA4agC": {
+          "type": "question",
+          "settings": {
+            "title": "(2) How can Heybike e-bikes and Jackery power stations enhance outdoor activities?",
+            "text": "<p>Heybike and Jackery product packages provide portability and flexibility. They reduce battery anxiety and are versatile for various scenarios, such as fishing, camping, road trips, backyard parties, etc.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_Q9p6Km": {
+          "type": "question",
+          "settings": {
+            "title": "(3) Where can I purchase the summer campaign bundles and get the latest information?",
+            "text": "<p>The bundles will be available on Heybike and Jackery official websites, offering great deals for this summer season. You can also follow Heybike social media (Facebook, Instagram, Youtube, Tiktok) and join our Facebook Group for more information.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "question_4kFnTQ": {
+          "type": "question",
+          "settings": {
+            "title": "(4) What's the warranty and when is the shipment of Heybike and Jackery's products?",
+            "text": "<p>Heybike offers a 2-year warranty for each ebike. Jackery offers a 3+2 year warranty for Explorer 600 Plus and Explorer 1000 Plus. Each product is subject to the warranty policy of its respective official store. Please refer to the related official store for its detailed warranty policy. As for the shipment, we will start in 5 business days. For any questions, please get in touch with Heybike customer service team for help.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "question_JMzq7B",
+        "question_LiBjkx",
+        "question_QA4agC",
+        "question_Q9p6Km",
+        "question_4kFnTQ"
+      ],
+      "settings": {
+        "style": "with-border",
+        "heading": "FAQs",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "image_with_text_overlay_9y7UED": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_XUHLmE": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Co-branding Summer Campaign",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true
+          }
+        },
+        "heading_7FzP3X": {
+          "type": "heading",
+          "settings": {
+            "heading": "Power up your summer & Go green with Heybike and Jackery!",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_mT9xrm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We share the commitment to an eco-friendly and sustainable way of living. By combining Heybike innovative electric bikes with Jackery reliable power stations, we aim to enhance everyone's outdoor experiences, whether it's fishing, camping, or off-grid living. Together, we envision a future where mobility and power solutions seamlessly integrate to provide convenience and fun for our customers. Join us this summer to explore the outdoors in a green way.</p>",
+            "text_size": "subtext-sm",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_XUHLmE",
+        "heading_7FzP3X",
+        "text_mT9xrm"
+      ],
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/1920X650.jpg",
+        "image_height": "650px",
+        "content_width": "small",
+        "content_position": "md:items-end md:justify-start",
+        "text_alignment": "left",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 27,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "logo_list_dbj8rF": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_jyNVg6": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/TailHappyTV.jpg",
+            "height": 120,
+            "link": ""
+          }
+        },
+        "logo_4xXMPY": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Freshly_Charged.jpg",
+            "height": 80,
+            "link": ""
+          }
+        },
+        "logo_KCJ3CV": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/CNET.png",
+            "height": 80,
+            "link": ""
+          }
+        },
+        "logo_pcFpTT": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Tom_s_Guide.png",
+            "height": 80,
+            "link": ""
+          }
+        },
+        "logo_tMdfrt": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/electrek_press.jpg",
+            "height": 80,
+            "link": ""
+          }
+        },
+        "logo_3JHjek": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Electricbike_report.png",
+            "height": 80,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_jyNVg6",
+        "logo_4xXMPY",
+        "logo_KCJ3CV",
+        "logo_pcFpTT",
+        "logo_tMdfrt",
+        "logo_3JHjek"
+      ],
+      "settings": {
+        "layout": "default",
+        "grid_horizontal": 70,
+        "direction": "left",
+        "speed": 5,
+        "heading": "Featured In",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "featured_collection_RHkmEp": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "collection": "accessories",
+        "products": [],
+        "product_limit": 2,
+        "columns": 2,
+        "carousel_on_desktop": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Featured collection",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "collection_list_UN9Db6": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_J6pDay": {
+          "type": "collection",
+          "settings": {
+            "collection": "test",
+            "image": "shopify://shop_images/Bundle_1__mars_2.0_600.jpg",
+            "title": "Cost-effective Bundle",
+            "description": "Best-selling foldable ebike and lightweight portable 600 plus power station",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_38YCDH": {
+          "type": "collection",
+          "settings": {
+            "collection": "fat-tire-bikes",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_YrkrY4": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_KEAPDf": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_J6pDay",
+        "collection_38YCDH",
+        "collection_YrkrY4",
+        "collection_KEAPDf"
+      ],
+      "disabled": true,
+      "settings": {
+        "columns": 1,
+        "carousel_on_desktop": true,
+        "image_type": "collection",
+        "image_ratio": "adapt",
+        "show_products_count": false,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Collections",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "multicolumn_ApmNMj": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_tF8kNa": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/Bundle_1__mars_2.0_600.jpg",
+            "image_ratio": "adapt",
+            "heading": "Cost-effective Bundle",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Best-selling foldable ebike and lightweight portable 600 plus power station</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_TKzm3p": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image_ratio": "adapt",
+            "heading": "Example title",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_HpJBGH": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/Bundle_2__mars_2.0_1000.jpg",
+            "image_ratio": "adapt",
+            "heading": "Example title",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_qBh4dU": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/Bundle_3__ranger_s_1000.jpg",
+            "image_ratio": "adapt",
+            "heading": "Powerful Package",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Best-selling foldable ebike and safe high-capacity 1000 plus power station</p>",
+            "button_label": "",
+            "button_link": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_tF8kNa",
+        "column_TKzm3p",
+        "column_HpJBGH",
+        "column_qBh4dU"
+      ],
+      "disabled": true,
+      "settings": {
+        "columns": 2,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Exclusive Bundle Deals",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "Long-distance Combo",
+        "description": "<p>Long-range foldable ebike and safe high-capacity 1000 plus power station</p>",
+        "button_label": "",
+        "button_link": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 12,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "image_with_text_FM6Jy3": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_g78pXR": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_yFxnLF": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_font": "body",
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_gBLdqW": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_size": "md"
+          }
+        }
+      },
+      "block_order": [
+        "heading_g78pXR",
+        "text_yFxnLF",
+        "button_gBLdqW"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_height": "650px",
+        "image_width": "medium",
+        "layout": "image_first",
+        "text_alignment": "left",
+        "image_height_mobile": "auto",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_background_2": "",
+        "gradient_background_2": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "slideshow_TzhhLN": {
+      "type": "slideshow",
+      "blocks": {
+        "image_VV8UNy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bundle_1__mars_2.0_600.jpg",
+            "heading": "Image slide",
+            "heading_size": "title-sm",
+            "heading_tag": "h2",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "image_etyPkd": {
+          "type": "image",
+          "settings": {
+            "heading": "Image slide",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_VV8UNy",
+        "image_etyPkd"
+      ],
+      "disabled": true,
+      "settings": {
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "image_height": "adapt",
+        "content_width": "small",
+        "image_height_mobile": "auto",
+        "color_text": "#ffffff",
+        "color_background": "#ffffff",
+        "gradient_background": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "padding_top": 0,
+        "padding_bottom": 8,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    },
+    "featured_collection_BrBFRG": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "collection": "test",
+        "products": [
+          "2-in-1-headlight-horn-switch"
+        ],
+        "product_limit": 3,
+        "columns": 1,
+        "carousel_on_desktop": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Featured collection",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "portfolio_YntckP": {
+      "type": "portfolio",
+      "blocks": {
+        "profile_H3hTL8": {
+          "type": "profile",
+          "settings": {
+            "image": "shopify://shop_images/700x605_8f35707c-2f91-4556-8714-381898565eb1.jpg",
+            "heading": "Heading",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "color_background": "#171717"
+          }
+        },
+        "profile_hKjEfi": {
+          "type": "profile",
+          "settings": {
+            "heading": "Heading",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "color_background": "#171717"
+          }
+        },
+        "profile_V8iCpp": {
+          "type": "profile",
+          "settings": {
+            "heading": "Heading",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "color_text": "#ffffff",
+            "color_background": "#171717"
+          }
+        }
+      },
+      "block_order": [
+        "profile_H3hTL8",
+        "profile_hKjEfi",
+        "profile_V8iCpp"
+      ],
+      "disabled": true,
+      "settings": {
+        "columns": 3,
+        "layout": "default",
+        "image_ratio": "portrait",
+        "image_ratio_mobile": "portrait",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Portfolio",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center justify-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#000000",
+        "color_background": "rgba(0,0,0,0)",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "image_with_text_overlay_tXVAPH",
+    "multicolumn_a6zy3A",
+    "image_comparison_w6PbMB",
+    "timeline_KRTJrd",
+    "featured_collection_gfXeq6",
+    "slideshow_GerUrx",
+    "collage_EPJ9Nh",
+    "faq_tAH9wn",
+    "image_with_text_overlay_9y7UED",
+    "logo_list_dbj8rF",
+    "featured_collection_RHkmEp",
+    "collection_list_UN9Db6",
+    "multicolumn_ApmNMj",
+    "image_with_text_FM6Jy3",
+    "slideshow_TzhhLN",
+    "featured_collection_BrBFRG",
+    "portfolio_YntckP"
+  ]
+}
